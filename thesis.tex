@@ -1802,7 +1802,7 @@ tba
 
 \subsection{In terms of functorial quantum field theory}
 
-The aim of this section is to reformulate Schur-Weyl duality for the Yangian in terms of a 2-functorial quantum field theory that will turn out to represent four-dimensional Chern-Simons theory. The mathematical structures used so far have been heavily representation theoretical. Nonetheless, we have seen some hints that there is an underlying geometry at play: We have made use of braids on cylinders as well as complex coordinates that may be reinterpreted as $N$-pointed Riemann spheres. The foundation for our construction is a symmetric monoidal double category $2\mathsf{Cob}$ that unifies the data of Riemann spheres and braids on cylinders. Regarding symmetric monoidal double categories we follow the reference \cite{article:hansen:2019}, where they were originally defined as a tool for efficiently organizing the structure of symmetric monoidal bicategories.
+The aim of this section is to reformulate Schur-Weyl duality for the Yangian in terms of a 2-functorial quantum field theory that will turn out to represent four-dimensional Chern-Simons theory. The mathematical structures used so far have been heavily representation theoretical. Nonetheless, we have seen some hints that there is an underlying geometry at play: We have made use of braids on cylinders as well as complex coordinates that may be reinterpreted as $N$-pointed Riemann spheres. The foundation for our construction is a symmetric monoidal double category of \emph{semi-topological cobordisms} that unifies the data of Riemann spheres and braids on cylinders. Regarding symmetric monoidal double categories we follow the reference \cite{article:hansen:2019}, where they were originally defined as a tool for efficiently organizing the structure of symmetric monoidal bicategories.
 
 \begin{definition}
 \begin{enumerate}[label=(\roman*)]
@@ -1906,7 +1906,7 @@ where we have quotiented by the action of $\C$ by translation.
 \end{example}
 
 \begin{definition}
-The double category $2\mathsf{Cob}$ has as $2\mathsf{Cob}^0$ the core of the category of finite pointed sets and as $2\mathsf{Cob}^1$ the category whose objects are of the form $C: [N] \dashrightarrow [M]$ with $C$ an $[N] \sqcup [M]$-pointed curve and whose morphisms
+The double category $\mathsf{STCob}$ of \emph{semi-topological cobordisms} has as $\mathsf{STCob}^0$ the core of the category of finite pointed sets and as $\mathsf{STCob}^1$ the category whose objects are of the form $C: [N] \dashrightarrow [M]$ with $C$ an $[N] \sqcup [M]$-pointed curve and whose morphisms
 \begin{center}
 \begin{tikzcd}[column sep=3.5cm]
 {[N]} \arrow{d}{\sigma} \arrow[dashed]{r}{(C;y_\infty,y_1,...,y_{N+M})} & {[M]} \arrow{d}{\tau} \\
@@ -1917,7 +1917,7 @@ are homotopy classes of smooth families $(C_t)_{0 \leq t \leq 1}$ of $[N] \sqcup
 \end{definition}
 
 \begin{prop}
-There is a double functor $2\mathsf{Cob} \to \C[\eta]\mathsf{Alg}$ mapping a pointed set $[N]$ to $Y(\mathfrak{gl}_\ell)^{\otimes N}$, a pointed permutation $\sigma: [N] \to [N]$ to the corresponding permutation on tensor factors, a genus zero curve $(\P^1;\infty,y_1,...,y_N;-\partial_{1/z},v_1,...,v_N)$ to the fundamental monodromy representation $L(\ydiagram{1})_{y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_N}^t$, shifts as
+There is a double functor $\mathsf{STCob} \to \C[\eta]\mathsf{Alg}$ mapping a pointed set $[N]$ to $Y(\mathfrak{gl}_\ell)^{\otimes N}$, a pointed permutation $\sigma: [N] \to [N]$ to the corresponding permutation on tensor factors, a genus zero curve $(\P^1;\infty,y_1,...,y_N;-\partial_{1/z},v_1,...,v_N)$ to the fundamental monodromy representation $L(\ydiagram{1})_{y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_N}^t$, shifts as
 \begin{center}
 \begin{tikzcd}[column sep=3.5cm]
 {[N]} \arrow{d}{\id} \arrow[dashed]{r}{(\P^1;\infty,y_1,...,y_{N+M})} & {[M]} \arrow{d}{\id} \\
