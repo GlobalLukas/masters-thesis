@@ -92,7 +92,7 @@ We examine a quantum-classical duality between inhomogeneous Heisenberg models a
 
 \section*{Acknowledgments}
 
-%I sincerely want to thank my supervisor Prof. Dr. Gleb Arutyunov for his feedback and guidance in the research process and for sparking my interest in this wonderful topic. I also thank (tba) for proofreading the text as well as (tba) Finally, I would like to thank my family for supporting me in my studies.
+I sincerely want to thank my original supervisor Prof. Dr. Gleb Arutyunov for his feedback and guidance in the research process and for sparking my interest in this wonderful topic. He was unfortunately struck with illness during the advising period and I wish him a swift recovery. I also thank (tba) for proofreading the text as well as (tba). Finally, I would like to thank my family for supporting me in my studies.
 
 \tableofcontents
 
@@ -113,13 +113,13 @@ contained in the degenerate \emph{double} affine Hecke algebra
 \begin{equation*}
 \ddot H_N = \C[X_1^{\pm 1},...,X_N^{\pm 1}] \otimes \C[S_N] \otimes \C[y_1,...,y_N],
 \end{equation*}
-which possesses a representation on $\C[y_1,...,y_N]$ via Macdonald difference operators that yields the relevant wave functions, \emph{i.e.} the generators $y_i$ become the position operators of the particles and the generators $X_i$ correspond to momentum operators. We will show how the coincidence in the descriptions of the Heisenberg and Ruijsenaars-Schneider models can be summarized by twisting an old result of Drinfeld \cite{article:drinfeld:1986}: There exists a generalized Schur-Weyl equivalence between the category of $\dot H_N$-modules and a certain subcategory of the category of $Y(\mathfrak{gl}_\ell)$-modules when $\ell > N$. Applying this equivalence to the wave function representation $\C[y_1,...,y_N]$ reduces to the sought-after result, yielding the representation
+which possesses a representation on $\C[y_1,...,y_N]$ via Macdonald difference operators that yields the relevant wave functions, \emph{i.e.} the generators $y_i$ become the position operators of the particles and the generators $X_i$ correspond to momentum operators. We will show how the coincidence in the descriptions of the Heisenberg and Ruijsenaars-Schneider models can be summarized by twisting an old result of Drinfeld \cite{article:drinfeld:1986}: There exists a generalized Schur-Weyl functor from the category of $\dot H_N$-modules to the category of $Y(\mathfrak{gl}_\ell)$-modules, which is fully faithful when $\ell > N$, giving an equivalence between $\dot H_N$-modules and $Y(\mathfrak{gl}_\ell)$ of weight $N$. Applying this functor to the wave function representation $\C[y_1,...,y_N]$ reduces to the sought-after result, yielding the representation
 \begin{equation*}
 (\C^\ell)^{\otimes N} \otimes_{S_N} \C[y_1,...,y_N]
 \end{equation*}
 of the Yangian, on which the momentum-like operators $X_i$ act exactly as the non-local Hamiltonians of the spin chain when the Planck constant $\hbar$ of the rational Ruijsenaars-Schneider model goes to zero.
 
-This is however not the full picture. The fact that we are suddenly dealing with the operators $X_i$ from the degenerate \emph{double} affine Hecke algebra points to a missing piece. Recall that \emph{non}-degenerate double affine Hecke algebras have an $S$-duality automorphism by way of interchanging their two sets of Laurent generators. As a remnant of this $S$-duality, the representation of $\ddot H_N$ on $\C[y_1,...,y_N]$ above has an $S$-dual representation on $\C[X_1^{\pm 1},...,X_N^{\pm 1}]$ via Dunkl differential operators. This representation describes the quantum trigonometric Calogero-Moser model. In a similar fashion as above, we can view it as a representation of the affine symmetric group $\dot S_N = S_N \ltimes \Z^N$ which sits inside $\ddot H_N$. Using Schur-Weyl duality for affine symmetric groups, we obtain a representation of the loop algebra $L(\mathfrak{gl}_\ell)$. We then combine the action of the loop algebra and the action of the Yangian to an action of the loop Yangian $LY(\mathfrak{gl}_\ell)$, unifying all four models using generalized Schur-Weyl duality between the degenerate double affine Hecke algebra and the loop Yangian \cite{article:guay:2005}.%, to unify all four models: The rational Ruijsenaars-Schneider model, the Heisenberg model, the trigonometric Calogero-Moser model, and the trigonometric Gaudin model all arise as representations of the loop Yangian.
+This is however not the full picture. The fact that we are suddenly dealing with the Laurent generators $X_i$ from the degenerate \emph{double} affine Hecke algebra points to a missing piece. Recall that \emph{non}-degenerate double affine Hecke algebras have an $S$-duality automorphism by way of interchanging their two sets of Laurent generators. As a remnant of this $S$-duality, the representation of $\ddot H_N$ on $\C[y_1,...,y_N]$ above has an $S$-dual representation on $\C[X_1^{\pm 1},...,X_N^{\pm 1}]$ via Dunkl differential operators. This representation describes the quantum trigonometric Calogero-Moser model. In a similar fashion as above, we can view it as a representation of the affine symmetric group $\dot S_N = S_N \ltimes \Z^N$ which sits inside $\ddot H_N$. Using Schur-Weyl duality for affine symmetric groups, we obtain a representation of the loop algebra $L(\mathfrak{gl}_\ell)$. We then combine the action of the loop algebra and the action of the Yangian to an action of the loop Yangian $LY(\mathfrak{gl}_\ell)$, unifying all four models using generalized Schur-Weyl duality between the degenerate double affine Hecke algebra and the loop Yangian \cite{article:guay:2005}.%, to unify all four models: The rational Ruijsenaars-Schneider model, the Heisenberg model, the trigonometric Calogero-Moser model, and the trigonometric Gaudin model all arise as representations of the loop Yangian.
 
 To finish our discussion, we will reframe this representation theoretic picture in a more geometric setting, thus connecting it to gauge theory. It will turn out that the whole story can be retold in terms of four-dimensional Chern-Simons theory, which was first described in \cite{article:costello:2013} and subsequently expanded on in a series of papers starting with \cite{article:costello:2018}. Four-dimensional Chern-Simons theory is a semi-topological quantum field theory or, more precisely, holomorphic in two directions with complex coordinate $z$ and topological in the other two directions. Thus, it lives on a four-manifold $C \times \Sigma$, where $C$ is a complex curve and $\Sigma$ an oriented surface. Its main dynamical variable is a $\mathfrak{gl}_\ell$-valued connection 1-form $A(z)$ on $\Sigma$, which is meromorphic in $z \in C$. One also fixes a meromorphic 1-form $\omega$ on $C$, which is wedged with the Chern-Simons 3-form of $A$ to obtain the Langrangian density of the theory. Its poles and zeros respectively give rise to order and disorder defects of the gauge field $A$.
 
@@ -1722,11 +1722,11 @@ Let us reexamine the preaffine Drinfeld functor
 \begin{equation*}
 D_{\ell,N}^g: \ddot H_N\mathsf{Mod} \to S\ddot H_N \# Y(\mathfrak{gl}_\ell) \mathsf{Mod}.
 \end{equation*}
-Note that there is an asymmetry in its definition: It prioritizes the polynomial generators $y_i$ by incorporating them in the action of the Yangian, while the Laurent generators $X_i$ are artificially added on. It is known that there is a generalized Schur-Weyl duality between the affine symmetric group, which is the source of the Laurent generators, and the loop algebra $L(\mathfrak{gl}_\ell) := U(\mathfrak{gl}_\ell[t^{\pm 1}])$\index{Loop algebra}. Thus, we might hope to put both sides on a more equal footing by incorporating an action of the loop algebra on $(\C^\ell)^{\otimes N} \otimes_{S_N} V$ in addition to the action of the Yangian, making use of the Laurent generators $X_i$:
+Note that there is an asymmetry in its definition: It prioritizes the polynomial generators $y_i$ by incorporating them in the action of the Yangian, while the $S$-dual Laurent generators $X_i$ are artificially added on. It is known that there is a generalized Schur-Weyl duality between the affine symmetric group, which is the source of the Laurent generators, and the loop algebra $L(\mathfrak{gl}_\ell) := U(\mathfrak{gl}_\ell[t^{\pm 1}])$\index{Loop algebra}. Thus, we might hope to put both sides on a more equal footing by incorporating an action of the loop algebra on $(\C^\ell)^{\otimes N} \otimes_{S_N} V$ in addition to the action of the Yangian, making use of the Laurent generators $X_i$:
 \begin{equation*}
 (x t^r)(u \otimes v) := \sum_i x_i u \otimes X_i^r v.
 \end{equation*}
-This yields an action of the $\C[\eta,\hbar]$-algebra $L(\mathfrak{gl}_\ell) \# Y(\mathfrak{gl}_\ell)$ on $(\C^\ell)^{\otimes N} \otimes_{S_N} V$. This action in fact descends to the \emph{loop Yangian $LY(\mathfrak{gl}_\ell)$}, which is a quotient of $L(\mathfrak{gl}_\ell) \# Y(\mathfrak{gl}_\ell)$:
+This yields an action of the $\C[\eta,\hbar]$-algebra $L(\mathfrak{gl}_\ell) \# Y(\mathfrak{gl}_\ell)$ on $(\C^\ell)^{\otimes N} \otimes_{S_N} V$. This action in fact descends to the \emph{loop Yangian $LY(\mathfrak{gl}_\ell)$}\index{Loop Yangian}, which is a quotient of $L(\mathfrak{gl}_\ell) \# Y(\mathfrak{gl}_\ell)$:
 
 \begin{prop}
 The action of the Yangian $Y(\mathfrak{gl}_\ell)$ and the loop algebra $L(\mathfrak{gl}_\ell)$ glue together to an action of the loop Yangian $LY(\mathfrak{gl}_\ell)$.
@@ -1802,7 +1802,7 @@ tba
 
 \subsection{In terms of functorial quantum field theory}
 
-The aim of this section is to reformulate Schur-Weyl duality for the Yangian in terms of a 2-functorial quantum field theory that will turn out to represent four-dimensional Chern-Simons theory. The mathematical structures used so far have been heavily representation theoretical. Nonetheless, we have seen some hints that there is an underlying geometry at play: We have made use of braids on cylinders as well as complex coordinates that may be reinterpreted as $N$-pointed Riemann spheres. The foundation for our construction is a symmetric monoidal double category $\C\mathsf{Cob}_{0,2,4}$ that unifies the data of Riemann spheres and braids on cylinders. Regarding symmetric monoidal double categories we follow the reference \cite{article:hansen:2019}, where they were originally defined as a tool for efficiently organizing the structure of symmetric monoidal bicategories.
+The aim of this section is to reformulate Schur-Weyl duality for the Yangian in terms of a 2-functorial quantum field theory that will turn out to represent four-dimensional Chern-Simons theory. The mathematical structures used so far have been heavily representation theoretical. Nonetheless, we have seen some hints that there is an underlying geometry at play: We have made use of braids on cylinders as well as complex coordinates that may be reinterpreted as $N$-pointed Riemann spheres. The foundation for our construction is a symmetric monoidal double category $2\mathsf{Cob}$ that unifies the data of Riemann spheres and braids on cylinders. Regarding symmetric monoidal double categories we follow the reference \cite{article:hansen:2019}, where they were originally defined as a tool for efficiently organizing the structure of symmetric monoidal bicategories.
 
 \begin{definition}
 \begin{enumerate}[label=(\roman*)]
@@ -1862,11 +1862,9 @@ where $M \otimes_k M'$ has the $(A \otimes_k A')$-$(B \otimes_k B')$-bimodule st
 The standard braidings then make $k\mathsf{Alg}$ into a symmetric monoidal double category \cite{article:hansen:2019}.
 \end{example}
 
-To define the symmetric monoidal double category $\mathsf{Cob}_{0,2,4}$, we start with some preliminary definitions:
-
 \begin{definition}
 \begin{enumerate}[label=(\roman*)]
-\item The \emph{category of pointed sets} has as objects sets with a distinguished element and maps that preserve distinguished elements. Canonical representatives of the isomorphism classes are given by $[N] := \{ \infty,1,...,N \}$ with $\infty$ distinguished.
+\item The \emph{category of finite pointed sets} consists of finite sets with a distinguished element and maps that preserve distinguished elements. Canonical representatives of the isomorphism classes are given by $[N] := \{ \infty,1,...,N \}$ with $\infty$ distinguished.
 \item Let $A$ be a pointed set. An \emph{$A$-pointed curve} $C$ is a complex projective curve together with pairwise distinct non-singular points $y_a \in C$ and non-zero tangent vectors $v_a \in T_{y_a} C$ indexed by $a \in A$. Let us write these data as $(C;(y_a)_{a \in A};(v_a)_{a \in A})$.
 \item A \emph{morphism of $A$-pointed curves}
 \begin{equation*}
@@ -1907,21 +1905,57 @@ M_{0,[N]} \cong \C \backslash \text{Conf}_N \times (\C^\times)^N,
 where we have quotiented by the action of $\C$ by translation.
 \end{example}
 
-We want a functor mapping the $i$th braid to $\check R_{i,i+1}(y_i-y_{i+1}) s_i$:
+\begin{definition}
+The double category $2\mathsf{Cob}$ has as $2\mathsf{Cob}^0$ the core of the category of finite pointed sets and as $2\mathsf{Cob}^1$ the category whose objects are of the form $C: [N] \dashrightarrow [M]$ with $C$ an $[N] \sqcup [M]$-pointed curve and whose morphisms
 \begin{center}
-\begin{tikzcd}[column sep=4cm]
-{[0]} \arrow{d}{\id} \arrow{r}{(\P^1;\infty,y_1,...,y_i,y_{i+1},...,y_N)} & {[N]} \arrow{d}{s_i} \\
-{[0]} \arrow[swap]{r}{(\P^1;\infty,y_1,...,y_{i+1},y_i,...,y_N)} & {[N]}
+\begin{tikzcd}[column sep=3.5cm]
+{[N]} \arrow{d}{\sigma} \arrow[dashed]{r}{(C;y_\infty,y_1,...,y_{N+M})} & {[M]} \arrow{d}{\tau} \\
+{[N]} \arrow[dashed,swap]{r}{(C';y_\infty',y_1',...,y_{N+M}')} & {[M]}
+\end{tikzcd}
+\end{center}
+are homotopy classes of smooth families $(C_t)_{0 \leq t \leq 1}$ of $[N] \sqcup [M]$-pointed curves with isomorphisms $C_0 \cong C$ and $C_1 \cong C'$ such that $y_i$ connects to $y_{(\sigma \sqcup \tau)(i)}'$.
+\end{definition}
+
+\begin{prop}
+There is a double functor $2\mathsf{Cob} \to \C[\eta]\mathsf{Alg}$ mapping a pointed set $[N]$ to $Y(\mathfrak{gl}_\ell)^{\otimes N}$, a pointed permutation $\sigma: [N] \to [N]$ to the corresponding permutation on tensor factors, a genus zero curve $(\P^1;\infty,y_1,...,y_N;-\partial_{1/z},v_1,...,v_N)$ to the fundamental monodromy representation $L(\ydiagram{1})_{y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_N}^t$, shifts as
+\begin{center}
+\begin{tikzcd}[column sep=3.5cm]
+{[N]} \arrow{d}{\id} \arrow[dashed]{r}{(\P^1;\infty,y_1,...,y_{N+M})} & {[M]} \arrow{d}{\id} \\
+{[N]} \arrow[dashed,swap]{r}{(\P^1;\infty,y_1',...,y_{N+M}')} & {[M]}
 \end{tikzcd}
 $\quad \mapsto \quad$
 \begin{tikzcd}[column sep=4cm]
-{\C[\eta]} \arrow{d}{\id} \arrow{r}{L(\ydiagram{1})_{y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_N}^t} & Y(\mathfrak{gl}_\ell)^{\otimes N} \arrow{d}{s_i} \\
-{\C[\eta]} \arrow[swap]{r}{L(\ydiagram{1})_{y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_N}^t} & Y(\mathfrak{gl}_\ell)^{\otimes N}
+Y(\mathfrak{gl}_\ell)^{\otimes N} \arrow{d}{\textnormal{shift}} \arrow[dashed]{r}{L(\ydiagram{1})_{y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_{N+M}}^t} & Y(\mathfrak{gl}_\ell)^{\otimes M} \arrow{d}{\textnormal{shift}} \\
+Y(\mathfrak{gl}_\ell)^{\otimes N} \arrow[dashed,swap]{r}{L(\ydiagram{1})_{y_1'}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_{N+M}'}^t} & Y(\mathfrak{gl}_\ell)^{\otimes M}
 \end{tikzcd}
 \end{center}
-and mapping the twist operators to ??. Mapping them to $\check H_i$ does not commute with the Yangian! Hence they should be mapped to separate operators. Possibly, one should look at the representations $L(\ydiagram{1})_{y,X}^t$ of $L(\mathfrak{gl}_\ell) \# Y(\mathfrak{gl}_\ell)$.
+with the identity bimodule map, braids as
+\begin{center}
+\begin{tikzcd}[column sep=3.5cm]
+{[N]} \arrow{d}{\sigma} \arrow[dashed]{r}{(\P^1;\infty,y_1,...,y_{N+M})} & {[M]} \arrow{d}{\tau} \\
+{[N]} \arrow[dashed,swap]{r}{(\P^1;\infty,y_1,...,y_{N+M})} & {[M]}
+\end{tikzcd}
+$\quad \mapsto \quad$
+\begin{tikzcd}[column sep=4cm]
+Y(\mathfrak{gl}_\ell)^{\otimes N} \arrow{d}{\sigma} \arrow[dashed]{r}{L(\ydiagram{1})_{y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_{N+M}}^t} & Y(\mathfrak{gl}_\ell)^{\otimes M} \arrow{d}{\tau} \\
+Y(\mathfrak{gl}_\ell)^{\otimes N} \arrow[dashed,swap]{r}{L(\ydiagram{1})_{y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_{N+M}}^t} & Y(\mathfrak{gl}_\ell)^{\otimes M}
+\end{tikzcd}
+\end{center}
+with $b_i$ getting mapped to the $R$-matrix $\check R_{i,i+1}(y_i-y_{i+1}) s_i$, and the $\pi$-operator as
+\begin{center}
+\begin{tikzcd}[column sep=3.5cm]
+{[N]} \arrow{d}{w^{-1}} \arrow[dashed]{r}{(\P^1;\infty,y_1,y_2,...,y_N)} & {[0]} \arrow{d}{\id} \\
+{[N]} \arrow[dashed,swap]{r}{(\P^1;\infty,y_2,...,y_N,y_1)} & {[0]}
+\end{tikzcd}
+$\quad \mapsto \quad$
+\begin{tikzcd}[column sep=4cm]
+Y(\mathfrak{gl}_\ell)^{\otimes N} \arrow{d}{w} \arrow[dashed]{r}{L(\ydiagram{1})_{y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_N}^t} & \C[\eta] \arrow{d}{\id} \\
+Y(\mathfrak{gl}_\ell)^{\otimes N} \arrow[dashed,swap]{r}{L(\ydiagram{1})_{y_2}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_1}^t} & \C[\eta]
+\end{tikzcd}
+\end{center}
+\end{prop}
 
-The gluing of curves becomes tensoring over $Y(\mathfrak{gl}_\ell)$. What is $\int^y (L(\ydiagram{1})_y^t)^\vee \otimes_{Y(\mathfrak{gl}_\ell)} L(\ydiagram{1})_y^t$? Probably just $\C[\eta]$.
+The gluing of curves becomes tensoring over $Y(\mathfrak{gl}_\ell)$. For this, we need to compute $L(\ydiagram{1})_{y_1}^t \otimes_{Y(\mathfrak{gl}_\ell)} L(\ydiagram{1})_{y_2}^t$. This should generally be $\C[\eta]$, except when $y_2 = y_1 \pm \eta$, where we would get $L([2])_{y_1}^t$ and $L([1^2])_{y_1}^t$? Do we disallow these cases somehow?
 
 \pagebreak
 
