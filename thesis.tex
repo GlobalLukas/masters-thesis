@@ -1363,7 +1363,7 @@ as elements of $Y(\mathfrak{gl}_\ell)[[z^{-1}]]$.
 
 \subsection{Spectral equation}
 
-In this section, we will derive the \emph{spectral equation} for the non-local Hamiltonians of the Heisenberg model from the functional relation established earlier. This is where we will see the Lax matrix of the rational Ruijsenaars-Schneider model appear seemingly out of nowhere. The rest of this thesis is dedicated to explaining this occurrence. We will work along the lines of \cite{book:arutyunov:betheAnsatz}, but our approach is slightly different since we use Yang's convention for $R$-matrices.
+In this section, we will derive the \emph{spectral equation} for the non-local Hamiltonians of the Heisenberg model from the functional relation established earlier. This is where we will see the Lax matrix of the rational Ruijsenaars-Schneider model appear seemingly out of nowhere. We will work along the lines of \cite{book:arutyunov:betheAnsatz}, but our approach is slightly different since we use Yang's convention for $R$-matrices instead of the polynomial convention.
 
 \begin{lemma}
 We have
@@ -1802,7 +1802,7 @@ tba
 
 \subsection{In terms of functorial quantum field theory}
 
-The aim of this section is to reformulate Schur-Weyl duality for the Yangian in terms of a 2-functorial quantum field theory that will turn out to represent four-dimensional Chern-Simons theory. The mathematical structures used so far have been heavily representation theoretical. Nonetheless, we have seen some hints that there is an underlying geometry at play: We have made use of braids on cylinders as well as complex coordinates that may be reinterpreted as $N$-pointed Riemann spheres. The foundation for our construction is a symmetric monoidal double category of \emph{semi-topological cobordisms} that unifies the data of Riemann spheres and braids on cylinders. Regarding symmetric monoidal double categories we follow the reference \cite{article:hansen:2019}, where they were originally defined as a tool for efficiently organizing the structure of symmetric monoidal bicategories.
+The aim of this section is to reformulate Schur-Weyl duality for the Yangian in terms of a 2-functorial quantum field theory that will turn out to represent four-dimensional Chern-Simons theory. The mathematical structures used so far have been heavily representation theoretical. Nonetheless, we have seen some hints that there is an underlying geometry at play: We have made use of braids on cylinders as well as complex coordinates that may be reinterpreted as $(1+N)$-pointed Riemann spheres. The foundation for our construction is a symmetric monoidal double category of \emph{semi-topological cobordisms} that unifies the data of Riemann spheres and braids on cylinders. Regarding symmetric monoidal double categories we follow the reference \cite{article:hansen:2019}, where they were originally defined as a tool for efficiently organizing the structure of symmetric monoidal bicategories.
 
 \begin{definition}
 \begin{enumerate}[label=(\roman*)]
@@ -1955,7 +1955,11 @@ Y(\mathfrak{gl}_\ell)^{\otimes N} \arrow[dashed,swap]{r}{L(\ydiagram{1})_{y_2}^t
 \end{center}
 \end{prop}
 
-The gluing of curves becomes tensoring over $Y(\mathfrak{gl}_\ell)$. For this, we need to compute $L(\ydiagram{1})_{y_1}^t \otimes_{Y(\mathfrak{gl}_\ell)} L(\ydiagram{1})_{y_2}^t$. This should generally be $\C[\eta]$, except when $y_2 = y_1 \pm \eta$, where we would get $L([2])_{y_1}^t$ and $L([1^2])_{y_1}^t$? Do we disallow these cases somehow?
+The gluing of curves becomes tensoring over $Y(\mathfrak{gl}_\ell)$. For this, we might need to compute the coend $\int^{y_2-y_1} L(\ydiagram{1})_{y_1}^t \otimes_{Y(\mathfrak{gl}_\ell)} L(\ydiagram{1})_{y_2}^t$. I would expect $L(\ydiagram{1})_{y_1}^t \otimes_{Y(\mathfrak{gl}_\ell)} L(\ydiagram{1})_{y_2}^t$ to be the trivial representation except at $y_2-y_1 = \pm \eta$, where we get the symmetric and antisymmetric representation. As a $U(\mathfrak{gl}_\ell)$-module, their sum would be the coadjoint representation, as one might expect from this coend, but the Yangian action is non-trivial.
+
+In the above, the loose identity morphisms for $[1]$ are $[2]$-pointed curves. For $[N]$, they should be disjoint unions of such curves, \emph{i.e.} we have to allow non-connected curves.
+
+What happens if we consider $\Sigma$ that are not just cylinders, but any compact oriented surface with boundaries? These can no longer be interpreted as giving families of curves, but it suggests that any curve has to map to some Frobenius algebra object in $Y(\mathfrak{gl}_\ell)^{\otimes N}\mathsf{Mod}$. To obtain two circles, we would have to consider multiple possible tangent vectors at each point $y_i$. Does this make sense for non-fundamental Young diagrams? In general, we would expect that the reducibility phenomena in the representation theory of the Yangian are also represented on the geometric side when points coalesce into bound states with $y_2=y_1 \pm \eta$. For $\omega$, this would mean that a zero eats a pole. We may label the curves by standard tableau and a choice of tangent vector at any of the particles in the bound state. But how to do this for non-zero genus?
 
 \pagebreak
 
