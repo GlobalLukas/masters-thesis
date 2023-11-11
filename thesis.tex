@@ -186,7 +186,7 @@ for $\varphi_i$ the $i$th angular coordinate and $\omega_i$ a frequency dependen
 \end{theorem}
 
 \begin{proof}
-tba
+Part (i) is an application of the Frobenius theorem. To show (ii), observe that the Hamiltonian flow of the commuting conserved quantities $f_1,...,f_N$ generate a transitive action of the $N$-dimensional commutative Lie algebra $\R^N$ on $M_c$. The 1-forms $df_i$ were assumed to be linearly independent, which implies that this action is locally free and hence has discrete stabilizer, which must then be of the form $\Z^k \subseteq \R^N$. Compactness of $M_c$ implies $k=N$ and $M_c \cong \R^N / \Z^N \cong (S^1)^N$.
 \end{proof}
 
 \begin{example}
@@ -1140,19 +1140,19 @@ Let $\lambda$ be a Young diagram. Let $g_\lambda,(e_{ij})_\lambda \in \operatorn
 \end{equation*}
 \end{definition}
 
-The functional relations between higher transfer matrices come from the so called \emph{fusion relations}\index{Fusion procedure}, which categorify into short exact sequences of representations of the Yangian. Of particular importance will be the following short exact sequence:
+The functional relations between higher transfer matrices come from the so called \emph{fusion relations}\index{Fusion procedure}, which categorify to short exact sequences of representations of the Yangian. Of particular importance will be the following short exact sequence:
 \begin{equation*}
 0 \to L([2,1^{k-1}])_0^t \to L([1^k])_0^t \otimes L(\ydiagram{1})_\eta^t \to L([1^{k+1}])_\eta^t \to 0.
 \end{equation*}
-The analogous sequence for $\mathfrak{sl}_2$ was originally established in \cite{article:chari:1990}. In terms of Young diagrams, the case $k=3$ simply reads
-\begin{equation*}
-\ydiagram{1,1,1} \otimes \ydiagram{1} = \ydiagram{2,1,1} \oplus \ydiagram{1,1,1,1},
-\end{equation*}
-which is the usual Littlewood-Richardson rule, except crucially we have an added dependence on the parameter $z$, which makes this short exact sequence non-split in general. Finally, the rule for traces over short exact sequences will give the functional relation
+the rule for traces over short exact sequences will then give the functional relation
 \begin{equation*}
 \tau_{[1^k]}^g(z) \tau_{\ydiagram{1}}^g(z+\eta) = \tau_{[2,1^{k-1}]}^g(z) + \tau_{[1^{k+1}]}^g(z+\eta),
 \end{equation*}
-which will be our basis for deriving the spectral equation.
+which will be our basis for deriving the spectral equation. The analogous short exact sequence for $\mathfrak{sl}_2$ was originally established in \cite{article:chari:1990}. In terms of Young diagrams, the case $k=3$ simply reads
+\begin{equation*}
+\ydiagram{1,1,1} \otimes \ydiagram{1} = \ydiagram{2,1,1} \oplus \ydiagram{1,1,1,1},
+\end{equation*}
+which is the usual Littlewood-Richardson rule, except crucially we have an added dependence on the parameter $z$, which makes this short exact sequence non-split in general.
 
 Let us now set out to show this, starting with a discussion of the \emph{fusion procedure} \cite{article:molev:2008}, originating in works such as \cite{article:kulish:1981}. To this end, fix a standard Young tableau $t_\lambda$ of shape $\lambda$ with content vector $(c_1,...,c_k)$ and let
 \begin{equation*}
@@ -1184,7 +1184,7 @@ Let $t_\lambda$ be a standard Young tableau of shape $\lambda$ with content vect
 \begin{equation*}
 L(\ydiagram{1})_{\eta c_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{\eta c_k}^t.
 \end{equation*}
-Then $L_{t_\lambda} \cong L(\lambda)_0^t$ as $Y(\mathfrak{gl}_\ell)$-modules.
+Then $L_{t_\lambda}$ is a $Y(\mathfrak{gl}_\ell)$-submodule isomorphic to $L(\lambda)_0^t$.
 \end{prop}
 
 \begin{proof}
@@ -1556,6 +1556,10 @@ D_{\ell,N+M}(V \otimes_{\dot H_*} W) = D_{\ell,N}(V) \otimes D_{\ell,M}(W).
 \end{equation*}
 \end{prop}
 
+\begin{proof}
+This already appears in \cite{article:drinfeld:1986}.
+\end{proof}
+
 We can already see how this is beginning to resemble the structure we are looking for: The Drinfeld functor takes representations of the degenerate affine Hecke algebra $\dot H_N$, such as the wave function representation of the quantum rational Ruijsenaars-Schneider model, and produces a representation of the Yangian clearly resembling fundamental monodromy representations with inhomogeneities given by the polynomial generators $y_i$ of the degenerate affine Hecke algebra. More precisely, when $\mathfrak{m} = (y_1-\bar y_1,...,y_N-\bar y_N)$ for complex numbers $\bar y_i$, we have an isomorphism
 \begin{equation*}
 D_{\ell,N}(\C[y_1,...,y_N]) \otimes_{\C[y_1,...,y_N]} \C[y_1,...,y_N]/\mathfrak{m} \cong L(\ydiagram{1})_{\bar y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{\bar y_N}^t
@@ -1685,7 +1689,7 @@ The way we have introduced the duality between the Heisenberg and Ruijsenaars-Sc
 \begin{equation*}
 L(\ydiagram{1})_{y+\eta c_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y+\eta c_N}^t
 \end{equation*}
-by the fusion procedure with corresponding projector $\Pi_{t_\lambda}$, up to a choice of tableau $t_\lambda$ with content vector $(c_1,...,c_N)$. On the particle side, the projector $\Pi_{t_\lambda}$ similar corresponds to a projector and the positions of particles get restricted to $y_i = y + \eta c_i$. Physically, this means that spins in higher representations labeled by $\lambda$ do not correspond to single particles, but to a bound state of $N$ particles, where $N$ is the number of boxes of the Young diagram $\lambda$. The exact correspondence is found in \cite{article:arakawa:1999}.
+by the fusion procedure with corresponding projector $\Pi_{t_\lambda}$, up to a choice of tableau $t_\lambda$ with content vector $(c_1,...,c_N)$. On the particle side, the projector $\Pi_{t_\lambda}$ similarly corresponds to a projector and the positions of particles get restricted to $y_i = y + \eta c_i$. Physically, this means that spins in higher representations labeled by $\lambda$ do not correspond to single particles, but to a bound state of $N$ particles, where $N$ is the number of boxes of the Young diagram $\lambda$. The exact correspondence is found in \cite{article:arakawa:1999}.
 
 \begin{example}
 Let us look at the two site spin chain
