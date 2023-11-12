@@ -318,7 +318,7 @@ Let $\Sigma = \R \times S^1$ be a cylinder with axial coordinate $t$ and angular
 \begin{equation*}
 L(z) := \operatorname{Hol}_\gamma(A), \quad M(z) := A_t(z)|_{x=0},
 \end{equation*}
-where $\gamma$ is a loop winding once around the cylinder and $\operatorname{Hol}_{\gamma_t}(A)$ denotes the holonomy of $A$ around $\gamma$, which is invariant under homotopies due to flatness. Then $(L(z),M(z))$ is a Lax pair.
+where $\gamma$ is a loop winding once around the cylinder and $\operatorname{Hol}_{\gamma}(A)$ denotes the holonomy of $A$ around $\gamma$, which is invariant under homotopies due to flatness. Then $(L(z),M(z))$ is a Lax pair.
 \end{prop}
 
 \begin{proof}
@@ -326,7 +326,7 @@ Let $\gamma$ be a curve starting at $(t_0,x_0) \in \Sigma$ and ending at $(t_1,x
 \begin{equation*}
 \frac{\partial}{\partial t_0} \operatorname{Hol}_\gamma(A) = -A_t(z)|_{x=x_0} \operatorname{Hol}_\gamma(A), \quad \frac{\partial}{\partial t_1} \operatorname{Hol}_\gamma(A) = A_t(z)|_{x=x_1} \operatorname{Hol}_\gamma(A).
 \end{equation*}
-Choosing $x_0 = x_1 = 0$ and letting $\gamma$ wind once around the cylinder implies
+Choosing $x_0 = x_1 = 0$ and $t_0 = t_1$ and letting $\gamma$ wind once around the cylinder implies
 \begin{equation*}
 \dot L(z) = \frac{\partial}{\partial t_0} \operatorname{Hol}_\gamma(A) + \frac{\partial}{\partial t_1} \operatorname{Hol}_\gamma(A) = A_t(z)|_{x=0} \operatorname{Hol}_\gamma(A) - A_t(z)|_{x=0} \operatorname{Hol}_\gamma(A) = [M(z),L(z)],
 \end{equation*}
@@ -508,7 +508,7 @@ The operators $X_i$ acting on $\C[y_1,...,y_N]$ are called \emph{Macdonald opera
 We will now show that the former polynomial representation above yields the rational Ruijsenaars-Schneider model, while the latter yields the trigonometric Calogero-Moser model. More precisely, we will see that certain symmetric polynomials in the $X_i$ and $y_i$ respectively yield the correct Hamiltonians. This manifests the bispectral duality between those two systems \cite{article:chalykh:2000} as a remnant of the $S$-duality exchanging the two sets of Laurent generators of the non-degenerate double affine Hecke algebra.
 
 \begin{definition}
-The \emph{quantum rational Ruijsenaars-Schneider model} is essentially given by the former polynomial representation of the degenerate double affine Hecke algebra\index{Quantum rational Ruijsenaars-Schneider model}. Concretely, its Hilbert space of wave functions is nothing but the vector space $\C[y_1,...,y_N]$, where the polynomial generators $y_1,...,y_N$ provide position operators while the Laurent generators $X_1,...,X_N$ provide operators involving momenta. Of particular interest is the spherical subalgebra $S\ddot H_N$, from which we get commuting Hamiltonians
+The \emph{quantum rational Ruijsenaars-Schneider model} is essentially given by the former polynomial representation of the degenerate double affine Hecke algebra\index{Quantum rational Ruijsenaars-Schneider model}. Concretely, its Hilbert space of wave functions is nothing but the vector space $\C[y_1,...,y_N]$, where the polynomial generators $y_1,...,y_N$ provide position operators while the Laurent generators $X_1,...,X_N$ provide operators involving momenta. Of particular interest is the spherical degenerate double affine Hecke algebra $S\ddot H_N$, from which we get commuting Hamiltonians
 \begin{equation*}
 D_k := e_k(X_1,...,X_N) \in S\ddot H_N,
 \end{equation*}
@@ -557,7 +557,7 @@ In particular, we see that only $X_N$ contributes to the coefficient in front of
 \end{proof}
 
 \begin{definition}
-The \emph{quantum trigonometric Calogero-Moser model} on the other hand is given by the latter polynomial representation of the degenerate double affine Hecke algebra\index{Quantum trigonometric Calogero-Moser model}, \emph{i.e.} $\C[X_1^\pm,...,X_N^\pm]$ is its Hilbert space of wave functions with position operators $X_1,...,X_N$ and momentum-like operators $y_1,...,y_N$. We again have a set of commutating Hamiltonians in the spherical subalgebra given by
+The \emph{quantum trigonometric Calogero-Moser model} on the other hand is given by the latter polynomial representation of the degenerate double affine Hecke algebra\index{Quantum trigonometric Calogero-Moser model}, \emph{i.e.} $\C[X_1^\pm,...,X_N^\pm]$ is its Hilbert space of wave functions with position operators $X_1,...,X_N$ and momentum-like operators $y_1,...,y_N$. We again have a set of commutating Hamiltonians in the spherical degenerate double affine Hecke algebra given by
 \begin{equation*}
 C_k' := \frac{1}{k} p_k(y_1,...,y_N) \in S\ddot H_N,
 \end{equation*}
@@ -855,7 +855,7 @@ Given a weight $\lambda = (\lambda_1,...,\lambda_\ell) \in \C^\ell$ for $\mathfr
 \begin{equation*}
 p_i(z) = (z+\eta \lambda_{i+1})(z+\eta \lambda_{i+1}+\eta) \cdots (z+\eta \lambda_i-2\eta)(z+\eta \lambda_i-\eta),
 \end{equation*}
-which is makes sense due to $(\lambda_i - \lambda_{i+1})/\eta \in \Z_+$. We may twist evaluation modules by the shift automorphism for $y \in \C$ or the transposition and respectively obtain modules we denote by $L(\lambda)_y$ and $L(\lambda)^t$ as well as $L(\lambda)_y^t$.
+which is makes sense due to $(\lambda_i - \lambda_{i+1})/\eta \in \Z_+$. We may twist evaluation modules by the shift automorphism for $y \in \C[\eta]$ or the transposition and respectively obtain modules we denote by $L(\lambda)_y$ and $L(\lambda)^t$ as well as $L(\lambda)_y^t$.
 \end{definition}
 
 \begin{remark}
@@ -875,7 +875,7 @@ Representations of the form
 \begin{equation*}
 L(\lambda^{(1)})_{y_1}^t \otimes \cdots \otimes L(\lambda^{(N)})_{y_N}^t,
 \end{equation*}
-as above are called \emph{monodromy representations}\index{Monodromy representation} with \emph{inhomogeneities} $y_1,...,y_N$ and the highest weight vector $\omega$ is called the \emph{pseudovacuum}. 
+as above are called \emph{monodromy representations}\index{Monodromy representation} with \emph{inhomogeneities} $y_1,...,y_N$. The highest weight vector $\omega$ is called the \emph{pseudovacuum}. 
 \end{definition}
 
 We now take a closer look at how transfer matrices act on monodromy representations. Our starting observation is the following:
@@ -888,7 +888,7 @@ R(z-y) = 1 - \frac{\eta P}{z-y}.
 \end{lemma}
 
 \begin{proof}
-Inserting the definition of evaluation modules, we see that $T(z)$ acts as
+Inserting the definition of evaluation modules as well as the transposition and shift automorphisms, we see that $T(z)$ acts as
 \begin{equation*}
 \sum_{ij} e_{ij} \otimes \bigg( \delta_{ij} - \frac{\eta e_{ji}}{z-y} \bigg)
 = \sum_{i} e_{ii} \otimes e_{ii} - \frac{\eta}{z-y} \sum_{ij} e_{ij} \otimes e_{ji} = 1 - \frac{\eta P}{z-y}.
@@ -1131,7 +1131,7 @@ The Bethe subalgebra $B^g(\mathfrak{gl}_\ell)$ is a maximal commutative subalgeb
 This appears in \cite{article:nazarov:1996}.
 \end{proof}
 
-Now, we have left out what we mean by the higher $g$-twisted transfer matrices $\tau_\lambda^g(z)$. The basic idea is to take the definition of the usual transfer matrix and switch the auxiliary space from the fundamental representation to a higher representation labeled by a Young diagram $\lambda$. This gives rise to the higher transfer matrices $\tau_\lambda^g(z)$. In particular of course, $\tau_{\ydiagram{1}}^g(z)$ will coincide with the usual transfer matrix.
+Now, we have left out what we mean by the higher $g$-twisted transfer matrices $\tau_\lambda^g(z)$. The basic idea is to take the definition of the usual transfer matrix and switch the auxiliary space from the fundamental representation to a higher representation labeled by a Young diagram $\lambda$. This defines the higher transfer matrices $\tau_\lambda^g(z)$. In particular of course, $\tau_{\ydiagram{1}}^g(z)$ will coincide with the usual transfer matrix.
 
 \begin{definition}
 Let $\lambda$ be a Young diagram. Let $g_\lambda,(e_{ij})_\lambda \in \operatorname{End} L(\lambda)$ denote the action of the twist matrix and the matrix units on the highest weight representation $L(\lambda)$. Define the \emph{higher $g$-twisted transfer matrix of shape $\lambda$}\index{Higher transfer matrix}
@@ -1293,12 +1293,48 @@ Let $V$ be a highest weight representation of $Y(\mathfrak{gl}_\ell)$ with highe
 This is proposition 3.2.5 of \cite{book:molev}. Since $T(z)$ acts as a lower-triangular matrix on the highest weight vector, the only non-zero term in the Leibniz formula above is the term for $\sigma = \id$, which acts exactly as described. Since $\operatorname{qdet}^g T(z)$ lies in the center of $Y(\mathfrak{gl}_\ell)$, it will act on all vectors of $V$ via this scalar.
 \end{proof}
 
+\begin{definition}
+Let $\lambda,\mu$ be Young diagrams and $t_\lambda,t_\mu$ standard tableaux of shape $\lambda,\mu$ with content vectors $(c_1,...,c_k),(d_1,...,d_l)$. Define the higher $R$-matrices
+\begin{equation*}
+R_{t_\lambda,t_\mu}(z) := \overset{\longleftarrow}{\prod_i} \overset{\longrightarrow}{\prod_j} R_{i,k+j}(z+\eta c_i - \eta d_j) \in (\End \C^\ell)^{\otimes k} \otimes (\End \C^\ell)^{\otimes l}[[z^{-1}]].
+\end{equation*}
+Repeated application of the RTT relation (\ref{equation:RTTRelation}) implies
+\begin{equation*}
+R_{t_\lambda,t_\mu}(z-w) T_{t_\lambda}(z) T_{t_\mu}(w) = T_{t_\mu}(w) T_{t_\lambda}(z) R_{t_\lambda,t_\mu}(z-w).
+\end{equation*}
+This allows us to show commutativity of the Bethe subalgebra.
+\end{definition}
+
 \begin{prop}
-The transfer matrices $\tau_\lambda^g(z)$ commute among each other, making $B^g(\mathfrak{gl}_\ell)$ into a commutative algebra.
+Letting
+\begin{equation*}
+R_{t_\lambda,t_\mu}^{(21)}(z) := \overset{\longleftarrow}{\prod_j} \overset{\longrightarrow}{\prod_i} R_{k+j,i}(z+\eta d_j - \eta c_i)
+\end{equation*}
+we obtain
+\begin{equation*}
+R_{t_\lambda,t_\mu}(z) R_{t_\mu,t_\lambda}^{(21)}(-z) = \prod_i \prod_j \left( 1 - \frac{\eta^2}{(z+\eta c_i-\eta d_j)^2}\right)
+\end{equation*}
 \end{prop}
 
 \begin{proof}
 tba
+\end{proof}
+
+\begin{corollary}
+The transfer matrices $\tau_\lambda^g(z)$ commute among each other, making $B^g(\mathfrak{gl}_\ell)$ into a commutative algebra.
+\end{corollary}
+
+\begin{proof}
+\begin{align*}
+\tau_\lambda^g(z) \tau_\mu^g(w)
+&= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\lambda} T_{t_\lambda}(z) g_{t_\mu} T_{t_\mu}(w) \\
+&= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\lambda} g_{t_\mu} T_{t_\lambda}(z) T_{t_\mu}(w) \\
+&= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\lambda} g_{t_\mu} R_{t_\lambda,t_\mu}(z-w)^{-1} T_{t_\mu}(w) T_{t_\lambda}(z) R_{t_\lambda,t_\mu}(z-w) \\
+&= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\lambda} g_{t_\mu} R_{t_\lambda,t_\mu}(z-w) R_{t_\lambda,t_\mu}(z-w)^{-1} T_{t_\mu}(w) T_{t_\lambda}(z) \\
+&= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\lambda} g_{t_\mu} T_{t_\mu}(w) T_{t_\lambda}(z) \\
+&= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\mu} T_{t_\mu}(w) g_{t_\lambda} T_{t_\lambda}(z) \\
+&= \tau_\mu^g(w) \tau_\lambda^g(z).
+\end{align*}
 \end{proof}
 
 To finish off this section, let us finally prove the exactness of our sequence:
@@ -1338,7 +1374,7 @@ We obtain the functional relation
 \end{corollary}
 
 \begin{proof}
-By the previous proposition, we have a morphism of short exact sequences: \\
+By the previous proposition, we have a linear map of short exact sequences: \\
 {\small
 \begin{tikzcd}[column sep=0.3cm]
 \\
@@ -1363,7 +1399,7 @@ as elements of $Y(\mathfrak{gl}_\ell)[[z^{-1}]]$.
 
 \subsection{Spectral equation}
 
-In this section, we will derive the \emph{spectral equation} for the non-local Hamiltonians of the Heisenberg model from the functional relation established earlier. This is where we will see the Lax matrix of the rational Ruijsenaars-Schneider model appear seemingly out of nowhere. We will work along the lines of \cite{book:arutyunov:betheAnsatz}, but our approach is slightly different since we use Yang's convention for $R$-matrices instead of the polynomial convention.
+In this section, we will derive the \emph{spectral equation} for the non-local Hamiltonians of the Heisenberg model from the functional relation established earlier. This is where we will see the Lax matrix of the rational Ruijsenaars-Schneider model appear seemingly out of nowhere. We will work along the lines of \cite{book:arutyunov:betheAnsatz}, but our approach is slightly different since we use Yang's convention for $R$-matrices instead of the polynomial convention and work in the $g$-twisted setting.
 
 \begin{lemma}
 We have
@@ -1386,7 +1422,7 @@ where we have used
 tba
 \end{proof}
 
-In matrix notation, this reads
+In matrix notation, this equation reads
 \begin{equation*}
 \begin{pmatrix}
 \operatorname{Res}_{z=y_1} \tau_{[1^{k+1}]}^g(z) \\
@@ -1411,7 +1447,7 @@ with
 \begin{equation*}
 L_{ij} := \frac{\eta H_j}{y_i-y_j+\eta} = \frac{\eta}{y_i-y_j+\eta} \bigg( \prod_{j \neq k} \frac{y_j-y_k-\eta}{y_j-y_k} \bigg) \check H_j.
 \end{equation*}
-This looks awfully close to the Lax matrix (\ref{equation:RSLaxMatrix}) of the rational Ruijsenaars-Schneider model! Iterating and combining with corollary \ref{corollary:quantumDet} finally gives the spectral equation, resembling a Cayley-Hamilton-type identity:
+This looks awfully close to the Lax matrix (\ref{equation:RSLaxMatrix}) of the rational Ruijsenaars-Schneider model! Iterating and combining with the formula for the quantum determinant from corollary \ref{corollary:quantumDet} finally gives the spectral equation, resembling a Cayley-Hamilton-type identity:
 
 \begin{theorem}[Spectral equation]\label{theorem:spectralEq}
 The non-local Hamiltonians $H_1,...,H_N$ of the spin chain fulfill the \emph{spectral equation}
@@ -1596,7 +1632,7 @@ With this definition, we are finally ready to show explicitly how the preaffine 
 
 \subsection{Fundamental spin chain}
 
-In this section, we will show how the wave function representation $\C[y_1,...,y_N]$ of the quantum rational Ruijsenaars-Schneider model produces the the fundamental spin chain, \emph{i.e.}
+Let us show how the wave function representation $\C[y_1,...,y_N]$ of the quantum rational Ruijsenaars-Schneider model produces the the fundamental spin chain, \emph{i.e.}
 \begin{equation*}
 L(\ydiagram{1})_{y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_N}^t
 \end{equation*}
@@ -1607,7 +1643,7 @@ On $(\C^\ell)^{\otimes N} \otimes_{S_N} \C[y_1,...,y_N]$, we have
 \begin{equation*}
 g_i u \otimes X_i f = \check R_{i,i-1}(y_i-y_{i-1}) \cdots \check R_{i1}(y_i-y_1) (g_i \otimes e^{\I \hbar \partial_i}) \check R_{iN}(y_i-y_N) \cdots \check R_{i,i+1}(y_i-y_{i+1}) (u \otimes f).
 \end{equation*}
-where
+where we have introduced
 \begin{equation*}
 \check R_{ij}(y_i-y_j) (u \otimes f) := u \otimes \frac{y_i-y_j}{y_i-y_j-\eta} f - u s_i \otimes \frac{\eta}{y_i-y_j-\eta} f.
 \end{equation*}
@@ -1730,7 +1766,7 @@ Note that there is an asymmetry in its definition: It prioritizes the polynomial
 \begin{equation*}
 (x t^r)(u \otimes v) := \sum_i x_i u \otimes X_i^r v.
 \end{equation*}
-This yields an action of the $\C[\eta,\hbar]$-algebra $L(\mathfrak{gl}_\ell) \# Y(\mathfrak{gl}_\ell)$ on $(\C^\ell)^{\otimes N} \otimes_{S_N} V$. This action in fact descends to the \emph{loop Yangian $LY(\mathfrak{gl}_\ell)$}\index{Loop Yangian}, which is a quotient of $L(\mathfrak{gl}_\ell) \# Y(\mathfrak{gl}_\ell)$:
+This yields an action of $L(\mathfrak{gl}_\ell) \# Y(\mathfrak{gl}_\ell)$ on $(\C^\ell)^{\otimes N} \otimes_{S_N} V$. This action in fact descends to the \emph{loop Yangian $LY(\mathfrak{gl}_\ell)$}\index{Loop Yangian}, which is a $\C[\eta,\hbar]$-algebra and a quotient of $L(\mathfrak{gl}_\ell) \# Y(\mathfrak{gl}_\ell)$:
 
 \begin{prop}
 The action of the Yangian $Y(\mathfrak{gl}_\ell)$ and the loop algebra $L(\mathfrak{gl}_\ell)$ glue together to an action of the loop Yangian $LY(\mathfrak{gl}_\ell)$.
