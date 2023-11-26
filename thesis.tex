@@ -88,7 +88,7 @@ Ort und Datum: & Hamburg im (tba) 2024
 
 \chapter*{Abstract}
 
-We examine a quantum-classical duality between inhomogeneous Heisenberg models and rational Ruijsenaars-Schneider models building on observations of \cite{article:gorsky:2014} and \cite{book:arutyunov:betheAnsatz}. We show how generalized Schur-Weyl duality between the Yangian and the degenerate affine Hecke algebra provides a clear structural reason for the existence of this duality, also giving a generalization to spins in non-fundamental representations. Employing the theory of degenerate double affine Hecke algebras, we extend this point of view to a quantum-classical duality between trigonometric Gaudin and Calogero-Moser models, showing how all four models arise from two $S$-dual representations of the loop Yangian. Finally, we give a geometric picture of generalized Schur-Weyl duality that makes apparent how all of these models emerge naturally in four-dimensional Chern-Simons theory when constructed as a 2-functorial quantum field theory. \\
+We examine a quantum-classical duality between inhomogeneous Heisenberg models and rational Ruijsenaars-Schneider models building on observations of \cite{article:gorsky:2014} and \cite{book:arutyunov:betheAnsatz}. We show how generalized Schur-Weyl duality between the Yangian and the degenerate affine Hecke algebra provides a clear structural reason for the existence of this duality, also giving a generalization to spins in non-fundamental representations. Employing the theory of degenerate double affine Hecke algebras, we extend this point of view to a quantum-classical duality between trigonometric Gaudin and Calogero-Moser models, showing how all four models arise from two $S$-dual representations of the loop Yangian. Finally, we give a geometric picture of generalized Schur-Weyl duality that makes apparent how all of these models emerge naturally in four-dimensional Chern-Simons theory when constructed as a 2-functorial quantum field theory and use this to extend our results to the elliptic case. \\
 
 \section*{Acknowledgments}
 
@@ -150,6 +150,15 @@ where $\eta$ is the Planck constant of the theory, as well as $\Sigma = S^1 \tim
 \omega = (?) \frac{dz}{z}
 \end{equation*}
 and $\Sigma = \R^2$. (tba) The entire situation is summarized by the mock commutative diagram in figure \ref{figure:dualities}.
+
+In short, the novel contributions of this thesis are the following:
+\begin{itemize}
+\item We explicitly show that the quantum trigonometric Calogero-Moser model and rational Ruijsenaars-Schneider model are realized as $S$-dual representations of the degenerate double affine Hecke algebra $\ddot H_N$ with commuting Hamiltonians living in the spherical subalgebra $S\ddot H_N$. This is largely parallel to existing literature
+\item We twist the Drinfeld functor $D_{\ell,N}: \dot H_N \mathsf{Mod} \to Y(\mathfrak{gl}_\ell) \mathsf{Mod}$ to give the \emph{preaffine Drinfeld functor} $D_{\ell,N}^g: \ddot H_N \mathsf{Mod} \to S\ddot H_N \# Y(\mathfrak{gl}_\ell) \mathsf{Mod}$ and show that it maps the Hilbert space and Hamiltonian operators of the quantum rational Ruijsenaars-Schneider model to the Hilbert space and Hamiltonian operators of the twisted inhomogeneous Heisenberg model when $\hbar \to 0$.
+\item We show the same for the quantum trigonometric Calogero-Moser model, mapping to the trigonometric Gaudin model when $\hbar \to 0$.
+\item We construct a 2-functorial quantum field theory representing four-dimensional Chern-Simons theory on $C \times S^1 \times \R$ with $C$ a punctured complex curve and show how the genus zero case $C = \P^1$ yields the rational Ruijsenaars-Schneider and Heisenberg models upon compactification of $S^1$ or $\P^1$, respectively.
+\item We compute the genus one case where $C$ is an elliptic curve and connect it to the elliptic Ruijsenaars-Schneider model.
+\end{itemize}
 
 The remaining chapters of this thesis are structured as follows. Chapter \ref{chapter:integrability} gives a full review from the basics of integrability to the state of the art of the pertinent models and establishes the setup that frames our discussion. Chapter \ref{chapter:duality} begins with a detailed discussion of the recent appearance of the Lax matrix of the rational Ruijsenaars-Schneider model in the functional relations for transfer matrices of the Heisenberg model used to derive the spectral equation whose solutions yield the energy spectrum of the Heisenberg model. We then move on to describe the mathematical underpinnings of generalized Schur-Weyl duality and how it gives rise to quantum-classical duality. The end of chapter \ref{chapter:duality} is dedicated to explicating $S$-duality, showing how the $S$-dual models, \emph{i.e.} the trigonometric Gaudin model and the trigonometric Calogero-Moser model are also related by quantum-classical duality. Chapter \ref{chapter:geometry} then continues with a description of the geometry behind the mathematical structures of chapter \ref{chapter:duality}, constructing two functorial field theories: One encapsulating Heisenberg-Ruijsenaars-Schneider duality and the other $S$-dual theory encapsulating Gaudin-Calogero-Moser duality. Each are shown to arise from four-dimensional Chern-Simons theory. After the conclusion (chapter \ref{chapter:conclusion}), we give supplementary material on Young diagrams (appendix \ref{appendix:youngdiagrams}) as well as results on Dunkl operators for the trigonometric Calogero-Moser model (appendix \ref{appendix:dunklOperators}).
 
@@ -1917,7 +1926,7 @@ as well as associator, left unitor, and right unitor isomorphisms
 \begin{equation*}
 \alpha: (C \bullet D) \bullet E \to C \bullet (D \bullet E), \quad \lambda: I \bullet C \to C, \quad \rho: C \bullet I \to C,
 \end{equation*}
-such that $SI = TI = \operatorname{Id}_{\mathsf{D}^0}$, $S(\alpha), T(\alpha), S(\lambda), T(\lambda), S(\rho), T(\rho)$ are all identities, $\alpha$ fulfills the pentagon axiom, and $\lambda, \rho$ fulfill the left and right unit axiom.
+such that $SI = TI = \operatorname{Id}_{\mathsf{D}^0}$, $S(M \bullet N) = SN, T(M \bullet N) = TM$, $S(\alpha), T(\alpha), S(\lambda), T(\lambda), S(\rho), T(\rho)$ are all identities, $\alpha$ fulfills the pentagon axiom, and $\lambda, \rho$ fulfill the left and right unit axiom.
 \item The morphisms of $\mathsf{D}^0$ are called \emph{tight morphisms}, written $f: M \to N$, while the objects of $\mathsf{D}^1$ are called \emph{loose morphisms}, written $C: S(C) \dashrightarrow T(C)$. A morphism $\beta: C \to D$ of $\mathsf{D}^1$ is called a \emph{square}, written
 \begin{center}
 \begin{tikzcd}[row sep=0.1cm,column sep=0.1cm]
@@ -1926,10 +1935,8 @@ S(C) \arrow[swap]{dd}{S(\beta)} \arrow[dashed]{rr}{C} & & T(C) \arrow{dd}{T(\bet
 S(D) \arrow[dashed,swap]{rr}{D} & & T(D)
 \end{tikzcd}
 \end{center}
-A square is \emph{globular} when both $S(\beta)$ and $T(\beta)$ are identities.
 \item A \emph{double functor} $F: \mathsf{D} \to \mathsf{E}$ consists of two functors $F^0: \mathsf{D}^0 \to \mathsf{E}^0$ and $F^1: \mathsf{D}^1 \to \mathsf{E}^1$ such that $SF^1 = F^0S$, $TF^1 = F^0T$ and globular natural isomorphisms $F^\bullet: F^1 C \bullet F^1 D \to F^1(C \bullet D)$ subject to some coherence conditions.
 \item A \emph{double natural transformation} $\nu: F \Rightarrow G: \mathsf{D} \to \mathsf{E}$ consists of two natural transformations $\nu^0: F^0 \Rightarrow G^0$ and $\nu^1: F^1 \Rightarrow G^1$ subject to some coherence conditions.
-\item A \emph{symmetric monoidal double category} $\mathsf{D}$ is a double category such that $\mathsf{D}^0$ and $\mathsf{D}^1$ are both symmetric monoidal categories, $I$ maps the monoidal unit of $\mathsf{D}^0$ to the monoidal unit of $\mathsf{D}^1$, $S$ and $T$ are strict symmetric monoidal together with globular natural isomorphisms realizing the interchange law between $\bullet$ and $\otimes$ subject to some coherence conditions.
 \end{enumerate}
 \end{definition}
 
@@ -2048,6 +2055,13 @@ Y(\mathfrak{gl}_\ell) \arrow[dashed,swap]{r}{L(\ydiagram{1})_{y}^t} & {\C[\eta]}
 with the matrix $g$.
 \end{prop}
 
+\begin{proof}
+The functor $F^0: \mathsf{STCob}^0 \to \C[\eta]\mathsf{Alg}^0$ is easily defined by mapping $[N]$ to $Y(\mathfrak{gl}_\ell)^{\otimes N}$ and a pointed bijection $\sigma: [N] \to [N]$ to the corresponding permutation on tensor factors.
+
+The functor $F^1: \mathsf{STCob}^1 \to \C[\eta]\mathsf{Alg}^1$ is harder to define: Note that the space of loose morphisms $[N] \dashrightarrow [M]$ is nothing but the complex Teichmüller groupoid $\mathcal{T}eich_{[N] \sqcup [M]}^\C$. By theorem 6.1.12 in \cite{book:bakalov}, this is equivalent to the standard Teichmüller groupoid, which in turn has a functor to the fundamental groupoid of the markings complex defined in \cite{article:bakalov:1998}. Hence it suffices to define a functor from the fundamental groupoid of the markings complex to the category of $Y(\mathfrak{gl}_\ell)^{\otimes N}$-$Y(\mathfrak{gl}_\ell)^{\otimes M}$-bimodules.
+\end{proof}
+
+The generators of the mapping class groups of $[N]$-punctured Riemann spheres can be visualized in the following way:
 \begin{center}
 \begin{tikzpicture}
 \draw[gray] (0,0) ellipse (2cm and 0.7cm);
@@ -2066,12 +2080,12 @@ with the matrix $g$.
 \fill (0.7,2) circle (0.07cm);
 \node[above] at (0.7,2) {$y_2$};
 
-\draw[dotted,very thick] (0.75,0.05) .. controls (0.75,1.05) and (-0.65,1.05) .. (-0.65,2.05);
+\draw[dotted,very thick] (0.62,0) .. controls (0.62,1) and (-0.62,1) .. (-0.62,2);
 \draw (0.7,0) .. controls (0.7,1) and (-0.7,1) .. (-0.7,2);
 
-\fill[white] (0.025,0.975) circle (0.125cm);
+\fill[white] (0,1) circle (0.08cm);
 
-\draw[dotted,very thick] (-0.65,-0.05) .. controls (-0.65,0.95) and (0.75,0.95) .. (0.75,1.95);
+\draw[dotted,very thick] (-0.62,0) .. controls (-0.62,1) and (0.62,1) .. (0.62,2);
 \draw (-0.7,0) .. controls (-0.7,1) and (0.7,1) .. (0.7,2);
 \end{tikzpicture}
 $\quad \quad$
@@ -2093,6 +2107,19 @@ $\quad \quad$
 \draw (0,0) -- (0,2);
 \end{tikzpicture}
 \end{center}
+The first picture shows a square
+\begin{center}
+\begin{tikzcd}[column sep=5cm]
+{[2]} \arrow[swap]{d}{(1 \ 2)} \arrow[dashed]{r}{(\P^1;\infty,y_1,y_2;-\partial_{1/z},r_1 e^{i \pi t_1},r_2 e^{i \pi t_2})} & {[0]} \arrow{d}{\id} \\
+{[2]} \arrow[dashed,swap]{r}{(\P^1;\infty,y_1,y_2;-\partial_{1/z},r_1 e^{i \pi t_1},r_2 e^{i \pi t_2})} & {[0]}
+\end{tikzcd}
+\end{center}
+with the punctures and tangent vectors moving as:
+\begin{align*}
+\gamma_1&: [0,1] \to \C \times \C^\times, \quad t \mapsto (0,[r_1,r_2](t) e^{i \pi [t_1,t_2](t)}), \\
+\gamma_2&: [0,1] \to \C \times \C^\times, \quad t \mapsto (e^{i \pi t} (y_2-y_1),[r_2,r_1](t) e^{i \pi [t_2,t_1](t)})
+\end{align*}
+Note that they form a braid in $\C \times [0,1]$ and a crossing in $\C^\times$. We may apply an ambient isotopy of $\P^1 \times \C^\times \times [0,1]$ that deforms this into a crossing in $\C^\times$ without any braid in $\P^1$. This is rel $\partial$ except for the tangent vectors.
 
 \begin{align*}
 \gamma_1&: [0,1] \to \C \times S^1 \times [0,1], \quad t \mapsto (0,e^{i 2\pi t},t) \\
@@ -2103,6 +2130,10 @@ $\quad \quad$
 \begin{equation*}
 [0,1] \times \C \times S^1 \times [0,1] \to \C \times S^1 \times [0,1], \quad (s,z,w,t) \mapsto (e^{-i \pi st}z,e^{-i \pi st} w,t)
 \end{equation*}
+
+Markings of surfaces give a pair-of-pants decomposition and contain a distinguished boundary component. All markings of a given surface can be turned into each other by two moves: the associativity move on the sphere with four boundary components and the $S$-move on the torus with one boundary component. Mapping class groups of closed surface are generated by Dehn twists around the circles that cut the surface into pairs-of-pants. For the mapping class group of a torus with one boundary component $SL_2(\Z)$, the Dehn twist generators are given be the mutually transpose unipotent matrices.
+
+Given an $[N]$-pointed curve, we may give a pair of pants decomposition/a marking, which defines the corresponding module by tensoring fundamental reps. We then have to show that this is invariant under the associativity move as well as the $S$-move up to natural isomorphism. We also have to define an action of the mapping class groups.
 
 %\begin{prop}
 %The standard dot product on $\C^\ell$ gives a $Y(\mathfrak{gl}_\ell)$-linear map
@@ -2181,13 +2212,17 @@ The Cauchy matrix should be seen as a linear map $\mathfrak{gl}_\ell^{(\zeta)} \
 
 Essentially: Take $\tau$ in the pole representation $\tau(y_j)$, put it into the zero representation $\tau(y_i+\eta)$, then multiply by $X_i$, then go back to the pole representation. This should give the Lax matrix of the RS model, so its just a conjugation away! It also makes apparent why the elementary symmetric polynomials in the $X_i$ are good invariants.
 
+\subsection{The elliptic case}
+
+In this section, we explore the representation theory set up by the functorial quantum field theory defined earlier in the case of genus one where $C$ is an elliptic curve, i.e a $[0]$-pointed complex torus. This can be obtained by composing two $[1]$-pointed Riemann spheres $[0] \to [1] \to [0]$ in the double category $\mathsf{STCob}$. In this composition, we have essentially one free parameter, namely the ratio $v/v'$ of the tangent vectors $v,v' \in \C^\times$ of the two Riemann spheres.
+
+On the algebraic side, this gluing procedure corresponds to $L(\ydiagram{1})_0^t \otimes_{Y(\mathfrak{gl}_\ell)} L(\ydiagram{1})_0^t$ and the action of the mapping class group of the elliptic curve on it. Adding more punctures should give rise to the elliptic Ruijsenaars-Schneider model.
+
 \section{$S$-dual geometry}
 
 Take 4d CS on $\C^\times \times \R^2$ instead. Also look at 5d CS on $\C^\times \times \C \times \R$.
 
 \subsection{In terms of functorial quantum field theory}
-
-\subsection{In terms of four-dimensional Chern-Simons theory}
 
 \chapter{Conclusion}\label{chapter:conclusion}
 
