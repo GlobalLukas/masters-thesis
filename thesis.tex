@@ -9,6 +9,7 @@
 \usepackage{imakeidx}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\setlist[enumerate]{itemsep=-1mm}
 \usepackage[boxsize=6pt]{ytableau}
 \usepackage{tikz-cd}
 \usepackage{tikz}
@@ -88,7 +89,7 @@ Ort und Datum: & Hamburg im (tba) 2024
 
 \chapter*{Abstract}
 
-We examine a quantum-classical duality between inhomogeneous Heisenberg models and rational Ruijsenaars-Schneider models building on observations of \cite{article:gorsky:2014} and \cite{book:arutyunov:betheAnsatz}. We show how generalized Schur-Weyl duality between the Yangian and the degenerate affine Hecke algebra provides a clear structural reason for the existence of this duality, also giving a generalization to spins in non-fundamental representations. Employing the theory of degenerate double affine Hecke algebras, we extend this point of view to a quantum-classical duality between trigonometric Gaudin and Calogero-Moser models, showing how all four models arise from two $S$-dual representations of the loop Yangian. Finally, we give a geometric picture of generalized Schur-Weyl duality that makes apparent how all of these models emerge naturally in four-dimensional Chern-Simons theory when constructed as a 2-functorial quantum field theory and use this to extend our results to the elliptic case. \\
+We examine a quantum-classical duality between inhomogeneous Heisenberg models and rational Ruijsenaars-Schneider models building on observations of \cite{article:gorsky:2014} and \cite{book:arutyunov:betheAnsatz}. We show how generalized Schur-Weyl duality between the Yangian and the degenerate affine Hecke algebra provides a clear structural reason for the existence of this duality, also giving a generalization to spins in non-fundamental representations. Employing the theory of degenerate double affine Hecke algebras, we extend this point of view to a quantum-classical duality between trigonometric Gaudin and Calogero-Moser models, showing how all four models arise from two $S$-dual representations of the loop Yangian. Finally, we give a geometric picture of generalized Schur-Weyl duality that makes apparent how all of these models emerge naturally in four-dimensional Chern-Simons theory when constructed as a 2-functorial quantum field theory and use this to extend the results to the elliptic case. \\
 
 \section*{Acknowledgments}
 
@@ -1935,8 +1936,9 @@ S(C) \arrow[swap]{dd}{S(\beta)} \arrow[dashed]{rr}{C} & & T(C) \arrow{dd}{T(\bet
 S(D) \arrow[dashed,swap]{rr}{D} & & T(D)
 \end{tikzcd}
 \end{center}
-\item A \emph{double functor} $F: \mathsf{D} \to \mathsf{E}$ consists of two functors $F^0: \mathsf{D}^0 \to \mathsf{E}^0$ and $F^1: \mathsf{D}^1 \to \mathsf{E}^1$ such that $SF^1 = F^0S$, $TF^1 = F^0T$ and globular natural isomorphisms $F^\bullet: F^1 C \bullet F^1 D \to F^1(C \bullet D)$ subject to some coherence conditions.
-\item A \emph{double natural transformation} $\nu: F \Rightarrow G: \mathsf{D} \to \mathsf{E}$ consists of two natural transformations $\nu^0: F^0 \Rightarrow G^0$ and $\nu^1: F^1 \Rightarrow G^1$ subject to some coherence conditions.
+Such a square is called \emph{globular} if $S(\beta)$ and $T(\beta)$ are identities.
+\item A \emph{double functor} $F: \mathsf{D} \to \mathsf{E}$ consists of two functors $F^0: \mathsf{D}^0 \to \mathsf{E}^0$ and $F^1: \mathsf{D}^1 \to \mathsf{E}^1$ such that $SF^1 = F^0S$, $TF^1 = F^0T$ and globular natural isomorphisms $F_{C,D}^\bullet: F^1 C \bullet F^1 D \to F^1(C \bullet D), F^I: IF^0 \to F^1 I$ subject to the axioms analogous to a monoidal functor.
+%\item A \emph{double natural transformation} $\nu: F \Rightarrow G: \mathsf{D} \to \mathsf{E}$ consists of two natural transformations $\nu^0: F^0 \Rightarrow G^0$ and $\nu^1: F^1 \Rightarrow G^1$ subject to some coherence conditions.
 \end{enumerate}
 \end{definition}
 
@@ -1946,7 +1948,7 @@ Let $k$ be a commutative ring. There is the double category $k\mathsf{Alg}$ of $
 k\mathsf{Alg}^0 &:= \{ k\text{-algebras} \}, \\
 k\mathsf{Alg}^1 &:= \{ (A,M,B) \mid A,B \text{ are } k\text{-algebras and } M \text{ is an } A\text{-}B\text{-bimodule} \}.
 \end{align*}
-Morphisms $f: A \to A'$ in $k\mathsf{Alg}^0$ are algebra homomorphisms and morphisms $\beta: (A,M,B) \to (A',M',B')$ in $k\mathsf{Alg}^1$ are triples $(f,\beta,g)$ with $f: A \to A', g: B \to B'$ algebra homomorphisms and $\beta: M \to M'$ a $k$-linear map with
+Morphisms $f: A \to A'$ in $k\mathsf{Alg}^0$ are algebra homomorphisms and morphisms $(A,M,B) \to (A',M',B')$ in $k\mathsf{Alg}^1$ are triples $(f,\beta,g)$ with $f: A \to A', g: B \to B'$ algebra homomorphisms and $\beta: M \to M'$ a $k$-linear map with
 \begin{equation*}
 \beta(amb) = f(a) \beta(m) g(b).
 \end{equation*}
@@ -1964,15 +1966,13 @@ a(m \otimes n)c := am \otimes nc.
 
 \begin{definition}
 \begin{enumerate}[label=(\roman*)]
-\item The \emph{category of finite pointed sets} consists of finite sets with a distinguished element and maps that preserve distinguished elements. Canonical representatives of the isomorphism classes are given by $[N] := \{ \infty,1,...,N \}$ with $\infty$ distinguished.
-\item Let $A$ be a pointed set. An \emph{$A$-pointed curve} $C$ is a complex projective curve together with pairwise distinct non-singular points $y_a \in C$ and non-zero tangent vectors $v_a \in T_{y_a} C$ indexed by $a \in A$. Let us write these data as $(C;(y_a)_{a \in A};(v_a)_{a \in A})$.
+\item The \emph{category of finite pointed sets} consists of finite sets with a distinguished element and maps that preserve distinguished elements. We call a bijection preserving distinguished elements a \emph{pointed bijection}. Canonical representatives of the isomorphism classes are given by $[N] := \{ \infty,1,...,N \}$ with $\infty$ distinguished. Let $\sqcup$ denote the coproduct in the category of finite pointed sets.
+\item Let $A$ be a pointed set. An \emph{$A$-pointed curve} $C$ is a non-singular complex projective curve together with pairwise distinct points $y_a \in C$ and non-zero tangent vectors $v_a \in T_{y_a} C$ indexed by $a \in A$. Let us write these data as $(C;(y_a)_{a \in A};(v_a)_{a \in A})$.
 \item A \emph{morphism of $A$-pointed curves}
 \begin{equation*}
 f: (C;(y_a)_{a \in A};(v_a)_{a \in A}) \to (C';(y_{a})_{a \in A};(v_{a})_{a \in A})
 \end{equation*}
 is a morphism of complex projective curves $m: C \to C'$ such that $m(y_a) = y_a'$ and $dm_{y_a}(v_a) = v_a'$.
-\item We let $M_{g,[N]}$ denote the set of isomorphism classes of $[N]$-pointed curves of genus $g$.
-\item A \emph{smooth family $(C_t)_{0 \leq t \leq 1}$ of $[N]$-pointed curves} is a smooth path in $M_{*,[N]}$. We remark that such a path can be visualized as a framed braid in the unpointed curve.
 \end{enumerate}
 \end{definition}
 
@@ -2004,62 +2004,59 @@ M_{0,[N]} \cong \C \backslash \text{Conf}_N \times (\C^\times)^N,
 where we have quotiented by the action of $\C$ by translation.
 \end{example}
 
-\begin{definition}
-The double category $\mathsf{STCob}$ of \emph{semi-topological cobordisms} has as $\mathsf{STCob}^0$ the core of the category of finite pointed sets and as $\mathsf{STCob}^1$ the category whose objects are of the form $C: [N] \dashrightarrow [M]$ with $C$ an $[N] \sqcup [M]$-pointed curve and whose morphisms
+We are now ready to draft our program. The double category $\mathsf{STCob}$ of \emph{semi-topological cobordisms} should have as $\mathsf{STCob}^0$ the category of finite pointed sets with pointed bijections. How do we define $\mathsf{STCob}^1$? Morally, we would want to consider $[N]$-pointed curves as loose morphisms and squares
 \begin{center}
 \begin{tikzcd}[column sep=3.5cm]
 {[N]} \arrow{d}{\sigma} \arrow[dashed]{r}{(C;y_\infty,y_1,...,y_{N+M})} & {[M]} \arrow{d}{\tau} \\
 {[N]} \arrow[dashed,swap]{r}{(C';y_\infty',y_1',...,y_{N+M}')} & {[M]}
 \end{tikzcd}
 \end{center}
-are homotopy classes of smooth families $(C_t)_{0 \leq t \leq 1}$ of $[N] \sqcup [M]$-pointed curves with isomorphisms $C_0 \cong C$ and $C_1 \cong C'$ such that $y_i$ connects to $y_{(\sigma \sqcup \tau)(i)}'$.
+that are smooth families $(C_t)_{0 \leq t \leq 1}$ of $[N]$-pointed curves up to homotopy with isomorphisms $C_0 \cong C$ and $C_1 \cong C'$ such that $y_i$ connects to $y_{(\sigma \sqcup \tau)(i)}'$. We remark that such families can be visualized as framed braids in the unpointed curves. This would mean that the loose morphisms $[N] \dashrightarrow [M]$ form the complex Teichmüller groupoid $\mathcal{T}eich_{[N] \sqcup [M]}^\C$ as defined in \cite{book:bakalov}. We would then want to construct a double functor $\mathsf{STCob} \to \C[\eta]\mathsf{Alg}$ that maps $[N]$ to $Y(\mathfrak{gl}_\ell)$, a pointed bijection $\sigma: [N] \to [N]$ to the corresponding permutation of tensor factors, the genus zero $[N]$-pointed curves $(\P^1;\infty,y_1,...,y_N;-\partial_{1/z},v_1,...,v_N)$ to the fundamental monodromy representation $L(\ydiagram{1})_{y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_N}^t$, and simple braids and Dehn twists to the $R$-matrix and the operators $X_1,...,X_N$.
+
+To make the construction technically feasible, we have to replace the complex Teichmüller groupoid $\mathcal{T}eich^\C$ by the equivalent groupoid $\mathcal{PT}eich$ of parametrized surfaces, whose generators and relations are known. The equivalence of groupoids is proven in \cite{book:bakalov}. Let us follow their construction:
+
+\begin{definition}
+\begin{enumerate}[label=(\roman*)]
+\item An \emph{extended surface} is a compact oriented smooth 2-manifold $\Sigma$ with boundary $\partial \Sigma$ and a marked point on each boundary circle. The set of boundary components is denoted $A(\Sigma)$.
+\item A \emph{morphism of extended surfaces} $\Sigma \to \Sigma'$ is a homotopy class of orientation-preserving homeomorphisms that map marked points to marked points.
+\item The \emph{standard sphere} $S_{0,n}$ is the extended surface defined by taking the Riemann sphere $\P^1$ with the disks $|z-k|<1/3$ removed and marked points $k-i/3$ for $1 \leq k \leq n$.
+\item A \emph{parametrization} of an extended surface $\Sigma$ is a finite set $C$ of simple non-intersecting closed curves on $\Sigma$, called \emph{cuts}, with a marked point on every cut, together with a collection of morphisms $\psi_a: \Sigma_a \to S_{0,n_a}$, where $\Sigma_a$ are the connected components of $\Sigma \setminus \bigsqcup_{c \in C} c$.
+\item The groupoid $\mathcal{PT}eich$ of \emph{parametrized surfaces} has objects that are pairs $(\Sigma,M)$, where $\Sigma$ is an extended surface and $M$ is a parametrization of $\Sigma$ and morphisms $(\Sigma,M) \to (\Sigma',M')$ are pairs $(f,\varphi)$, where $f$ is a homotopy class of orientation-preserving homeomorphisms $\Sigma \to \Sigma'$ and $\varphi$ is a path in $\mathcal{M}(\Sigma')$ from $f(M)$ to $M'$.
+\item The disjoint union $(\Sigma_1,M_1) \sqcup (\Sigma_2,M_2)$ of two parameterized surfaces is obviously defined.
+\item The gluing $(\Sigma_1,M_1) \sqcup_{\alpha,\beta} (\Sigma_2,M_2)$ of two parameterized surfaces is obviously defined.
+\end{enumerate}
 \end{definition}
 
 \begin{prop}
-There is a double functor $\mathsf{STCob} \to \C[\eta]\mathsf{Alg}$ mapping a pointed set $[N]$ to $Y(\mathfrak{gl}_\ell)^{\otimes N}$, a pointed permutation $\sigma: [N] \to [N]$ to the corresponding permutation on tensor factors, a genus zero curve $(\P^1;\infty,y_1,...,y_N;-\partial_{1/z},v_1,...,v_N)$ to the fundamental monodromy representation $L(\ydiagram{1})_{y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_N}^t$, shifts as
-\begin{center}
-\begin{tikzcd}[column sep=3.5cm]
-{[1]} \arrow{d}{\id} \arrow[dashed]{r}{(\P^1;\infty,y;-\partial_{1/z},v)} & {[0]} \arrow{d}{\id} \\
-{[1]} \arrow[dashed,swap]{r}{(\P^1;\infty,y';-\partial_{1/z},v')} & {[0]}
-\end{tikzcd}
-$\quad \mapsto \quad$
-\begin{tikzcd}[column sep=4cm]
-Y(\mathfrak{gl}_\ell) \arrow{d}{e^{(y'-y)\partial}} \arrow[dashed]{r}{L(\ydiagram{1})_{y}^t} & {\C[\eta]} \arrow{d}{\id} \\
-Y(\mathfrak{gl}_\ell) \arrow[dashed,swap]{r}{L(\ydiagram{1})_{y'}^t} & {\C[\eta]}
-\end{tikzcd}
-\end{center}
-with the identity map, braids as
-\begin{center}
-\begin{tikzcd}[column sep=3.5cm]
-{[2]} \arrow{d}{(1 \ 2)} \arrow[dashed]{r}{(\P^1;\infty,y_1,y_2;-\partial_{1/z},v_1,v_2)} & {[0]} \arrow{d}{\id} \\
-{[2]} \arrow[dashed,swap]{r}{(\P^1;\infty,y_1,y_2;-\partial_{1/z},v_1,v_2)} & {[0]}
-\end{tikzcd}
-$\quad \mapsto \quad$
-\begin{tikzcd}[column sep=4cm]
-Y(\mathfrak{gl}_\ell)^{\otimes 2} \arrow{d}{(1 \ 2)} \arrow[dashed]{r}{L(\ydiagram{1})_{y_1}^t \otimes L(\ydiagram{1})_{y_2}^t} & {\C[\eta]} \arrow{d}{\id} \\
-Y(\mathfrak{gl}_\ell)^{\otimes 2} \arrow[dashed,swap]{r}{L(\ydiagram{1})_{y_1}^t \otimes L(\ydiagram{1})_{y_2}^t} & \C[\eta]
-\end{tikzcd}
-\end{center}
-with the $R$-matrix $\check R_{12}(y_1-y_2)$, and twists as
-\begin{center}
-\begin{tikzcd}[column sep=3.5cm]
-{[1]} \arrow{d}{\id} \arrow[dashed]{r}{(\P^1;\infty,y;-\partial_{1/z},v)} & {[0]} \arrow{d}{\id} \\
-{[1]} \arrow[dashed,swap]{r}{(\P^1;\infty,y;-\partial_{1/z},v)} & {[0]}
-\end{tikzcd}
-$\quad \mapsto \quad$
-\begin{tikzcd}[column sep=4cm]
-Y(\mathfrak{gl}_\ell) \arrow{d}{\operatorname{ad}_g} \arrow[dashed]{r}{L(\ydiagram{1})_{y}^t} & {\C[\eta]} \arrow{d}{\id} \\
-Y(\mathfrak{gl}_\ell) \arrow[dashed,swap]{r}{L(\ydiagram{1})_{y}^t} & {\C[\eta]}
-\end{tikzcd}
-\end{center}
-with the matrix $g$.
+The groupoid $\mathcal{PT}eich$ is generated by
+\begin{enumerate}[label=(\roman*)]
+\item The $Z$-move: The cyclic permutation of the boundary components of $S_{0,n}$.
+\item The $B$-move: The transposition of two boundary components of $S_{0,3}$.
+\item The $F$-move: The removal of a cut $c$ on $S_{0,n}$, denoted by $F_c$.
+\item The $S$-move: The exchange of the two transverse cuts of the torus $S_{1,1}$.
+\end{enumerate}
+From this, we can define the Dehn twists $T_\alpha = F_c B_{\alpha,c} F_c^{-1}$ around any boundary component $\alpha$, similarly around any cut. These generators are subject to the relations
+\begin{enumerate}[label=(\roman*)]
+\item The rotation axiom: $Z^n = \id$.
+\item Commutativity of $\sqcup$: For any moves $E_1,E_2$ on $\Sigma_1,\Sigma_2$, we have $(E_1 \sqcup \id) (\id \sqcup E_2) = (\id \sqcup E_2) (E_1 \sqcup \id)$.
+\item Symmetry of $F$-move: $Z^{n-1} F_c = F_c (Z^{-1} \sqcup Z)$.
+\item Associativity of $F$-moves: $F_{c_1} F_{c_2} = F_{c_2} F_{c_1}$.
+\item Cylinder axiom: For any move $E$ on $\Sigma$ and $\id$ on the cylinder $S_{0,2}$, we have $F_\alpha (E \sqcup_{\alpha,\alpha_1} \id) = E F_\alpha$.
+\item Braiding axiom: For $S_{0,4}$ with boundary components $\alpha,\beta,\gamma,\delta$, we have $B_{\alpha,\beta \gamma} = B_{\alpha,\beta} B_{\alpha,\gamma}$ as well as $B_{\alpha \beta,\gamma} = B_{\alpha,\gamma} B_{\beta,\gamma}$.
+\item Dehn twist axiom: For any component with two holes $\alpha,\beta$, we have $Z B_{\alpha,\beta} = B_{\beta, \alpha} Z$, or equivalently $T_\alpha = T_\beta$.
+\item Torus axiom I: Let $c_1$ be a cut around the small circle of $S_{1,1}$. Then $S^2 = Z^{-1} B_{\alpha,c_1}$ and $(ST_{c_1})^3 = S^2$.
+\item Torus axiom II: Let $S_{1,2}$ have boundary components $\alpha,\beta$. Then $Z^{-1},B_{\alpha,\beta} F_{c_6}^{-1} F_{c_1} = S^{-1} F_{c_6}^{-1} F_{c_4} T_{c_3} T_{c_4}^{-1} F_{c_4}^{-1} S F_{c_5}^{-1} F_{c_2}$.
+\end{enumerate}
+All other elements of the groupoid are built from these simple moves using disjoint union and gluing.
 \end{prop}
 
-\begin{proof}
-The functor $F^0: \mathsf{STCob}^0 \to \C[\eta]\mathsf{Alg}^0$ is easily defined by mapping $[N]$ to $Y(\mathfrak{gl}_\ell)^{\otimes N}$ and a pointed bijection $\sigma: [N] \to [N]$ to the corresponding permutation on tensor factors.
+We want to associate to every surface a category. In particular, we want to associate to the $[N]$-pointed sphere the category $\ddot H_N\mathsf{Mod}$ and then glue these categories. Following (tba), this would work using modules over the coadjoint algebra $H$. Look at factorization homology $C \mapsto \int_C Y(\mathfrak{gl}_\ell)$, mapping the $[N]$-pointed sphere to Yangian modules of weight $N$, these should be modules over $H^{\otimes N}$. The annulus gets mapped to $L(\ydiagram{1})_{y_1}^t \otimes L(\ydiagram{1})_{y_2}^t$, which is the coadjoint algebra. The advantage here is that linked, nested, and unlinked crossing are all the same in four dimensions. For the once-punctured torus, this gives the Heisenberg double, also hinting at the elliptic RS model.
 
-The functor $F^1: \mathsf{STCob}^1 \to \C[\eta]\mathsf{Alg}^1$ is harder to define: Note that the space of loose morphisms $[N] \dashrightarrow [M]$ is nothing but the complex Teichmüller groupoid $\mathcal{T}eich_{[N] \sqcup [M]}^\C$. By theorem 6.1.12 in \cite{book:bakalov}, this is equivalent to the standard Teichmüller groupoid, which in turn has a functor to the fundamental groupoid of the markings complex defined in \cite{article:bakalov:1998}. Hence it suffices to define a functor from the fundamental groupoid of the markings complex to the category of $Y(\mathfrak{gl}_\ell)^{\otimes N}$-$Y(\mathfrak{gl}_\ell)^{\otimes M}$-bimodules.
-\end{proof}
+The category of finite-dimensional modules over the Yangian has a braided structure via the fused $R$-matrices. Does it have a pivotal structure via the square of the quantum determinant? If so, we can apply the results of the paper “Integrating quantum groups over surfaces”. Indeed, Costello claims that the annulus should be assigned the 2-category of representations of the Yangian.
+
+We may then define the double functor, replacing $[N]$ with discs and spans. The reason we assign categories to curves instead of modules is that we allow variation in the module insertions, not just the fundamental module.
+
+\pagebreak
 
 The generators of the mapping class groups of $[N]$-punctured Riemann spheres can be visualized in the following way:
 \begin{center}
