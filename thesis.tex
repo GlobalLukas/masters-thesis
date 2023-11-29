@@ -13,10 +13,13 @@
 \usepackage[boxsize=6pt]{ytableau}
 \usepackage{tikz-cd}
 \usepackage{tikz}
+\usepackage{stmaryrd}
 \usetikzlibrary{decorations.markings,arrows,arrows.meta}
 \setlist[enumerate]{itemsep=0mm}
 \usepackage[a4paper,left=25mm,right=25mm,top=25mm,bottom=35mm]{geometry}
 \linespread{1.275}
+
+\counterwithout{figure}{chapter}
 
 \tikzset{every path/.style={thick}}
 
@@ -54,7 +57,6 @@
 \newcommand{\A}{\mathbb{A}}
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\I}{\mathrm{i}}
-\newcommand{\CP}{\mathbb{CP}}
 \renewcommand{\P}{\mathbb{P}}
 
 \makeindex[intoc]
@@ -138,15 +140,15 @@ To finish our discussion, we will reframe this representation theoretic picture 
 \end{tikzcd}
 ~\\~\\
 \end{center}
-\caption{A pictorial summary of the results. The reflection symmetry around the horizontal axis comes from generalized Schur-Weyl duality, while the reflection symmetry around the vertical axis comes from $S$-duality. Here, we respectively write $\CP^1$ without the double pole at infinity as $\C$ and $\CP^1$ without the single poles at zero and infinity as $\C^\times$.}
+\caption{A pictorial summary of the results. The reflection symmetry around the horizontal axis comes from generalized Schur-Weyl duality, while the reflection symmetry around the vertical axis comes from $S$-duality. Here, we respectively write $\P^1$ without the double pole at infinity as $\C$ and $\P^1$ without the single poles at zero and infinity as $\C^\times$.}
 \label{figure:dualities}
 \end{figure}
 
-Specializing four-dimensional Chern-Simons theory to the four-manifold $C \times \Sigma$ with $C = \CP^1$ and the 1-form
+Specializing four-dimensional Chern-Simons theory to the four-manifold $C \times \Sigma$ with $C = \P^1$ and the 1-form
 \begin{equation*}
 \omega = \frac{(z-y_1-\eta) \cdots (z-y_N-\eta)}{(z-y_1) \cdots (z-y_N)} dz,
 \end{equation*}
-where $\eta$ is the Planck constant of the theory, as well as $\Sigma = S^1 \times \R$ a cylinder, we will see how the rational Ruijsenaars-Schneider model describes the boundary conditions at the order defects $y_i$ of the gauge field $A$ while Wilson loops around the cylinder describe the transfer matrices of the Heisenberg model. $S$-Dually, we may also specialize to $C = \CP^1$ with
+where $\eta$ is the Planck constant of the theory, as well as $\Sigma = S^1 \times \R$ a cylinder, we will see how the rational Ruijsenaars-Schneider model describes the boundary conditions at the order defects $y_i$ of the gauge field $A$ while Wilson loops around the cylinder describe the transfer matrices of the Heisenberg model. $S$-Dually, we may also specialize to $C = \P^1$ with
 \begin{equation*}
 \omega = (?) \frac{dz}{z}
 \end{equation*}
@@ -601,7 +603,7 @@ so $C_2$ will indeed reduce to the classical Hamiltonian (\ref{equation:trigCMHa
 In order to define the Heisenberg model, we will make use of the representation theory of the \emph{Yangian}. The Yangian $Y(\mathfrak{gl}_\ell)$ was first defined by Drinfeld in his seminal paper \cite{article:drinfeld:1985} introducing quantum groups. An extensive textbook review can be found in \cite{book:molev}, which we follow closely.
 
 \begin{definition}
-The \emph{Yangian}\index{Yangian} for the complex reductive Lie algebra $\mathfrak{gl}_\ell$, written $Y(\mathfrak{gl}_\ell)$, is defined as the unital associative $\C[\eta]$-algebra with the following presentation: It has generators $t_{ij}^{(r)}$ for $1 \leq i,j \leq \ell$ and $r \geq 1$, which are subject to the relations
+The \emph{Yangian}\index{Yangian} for the complex reductive Lie algebra $\mathfrak{gl}_\ell$, written $Y(\mathfrak{gl}_\ell)$, is defined as the unital associative $\C\llbracket\eta\rrbracket$-algebra with the following presentation: It has generators $t_{ij}^{(r)}$ for $1 \leq i,j \leq \ell$ and $r \geq 1$, which are subject to the relations
 \begin{equation}\label{equation:yangianDefiningRelation}
 [t_{ij}^{(r+1)},t_{kl}^{(s)}] - [t_{ij}^{(r)},t_{kl}^{(s+1)}] = \eta(t_{kj}^{(r)} t_{il}^{(s)} - t_{kj}^{(s)} t_{il}^{(r)}),
 \end{equation}
@@ -611,11 +613,11 @@ with $r,s \geq 0$ making use of $t_{ij}^{(0)} := \delta_{ij}/\eta$. Note that sp
 \begin{remark}
 It is often useful to introduce these generators as coefficients of a formal power series
 \begin{equation*}
-t_{ij}(z) := \eta \sum_{r \geq 0} t_{ij}^{(r)} z^{-r} \in Y(\mathfrak{gl}_\ell)[[z^{-1}]].
+t_{ij}(z) := \eta \sum_{r \geq 0} t_{ij}^{(r)} z^{-r} \in Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket.
 \end{equation*}
 The parameter $z$ is called the \emph{spectral parameter}\index{Spectral parameter}. With this notation, equation (\ref{equation:yangianDefiningRelation}) becomes
 \begin{equation}\label{equation:yangianDefiningRelationUV}
-(z-w) [t_{ij}(z),t_{kl}(w)] = \eta(t_{kj}(z) t_{il}(w) - t_{kj}(w) t_{il}(z)) \in Y(\mathfrak{gl}_\ell)[[z^{-1},w^{-1}]],
+(z-w) [t_{ij}(z),t_{kl}(w)] = \eta(t_{kj}(z) t_{il}(w) - t_{kj}(w) t_{il}(z)) \in Y(\mathfrak{gl}_\ell)\llbracket z^{-1},w^{-1} \rrbracket,
 \end{equation}
 which should be understood as an equality of the coefficients in each degree.
 \end{remark}
@@ -638,26 +640,26 @@ Y(\mathfrak{gl}_\ell) \to U(\mathfrak{gl}_\ell), \quad t_{ij}^{(p)} \mapsto \del
 \end{equation*}
 called the \emph{evaluation homomorphism}. On the level of power series, it is given by
 \begin{equation*}
-Y(\mathfrak{gl}_\ell)[[z^{-1}]] \to U(\mathfrak{gl}_\ell)[[z^{-1}]], \quad t_{ij}(z) \mapsto \delta_{ij} + \frac{\eta e_{ij}}{z}.
+Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \to U(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket, \quad t_{ij}(z) \mapsto \delta_{ij} + \frac{\eta e_{ij}}{z}.
 \end{equation*}
 \end{enumerate}
 \end{prop}
 
-We saw that it can be notationally convenient to introduce the formal parameter $z$ and work inside the algebra $Y(\mathfrak{gl}_\ell)[[z^{-1}]]$. In the same vein, it will also be convenient to work inside the algebra $\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)[[z^{-1}]]$ and write the generators of $Y(\mathfrak{gl}_\ell)$ in matrix form:
+We saw that it can be notationally convenient to introduce the formal parameter $z$ and work inside the algebra $Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$. In the same vein, it will also be convenient to work inside the algebra $\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$ and write the generators of $Y(\mathfrak{gl}_\ell)$ in matrix form:
 \begin{equation*}
-T(z) := \sum_{ij} e_{ij} \otimes t_{ij}(z) \in \End \C^\ell \otimes Y(\mathfrak{gl}_\ell)[[z^{-1}]].
+T(z) := \sum_{ij} e_{ij} \otimes t_{ij}(z) \in \End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket.
 \end{equation*}
-The additional vector space $\C^\ell$ is usually called the \emph{auxiliary space} to distinguish it from representation spaces, usually called \emph{quantum spaces}. The expression might be thought of as a power series of matrices with coefficients in $Y(\mathfrak{gl}_\ell)$. With this in hand, define the following elements in $\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)[[z^{-1}]]^{\otimes N}$:
+The additional vector space $\C^\ell$ is usually called the \emph{auxiliary space} to distinguish it from representation spaces, usually called \emph{quantum spaces}. The expression might be thought of as a power series of matrices with coefficients in $Y(\mathfrak{gl}_\ell)$. With this in hand, define the following elements in $\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket^{\otimes N}$:
 \begin{equation*}
 T_{[a]}(z) := \sum_{ij} \overset{0}{e_{ij}} \otimes \overset{1}{1} \otimes \cdots \otimes \overset{a}{t_{ij}(z)} \otimes \cdots \otimes \overset{N}{1},
 \end{equation*}
 where we have used $0$ to denote the auxiliary space index and $1,...,a,...,N$ to denote quantum space indices. We can now define the map
 \begin{equation*}
-\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)[[z^{-1}]] \to \End \C^\ell \otimes Y(\mathfrak{gl}_\ell)[[z^{-1}]]^{\otimes 2}, \quad T(z) \mapsto T_{[1]}(z) T_{[2]}(z).
+\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \to \End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket^{\otimes 2}, \quad T(z) \mapsto T_{[1]}(z) T_{[2]}(z).
 \end{equation*}
 Using the identity $e_{ij} e_{kl} = \delta_{jk} e_{il}$, we see that on $Y(\mathfrak{gl}_\ell)[[z^{-1}]]$ this reduces to
 \begin{equation*}
-Y(\mathfrak{gl}_\ell)[[z^{-1}]] \to Y(\mathfrak{gl}_\ell)[[z^{-1}]]^{\otimes 2}, \quad t_{ij}(z) \mapsto \sum_k t_{ik}(z) \otimes t_{kj}(z),
+Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \to Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket^{\otimes 2}, \quad t_{ij}(z) \mapsto \sum_k t_{ik}(z) \otimes t_{kj}(z),
 \end{equation*}
 which degree-wise gives the map
 \begin{equation}\label{equation:coproduct}
@@ -669,7 +671,7 @@ The map $\Delta$ from (\ref{equation:coproduct}) is an algebra homomorphism. It 
 \begin{equation*}
 \epsilon: Y(\mathfrak{gl}_\ell) \to \C, \quad t_{ij}^{(r)} \mapsto 0.
 \end{equation*}
-Furthermore, $Y(\mathfrak{gl}_\ell)$ is a Hopf algebra. The antipode can be represented on the level of the algebra $\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)[[z^{-1}]]$ as
+Furthermore, $Y(\mathfrak{gl}_\ell)$ is a Hopf algebra. The antipode can be represented on the level of the algebra $\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$ as
 \begin{equation*}
 S: T(z) \mapsto T(z)^{-1},
 \end{equation*}
@@ -681,7 +683,7 @@ This is theorem 1.5.1 of \cite{book:molev}.
 \end{proof}
 
 \begin{remark}
-Similar to the definition of the $T_{[a]}(z)$, we may define the following elements of the algebra $(\End \C^\ell)^{\otimes k} \otimes Y(\mathfrak{gl}_\ell)[[z^{-1}]]$:
+Similar to the definition of the $T_{[a]}(z)$, we may define the following elements of the algebra $(\End \C^\ell)^{\otimes k} \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$:
 \begin{equation*}
 T_a(z) := \sum_{ij} \overset{1}{1} \otimes \cdots \otimes \overset{a}{e_{ij}} \otimes \cdots \otimes \overset{k}{1} \otimes \overset{0}{t_{ij}(z)},
 \end{equation*}
@@ -786,16 +788,16 @@ where $\Pi^\pm = (1 \pm P)/2$ are the symmetrizer and antisymmetrizer respective
 
 \begin{definition}
 \begin{enumerate}[label=(\roman*)]
-\item For $y \in \C[\eta]$, the Yangian has the \emph{shift automorphism}
+\item There is a homomorphism of $\C\llbracket \eta \rrbracket$-algebras
 \begin{equation*}
-\exp(-y\partial): Y(\mathfrak{gl}_\ell)[[z^{-1}]] \to Y(\mathfrak{gl}_\ell)[[z^{-1}]], \quad t_{ij}(z) \mapsto t_{ij}(z-y).
+\exp(-y\partial): Y(\mathfrak{gl}_\ell) \to Y(\mathfrak{gl}_\ell)\llbracket y \rrbracket, \quad t_{ij}(z) \mapsto t_{ij}(z-y).
 \end{equation*}
-This is possible because we can expand $(z-y)^{-r}$ as a power series in $z^{-1}$:
+that specializes to a \emph{shift automorphism} of the Yangian for fixed values of $y$. This is possible because we can expand $(z-y)^{-r}$ as a power series in $z^{-1}$:
 \begin{equation*}
 (z-y)^{-r} = \sum_{s=r}^\infty {s-1 \choose r-1} y^{s-r} z^{-s}.
 \end{equation*}
 \item There is the \emph{transposition automorphism} $T(z) \mapsto T^t(-z)$, or $t_{ij}(z) \mapsto t_{ji}(-z)$.
-\item Given any $f(z) \in \C[\eta][[z^{-1}]]$ with leading term one, there is an automorphism $T(z) \mapsto f(z) T(z)$.
+\item Given any $f(z) \in \C\llbracket \eta,z^{-1} \rrbracket$ with leading term one, there is an automorphism $T(z) \mapsto f(z) T(z)$.
 \item Given any $g \in \operatorname{GL}_\ell$, there is an automorphism $T(z) \mapsto g T(z) g^{-1}$.
 \end{enumerate}
 \end{definition}
@@ -812,7 +814,7 @@ If $V$ is generated by $\omega$, $V$ is a highest weight representation with hig
 We now proceed similarly with the Yangian:
 
 \begin{definition}
-Let $V$ be a representation of $Y(\mathfrak{gl}_\ell)$. A non-zero element $\omega \in V$ is of \emph{highest weight} $\lambda(z) = (\lambda_1(z),...,\lambda_\ell(z))$ for $\lambda_i(z) \in \C[\eta][[z^{-1}]]$ if the following relations hold:
+Let $V$ be a representation of $Y(\mathfrak{gl}_\ell)$. A non-zero element $\omega \in V$ is of \emph{highest weight} $\lambda(z) = (\lambda_1(z),...,\lambda_\ell(z))$ for $\lambda_i(z) \in \C\llbracket \eta,z^{-1} \rrbracket$ if the following relations hold:
 \begin{align*}
 t_{ij}(z) \omega &= 0, \quad 1 \leq i < j \leq \ell \\
 t_{ii}(z) \omega &= \lambda_i(z) \omega, \quad 1 \leq i \leq \ell.
@@ -833,11 +835,11 @@ The irreducible highest weight representation $L(\lambda(z))$ of $Y(\mathfrak{gl
 \begin{equation*}
 \frac{\lambda_i(z)}{\lambda_{i+1}(z)} = \frac{p_i(z+\eta)}{p_i(z)}
 \end{equation*}
-for $i=1,...,\ell-1$ and unique monic polynomials $p_i(z) \in \C[\eta][z]$ called \emph{Drinfeld polynomials}.
+for $i=1,...,\ell-1$ and unique monic polynomials $p_i(z) \in \C\llbracket \eta \rrbracket[z]$ called \emph{Drinfeld polynomials}.
 \end{theorem}
 
 \begin{proof}
-This is theorem 3.4.1 of \cite{book:molev}. We consider the case $\ell = 2$. Essentially, one first finds a power series $f(z) \in \C[[z^{-1}]]$ such that $f(z) \lambda_1(z)$ and $f(z) \lambda_2(z)$ are polynomials, so that we can say without loss of generality that
+This is theorem 3.4.1 of \cite{book:molev}. We consider the case $\ell = 2$. Essentially, one first finds a power series $f(z) \in \C\llbracket \eta,z^{-1} \rrbracket$ such that $f(z) \lambda_1(z)$ and $f(z) \lambda_2(z)$ are polynomials, so that we can say without loss of generality that
 \begin{equation*}
 \lambda_1(z) = (1+\alpha_1 z^{-1}) \cdots (1+\alpha_k z^{-1}), \quad \lambda_2(z) = (1+\beta_1 z^{-1}) \cdots (1+\beta_k z^{-1}).
 \end{equation*}
@@ -865,7 +867,7 @@ Given a weight $\lambda = (\lambda_1,...,\lambda_\ell) \in \C^\ell$ for $\mathfr
 \begin{equation*}
 p_i(z) = (z+\eta \lambda_{i+1})(z+\eta \lambda_{i+1}+\eta) \cdots (z+\eta \lambda_i-2\eta)(z+\eta \lambda_i-\eta),
 \end{equation*}
-which is makes sense due to $(\lambda_i - \lambda_{i+1})/\eta \in \Z_+$. We may twist evaluation modules by the shift automorphism for $y \in \C[\eta]$ or the transposition and respectively obtain modules we denote by $L(\lambda)_y$ and $L(\lambda)^t$ as well as $L(\lambda)_y^t$.
+which is makes sense due to $(\lambda_i - \lambda_{i+1})/\eta \in \Z_+$. We may twist evaluation modules by the shift automorphism for $y \in \C\llbracket \eta \rrbracket$ or the transposition and respectively obtain modules we denote by $L(\lambda)_y$ and $L(\lambda)^t$ as well as $L(\lambda)_y^t$.
 \end{definition}
 
 \begin{remark}
@@ -1280,7 +1282,7 @@ But $\Pi_{t_{[1^\ell]}} (\gamma_{i_1} e_{i_1} \otimes \cdots \otimes \gamma_{i_\
 \begin{definition}
 Due to this fact, $\tau_{[1^\ell]}^g(z)$ deserves the name \emph{$g$-twisted quantum determinant}\index{Quantum determinant}. We hence also write 
 \begin{equation*}
-\operatorname{qdet}^g T(z) := \tau_{[1^\ell]}^g(z).
+\operatorname{qdet}^g T(z) := \tau_{[1^\ell]}^g(z) \text{ and } \operatorname{qdet} T(z) := \tau_{[1^\ell]}^1(z).
 \end{equation*}
 \end{definition}
 
@@ -1727,7 +1729,7 @@ g_i u \otimes X_i f
 \begin{prop}
 The operator
 \begin{equation*}
-\sum_j \frac{\eta}{z-y_j} \bigg( \prod_{k \neq j} \frac{y_j-y_k-\eta}{y_j-y_k} \bigg) X_j \in (S\ddot H_N)_{\delta(y)}[[z^{-1}]]
+\sum_j \frac{\eta}{z-y_j} \bigg( \prod_{k \neq j} \frac{y_j-y_k-\eta}{y_j-y_k} \bigg) X_j \in (S\ddot H_N)_{\delta(y)}\llbracket z^{-1} \rrbracket
 \end{equation*}
 acts on $D_{\ell,N}^g(\C[y_1,...,y_N])$ as the transfer matrix $\tau^g(z)$ when $\hbar = 0$.
 \end{prop}
@@ -1915,7 +1917,104 @@ When $\hbar = 0$, this becomes the Gaudin Hamiltonian $G_i$. tba
 
 \subsection{In terms of functorial quantum field theory}
 
-The aim of this section is to reformulate Schur-Weyl duality for the Yangian in terms of a 2-functorial quantum field theory that will turn out to represent four-dimensional Chern-Simons theory. The mathematical structures used so far have been heavily representation theoretical. Nonetheless, we have seen some hints that there is an underlying geometry at play: We have made use of braids on cylinders as well as complex coordinates that may be reinterpreted as $(1+N)$-pointed Riemann spheres. The foundation for our construction is a double category of \emph{semi-topological cobordisms} that unifies the data of Riemann spheres and braids on cylinders.
+The aim of this section is to reformulate Schur-Weyl duality for the Yangian in terms of a 2-functorial quantum field theory that will turn out to represent four-dimensional Chern-Simons theory. The mathematical structures used so far have been heavily representation theoretical. Nonetheless, we have seen some hints that there is an underlying geometry at play: We have made use of braids on cylinders as well as complex coordinates that may be reinterpreted as $(1+N)$-pointed Riemann spheres. 
+
+These data are combined in the complex Teichmüller tower, whose genus zero part is given by $(1+N)$-pointed Riemann spheres $(\P^1;\infty,y_1,...,y_N;-\partial_{z^{-1}},v_1,...,v_N)$, where $y_1,...,y_N$ are distinct complex numbers and $v_1,...,v_N$ are non-zero tangent vectors at $y_1,...,y_N$, respectively. The morphisms in genus zero are generated by braidings and Dehn twists, visualized in figure \ref{figure:braidTwist}. In \cite{book:bakalov}, it is proved that the complex Teichmüller groupoid is equivalent to the topological Teichmüller groupoid, coming from the following construction:
+
+\begin{definition}
+\begin{enumerate}[label=(\roman*)]
+\item An \emph{extended surface} is a smooth oriented 2-manifold $\Sigma$ with parametrized boundary circles.
+\item There is a 2-category $\mathcal{ES}$ whose objects are extended surfaces, whose 1-morphisms are orientation-preserving homeomorphisms also preserving parametrizations, and whose 2-morphisms are isotopies between homeomorphisms.
+\item The \emph{topological Teichmüller groupoid} $\mathsf{Teich}$ is the homotopy category of $\mathcal{ES}$.
+\end{enumerate}
+\end{definition}
+
+\begin{figure}
+\centering
+\begin{center}
+\begin{tikzpicture}
+\draw[gray] (0,0) ellipse (2cm and 0.7cm);
+\node[right] at (2cm,0) {$\infty$};
+\draw[gray] (-2cm,0) -- (-2cm,2);
+\draw[gray] (2cm,0) -- (2cm,2);
+\draw[gray] (0,2) ellipse (2cm and 0.7cm);
+\node[right] at (2cm,2) {$\infty$};
+
+\fill (-0.7,0) circle (0.07cm);
+\node[below] at (-0.7,0) {$y_1$};
+\fill (0.7,0) circle (0.07cm);
+\node[below] at (0.7,0) {$y_2$};
+\fill (-0.7,2) circle (0.07cm);
+\node[above] at (-0.7,2) {$y_1$};
+\fill (0.7,2) circle (0.07cm);
+\node[above] at (0.7,2) {$y_2$};
+
+\draw[dotted,very thick] (0.62,0) .. controls (0.62,1) and (-0.62,1) .. (-0.62,2);
+\draw (0.7,0) .. controls (0.7,1) and (-0.7,1) .. (-0.7,2);
+
+\fill[white] (0,1) circle (0.08cm);
+
+\draw[dotted,very thick] (-0.62,0) .. controls (-0.62,1) and (0.62,1) .. (0.62,2);
+\draw (-0.7,0) .. controls (-0.7,1) and (0.7,1) .. (0.7,2);
+
+\node[below] at (0,-1) {(a)};
+\end{tikzpicture}
+$\quad \quad$
+\begin{tikzpicture}
+\draw[gray] (0,0) ellipse (2cm and 0.7cm);
+\node[right] at (2cm,0) {$\infty$};
+\draw[gray] (-2cm,0) -- (-2cm,2);
+\draw[gray] (2cm,0) -- (2cm,2);
+\draw[gray] (0,2) ellipse (2cm and 0.7cm);
+\node[right] at (2cm,2) {$\infty$};
+
+\fill (0,0) circle (0.07cm);
+\node[below] at (0,0) {$y$};
+\fill (0,2) circle (0.07cm);
+\node[above] at (0,2) {$y$};
+
+\draw[dotted,very thick] (0.08,0) .. controls (0.08,0.5) and (-0.08,0.5) .. (-0.08,1);
+\draw[dotted,very thick] (-0.07,1.07) .. controls (-0.07,1.5) and (0.07,1.5) .. (0.07,2);
+\draw (0,0) -- (0,2);
+
+\node[below] at (0,-1) {(b)};
+\end{tikzpicture}
+\caption{(a) A framed braiding in the $(1+2)$-pointed Riemann sphere. (b) A counter-clockwise $2\pi$-twist of the framing around a single strand in the $(1+1)$-pointed Riemann sphere.}
+\label{figure:braidTwist}
+\end{center}
+\end{figure}
+
+We will use this in conjunction with the results of \cite{article:benzvi:2018} to construct a 2-functorial field theory $\mathcal{ES} \to \mathcal{BM}on$ via factorization homology. To accomplish this, we need a pivotal braided abelian tensor category as coefficients. Such a category is readily provided by monodromy representations of the Yangian:
+
+\begin{definition}
+Let $Y(\mathfrak{gl}_\ell)\mathsf{MD}$ be the category whose objects are $Y(\mathfrak{gl}_\ell)$-modules of the form
+\begin{equation*}
+L(\lambda^{(1)})_{y_1}^\pm \otimes \cdots \otimes L(\lambda^{(N)})_{y_N}^\pm
+\end{equation*}
+and morphisms are generated by $R$-matrices, fusion morphisms, cup, and cap. The cap has nice kernel when $\ell=2$.
+\end{definition}
+
+\begin{prop}
+$Y(\mathfrak{gl}_\ell)\mathsf{MD}$ is a pivotal braided abelian tensor category.
+\end{prop}
+
+\begin{proof}
+We have
+\begin{equation*}
+S^2(T(z)) = (\operatorname{qdet} T(z + (\ell-1) \eta)) T(z+\ell \eta) (\operatorname{qdet} T(z + \ell \eta))^{-1}.
+\end{equation*}
+\end{proof}
+
+\begin{corollary}
+Factorization homology gives a 2-functor
+\begin{equation*}
+\int_{(-)} Y(\mathfrak{gl}_\ell)\mathsf{MD}: \mathcal{ES} \to \mathcal{M}on_\textnormal{bal,br}.
+\end{equation*}
+\end{corollary}
+
+Look at the \emph{dual Yangian} from \cite{article:wendlandt:2022}.
+
+\pagebreak
 
 \begin{definition}
 \begin{enumerate}[label=(\roman*)]
@@ -2059,51 +2158,7 @@ We may then define the double functor, replacing $[N]$ with discs and spans. The
 \pagebreak
 
 The generators of the mapping class groups of $[N]$-punctured Riemann spheres can be visualized in the following way:
-\begin{center}
-\begin{tikzpicture}
-\draw[gray] (0,0) ellipse (2cm and 0.7cm);
-\node[right] at (2cm,0) {$\infty$};
-\draw[gray] (-2cm,0) -- (-2cm,2);
-\draw[gray] (2cm,0) -- (2cm,2);
-\draw[gray] (0,2) ellipse (2cm and 0.7cm);
-\node[right] at (2cm,2) {$\infty$};
 
-\fill (-0.7,0) circle (0.07cm);
-\node[below] at (-0.7,0) {$y_1$};
-\fill (0.7,0) circle (0.07cm);
-\node[below] at (0.7,0) {$y_2$};
-\fill (-0.7,2) circle (0.07cm);
-\node[above] at (-0.7,2) {$y_1$};
-\fill (0.7,2) circle (0.07cm);
-\node[above] at (0.7,2) {$y_2$};
-
-\draw[dotted,very thick] (0.62,0) .. controls (0.62,1) and (-0.62,1) .. (-0.62,2);
-\draw (0.7,0) .. controls (0.7,1) and (-0.7,1) .. (-0.7,2);
-
-\fill[white] (0,1) circle (0.08cm);
-
-\draw[dotted,very thick] (-0.62,0) .. controls (-0.62,1) and (0.62,1) .. (0.62,2);
-\draw (-0.7,0) .. controls (-0.7,1) and (0.7,1) .. (0.7,2);
-\end{tikzpicture}
-$\quad \quad$
-\begin{tikzpicture}
-\draw[gray] (0,0) ellipse (2cm and 0.7cm);
-\node[right] at (2cm,0) {$\infty$};
-\draw[gray] (-2cm,0) -- (-2cm,2);
-\draw[gray] (2cm,0) -- (2cm,2);
-\draw[gray] (0,2) ellipse (2cm and 0.7cm);
-\node[right] at (2cm,2) {$\infty$};
-
-\fill (0,0) circle (0.07cm);
-\node[below] at (0,0) {$y$};
-\fill (0,2) circle (0.07cm);
-\node[above] at (0,2) {$y$};
-
-\draw[dotted,very thick] (0.08,0) .. controls (0.08,0.5) and (-0.08,0.5) .. (-0.08,1);
-\draw[dotted,very thick] (-0.07,1.07) .. controls (-0.07,1.5) and (0.07,1.5) .. (0.07,2);
-\draw (0,0) -- (0,2);
-\end{tikzpicture}
-\end{center}
 The first picture shows a square
 \begin{center}
 \begin{tikzcd}[column sep=5cm]
@@ -2412,13 +2467,13 @@ $A$ & $\mathfrak{gl}_\ell$-valued 1-form on $\Sigma$
 \bibliography{bibliography}
 \addcontentsline{toc}{chapter}{Bibliography}
 
-%\pagebreak
-%
-%\section*{Erklärung}
-%
-%Hiermit erkläre ich, dass ich die vorliegende Arbeit selbständig und ohne fremde Hilfe angefertigt und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe. Weiterhin versichere ich, dass diese Arbeit noch nicht als Abschlussarbeit an anderer Stelle vorgelegen hat.
-%~\\~\\
-%Datum: --, Unterschrift:
+\pagebreak
+
+\section*{Erklärung}
+
+Hiermit versichere ich an Eides statt, dass ich die vorliegende Arbeit im Masterstudiengang Mathematik selbstständig verfasst und keine anderen als die angegebenen Hilfsmittel – insbesondere keine im Quellenverzeichnis nicht benannten Internet-Quellen – benutzt habe. Alle Stellen, die wörtlich oder sinngemäß aus Veröffentlichungen entnommen wurden, sind als solche kenntlich gemacht. Ich versichere weiterhin, dass ich die Arbeit vorher nicht in einem anderen Prüfungsverfahren eingereicht habe.
+~\\~\\
+Datum: (tba), Unterschrift:
 
 %\noindent\includegraphics[width=250pt]{signature.png}
 \end{document}
