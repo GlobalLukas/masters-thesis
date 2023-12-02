@@ -325,10 +325,10 @@ in local coordinates $t,x$, this means
 \end{equation*}
 \end{definition}
 
-\begin{prop}
-Let $\Sigma = \R \times S^1$ be a cylinder with axial coordinate $t$ and angular coordinate $x$ and $A = A_t dt + A_x dx$ be a Lax connection. Let $z$ not be a pole and
+\begin{prop}[\cite{notes:beisert:2014}]
+Let $\Sigma = \R \times S^1$ be a cylinder with axial coordinate $t$ and angular coordinate $x$ and $A(z) = A_t(z) dt + A_x(z) dx$ be a Lax connection. Let $z$ not be a pole and
 \begin{equation*}
-L(z) := \operatorname{Hol}_\gamma(A), \quad M(z) := A_t(z)|_{x=0},
+L(z) := \operatorname{Hol}_\gamma(A(z)), \quad M(z) := A_t(z)|_{x=0},
 \end{equation*}
 where $\gamma$ is a loop winding once around the cylinder and $\operatorname{Hol}_{\gamma}(A)$ denotes the holonomy of $A$ around $\gamma$, which is invariant under homotopies due to flatness. Then $(L(z),M(z))$ is a Lax pair.
 \end{prop}
@@ -336,12 +336,14 @@ where $\gamma$ is a loop winding once around the cylinder and $\operatorname{Hol
 \begin{proof}
 Let $\gamma$ be a curve starting at $(t_0,x_0) \in \Sigma$ and ending at $(t_1,x_1) \in \Sigma$. The defining partial differential equations for the holonomy give
 \begin{equation*}
-\frac{\partial}{\partial t_0} \operatorname{Hol}_\gamma(A) = -A_t(z)|_{x=x_0} \operatorname{Hol}_\gamma(A), \quad \frac{\partial}{\partial t_1} \operatorname{Hol}_\gamma(A) = A_t(z)|_{x=x_1} \operatorname{Hol}_\gamma(A).
+\frac{\partial}{\partial t_0} \operatorname{Hol}_\gamma(A(z)) = -A_t(z)|_{x=x_0} \operatorname{Hol}_\gamma(A(z)), \quad \frac{\partial}{\partial t_1} \operatorname{Hol}_\gamma(A(z)) = A_t(z)|_{x=x_1} \operatorname{Hol}_\gamma(A(z)).
 \end{equation*}
 Choosing $x_0 = x_1 = 0$ and $t_0 = t_1$ and letting $\gamma$ wind once around the cylinder implies
-\begin{equation*}
-\dot L(z) = \frac{\partial}{\partial t_0} \operatorname{Hol}_\gamma(A) + \frac{\partial}{\partial t_1} \operatorname{Hol}_\gamma(A) = A_t(z)|_{x=0} \operatorname{Hol}_\gamma(A) - A_t(z)|_{x=0} \operatorname{Hol}_\gamma(A) = [M(z),L(z)],
-\end{equation*}
+\begin{align*}
+\dot L(z)
+&= \frac{\partial}{\partial t_0} \operatorname{Hol}_\gamma(A(z)) + \frac{\partial}{\partial t_1} \operatorname{Hol}_\gamma(A(z)) \\
+&= A_t(z)|_{x=0} \operatorname{Hol}_\gamma(A(z)) - A_t(z)|_{x=0} \operatorname{Hol}_\gamma(A(z)) = [M(z),L(z)],
+\end{align*}
 which shows that we indeed have a Lax pair.
 \end{proof}
 
@@ -378,10 +380,10 @@ This is a quick computation with Mathematica ($\to$ \texttt{RSHamiltonianExpansi
 \end{proof}
 
 \begin{definition}
-The function $H_\text{CM}$ from equation (\ref{equation:trigCMHamiltonian}) defines the Hamiltonians for the \emph{classical Calogero-Moser models}\index{Calogero-Moser model}.
+The function $H^\text{CM}$ from equation (\ref{equation:trigCMHamiltonian}) defines the Hamiltonians for the \emph{classical Calogero-Moser models}\index{Calogero-Moser model}.
 \end{definition}
 
-The Hamiltonian (\ref{equation:trigCMHamiltonian}) of the rational Calogero-Moser model evidently describes point particles repelling each other through centrifugal inverse-cube forces. \cite{article:ruijsenaars:1987} hence argues that the rational Ruijsenaars-Schneider model describes the same phenomenon in the relativistic setting with finite speed of light $c$. The trigonometric case might be thought of as a periodic modification after taking the position variables $y_i$ to be purely imaginary, hence describing particles on a circle. Our focus will be on the rational Ruijsenaars-Schneider model and the trigonometric Calogero-Moser model.
+The Hamiltonian (\ref{equation:trigCMHamiltonian}) of the rational Calogero-Moser model evidently describes point particles repelling each other through centrifugal inverse-cube forces. \cite{article:ruijsenaars:1987} hence argues that the rational Ruijsenaars-Schneider model describes the same phenomenon in the relativistic setting with finite speed of light $c$. We further remark that the trigonometric case might be thought of as having periodic coordinates after taking the position variables $y_i$ to be purely imaginary, hence describing particles on a circle. Our focus will be on the rational Ruijsenaars-Schneider model and the trigonometric Calogero-Moser model.
 
 \begin{prop}
 Lax matrices ensuring Liouville integrability for the rational Ruijsenaars-Schneider and the trigonometric Calogero-Moser model are given by
@@ -418,7 +420,7 @@ In order to quantize the rational Ruijsenaars-Schneider and trigonometric Caloge
 
 \subsection{Weyl groups and Hecke algebras of type $A$}
 
-Let $N$ be a natural number. The Weyl group of type $A_{N-1}$ is the symmetric group $S_N$ on $N$ letters. We write cycles in standard form $(1 \ 2 \ 3)$, mapping 1 to 2, 2 to 3, and 3 to 1, and denote the simple transpositions $(i \ i+1)$ by $s_i$ for $1 \leq i < N$. Finally, we let $w := s_1 \cdots s_{N-1}$ denote the Coxeter element.
+Let $N$ be a natural number. The Weyl group of type $A_{N-1}$ is the symmetric group $S_N$ on $N$ letters. We write cycles in standard form $(1 \ 2 \ 3)$, mapping 1 to 2, 2 to 3, and 3 to 1, and denote the simple transpositions $(i \ i+1)$ by $s_i$ for $1 \leq i < N$. Finally, we let $w := s_1 \cdots s_{N-1} = (1 \ \cdots \ N)$ denote the Coxeter element.
 
 \begin{definition}
 \begin{enumerate}[label=(\roman*)]
@@ -433,7 +435,7 @@ s_i \mapsto s_i, \quad X_i \mapsto X_i^{-1}, \quad y_i \mapsto y_i,
 \end{equation*}
 making left modules equivalent to right modules.
 \item The $\C[\eta]$-subalgebra $\dot H_N \subset \ddot H_N$ generated only by $\C[S_N]$ and $\C[y_1,...,y_N]$ is the \emph{degenerate affine Hecke algebra (of type $A_{N-1}$)}\index{Degenerate affine Hecke algebra}. It is also generated by the $s_i$ and $y_1$.
-\item Let $e := \frac{1}{N!}\sum_{\sigma \in S_N} \sigma \in \ddot H_N$ be the symmetrizer. Then $S\ddot H_N := e \ddot H_N e$ is the \emph{spherical degenerate double affine Hecke algebra (of type $A_{N-1}$)}\index{Spherical degenerate double affine Hecke algebra}.
+\item Let $e := \frac{1}{N!}\sum_{\sigma \in S_N} \sigma \in \ddot H_N$ be the symmetrizer. Then $S\ddot H_N := e \ddot H_N e$ is the \emph{spherical degenerate double affine Hecke algebra (of type $A_{N-1}$)}\index{Spherical degenerate double affine Hecke algebra}, or \emph{spherical subalgebra} for short.
 \end{enumerate}
 \end{definition}
 
@@ -452,7 +454,7 @@ The spherical degenerate double affine Hecke algebra will be of great importance
 See \cite{article:oblomkov:2003}.
 \end{proof}
 
-Much of the following is in analogy to \cite{article:lamers:2022}, where the non-degenerate case is discussed. We construct a representation of $\dot H_N$ on polynomials $\C[y_1,...,y_N]$. Let us begin by considering the action where $S_N$ acts by permutation of the variables. This allows us to introduce the following operators:
+Much of the following is parallel to \cite{article:lamers:2022}, where the non-degenerate case is discussed. We construct a representation of $\dot H_N$ on polynomials $\C[y_1,...,y_N]$. Let us begin by considering the action where $S_N$ acts by permutation of the variables. This allows us to introduce the following operators:
 \begin{enumerate}[label=(\roman*)]
 \item The \emph{divided difference operators} are defined as
 \begin{equation*}
@@ -603,11 +605,11 @@ so $C_2$ will indeed reduce to the classical Hamiltonian (\ref{equation:trigCMHa
 In order to define the Heisenberg model, we will make use of the representation theory of the \emph{Yangian}. The Yangian $Y(\mathfrak{gl}_\ell)$ was first defined by Drinfeld in his seminal paper \cite{article:drinfeld:1985} introducing quantum groups. An extensive textbook review can be found in \cite{book:molev}, which we follow closely.
 
 \begin{definition}
-The \emph{Yangian}\index{Yangian} for the complex reductive Lie algebra $\mathfrak{gl}_\ell$, written $Y(\mathfrak{gl}_\ell)$, is defined as the unital associative $\C\llbracket\eta\rrbracket$-algebra with the following presentation: It has generators $t_{ij}^{(r)}$ for $1 \leq i,j \leq \ell$ and $r \geq 1$, which are subject to the relations
+The \emph{Yangian}\index{Yangian} for the complex Lie algebra $\mathfrak{gl}_\ell$, written $Y(\mathfrak{gl}_\ell)$, is defined as the unital associative $\C[\eta]$-algebra with the following presentation: It has generators $t_{ij}^{(r)}$ for $1 \leq i,j \leq \ell$ and $r \geq 1$, which are subject to the relations
 \begin{equation}\label{equation:yangianDefiningRelation}
 [t_{ij}^{(r+1)},t_{kl}^{(s)}] - [t_{ij}^{(r)},t_{kl}^{(s+1)}] = \eta(t_{kj}^{(r)} t_{il}^{(s)} - t_{kj}^{(s)} t_{il}^{(r)}),
 \end{equation}
-with $r,s \geq 0$ making use of $t_{ij}^{(0)} := \delta_{ij}/\eta$. Note that specializing to $\eta = 0$ yields the relations for the current algebra $\mathfrak{gl}_\ell[z]$, hence the Yangian may be understood as a deformation thereof.
+with $r,s \geq 0$ making use of $t_{ij}^{(0)} := \delta_{ij}/\eta$. We remark that the dual Yangian has a canonical ascending filtration where $t_{ij}^{(r)}$ has degree $r$. Also note that specializing to $\eta = 0$ yields the relations for the current algebra $\mathfrak{gl}_\ell[z^{-1}]$, hence the Yangian may be understood as a deformation thereof.
 \end{definition}
 
 \begin{remark}
@@ -642,20 +644,21 @@ called the \emph{evaluation homomorphism}. On the level of power series, it is g
 \begin{equation*}
 Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \to U(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket, \quad t_{ij}(z) \mapsto \delta_{ij} + \frac{\eta e_{ij}}{z}.
 \end{equation*}
+which should be understood coefficient-wise.
 \end{enumerate}
 \end{prop}
 
-We saw that it can be notationally convenient to introduce the formal parameter $z$ and work inside the algebra $Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$. In the same vein, it will also be convenient to work inside the algebra $\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$ and write the generators of $Y(\mathfrak{gl}_\ell)$ in matrix form:
+We saw that it can be notationally convenient to introduce the formal parameter $z$ and work inside the algebra $Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$. In the same vein, it will also be convenient to work inside the algebra $\End V \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$, where $V := \C^\ell[\eta]$ and write the generators of $Y(\mathfrak{gl}_\ell)$ in matrix form:
 \begin{equation*}
-T(z) := \sum_{ij} e_{ij} \otimes t_{ij}(z) \in \End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket.
+T(z) := \sum_{ij} e_{ij} \otimes t_{ij}(z) \in \End V \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket.
 \end{equation*}
-The additional vector space $\C^\ell$ is usually called the \emph{auxiliary space} to distinguish it from representation spaces, usually called \emph{quantum spaces}. The expression might be thought of as a power series of matrices with coefficients in $Y(\mathfrak{gl}_\ell)$. With this in hand, define the following elements in $\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket^{\otimes N}$:
+The additional vector space $\C^\ell$ is usually called the \emph{auxiliary space} to distinguish it from representation spaces, usually called \emph{quantum spaces}. The expression might be thought of as a power series of matrices with coefficients in $Y(\mathfrak{gl}_\ell)$. With this in hand, define the following elements in $\End V \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket^{\otimes N}$:
 \begin{equation*}
 T_{[a]}(z) := \sum_{ij} \overset{0}{e_{ij}} \otimes \overset{1}{1} \otimes \cdots \otimes \overset{a}{t_{ij}(z)} \otimes \cdots \otimes \overset{N}{1},
 \end{equation*}
 where we have used $0$ to denote the auxiliary space index and $1,...,a,...,N$ to denote quantum space indices. We can now define the map
 \begin{equation*}
-\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \to \End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket^{\otimes 2}, \quad T(z) \mapsto T_{[1]}(z) T_{[2]}(z).
+\End V \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \to \End V \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket^{\otimes 2}, \quad T(z) \mapsto T_{[1]}(z) T_{[2]}(z).
 \end{equation*}
 Using the identity $e_{ij} e_{kl} = \delta_{jk} e_{il}$, we see that on $Y(\mathfrak{gl}_\ell)[[z^{-1}]]$ this reduces to
 \begin{equation*}
@@ -669,9 +672,9 @@ which degree-wise gives the map
 \begin{prop}
 The map $\Delta$ from (\ref{equation:coproduct}) is an algebra homomorphism. It equips $Y(\mathfrak{gl}_\ell)$ with the structure of a bialgebra with counit
 \begin{equation*}
-\epsilon: Y(\mathfrak{gl}_\ell) \to \C, \quad t_{ij}^{(r)} \mapsto 0.
+\epsilon: Y(\mathfrak{gl}_\ell) \to \C[\eta], \quad t_{ij}^{(r)} \mapsto 0.
 \end{equation*}
-Furthermore, $Y(\mathfrak{gl}_\ell)$ is a Hopf algebra. The antipode can be represented on the level of the algebra $\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$ as
+Furthermore, $Y(\mathfrak{gl}_\ell)$ is a Hopf algebra. The antipode can be represented on the level of the algebra $\End V \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$ as
 \begin{equation*}
 S: T(z) \mapsto T(z)^{-1},
 \end{equation*}
@@ -683,11 +686,11 @@ This is theorem 1.5.1 of \cite{book:molev}.
 \end{proof}
 
 \begin{remark}
-Similar to the definition of the $T_{[a]}(z)$, we may define the following elements of the algebra $(\End \C^\ell)^{\otimes k} \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$:
+Similar to the definition of the $T_{[a]}(z)$, we may define the following elements of the algebra $(\End V)^{\otimes k} \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$:
 \begin{equation*}
 T_a(z) := \sum_{ij} \overset{1}{1} \otimes \cdots \otimes \overset{a}{e_{ij}} \otimes \cdots \otimes \overset{k}{1} \otimes \overset{0}{t_{ij}(z)},
 \end{equation*}
-where we have used $1,...,a,...,k$ to denote auxiliary space indices and $0$ to denote the quantum space index. Letting $P := \sum_{ij} e_{ij} \otimes e_{ji} \in (\End \C^\ell)^{\otimes 2}$ be the permutation operator and
+where we have used $1,...,a,...,k$ to denote auxiliary space indices and $0$ to denote the quantum space index. Letting $P := \sum_{ij} e_{ij} \otimes e_{ji} \in (\End V)^{\otimes 2}$ be the permutation operator and
 \begin{equation*}
 R(z) := 1 - \frac{\eta P}{z}
 \end{equation*}
@@ -703,7 +706,7 @@ where $R_{12}(z-w)$ is understood to act on the two auxiliary spaces labeled $1$
 \end{prop}
 
 \begin{proof}
-Consider the result of acting on $e_j \otimes e_l \in \C^\ell \otimes \C^\ell$. The left hand side gives
+Consider the result of acting on $e_j \otimes e_l \in V \otimes V$. The left hand side gives
 \begin{equation*}
 \sum_{ik} e_i \otimes e_k \otimes t_{ij}(z) t_{kl}(w) - \frac{\eta}{z-w} \sum_{ik} e_i \otimes e_k \otimes t_{kj}(z) t_{il}(w)
 \end{equation*}
@@ -720,7 +723,7 @@ Note that the RTT relation is invariant under multiplying the $R$-matrix by a po
 \begin{tabular}{|l||l|}
 \hline
 Yang's convention & $R(z) = 1 - \frac{\eta}{z} P$ \\
-polynomial convention & $\mathcal{R}(z) = z - \eta P$ \\
+polynomial convention & $\hat R(z) = z - \eta P$ \\
 unitary convention & $\check R(z) = \frac{z}{z-\eta} - \frac{\eta}{z-\eta} P$ \\
 \hline
 \end{tabular}
@@ -778,28 +781,105 @@ illustrated with the diagram
 \end{center}
 which is essentially the second Reidemeister move. We can always switch from one convention to the other at the cost of normalization factors. The crucial difference between conventions lies in their analytic structure, which we will make use of extensively. More specifically:
 \begin{align*}
-1 &= R(\infty) = \lim_{z \to \infty} \mathcal{R}(z)/z = \check R(\infty), \\
-P &= -\operatorname{Res}_{z=0} R(z)/\eta = -\mathcal{R}(0)/\eta = \check R(0), \\
-\Pi^+ &= R(-\eta)/2 = -\mathcal{R}(-\eta)/2\eta = \check R(-\eta), \\
-\Pi^- &= R(\eta)/2 = \mathcal{R}(\eta)/2\eta = \operatorname{Res}_{z=\eta} \check R(z)/2\eta,
+1 &= R(\infty) = \lim_{z \to \infty} \hat{R}(z)/z = \check R(\infty), \\
+P &= -\operatorname{Res}_{z=0} R(z)/\eta = -\hat{R}(0)/\eta = \check R(0), \\
+\Pi^+ &= R(-\eta)/2 = -\hat{R}(-\eta)/2\eta = \check R(-\eta), \\
+\Pi^- &= R(\eta)/2 = \hat{R}(\eta)/2\eta = \operatorname{Res}_{z=\eta} \check R(z)/2\eta,
 \end{align*}
 where $\Pi^\pm = (1 \pm P)/2$ are the symmetrizer and antisymmetrizer respectively. This is where the $R$-matrix becomes singular.
 \end{remark}
 
 \begin{definition}
 \begin{enumerate}[label=(\roman*)]
-\item There is a homomorphism of $\C\llbracket \eta \rrbracket$-algebras
+\item There is a homomorphism of $\C[\eta]$-algebras
 \begin{equation*}
-\exp(-y\partial): Y(\mathfrak{gl}_\ell) \to Y(\mathfrak{gl}_\ell)\llbracket y \rrbracket, \quad t_{ij}(z) \mapsto t_{ij}(z-y).
+\exp(-y\partial): Y(\mathfrak{gl}_\ell) \to Y(\mathfrak{gl}_\ell)[y], \quad t_{ij}(z) \mapsto t_{ij}(z-y).
 \end{equation*}
-that specializes to a \emph{shift automorphism} of the Yangian for fixed values of $y$. This is possible because we can expand $(z-y)^{-r}$ as a power series in $z^{-1}$:
+that specializes to a \emph{shift automorphism} of the Yangian for fixed values of $y$. This is possible because we can formally expand $(z-y)^{-r}$ as a power series in $z^{-1}$ such that the coefficients are polynomials in $y$:
 \begin{equation*}
 (z-y)^{-r} = \sum_{s=r}^\infty {s-1 \choose r-1} y^{s-r} z^{-s}.
 \end{equation*}
 \item There is the \emph{transposition automorphism} $T(z) \mapsto T^t(-z)$, or $t_{ij}(z) \mapsto t_{ji}(-z)$.
-\item Given any $f(z) \in \C\llbracket \eta,z^{-1} \rrbracket$ with leading term one, there is an automorphism $T(z) \mapsto f(z) T(z)$.
-\item Given any $g \in \operatorname{GL}_\ell$, there is an automorphism $T(z) \mapsto g T(z) g^{-1}$.
+%\item Given any $f(z) \in \C\llbracket \eta,z^{-1} \rrbracket$ with leading term one, there is an automorphism $T(z) \mapsto f(z) T(z)$.
+%\item Given any $g \in \operatorname{GL}_\ell$, there is an automorphism $T(z) \mapsto g T(z) g^{-1}$.
 \end{enumerate}
+\end{definition}
+
+\subsection{The dual and double Yangians of $\mathfrak{gl}_\ell$}
+
+In addition to the Yangian $Y(\mathfrak{gl}_\ell)$, we will later make use of the \emph{dual Yangian} $Y^\vee(\mathfrak{gl}_\ell)$ and \emph{double Yangian} $DY(\mathfrak{gl}_\ell)$. These were studied in detail in the paper \cite{article:nazarov:2019}. Essentially, while the Yangian describes the disc at infinity with local coordinate $z^{-1}$, the dual Yangian describes the disc around zero with local coordinate $z$. The double Yangian combines both, describing the overlap $\C^\times$.
+
+\begin{definition}
+The \emph{dual Yangian} for the complex Lie algebra $\mathfrak{gl}_\ell$, written $Y^*(\mathfrak{gl}_\ell)$, is defined as the unital associative $\C[\eta]$-algebra with the following presentation: It has generators $t_{ij}^{(-r)}$ for $1 \leq i,j \leq \ell$ and $r \geq 1$. To describe the defining relations, we again let $t_{ij}^{(0)} = \delta_{ij}/\eta$ and introduce
+\begin{equation*}
+T^*(z) := \sum_{ij} t_{ij}^*(z) \otimes e_{ij} \in Y^*(\mathfrak{gl}_\ell)\llbracket z \rrbracket \otimes V, \quad t_{ij}^*(z) = \eta \sum_{r \geq 0} t_{ij}^{(-r)} z^r \in Y^*(\mathfrak{gl}_\ell)\llbracket z \rrbracket,
+\end{equation*}
+as well as
+\begin{equation*}
+T_a^*(z) = \sum_{ij} \overset{0}{t_{ij}^*(z)} \otimes \overset{1}{1} \otimes \cdots \otimes \overset{a}{e_{ij}} \otimes \cdots \otimes \overset{k}{1}.
+\end{equation*}
+The defining relation of the dual Yangian then is the \emph{TTR relation}:
+\begin{equation}\label{equation:TTRRelation}
+T_1^*(z) T_2^*(w) R_{12}(z-w) = R_{12}(z-w) T_2^*(w) T_1^*(z).
+\end{equation}
+We remark that the dual Yangian has a canonical descending filtration where $t_{ij}^{(-r)}$ has degree $r$.
+\end{definition}
+
+\begin{prop}
+The dual Yangian $Y^*(\mathfrak{gl}_\ell)$ is a bialgebra with comultiplication
+\begin{equation*}
+\Delta: t_{ij}^*(z) \mapsto \sum_k t_{ik}^*(z) \otimes t_{kj}^*(z)
+\end{equation*}
+and counit $\epsilon: t_{ij}^*(z) \mapsto \delta_{ij}$.
+\end{prop}
+
+\begin{remark}
+An antipode may be defined in the completion of $Y^*(\mathfrak{gl}_\ell)$ with respect to the canonical descending filtration, see \cite{article:nazarov:2019}. We denote it by $Y^\vee(\mathfrak{gl}_\ell)$. The comultiplication and counit naturally extend to $Y^\vee(\mathfrak{gl}_\ell)$.
+\end{remark}
+
+\begin{prop}
+There is a canonical non-degenerate pairing
+\begin{equation*}
+\langle \cdot,\cdot \rangle: Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to \C[\eta]
+\end{equation*}
+such that multiplications and comultiplications become dual to each other in the sense that
+\begin{equation*}
+\langle a,bc \rangle = \langle \Delta(a),b \otimes c \rangle \quad \text{and} \quad \langle ab,c \rangle = \langle a \otimes b,\Delta(c) \rangle,
+\end{equation*}
+understanding that $\langle a \otimes b, c \otimes d \rangle := \langle a,c \rangle \langle b,d \rangle$.
+\end{prop}
+
+\begin{prop}
+There is a canonical element
+\begin{equation*}
+\mathcal{R} = \sum_i X_i^\vee \otimes X_i \in Y^\vee(\mathfrak{gl}_\ell) \operatorname{\widehat{\otimes}} Y(\mathfrak{gl}_\ell),
+\end{equation*}
+called the \emph{universal $R$-matrix}, defining dual bases for $\langle \cdot,\cdot \rangle$ with the property that $\deg X_i \to \infty$ and $\deg X_i^\vee \to \infty$ as $i \to \infty$. The completion of the tensor product is taken with respect to the descending filtration induced by the canonical filtration of $Y^\vee(\mathfrak{gl}_\ell)$.
+\end{prop}
+
+\begin{remark}
+This allows us to define left and right actions of $Y(\mathfrak{gl}_\ell)$ on $Y^\vee(\mathfrak{gl}_\ell)$ via
+\begin{align*}
+\lambda &:= (\langle \cdot,\cdot \rangle \otimes \id) (\id \otimes \Delta): Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to Y^\vee(\mathfrak{gl}_\ell), \\
+\rho &:= (\id \otimes \langle \cdot,\cdot \rangle) (\Delta \otimes \id): Y^\vee(\mathfrak{gl}_\ell) \otimes Y(\mathfrak{gl}_\ell) \to Y^\vee(\mathfrak{gl}_\ell),
+\end{align*}
+as well as a coadjoint action
+\begin{equation*}
+\alpha: (\lambda \otimes \id)(\id \otimes \rho)(\id \otimes \tau)(\id \otimes S \otimes \id) (\Delta \otimes \id): Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to Y^\vee(\mathfrak{gl}_\ell)
+\end{equation*}
+Moreover, given any finite-dimensional module $M$ with left action $\lambda: Y(\mathfrak{gl}_\ell) \otimes M \to M$, we may define a left coaction
+\begin{equation*}
+\delta := (\id \otimes \lambda) (\mathcal{R} \otimes \id): M \to Y^\vee(\mathfrak{gl}_\ell) \otimes M,
+\end{equation*}
+which is $Y(\mathfrak{gl}_\ell)$-linear.
+\end{remark}
+
+\begin{definition}
+The \emph{double Yangian} for the complex Lie algebra $\mathfrak{gl}_\ell$, written $DY(\mathfrak{gl}_\ell)$, is defined as the unital associative $\C[\eta]$-algebra with generators $t_{ij}^{(r)}$ for $1 \leq i,j \leq \ell$ and $r \in \Z$, forming matrices $T(z)$ and $T^*(z)$ satisfying the RTT and TTR relations (\ref{equation:RTTRelation}) and (\ref{equation:TTRRelation}) for the Yangian and dual Yangian, respectively, plus the additional relation
+\begin{equation}\label{equation:TRTRelation}
+T_{1}(z) R_{12}(z-w) T_2^*(w) = T_2^*(w) R_{12}(z-w) T_{1}(z) \in \overset{1}{\End V} \otimes \overset{0}{DY(\mathfrak{gl}_\ell)\llbracket z^{-1},w \rrbracket} \otimes \overset{2}{\End V},
+\end{equation}
+called the \emph{TRT relation}.
 \end{definition}
  
 \subsection{Representations of the Yangian}
@@ -814,7 +894,7 @@ If $V$ is generated by $\omega$, $V$ is a highest weight representation with hig
 We now proceed similarly with the Yangian:
 
 \begin{definition}
-Let $V$ be a representation of $Y(\mathfrak{gl}_\ell)$. A non-zero element $\omega \in V$ is of \emph{highest weight} $\lambda(z) = (\lambda_1(z),...,\lambda_\ell(z))$ for $\lambda_i(z) \in \C\llbracket \eta,z^{-1} \rrbracket$ if the following relations hold:
+Let $V$ be a representation of $Y(\mathfrak{gl}_\ell)$. A non-zero element $\omega \in V$ is of \emph{highest weight} $\lambda(z) = (\lambda_1(z),...,\lambda_\ell(z))$ for $\lambda_i(z) \in \C[\eta]\llbracket z^{-1} \rrbracket$ if the following relations hold:
 \begin{align*}
 t_{ij}(z) \omega &= 0, \quad 1 \leq i < j \leq \ell \\
 t_{ii}(z) \omega &= \lambda_i(z) \omega, \quad 1 \leq i \leq \ell.
@@ -835,11 +915,11 @@ The irreducible highest weight representation $L(\lambda(z))$ of $Y(\mathfrak{gl
 \begin{equation*}
 \frac{\lambda_i(z)}{\lambda_{i+1}(z)} = \frac{p_i(z+\eta)}{p_i(z)}
 \end{equation*}
-for $i=1,...,\ell-1$ and unique monic polynomials $p_i(z) \in \C\llbracket \eta \rrbracket[z]$ called \emph{Drinfeld polynomials}.
+for $i=1,...,\ell-1$ and unique monic polynomials $p_i(z) \in \C[\eta,z]$ called \emph{Drinfeld polynomials}.
 \end{theorem}
 
 \begin{proof}
-This is theorem 3.4.1 of \cite{book:molev}. We consider the case $\ell = 2$. Essentially, one first finds a power series $f(z) \in \C\llbracket \eta,z^{-1} \rrbracket$ such that $f(z) \lambda_1(z)$ and $f(z) \lambda_2(z)$ are polynomials, so that we can say without loss of generality that
+This is theorem 3.4.1 of \cite{book:molev}. We consider the case $\ell = 2$. Essentially, one first finds a power series $f(z) \in \C[\eta]\llbracket z^{-1} \rrbracket$ such that $f(z) \lambda_1(z)$ and $f(z) \lambda_2(z)$ are polynomials, so that we can say without loss of generality that
 \begin{equation*}
 \lambda_1(z) = (1+\alpha_1 z^{-1}) \cdots (1+\alpha_k z^{-1}), \quad \lambda_2(z) = (1+\beta_1 z^{-1}) \cdots (1+\beta_k z^{-1}).
 \end{equation*}
@@ -867,11 +947,11 @@ Given a weight $\lambda = (\lambda_1,...,\lambda_\ell) \in \C^\ell$ for $\mathfr
 \begin{equation*}
 p_i(z) = (z+\eta \lambda_{i+1})(z+\eta \lambda_{i+1}+\eta) \cdots (z+\eta \lambda_i-2\eta)(z+\eta \lambda_i-\eta),
 \end{equation*}
-which is makes sense due to $(\lambda_i - \lambda_{i+1})/\eta \in \Z_+$. We may twist evaluation modules by the shift automorphism for $y \in \C\llbracket \eta \rrbracket$ or the transposition and respectively obtain modules we denote by $L(\lambda)_y$ and $L(\lambda)^t$ as well as $L(\lambda)_y^t$.
+which is makes sense due to $(\lambda_i - \lambda_{i+1})/\eta \in \Z_+$. We may twist evaluation modules by the shift automorphism for $y \in \C[\eta]$ or the transposition and respectively obtain modules we denote by $L(\lambda)_y$ and $L(\lambda)^t$ as well as $L(\lambda)_y^t$.
 \end{definition}
 
 \begin{remark}
-Let $y_1,...,y_N \in \C$ and consider a tensor product
+Let $y_1,...,y_N \in \C[\eta]$ and consider a tensor product
 \begin{equation*}
 L(\lambda^{(1)})_{y_1}^t \otimes \cdots \otimes L(\lambda^{(N)})_{y_N}^t,
 \end{equation*}
@@ -948,6 +1028,61 @@ where the subscript again denotes which spaces the $R$-matrix acts on. Diagramma
 \end{center}
 which is the third Reidemeister move.
 \end{remark}
+
+\begin{prop}
+The standard dot product on $\C^\ell$ gives a $Y(\mathfrak{gl}_\ell)$-linear map
+\begin{equation*}
+L(\ydiagram{1})_y^t \otimes L(\ydiagram{1})_{y+\ell \eta} \to \C[\eta], \quad e_p \otimes e_q \mapsto \delta_{pq}.
+\end{equation*}
+\end{prop}
+
+\begin{proof}
+The Yangian generator $t_{ij}(z)$ acts on $L(\ydiagram{1})_{y_1}^t \otimes L(\ydiagram{1})_{y_2}$ in the following way:
+\begin{align*}
+&\sum_k \left( \delta_{ik}-\frac{\eta e_{ki}}{z-y_1} \right) e_p \otimes \left( \delta_{kj}+\frac{\eta e_{kj}}{z-y_2} \right) e_q \\
+&= \sum_k \delta_{ik} e_p \otimes \delta_{kj} e_q + \frac{\eta}{z-y_2} \sum_k \delta_{ik} e_p \otimes e_{kj} e_q \\
+& \quad \quad - \frac{\eta}{z-y_1} \sum_k e_{ki} e_p \otimes \delta_{kj} e_q
+- \frac{\eta^2}{(z-y_1)(z-y_2)} \sum_k e_{ki} e_p \otimes e_{kj} e_q \\
+&= \delta_{ij} e_p \otimes e_q
++ \frac{\eta}{z-y_2} \delta_{jq} e_p \otimes e_i
+- \frac{\eta}{z-y_1} \delta_{ip} e_j \otimes e_q
+- \frac{\eta^2}{(z-y_1)(z-y_2)} \delta_{ip} \delta_{jq} \sum_k e_k \otimes e_k
+\end{align*}
+which the standard scalar product maps to
+\begin{equation*}
+\delta_{ij} \delta_{pq} \left( 1
++ \frac{\eta}{z-y_2}
+- \frac{\eta}{z-y_1}
+- \frac{\eta^2 \ell}{(z-y_1)(z-y_2)} \right).
+\end{equation*}
+This reduces to $\delta_{ij} \delta_{pq}$ when $y_1 = y_2-\ell \eta$.
+\end{proof}
+
+\begin{prop}
+The standard basis of $\C^\ell$ gives a $Y(\mathfrak{gl}_\ell)$-linear map
+\begin{equation*}
+\C[\eta] \to L(\ydiagram{1})_{y+\ell \eta} \otimes L(\ydiagram{1})_y^t, \quad 1 \mapsto \sum_p e_p \otimes e_p.
+\end{equation*}
+\end{prop}
+
+\begin{proof}
+The Yangian generator $t_{ij}(z)$ acts in the following way:
+\begin{align*}
+&\sum_p \sum_k \left( \delta_{ik}+\frac{\eta e_{ik}}{z-y_1} \right) e_p \otimes \left( \delta_{kj}-\frac{\eta e_{jk}}{z-y_2} \right) e_p \\
+&= \sum_p \sum_k \delta_{ik} e_p \otimes \delta_{kj} e_p - \frac{\eta}{z-y_2} \sum_p \sum_k \delta_{ik} e_p \otimes e_{jk} e_p \\
+& \quad \quad + \frac{\eta}{z-y_1} \sum_p \sum_k e_{ik} e_p \otimes \delta_{kj} e_p
+- \frac{\eta^2}{(z-y_1)(z-y_2)} \sum_p \sum_k e_{ik} e_p \otimes e_{jk} e_p \\
+&= \delta_{ij} \sum_p e_p \otimes e_p
+- \frac{\eta}{z-y_2} \sum_p \delta_{ip} e_p\otimes e_j
++ \frac{\eta}{z-y_1} \sum_p \delta_{jp} e_i \otimes e_p
+- \frac{\eta^2 \ell}{(z-y_1)(z-y_2)} e_i \otimes e_j \\
+&= \delta_{ij} \sum_p e_p \otimes e_p
++ \left(- \frac{\eta}{z-y_2}
++ \frac{\eta}{z-y_1}
+- \frac{\eta^2 \ell}{(z-y_1)(z-y_2)} \right) e_i \otimes e_j
+\end{align*}
+The second term becomes zero when $y_1 = y_2 + \ell \eta$.
+\end{proof}
 
 Having $L(\ydiagram{1})_y^t$ under our belt, let us look at monodromy representations of the type
 \begin{equation*}
@@ -1987,15 +2122,11 @@ $\quad \quad$
 We will use this in conjunction with the results of \cite{article:benzvi:2018} to construct a 2-functorial field theory $\mathcal{ES} \to \mathcal{BM}on$ via factorization homology. To accomplish this, we need a pivotal braided abelian tensor category as coefficients. Such a category is readily provided by monodromy representations of the Yangian:
 
 \begin{definition}
-Let $Y(\mathfrak{gl}_\ell)\mathsf{MD}$ be the category whose objects are $Y(\mathfrak{gl}_\ell)$-modules of the form
-\begin{equation*}
-L(\lambda^{(1)})_{y_1}^\pm \otimes \cdots \otimes L(\lambda^{(N)})_{y_N}^\pm
-\end{equation*}
-and morphisms are generated by $R$-matrices, fusion morphisms, cup, and cap. The cap has nice kernel when $\ell=2$.
+Let $Y(\mathfrak{gl}_\ell)\mathsf{mod}$ be the category whose objects are $Y(\mathfrak{gl}_\ell)$-modules that are locally finite-dimensional
 \end{definition}
 
 \begin{prop}
-$Y(\mathfrak{gl}_\ell)\mathsf{MD}$ is a pivotal braided abelian tensor category.
+$Y(\mathfrak{gl}_\ell)\mathsf{mod}$ is a pivotal braided abelian tensor category.
 \end{prop}
 
 \begin{proof}
@@ -2008,11 +2139,13 @@ S^2(T(z)) = (\operatorname{qdet} T(z + (\ell-1) \eta)) T(z+\ell \eta) (\operator
 \begin{corollary}
 Factorization homology gives a 2-functor
 \begin{equation*}
-\int_{(-)} Y(\mathfrak{gl}_\ell)\mathsf{MD}: \mathcal{ES} \to \mathcal{M}on_\textnormal{bal,br}.
+\int_{(-)} Y(\mathfrak{gl}_\ell)\mathsf{mod}: \mathcal{ES} \to \mathcal{M}on_\textnormal{bal,br}.
 \end{equation*}
 \end{corollary}
 
-Look at the \emph{dual Yangian} from \cite{article:wendlandt:2022}.
+Look at the \emph{dual Yangian} from \cite{article:nazarov:2019} and \cite{article:wendlandt:2022}. The Yangian has parameter $z^{-1}$, the dual Yangian has parameter $z$. Together they give the disc $\C\llbracket z^\pm \rrbracket$.
+
+Costello considers the monoidal category of Yangian modules of finite rank over $\C\llbracket \eta \rrbracket$ as the values of the disc, Ben-Zvi considers locally finite-dimensional modules.
 
 \pagebreak
 
@@ -2186,61 +2319,6 @@ Note that they form a braid in $\C \times [0,1]$ and a crossing in $\C^\times$. 
 Markings of surfaces give a pair-of-pants decomposition and contain a distinguished boundary component. All markings of a given surface can be turned into each other by two moves: the associativity move on the sphere with four boundary components and the $S$-move on the torus with one boundary component. Mapping class groups of closed surface are generated by Dehn twists around the circles that cut the surface into pairs-of-pants. For the mapping class group of a torus with one boundary component $SL_2(\Z)$, the Dehn twist generators are given be the mutually transpose unipotent matrices.
 
 Given an $[N]$-pointed curve, we may give a pair of pants decomposition/a marking, which defines the corresponding module by tensoring fundamental reps. We then have to show that this is invariant under the associativity move as well as the $S$-move up to natural isomorphism. We also have to define an action of the mapping class groups.
-
-%\begin{prop}
-%The standard dot product on $\C^\ell$ gives a $Y(\mathfrak{gl}_\ell)$-linear map
-%\begin{equation*}
-%L(\ydiagram{1})_y^t \otimes L(\ydiagram{1})_{y+\ell \eta} \to \C[\eta], \quad e_p \otimes e_q \mapsto \delta_{pq}.
-%\end{equation*}
-%\end{prop}
-%
-%\begin{proof}
-%The Yangian generator $t_{ij}(z)$ acts on $L(\ydiagram{1})_{y_1}^t \otimes L(\ydiagram{1})_{y_2}$ in the following way:
-%\begin{align*}
-%&\sum_k \left( \delta_{ik}-\frac{\eta e_{ki}}{z-y_1} \right) e_p \otimes \left( \delta_{kj}+\frac{\eta e_{kj}}{z-y_2} \right) e_q \\
-%&= \sum_k \delta_{ik} e_p \otimes \delta_{kj} e_q + \frac{\eta}{z-y_2} \sum_k \delta_{ik} e_p \otimes e_{kj} e_q \\
-%& \quad \quad - \frac{\eta}{z-y_1} \sum_k e_{ki} e_p \otimes \delta_{kj} e_q
-%- \frac{\eta^2}{(z-y_1)(z-y_2)} \sum_k e_{ki} e_p \otimes e_{kj} e_q \\
-%&= \delta_{ij} e_p \otimes e_q
-%+ \frac{\eta}{z-y_2} \delta_{jq} e_p \otimes e_i
-%- \frac{\eta}{z-y_1} \delta_{ip} e_j \otimes e_q
-%- \frac{\eta^2}{(z-y_1)(z-y_2)} \delta_{ip} \delta_{jq} \sum_k e_k \otimes e_k
-%\end{align*}
-%which the standard scalar product maps to
-%\begin{equation*}
-%\delta_{ij} \delta_{pq} \left( 1
-%+ \frac{\eta}{z-y_2}
-%- \frac{\eta}{z-y_1}
-%- \frac{\eta^2 \ell}{(z-y_1)(z-y_2)} \right).
-%\end{equation*}
-%This reduces to $\delta_{ij} \delta_{pq}$ when $y_1 = y_2-\ell \eta$.
-%\end{proof}
-%
-%\begin{prop}
-%The standard basis of $\C^\ell$ gives a $Y(\mathfrak{gl}_\ell)$-linear map
-%\begin{equation*}
-%\C[\eta] \to L(\ydiagram{1})_{y+\ell \eta} \otimes L(\ydiagram{1})_y^t, \quad 1 \mapsto \sum_p e_p \otimes e_p.
-%\end{equation*}
-%\end{prop}
-%
-%\begin{proof}
-%The Yangian generator $t_{ij}(z)$ acts in the following way:
-%\begin{align*}
-%&\sum_p \sum_k \left( \delta_{ik}+\frac{\eta e_{ik}}{z-y_1} \right) e_p \otimes \left( \delta_{kj}-\frac{\eta e_{jk}}{z-y_2} \right) e_p \\
-%&= \sum_p \sum_k \delta_{ik} e_p \otimes \delta_{kj} e_p - \frac{\eta}{z-y_2} \sum_p \sum_k \delta_{ik} e_p \otimes e_{jk} e_p \\
-%& \quad \quad + \frac{\eta}{z-y_1} \sum_p \sum_k e_{ik} e_p \otimes \delta_{kj} e_p
-%- \frac{\eta^2}{(z-y_1)(z-y_2)} \sum_p \sum_k e_{ik} e_p \otimes e_{jk} e_p \\
-%&= \delta_{ij} \sum_p e_p \otimes e_p
-%- \frac{\eta}{z-y_2} \sum_p \delta_{ip} e_p\otimes e_j
-%+ \frac{\eta}{z-y_1} \sum_p \delta_{jp} e_i \otimes e_p
-%- \frac{\eta^2 \ell}{(z-y_1)(z-y_2)} e_i \otimes e_j \\
-%&= \delta_{ij} \sum_p e_p \otimes e_p
-%+ \left(- \frac{\eta}{z-y_2}
-%+ \frac{\eta}{z-y_1}
-%- \frac{\eta^2 \ell}{(z-y_1)(z-y_2)} \right) e_i \otimes e_j
-%\end{align*}
-%The second term becomes zero when $y_1 = y_2 + \ell \eta$.
-%\end{proof}
 
 \pagebreak
 
