@@ -91,7 +91,7 @@ Ort und Datum: & Hamburg im (tba) 2024
 
 \chapter*{Abstract}
 
-We examine a quantum-classical duality between inhomogeneous Heisenberg models and rational Ruijsenaars-Schneider models building on observations of \cite{article:gorsky:2014} and \cite{book:arutyunov:betheAnsatz}. We show how generalized Schur-Weyl duality between the Yangian and the degenerate affine Hecke algebra provides a clear structural reason for the existence of this duality, also giving a generalization to spins in non-fundamental representations. Employing the theory of degenerate double affine Hecke algebras, we extend this point of view to a quantum-classical duality between trigonometric Gaudin and Calogero-Moser models, showing how all four models arise from two $S$-dual representations of the loop Yangian. Finally, we give a geometric picture of generalized Schur-Weyl duality that makes apparent how all of these models emerge naturally in four-dimensional Chern-Simons theory when constructed as a 2-functorial quantum field theory and use this to extend our results to the elliptic case. \\
+We examine a quantum-classical duality between inhomogeneous Heisenberg models and rational Ruijsenaars-Schneider models building on observations of \cite{article:gorsky:2014} and \cite{book:arutyunov:betheAnsatz}. We show how generalized Schur-Weyl duality between the Yangian and the degenerate affine Hecke algebra provides a clear structural reason for the existence of this duality, also giving a generalization to spins in non-fundamental representations: Employing the theory of degenerate double affine Hecke algebras, we extend this point of view to a quantum-classical duality between trigonometric Gaudin and Calogero-Moser models, showing how all four models arise from two $S$-dual representations of the loop Yangian. Finally, we give a geometric picture of generalized Schur-Weyl duality that makes apparent how all of these models emerge naturally in four-dimensional Chern-Simons theory when constructed as a 2-functorial quantum field theory and use this to extend our results to the elliptic case. \\
 
 \section*{Acknowledgments}
 
@@ -106,7 +106,7 @@ Integrability \cite{book:arutyunov:elements} is a key phenomenon in many physica
 
 In \cite{article:gorsky:2014}, a \emph{quantum-classical} duality between the quantum twisted inhomogeneous Heisenberg $\mathfrak{gl}_\ell$-spin chain and the classical rational Ruijsenaars-Schneider model was first worked out. For our purposes, we will simply refer to this duality as \emph{the} quantum-classical duality. The first model describes a chain of $N$ atoms, labeled by inhomogeneities $y_1,...,y_N \in \C$, whose local Hilbert spaces\footnote{We use the term \emph{Hilbert space} in the loose sense of describing the state space of a quantum system, \emph{i.e.} it does not necessarily come equipped with an inner product. In accordance, we will generally not be careful about Hermiticity.} are given by the vector representation of $\mathfrak{gl}_\ell$. The Hamiltonian imposes nearest-neighbor interactions with boundary conditions that are periodic up to a twist matrix. The second model describes $N$ relativistic point particles acting on each other by mutual centrifugal forces. In this model, the conserved quantities can be neatly described via eigenvalues of a Lax matrix. \emph{Loc. cit.} then describes the quantum-classical duality in terms of a coincidence of spectra of the twist and Lax matrices on the quantum and classical side respectively. This involves the following substitutions: The inhomogeneities of the Heisenberg spin chain model become the positions of the particles in the Ruijsenaars-Schneider model and the eigenvalues of certain non-local spin chain Hamiltonians correspond to the momenta of these particles.
 
-Recently, a novel angle on this duality has appeared in \cite{book:arutyunov:betheAnsatz}, where the Lax matrix of the rational Ruijsenaars-Schneider model miraculously appears in functional relations among higher transfer matrices of the spin chain. Such hints spark the quest for a more conceptual reason behind the coincidence.
+Recently, a novel angle on this duality has appeared in \cite{book:arutyunov:betheAnsatz}, where the Lax matrix of the rational Ruijsenaars-Schneider model miraculously appears in functional relations among higher transfer matrices of the spin chain. These encode the spectrum of the inhomogeneous Heisenberg model. Such hints spark the quest for a more conceptual reason behind the coincidence.
 
 To this end, our first step will be to identify the relevant algebras at play. For the Heisenberg $\mathfrak{gl}_\ell$-spin chain, it is well known that its Hilbert space is a representation of the Yangian $Y(\mathfrak{gl}_\ell)$, which in turn contains all relevant observables. For the classical rational Ruijsenaars-Schneider model, it is at first glance more mysterious which algebra we are supposed to consider. However, working with the \emph{quantum} rational Ruijsenaars-Schneider model first, we can identify the degenerate affine Hecke algebra
 \begin{equation*}
@@ -157,7 +157,7 @@ and $\Sigma = \R^2$. (tba) The entire situation is summarized by the mock commut
 In short, the novel contributions of this thesis are the following:
 \begin{itemize}
 \item We explicitly show that the quantum trigonometric Calogero-Moser model and rational Ruijsenaars-Schneider model are realized as $S$-dual representations of the degenerate double affine Hecke algebra $\ddot H_N$ with commuting Hamiltonians living in the spherical subalgebra $S\ddot H_N$. This is largely parallel to existing literature
-\item We twist the Drinfeld functor $D_{\ell,N}: \dot H_N \mathsf{Mod} \to Y(\mathfrak{gl}_\ell) \mathsf{Mod}$ to give the \emph{preaffine Drinfeld functor} $D_{\ell,N}^g: \ddot H_N \mathsf{Mod} \to S\ddot H_N \# Y(\mathfrak{gl}_\ell) \mathsf{Mod}$ and show that it maps the Hilbert space and Hamiltonian operators of the quantum rational Ruijsenaars-Schneider model to the Hilbert space and Hamiltonian operators of the twisted inhomogeneous Heisenberg model when $\hbar \to 0$.
+\item We twist the Drinfeld functor $D_{\ell,N}: \dot H_N \mathsf{Mod} \to Y(\mathfrak{gl}_\ell) \mathsf{Mod}$ to give the \emph{preaffine Drinfeld functor} $D_{\ell,N}^g: \ddot H_N \mathsf{Mod} \to S\ddot H_N \# Y(\mathfrak{gl}_\ell) \mathsf{Mod}$ and show that it maps the Hilbert space and Hamiltonian operators of the quantum rational Ruijsenaars-Schneider model to the Hilbert space and Hamiltonian operators of the twisted inhomogeneous Heisenberg model in the limit where the Plack constant for the rational Ruijsenaars-Schneider modle $\hbar$ goes to zero.
 \item We show the same for the quantum trigonometric Calogero-Moser model, mapping to the trigonometric Gaudin model when $\hbar \to 0$.
 \item We construct a 2-functorial quantum field theory representing four-dimensional Chern-Simons theory on $C \times S^1 \times \R$ with $C$ a punctured complex curve and show how the genus zero case $C = \P^1$ yields the rational Ruijsenaars-Schneider and Heisenberg models upon compactification of $S^1$ or $\P^1$, respectively.
 \item We compute the genus one case where $C$ is an elliptic curve and connect it to the elliptic Ruijsenaars-Schneider model.
@@ -179,7 +179,7 @@ The remaining chapters of this thesis are structured as follows. Chapter \ref{ch
 
 \subsection{Liouville theorem}
 
-Physical models in classical mechanics are described by phase spaces that are $2N$-dimensional symplectic manifolds together with a choice of Hamiltonian $H$. In this setting, the definitive definition of integrability is given by \emph{Liouville integrability}, which comes from the basic idea that conserved quantities reduce the effective dimensionality of the phase space. To see this, assume that we are handed a conserved quantity $f$, in other words $\dot f = \{ H, f \} = 0$. By definition, $f$ will be constant along the Hamiltonian flow generated by the Hamiltonian vector field of $H$, say $f \equiv c \in \R$, so we may narrow our phase space to individual level sets of $f$, which generically have codimension one. Continuing this argument inductively by adding more conserved quantities while making sure that they all Poisson-commute, one will eventually arrive at a half-dimensional submanifold on which the equations of motion simplify greatly. This requires a full set of $N$ independent Poisson-commuting observables, including the Hamiltonian:
+Physical models in classical mechanics are described by phase spaces that are $2N$-dimensional symplectic manifolds together with a choice of Hamiltonian $H$. In this setting, the definitive definition of integrability is given by \emph{Liouville integrability}, which comes from the basic idea that conserved quantities reduce the effective dimensionality of the phase space. To see this, assume that we are handed a conserved quantity $f$, in other words $\dot f = \{ H, f \} = 0$. By definition, $f$ will be constant along the Hamiltonian flow generated by the Hamiltonian vector field of $H$, say $f \equiv c \in \R$, so we may narrow our phase space to individual level sets of $f$, which generically have codimension one. Continuing this argument inductively by adding more conserved quantities while making sure that they all Poisson-commute, one will eventually arrive at a half-dimensional submanifold on which the equations of motion simplify greatly. This requires a full set of $N$ independent Poisson-commuting observables, including the Hamiltonian. The precise statement is given by the Liouville theorem:
 
 \begin{theorem}[Liouville theorem \cite{book:arnold}] \index{Liouville theorem}
 Let $M$ be a $2N$-dimensional symplectic manifold and suppose there exist $N$ smooth functions $f_1,...,f_N \in C^\infty(M)$ such that all pairwise Poisson brackets vanish, \emph{i.e.} $\{ f_i,f_j \} = 0$ for all $1 \leq i,j \leq N$ and the Hamiltonian $H$ is a function of the $f_i$. Given $c = (c_1,...,c_N) \in \R^N$, consider the level set
@@ -198,7 +198,7 @@ for $\varphi_i$ the $i$th angular coordinate and $\omega_i$ a frequency dependen
 \end{theorem}
 
 \begin{proof}
-Part (i) is an application of the Frobenius theorem. To show (ii), observe that the Hamiltonian flow of the commuting conserved quantities $f_1,...,f_N$ generate a transitive action of the $N$-dimensional commutative Lie algebra $\R^N$ on $M_c$. The 1-forms $df_i$ were assumed to be linearly independent, which implies that this action is locally free and hence has discrete stabilizer, which must then be of the form $\Z^k \subseteq \R^N$. Compactness of $M_c$ implies $k=N$ and $M_c \cong \R^N / \Z^N \cong (S^1)^N$.
+Part (i) is an application of the Frobenius theorem. To show (ii), observe that the Hamiltonian flow of the commuting conserved quantities $f_1,...,f_N$ generate an action of the $N$-dimensional commutative Lie algebra $\R^N$ on $M_c$. The 1-forms $df_i$ were assumed to be linearly independent, which implies that this action is locally free and hence is transitive and has discrete stabilizer, which must then be of the form $\Z^k \subseteq \R^N$. Compactness of $M_c$ implies $k=N$ and $M_c \cong \R^N / \Z^N \cong (S^1)^N$.
 \end{proof}
 
 \begin{example}
@@ -420,7 +420,36 @@ In order to quantize the rational Ruijsenaars-Schneider and trigonometric Caloge
 
 \subsection{Weyl groups and Hecke algebras of type $A$}
 
-Let $N$ be a natural number. The Weyl group of type $A_{N-1}$ is the symmetric group $S_N$ on $N$ letters. We write cycles in standard form $(1 \ 2 \ 3)$, mapping 1 to 2, 2 to 3, and 3 to 1, and denote the simple transpositions $(i \ i+1)$ by $s_i$ for $1 \leq i < N$. Finally, we let $w := s_1 \cdots s_{N-1} = (1 \ \cdots \ N)$ denote the Coxeter element.
+\begin{definition}
+\begin{enumerate}[label=(\roman*)]
+\item The Weyl group of type $A_{N-1}$ is the symmetric group $S_N$ on $N$ letters. We write cycles in standard form $(1 \ 2 \ 3)$, mapping 1 to 2, 2 to 3, and 3 to 1, and denote the simple transpositions $(i \ i+1)$ by $s_i$ for $1 \leq i < N$. Finally, we let $w := s_1 \cdots s_{N-1} = (1 \ \cdots \ N)$ denote the Coxeter element.
+\item Define the \emph{Jucys-Murphy elements}
+\begin{equation*}
+Y_1 := 0, \quad Y_i := \sum_{k=1}^{i-1} (k \ i) \in \C[S_N].
+\end{equation*}
+They fulfill $Y_i Y_j = Y_j Y_i$ and $s_i Y_j = Y_j s_i$ for $|i-j|>1$, as well as $s_i Y_i = Y_{i+1} s_i-1$.
+\item Given a standard Young tableau $t$ of shape $\lambda$ partitioning $N$, define the \emph{Specht polynomial}
+\begin{equation*}
+f_t(y_1,...,y_N) := \prod_{i<j \text{ in column } c} (y_j-y_i).
+\end{equation*}
+\item The \emph{Specht module} $S(\lambda)$ is the $\C[S_N]$-module with basis $f_t$, where $t$ ranges over all standard Young tableaux of shape $\lambda$ and $S_N$ acts by permutation of variables.
+\end{enumerate}
+\end{definition}
+
+\begin{prop}
+\begin{enumerate}[label=(\roman*)]
+\item The Specht modules $S(\lambda)$, for $\lambda$ ranging over Young diagrams partitioning $N$, provide all finite-dimensional irreducible representations of $\C[S_N]$.
+\item The Specht module $S(\lambda)$ has a basis $\{ v_t \}$ labeled by standard Young tableaux $t$ of shape $\lambda$ such that
+\begin{equation*}
+Y_i v_t = c_i(t) v_t,
+\end{equation*}
+where $c_i(t)$ is the content of $i$ in $t$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+For (i), see (tba), for (ii), see \cite{article:murphy:1981}.
+\end{proof}
 
 \begin{definition}
 \begin{enumerate}[label=(\roman*)]
@@ -434,7 +463,10 @@ where $1 \leq i < N, 1 \leq j \leq N$ and $|i-j|>1$. It can thus be seen to be g
 s_i \mapsto s_i, \quad X_i \mapsto X_i^{-1}, \quad y_i \mapsto y_i,
 \end{equation*}
 making left modules equivalent to right modules.
-\item The $\C[\eta]$-subalgebra $\dot H_N \subset \ddot H_N$ generated only by $\C[S_N]$ and $\C[y_1,...,y_N]$ is the \emph{degenerate affine Hecke algebra (of type $A_{N-1}$)}\index{Degenerate affine Hecke algebra}. It is also generated by the $s_i$ and $y_1$.
+\item The $\C[\eta]$-subalgebra $\dot H_N \subset \ddot H_N$ generated only by $\C[S_N]$ and $\C[y_1,...,y_N]$ is the \emph{degenerate affine Hecke algebra (of type $A_{N-1}$)}\index{Degenerate affine Hecke algebra}. It is also generated by the $s_i$ and $y_1$. There is an evaluation morphism
+\begin{equation*}
+\operatorname{ev}: \dot H_N \to S_N[y], \quad s_i \mapsto s_i, y_i \mapsto y - \eta Y_i.
+\end{equation*}
 \item Let $e := \frac{1}{N!}\sum_{\sigma \in S_N} \sigma \in \ddot H_N$ be the symmetrizer. Then $S\ddot H_N := e \ddot H_N e$ is the \emph{spherical degenerate double affine Hecke algebra (of type $A_{N-1}$)}\index{Spherical degenerate double affine Hecke algebra}, or \emph{spherical subalgebra} for short.
 \end{enumerate}
 \end{definition}
@@ -454,7 +486,7 @@ The spherical degenerate double affine Hecke algebra will be of great importance
 See \cite{article:oblomkov:2003}.
 \end{proof}
 
-Much of the following is parallel to \cite{article:lamers:2022}, where the non-degenerate case is discussed. We construct a representation of $\dot H_N$ on polynomials $\C[y_1,...,y_N]$. Let us begin by considering the action where $S_N$ acts by permutation of the variables. This allows us to introduce the following operators:
+Much of the following is parallel to \cite{article:lamers:2022}, where the non-degenerate case is discussed. We construct a representation of $\dot H_N$ on polynomials $\C[y_1,...,y_N]$. This is supposed to become the wave function representation for the rational Ruijsenaars-Schneider model. Let us begin by considering the action where $S_N$ acts by permutation of the variables. This allows us to introduce the following operators:
 \begin{enumerate}[label=(\roman*)]
 \item The \emph{divided difference operators} are defined as
 \begin{equation*}
@@ -476,7 +508,7 @@ gives rise to a representation of $\dot H_N$ on $\C[y_1,...,y_N]$.
 \end{lemma}
 
 \begin{proof}
-It is clear that $T_i$ and $T_j,y_j$ commute for $|i-j|>1$. We also have
+It is clear that $T_i$ and $T_j$ as well as $T_i$ and $y_j$ commute for $|i-j|>1$. We also have
 \begin{equation*}
 T_i^2 = 1 + s_i \eta \Delta_i + \eta \Delta_i s_i = 1 + \eta \Delta_i - \eta \Delta_i = 1.
 \end{equation*}
@@ -570,8 +602,10 @@ by the previous lemma. It is clear that $x_{ij}$ acts as the identity on symmetr
 In particular, we see that only $X_N$ contributes to the coefficient in front of $e^{\I \hbar \partial_N}$, which is exactly $\prod_{N \neq j} \frac{y_N-y_j-\eta}{y_N-y_j}$. The symmetry $(j \ \cdots \ N) D_1 (N \ \cdots \ j) = D_1$ for $j < N$ shows that the coefficients in front of $e^{\I \hbar \partial_j}$ also have this form.
 \end{proof}
 
+Let us now move on to the trigonometric Calogero-Moser model:
+
 \begin{definition}
-The \emph{quantum trigonometric Calogero-Moser model} on the other hand is given by the latter polynomial representation of the degenerate double affine Hecke algebra\index{Quantum trigonometric Calogero-Moser model}, \emph{i.e.} $\C[X_1^\pm,...,X_N^\pm]$ is its Hilbert space of wave functions with position operators $X_1,...,X_N$ and momentum-like operators $y_1,...,y_N$. We again have a set of commutating Hamiltonians in the spherical degenerate double affine Hecke algebra given by
+The \emph{quantum trigonometric Calogero-Moser model} is given by the latter polynomial representation of the degenerate double affine Hecke algebra\index{Quantum trigonometric Calogero-Moser model}, \emph{i.e.} $\C[X_1^\pm,...,X_N^\pm]$ is its Hilbert space of wave functions with position operators $X_1,...,X_N$ and momentum-like operators $y_1,...,y_N$. We again have a set of commutating Hamiltonians in the spherical degenerate double affine Hecke algebra given by
 \begin{equation*}
 C_k' := \frac{1}{k} p_k(y_1,...,y_N) \in S\ddot H_N,
 \end{equation*}
@@ -638,7 +672,7 @@ U(\mathfrak{gl}_\ell) \to Y(\mathfrak{gl}_\ell), \quad e_{ij} \mapsto t_{ij}^{(1
 \end{equation*}
 \item There is a surjective homomorphism
 \begin{equation*}
-Y(\mathfrak{gl}_\ell) \to U(\mathfrak{gl}_\ell), \quad t_{ij}^{(p)} \mapsto \delta_{p1} e_{ij}
+\operatorname{ev}_0: Y(\mathfrak{gl}_\ell) \to U(\mathfrak{gl}_\ell), \quad t_{ij}^{(p)} \mapsto \delta_{p1} e_{ij}
 \end{equation*}
 called the \emph{evaluation homomorphism}. On the level of power series, it is given by
 \begin{equation*}
@@ -799,6 +833,10 @@ that specializes to a \emph{shift automorphism} of the Yangian for fixed values 
 \begin{equation*}
 (z-y)^{-r} = \sum_{s=r}^\infty {s-1 \choose r-1} y^{s-r} z^{-s}.
 \end{equation*}
+This also yields a general evaluation homomorphism
+\begin{equation*}
+\operatorname{ev}: Y(\mathfrak{gl}_\ell) \to U(\mathfrak{gl}_\ell)[y], \quad t_{ij}(z) \mapsto \delta_{ij} + \frac{\eta e_{ij}}{z-y}.
+\end{equation*}
 \item There is the \emph{transposition automorphism} $T(z) \mapsto T^t(-z)$, or $t_{ij}(z) \mapsto t_{ji}(-z)$.
 %\item Given any $f(z) \in \C\llbracket \eta,z^{-1} \rrbracket$ with leading term one, there is an automorphism $T(z) \mapsto f(z) T(z)$.
 %\item Given any $g \in \operatorname{GL}_\ell$, there is an automorphism $T(z) \mapsto g T(z) g^{-1}$.
@@ -839,13 +877,9 @@ This appears in \cite{article:nazarov:2019}.
 \begin{prop}
 There is a canonical non-degenerate pairing
 \begin{equation*}
-\langle \cdot,\cdot \rangle: Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to \C[\eta], \quad t_{ij}^{(r)} \otimes t_{kl}^{(-s)} \mapsto -\delta_{rs} \delta_{il} \delta_{jk}
+\langle \cdot,\cdot \rangle: Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to \C[\eta],
 \end{equation*}
-such that multiplications and comultiplications become dual to each other in the sense that
-\begin{equation*}
-\langle a,bc \rangle = \langle \Delta(a),b \otimes c \rangle \quad \text{and} \quad \langle ab,c \rangle = \langle a \otimes b,\Delta(c) \rangle,
-\end{equation*}
-understanding that $\langle a \otimes b, c \otimes d \rangle := \langle a,c \rangle \langle b,d \rangle$.
+that sends $t_{ij}^{(r)} \otimes t_{kl}^{(-s)}$ to $-\delta_{rs} \delta_{il} \delta_{jk}$ and such that multiplications and comultiplications become dual to each other in the sense that $\langle a,bc \rangle = \langle \Delta(a),b \otimes c \rangle$ and $\langle ab,c \rangle = \langle a \otimes b,\Delta(c) \rangle$, understanding that $\langle a \otimes b, c \otimes d \rangle := \langle a,c \rangle \langle b,d \rangle$.
 \end{prop}
 
 \begin{proof}
@@ -1566,22 +1600,23 @@ By the previous proposition, we have a linear map of short exact sequences: \\
 \begin{tikzcd}[column sep=0.3cm]
 \\
 0 \arrow{r}
-& L([2,1^{k-1}])_0 \otimes Y(\mathfrak{gl}_\ell)[[z^{-1}]] \arrow{r} \arrow{d}{g_{[2,1^{k-1}]} T_{[2,1^{k-1}]}(z)}
-& L([1^k])_0 \otimes L(\ydiagram{1})_\eta \otimes Y(\mathfrak{gl}_\ell)[[z^{-1}]] \arrow{r} \arrow{d}{g_{[1^k]} T_{[1^k]}(z) g_{\ydiagram{1}} T_{\ydiagram{1}}(z+\eta)}
-& L([1^{k+1}])_\eta \otimes Y(\mathfrak{gl}_\ell)[[z^{-1}]] \arrow{r} \arrow{d}{g_{[1^{k+1}]} T_{[1^{k+1}]}(z+\eta)}
+& L([2,1^{k-1}])_0 \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r} \arrow{d}{g_{[2,1^{k-1}]} T_{[2,1^{k-1}]}(z)}
+& L([1^k])_0 \otimes L(\ydiagram{1})_\eta \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r} \arrow{d}{g_{[1^k]} T_{[1^k]}(z) g_{\ydiagram{1}} T_{\ydiagram{1}}(z+\eta)}
+& L([1^{k+1}])_\eta \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r} \arrow{d}{g_{[1^{k+1}]} T_{[1^{k+1}]}(z+\eta)}
 & 0 \\
 0 \arrow{r}
-& L([2,1^{k-1}])_0 \otimes Y(\mathfrak{gl}_\ell)[[z^{-1}]] \arrow{r}
-& L([1^k])_0 \otimes L(\ydiagram{1})_\eta \otimes Y(\mathfrak{gl}_\ell)[[z^{-1}]] \arrow{r}
-& L([1^{k+1}])_\eta \otimes Y(\mathfrak{gl}_\ell)[[z^{-1}]] \arrow{r}
+& L([2,1^{k-1}])_0 \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r}
+& L([1^k])_0 \otimes L(\ydiagram{1})_\eta \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r}
+& L([1^{k+1}])_\eta \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r}
 & 0 \\
 \end{tikzcd}
 }
-Taking the trace over everything except $Y(\mathfrak{gl}_\ell)[[z^{-1}]]$ yields
+
+Taking the trace over everything except $Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$ yields
 \begin{equation*}
 0 = \tau_{[2,1^{k-1}]}^g(z) - \tau_{[1^k]}^g(z) \tau_{\ydiagram{1}}^g(z+\eta) + \tau_{[1^{k+1}]}^g(z+\eta)
 \end{equation*}
-as elements of $Y(\mathfrak{gl}_\ell)[[z^{-1}]]$.
+as elements of $Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$.
 \end{proof}
 
 \subsection{Spectral equation}
@@ -1672,7 +1707,7 @@ with
 \begin{equation*}
 L_{ij} := \frac{\eta H_j}{y_i-y_j+\eta} = \frac{\eta}{y_i-y_j+\eta} \bigg( \prod_{j \neq k} \frac{y_j-y_k-\eta}{y_j-y_k} \bigg) \check H_j.
 \end{equation*}
-This looks awfully close to the Lax matrix (\ref{equation:RSLaxMatrix}) of the rational Ruijsenaars-Schneider model when we substitute $e^{-p_j}$ for $\check H_j$! Remember that $X_j$ is the operator that under quantization correponds to $e^{-p_j}$, so we would hypothesize that $X_j$ and $\check H_j$ will in some sense turn out to be one and the same operator.
+This looks awfully close to the Lax matrix (\ref{equation:RSLaxMatrix}) of the rational Ruijsenaars-Schneider model when we substitute $e^{-p_j}$ for $\check H_j$! Remember that $X_j$ is the operator that under quantization correponds to $e^{-p_j}$, so we would hypothesize that $X_j$ and $\check H_j$ will in some sense turn out to be one and the same operator. This will turn out to be true in the next section.
 
 Iterating the matrix equation and combining with the formula for the quantum determinant from corollary \ref{corollary:quantumDet} finally gives the spectral equation, resembling a Cayley-Hamilton-type identity:
 
@@ -1708,19 +1743,18 @@ Why should the Lax matrix of the rational Ruijsenaars-Schneider model appear in 
 
 \subsection{Classical Schur-Weyl duality}
 
-Classical Schur-Weyl duality establishes a link between the representation theory of the symmetric group $S_N$ and the representation theory of the Lie algebra $\mathfrak{gl}_\ell$. Let $\C^\ell$ be the fundamental representation of $\mathfrak{gl}_\ell$ and consider the $N$-fold tensor product representation $(\C^\ell)^{\otimes N}$. Clearly, $\mathfrak{gl}_\ell$ acts from the left via the coproduct of $U(\mathfrak{gl}_\ell)$. However, there is also a right action of $S_N$ by permuting tensorands. Schur-Weyl duality now states the following:
+Classical Schur-Weyl duality establishes a link between the representation theory of the symmetric group $S_N$ and the representation theory of the Lie algebra $\mathfrak{gl}_\ell$. Let $\C^\ell$ be the vector representation of $\mathfrak{gl}_\ell$ and consider the $N$-fold tensor product representation $(\C^\ell)^{\otimes N}$. Clearly, $\mathfrak{gl}_\ell$ acts from the left via the coproduct of $U(\mathfrak{gl}_\ell)$. However, there is also a right action of $S_N$ by permuting tensorands. Schur-Weyl duality now states the following:
 
 \begin{theorem}
-The actions of $U(\mathfrak{gl}_\ell)$ and $\C[S_N]$ on $(\C^\ell)^{\otimes N}$ are each others centralizer.\index{Schur-Weyl duality}
-\end{theorem}
-
-\begin{corollary}
-We have the decomposition
+\begin{enumerate}[label=(\roman*)]
+\item The actions of $U(\mathfrak{gl}_\ell)$ and $\C[S_N]$ on $(\C^\ell)^{\otimes N}$ are each others centralizer.\index{Schur-Weyl duality}
+\item We have the decomposition
 \begin{equation*}
 (\C^\ell)^{\otimes N} = \bigoplus_{\lambda} L(\lambda) \otimes S(\lambda),
 \end{equation*}
 where $\lambda$ ranges over all Young diagrams with $N$ boxes and at most $\ell$ rows, $L(\lambda)$ is the corresponding irreducible highest weight representation of $\mathfrak{gl}_\ell$ and $S(\lambda)$ is the corresponding Specht module of $S_N$, compare proposition \ref{prop:fusionDecomposition}.
-\end{corollary}
+\end{enumerate}
+\end{theorem}
 
 \begin{corollary}
 We have $L(\lambda) = (\C^\ell)^{\otimes N} \otimes_{S_N} S(\lambda)$.
@@ -1823,6 +1857,20 @@ D_{\ell,N+M}(V \otimes_{\dot H_*} W) \cong D_{\ell,N}(V) \otimes D_{\ell,M}(W).
 This already appears in \cite{article:drinfeld:1986}.
 \end{proof}
 
+\begin{prop}
+The following diagram commutes up to natural isomorphism:
+\begin{center}
+\begin{tikzcd}
+{\C[S_N]\mathsf{Mod}} \arrow{d}{\operatorname{ev}} \arrow{r}{SW_{\ell,N}} & U(\mathfrak{gl}_\ell) \arrow{d}{\operatorname{ev}} \\
+\dot H_N\mathsf{Mod} \arrow{r}{D_{\ell,N}} & Y(\mathfrak{gl}_\ell)
+\end{tikzcd}
+\end{center}
+\end{prop}
+
+\begin{proof}
+tba
+\end{proof}
+
 We can already see how this is beginning to resemble the structure we are looking for: The Drinfeld functor takes representations of the degenerate affine Hecke algebra $\dot H_N$, such as the wave function representation of the quantum rational Ruijsenaars-Schneider model, and produces a representation of the Yangian clearly resembling fundamental monodromy representations with inhomogeneities given by the polynomial generators $y_i$ of the degenerate affine Hecke algebra. More precisely, when $\mathfrak{m} = (y_1-\bar y_1,...,y_N-\bar y_N)$ for complex numbers $\bar y_i$, we have an isomorphism
 \begin{equation*}
 D_{\ell,N}(\C[y_1,...,y_N]) \otimes_{\C[y_1,...,y_N]} \C[y_1,...,y_N]/\mathfrak{m} \cong L(\ydiagram{1})_{\bar y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{\bar y_N}^t
@@ -1913,15 +1961,7 @@ acts on $D_{\ell,N}^g(\C[y_1,...,y_N])$ as the transfer matrix $\tau^g(z)$ when 
 tba
 \end{proof}
 
-\begin{corollary}
-The operators $\check H_j$ and $X_j$ act in the same way on $D_{\ell,N}^g(\C[y_1,...,y_N])$ in the classical limit when $\hbar = 0$. 
-\end{corollary}
-
-\begin{proof}
-tba
-\end{proof}
-
-Let us finish by giving a Rosetta stone for quantum-classical duality:
+Let us finish off this section by giving a Rosetta stone for quantum-classical duality:
 \begin{center}
 \begin{tabular}{|r||l|}
 \hline
@@ -1932,8 +1972,6 @@ fundamental monodromy representation & wave function representation \\
 $i$th atom & $i$th particle \\
 inhomogeneities $y_i$ & positions $y_i$ \\
 non-local Hamiltonians $\check H_i$ & Macdonald operators $X_i$ \\
-twist parameters $\gamma_i$ & eigenvalues of the Lax matrix $L^\textnormal{RS}$ \\
-residue at $\infty$ of transfer matrix $\tau^g(z)$ & Hamiltonian $\operatorname{tr} L^\textnormal{RS}$ \\
 Planck constant $\eta$ & coupling constant $\eta$ \\
 \hline
 \end{tabular}
@@ -1941,21 +1979,26 @@ Planck constant $\eta$ & coupling constant $\eta$ \\
 
 \subsection{Higher spin chain}
 
-The way we have introduced the duality between the Heisenberg and Ruijsenaars-Schneider models easily lends itself to a generalization to spins in non-fundamental representations. Consider a Young diagram $\lambda$. We know that we can obtain the evaluation module $L(\lambda)_y^t$ as a submodule of the fundamental monodromy representation
-\begin{equation*}
-L(\ydiagram{1})_{y+\eta c_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y+\eta c_N}^t
-\end{equation*}
-by the fusion procedure with corresponding projector $\Pi_{t_\lambda}$, up to a choice of tableau $t_\lambda$ with content vector $(c_1,...,c_N)$. The projector is obtained as a limit of
-\begin{equation*}
-R(y_1,...,y_k) = \overset{\longrightarrow}\prod_{i<j} R_{ij}(y_i-y_j),
-\end{equation*}
-which comes from the operator
-\begin{equation*}
-x = \overset{\longrightarrow}\prod_{i<j} x_{ij},
-\end{equation*}
-on the wave function module $\C[y_1,...,y_N]$. This imposes generalized Pauli exclusion principles on the particles, which are already satisfied when we require the particles to be bosons.
+The way we have introduced the duality between the Heisenberg and Ruijsenaars-Schneider models easily lends itself to a generalization to spins in non-fundamental representations: Consider a Young diagram $\lambda$ of $N$ boxes with Specht module $S(\lambda)$ and pull back along the evaluation morphism. This yields the $\dot H_N$-module $S(\lambda)[y]$ with $y_i$ acting as $y + \eta c_i$ on the basis vector $v_{t_\lambda}$ labeled by a standard Young tableau $t_\lambda$ of shape $\lambda$ with content vector $(c_1,...,c_N)$. We conclude that $S(\lambda)[y]$ maps to $L(\lambda)[y]$ under the Drinfeld functor.
 
-Additionally, the positions of particles get restricted to $y_i = y + \eta c_i$, which means that spins in higher representations labeled by $\lambda$ do not correspond to single particles, but to a bound state of $N$ particles, where $N$ is the number of boxes of the Young diagram $\lambda$.
+On the other hand, we may equivalently try to apply the fusion procedure, taking the limit $y_i \to y + \eta c_i$ and projecting onto the subspace $L_{t_\lambda} \subset L(\ydiagram{1})_{y+\eta c_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y+\eta c_N}^t$ isomorphic to $L(\lambda)_y^t$.
+
+We conclude that a single atom with spin representation labeled by $\lambda$ is equivalently a \emph{stack of $N$ particles} at relative positions determined by the content vectors, whose quantum state transforms in the representation given by the Specht module $S(\lambda)$.
+
+\begin{center}
+\begin{tabular}{|r||l|}
+\hline
+twisted inhomogeneous Heisenberg model & rational Ruijsenaars-Schneider model \\
+\hline
+$i$th atom & $i$th stack of particles \\
+spin in representation $\lambda$ & stack satisfying $\lambda$-exchange statistics \\
+inhomogeneities $y_i$ of spins & positions $y_i$ of stacks \\
+Planck constant $\eta$ & coupling constant $\eta$ \\
+\hline
+\end{tabular}
+\end{center}
+
+What is the correspondence for Hamiltonians?
 
 \begin{example}
 Let us look at the two site spin chain
@@ -1972,17 +2015,6 @@ Solving this with the spectral equation derived earlier proves difficult, since 
 \end{equation*}
 for the $\ydiagram{4}$-multiplet, which is exactly correct up to the factor $(z-\eta)^2$, which results from using the polynomial convention.
 \end{example}
-
-\begin{center}
-\begin{tabular}{|r||l|}
-\hline
-twisted inhomogeneous Heisenberg model & rational Ruijsenaars-Schneider model \\
-\hline
-$i$th atom with spin in representation $\lambda^{(i)}$ & $i$th bound state of particles \\
-\vdots & \vdots \\
-\hline
-\end{tabular}
-\end{center}
 
 \section{$S$-duality}
 
@@ -2094,6 +2126,27 @@ When $\hbar = 0$, this becomes the Gaudin Hamiltonian $G_i$. tba
 
 The aim of this section is to reformulate Schur-Weyl duality for the Yangian in terms of a 2-functorial quantum field theory that will later turn out to represent four-dimensional Chern-Simons theory. The mathematical structures used so far have been heavily representation theoretical. Nonetheless, we have seen some hints that there is an underlying geometry at play: We have made use of braids on cylinders as well as complex coordinates that may be reinterpreted as $(1+N)$-pointed Riemann spheres. 
 
+\begin{definition}
+\item A \emph{$(1+N)$-pointed curve $C$} is a smooth complex projective curve together with $1+N$ distinct points $y_\infty,y_1,...,y_N \in C$ and non-zero tangent vectors $v_\infty,v_1,...,v_N \in T_{y_i} C$. We write these data as $(C;y_\infty,y_1,...,y_N;v_\infty,v_1,...,v_N)$.
+\item A \emph{morphism of $(1+N)$-pointed curves}
+\begin{equation*}
+f: (C;y_\infty,y_1,...,y_N;v_\infty,v_1,...,v_N) \to (C';y_\infty',y_1',...,y_N';v_\infty',v_1',...,v_N')
+\end{equation*}
+is a bijection $\sigma: \{ \infty,1,...,N \} \to \{ \infty,1,...,N \}$ fixing $\infty$ and a morphism $f: C \to C'$ of complex projective curves, such that $f(y_i) = y_{\sigma(i)}'$ and $df_{y_i}(v_i) = v_{\sigma(i)}'$. 
+\end{definition}
+
+\begin{remark}
+We can consider the moduli stack $\mathcal{M}_{0,1+N}$ of $(1+N)$-pointed curves of genus zero: Any such curve will be isomorphic to a curve of the form
+\begin{equation*}
+(\P^1;\infty,y_1,...,y_N;-\partial_{z^{-1}};v_1,...,v_N),
+\end{equation*}
+where we have one residual symmetry by simultaneous translation $y_i \to y_i + y$ for some $y \in \C$. We further have to mod out by the action of the symmetric group $S_N$ permuting the points.
+\end{remark}
+
+\begin{definition}
+A \emph{quasi-coherent sheaf on $\mathcal{M}_{0,1+N}$} is a $\C[y_1,...,y_N]_{\delta(y)}$-module $M$ equipped with shift automorphisms $\exp(y\partial): M \to M$ and permutation automorphisms $\sigma: M \to M$ that are equivariant.
+\end{definition}
+
 These data are combined in the complex Teichmüller tower, whose genus zero part is given by $(1+N)$-pointed Riemann spheres $(\P^1;\infty,y_1,...,y_N;-\partial_{z^{-1}},v_1,...,v_N)$, where $y_1,...,y_N$ are distinct complex numbers and $v_1,...,v_N$ are non-zero tangent vectors at $y_1,...,y_N$, respectively. The morphisms in genus zero are generated by braidings and twists, visualized in figure \ref{figure:braidTwist}. In \cite{book:bakalov}, it is proved that the complex Teichmüller groupoid is equivalent to the topological Teichmüller groupoid, coming from the following construction:
 
 \begin{definition}
@@ -2159,30 +2212,40 @@ $\quad \quad$
 \end{center}
 \end{figure}
 
-We will use this in conjunction with the results of \cite{article:benzvi:2018} to construct a 2-functorial field theory on $\mathcal{ES}$ via factorization homology. To accomplish this, we need a balanced braided abelian tensor category as the $E_2$-algebra of coefficients. Such a category is readily provided by locally finite-dimensional $Y(\mathfrak{gl}_\ell)$-modules:
+We will use this in conjunction with the results of \cite{article:benzvi:2018} to construct a 2-functorial field theory on $\mathcal{ES}$ via factorization homology. To accomplish this, we need a balanced braided abelian tensor category as the $E_2$-algebra of coefficients. Such a category is readily provided by a certain category of $Y(\mathfrak{gl}_\ell)$-modules:
 
 \begin{definition}
-Consider $\eta$ as a non-zero complex number and let $\Omega \subseteq \C$ be a subset that fulfills $y_1-y_2 \neq \pm\eta$ for any $y_1,y_2 \in \Omega$. Let $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\Omega$ be the subcategory generated by $L(\ydiagram{1})_y^t$ for $y \in \Omega$ under the rigid monoidal structure and finite (co)limits.
+Consider $\eta$ as a non-zero purely imaginary number. Let $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$ be the subcategory of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ generated by generator modules of the form
+\begin{equation*}
+L(\ydiagram{1})_{y_1}^{(t)} \otimes \cdots \otimes L(\ydiagram{1})_{y_N}^{(t)},
+\end{equation*}
+under finite (co)limits. Here,  the superscript $(-)^{(t)}$ indicates a possible $(-)^t$, in which case $y_i \in \R \times 2\ell\eta\Z$, otherwise $y_i \in \R \times (\ell\eta + 2\ell\eta\Z)$.
 \end{definition}
 
-\begin{example}
-Let $\Omega = \{ z \in \C \mid |\Im z|<|\eta| \}$ and $\eta$ be purely imaginary.
-\end{example}
-
 \begin{prop}
-$Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\Omega$ is a symmetric rigid monoidal abelian category.
+$Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$ is a symmetric rigid monoidal abelian category.
 \end{prop}
 
 \begin{proof}
-$Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\Omega$ is rigid monoidal abelian by construction. Further recall that we have a braiding
+\begin{enumerate}
+\item Abelian: The category is preabelian by closedness under finite (co)limits and preadditivity. Normality of mono- and epimorphisms is inherited from $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$.
+\item Duals for generators: Note that the right dual of any generator module is again a generator module. It is obtained by reversing the order of the tensor product, flipping the superscripts, and shifting the subscripts by $\ell \eta$. The same holds for left duals, except we shift by $-\ell\eta$. Double right dualization induces a shift by $2\ell\eta$, which is an equivalence. In particular, right dualization is exact on generator modules, so we can extend right dualization to all of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
+\item Symmetric braiding for generators: First note that
 \begin{equation*}
 \check R(y_1-y_2): L(\ydiagram{1})_{y_1}^t \otimes L(\ydiagram{1})_{y_2}^t \to L(\ydiagram{1})_{y_2}^t \otimes L(\ydiagram{1})_{y_1}^t
 \end{equation*}
-that fulfills the symmetry condition by unitarity. It is well defined and invertible due to $y_1-y_2 \neq \pm \eta$. We can equip the rest of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\Omega$ with a braided rigid monoidal structure by taking finite (co)limits, since tensoring with $L(\ydiagram{1})_y^t$ is exact.
+gives a braiding on generator modules of the form $L(\ydiagram{1})_y^t$ due to the Yang-Baxter equation. Moreover, it is symmetric due to unitarity. We remark that $\check R(y_1-y_2)$ is invertible for all admissible $y_1$ and $y_2$, since $y_1-y_2 \neq \pm \eta$ by construction. By dualization, we also obtain maps
+\begin{equation*}
+L(\ydiagram{1})_{y_2-\ell\eta} \otimes L(\ydiagram{1})_{y_1}^t \to L(\ydiagram{1})_{y_1}^t \otimes L(\ydiagram{1})_{y_2+\ell\eta},
+\end{equation*}
+which become braidings when composed with the isomorphism induced by $\exp(2\ell\eta \partial)$-equivariance. These simple braids generate braidings for all generator modules.
+\item Everything in sight commutes with finite (co)limits, so we may extend to all of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
+\end{enumerate}
+If we introduce shift equivariance, preadditivity will be destroyed, but the essential features should survive.
 \end{proof}
 
 \begin{prop}
-The completed dual Yangian $\hat Y^\vee(\mathfrak{gl}_\ell)$ is the coend $\int^X X \otimes X^\vee$, where $X$ ranges over $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\Omega$.
+The completed dual Yangian $\hat Y^\vee(\mathfrak{gl}_\ell)$ is the coend $\int^X X \otimes X^\vee$, where $X$ ranges over $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
 \end{prop}
 
 \begin{proof}
