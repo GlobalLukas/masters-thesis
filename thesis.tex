@@ -1041,13 +1041,13 @@ Representations of the form
 \begin{equation*}
 L(\lambda^{(1)})_{y_1}^t \otimes \cdots \otimes L(\lambda^{(N)})_{y_N}^t,
 \end{equation*}
-as above are called \emph{monodromy representations}\index{Monodromy representation} with \emph{inhomogeneities} $y_1,...,y_N$. %The highest weight vector $\omega$ is called the \emph{pseudovacuum}. 
+as above are called \emph{monodromy representations}\index{Monodromy representation} with \emph{inhomogeneities} $y_1,...,y_N$. The highest weight vector $\omega$ is called the \emph{pseudovacuum}.
 \end{definition}
 
-We now take a closer look at how transfer matrices act on monodromy representations. Our starting observation is the following:
+We now take a closer look at how transfer matrices act on monodromy representations. Let us introduce the notation $V_y^- := L(\ydiagram{1})_y$ for the vector representation, and $V_y^+ := L([1^{\ell-1}])_y \cong L(\ydiagram{1})_y^t$ for the covector representation. Our starting observation is the following:
 
 \begin{lemma}
-The generator matrix $T(z)$ acts on the evaluation module $L(\ydiagram{1})_y^t$ corresponding to the fundamental $\mathfrak{gl}_\ell$-representation $\C^\ell$ via the $R$-matrix:
+The generator matrix $T(z)$ acts on $V_y^+$ via the $R$-matrix:
 \begin{equation*}
 R(z-y) = 1 - \frac{\eta P}{z-y}.
 \end{equation*}
@@ -1103,64 +1103,9 @@ where the subscript again denotes which spaces the $R$-matrix acts on. Diagramma
 which is the third Reidemeister move.
 \end{remark}
 
-\begin{prop}
-The standard dot product on $\C^\ell$ gives a $Y(\mathfrak{gl}_\ell)$-linear map
+Having $V_y^+$ under our belt, let us look at monodromy representations of the type
 \begin{equation*}
-L(\ydiagram{1})_y^t \otimes L(\ydiagram{1})_{y+\ell \eta} \to \C[\eta], \quad e_p \otimes e_q \mapsto \delta_{pq}.
-\end{equation*}
-\end{prop}
-
-\begin{proof}
-The Yangian generator $t_{ij}(z)$ acts on $L(\ydiagram{1})_{y_1}^t \otimes L(\ydiagram{1})_{y_2}$ in the following way:
-\begin{align*}
-&\sum_k \left( \delta_{ik}-\frac{\eta e_{ki}}{z-y_1} \right) e_p \otimes \left( \delta_{kj}+\frac{\eta e_{kj}}{z-y_2} \right) e_q \\
-&= \sum_k \delta_{ik} e_p \otimes \delta_{kj} e_q + \frac{\eta}{z-y_2} \sum_k \delta_{ik} e_p \otimes e_{kj} e_q \\
-& \quad \quad - \frac{\eta}{z-y_1} \sum_k e_{ki} e_p \otimes \delta_{kj} e_q
-- \frac{\eta^2}{(z-y_1)(z-y_2)} \sum_k e_{ki} e_p \otimes e_{kj} e_q \\
-&= \delta_{ij} e_p \otimes e_q
-+ \frac{\eta}{z-y_2} \delta_{jq} e_p \otimes e_i
-- \frac{\eta}{z-y_1} \delta_{ip} e_j \otimes e_q
-- \frac{\eta^2}{(z-y_1)(z-y_2)} \delta_{ip} \delta_{jq} \sum_k e_k \otimes e_k
-\end{align*}
-which the standard scalar product maps to
-\begin{equation*}
-\delta_{ij} \delta_{pq} \left( 1
-+ \frac{\eta}{z-y_2}
-- \frac{\eta}{z-y_1}
-- \frac{\eta^2 \ell}{(z-y_1)(z-y_2)} \right).
-\end{equation*}
-This reduces to $\delta_{ij} \delta_{pq}$ when $y_1 = y_2-\ell \eta$.
-\end{proof}
-
-\begin{prop}
-The standard basis of $\C^\ell$ gives a $Y(\mathfrak{gl}_\ell)$-linear map
-\begin{equation*}
-\C[\eta] \to L(\ydiagram{1})_{y+\ell \eta} \otimes L(\ydiagram{1})_y^t, \quad 1 \mapsto \sum_p e_p \otimes e_p.
-\end{equation*}
-\end{prop}
-
-\begin{proof}
-The Yangian generator $t_{ij}(z)$ acts in the following way:
-\begin{align*}
-&\sum_p \sum_k \left( \delta_{ik}+\frac{\eta e_{ik}}{z-y_1} \right) e_p \otimes \left( \delta_{kj}-\frac{\eta e_{jk}}{z-y_2} \right) e_p \\
-&= \sum_p \sum_k \delta_{ik} e_p \otimes \delta_{kj} e_p - \frac{\eta}{z-y_2} \sum_p \sum_k \delta_{ik} e_p \otimes e_{jk} e_p \\
-& \quad \quad + \frac{\eta}{z-y_1} \sum_p \sum_k e_{ik} e_p \otimes \delta_{kj} e_p
-- \frac{\eta^2}{(z-y_1)(z-y_2)} \sum_p \sum_k e_{ik} e_p \otimes e_{jk} e_p \\
-&= \delta_{ij} \sum_p e_p \otimes e_p
-- \frac{\eta}{z-y_2} \sum_p \delta_{ip} e_p\otimes e_j
-+ \frac{\eta}{z-y_1} \sum_p \delta_{jp} e_i \otimes e_p
-- \frac{\eta^2 \ell}{(z-y_1)(z-y_2)} e_i \otimes e_j \\
-&= \delta_{ij} \sum_p e_p \otimes e_p
-+ \left(- \frac{\eta}{z-y_2}
-+ \frac{\eta}{z-y_1}
-- \frac{\eta^2 \ell}{(z-y_1)(z-y_2)} \right) e_i \otimes e_j
-\end{align*}
-The second term becomes zero when $y_1 = y_2 + \ell \eta$.
-\end{proof}
-
-Having $L(\ydiagram{1})_y^t$ under our belt, let us look at monodromy representations of the type
-\begin{equation*}
-L(\ydiagram{1})_{y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_N}^t,
+V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+,
 \end{equation*}
 which we call \emph{fundamental}.
 
@@ -1193,6 +1138,63 @@ where $0$ is the auxiliary space index and $1,...,N$ are quantum space indices. 
 
 \begin{proof}
 This follows from the previous lemma and the formula for the coproduct (\ref{equation:coproduct}), except the order is reversed since we used the transposition automorphism.
+\end{proof}
+
+We remark that $L(\ydiagram{1})$ and $L([1^{\ell-1}])$ are dual as $U(\mathfrak{gl}_\ell)$-modules, as they are both given by $\C^\ell$ with the standard and negative transposed action, respectively. This duality extends to the Yangian up to a shift of the spectral parameter:
+
+\begin{prop}
+The standard dot product on $\C^\ell$ gives a $Y(\mathfrak{gl}_\ell)$-linear map
+\begin{equation*}
+V_y^+ \otimes V_{y+\ell \eta}^- \to \C[\eta], \quad e_p \otimes e_q \mapsto \delta_{pq}.
+\end{equation*}
+\end{prop}
+
+\begin{proof}
+The Yangian generator $t_{ij}(z)$ acts on $V_{y_1}^+ \otimes V_{y_2}^-$ in the following way:
+\begin{align*}
+&\sum_k \left( \delta_{ik}-\frac{\eta e_{ki}}{z-y_1} \right) e_p \otimes \left( \delta_{kj}+\frac{\eta e_{kj}}{z-y_2} \right) e_q \\
+&= \sum_k \delta_{ik} e_p \otimes \delta_{kj} e_q + \frac{\eta}{z-y_2} \sum_k \delta_{ik} e_p \otimes e_{kj} e_q \\
+& \quad \quad - \frac{\eta}{z-y_1} \sum_k e_{ki} e_p \otimes \delta_{kj} e_q
+- \frac{\eta^2}{(z-y_1)(z-y_2)} \sum_k e_{ki} e_p \otimes e_{kj} e_q \\
+&= \delta_{ij} e_p \otimes e_q
++ \frac{\eta}{z-y_2} \delta_{jq} e_p \otimes e_i
+- \frac{\eta}{z-y_1} \delta_{ip} e_j \otimes e_q
+- \frac{\eta^2}{(z-y_1)(z-y_2)} \delta_{ip} \delta_{jq} \sum_k e_k \otimes e_k
+\end{align*}
+which the standard scalar product maps to
+\begin{equation*}
+\delta_{ij} \delta_{pq} \left( 1
++ \frac{\eta}{z-y_2}
+- \frac{\eta}{z-y_1}
+- \frac{\eta^2 \ell}{(z-y_1)(z-y_2)} \right).
+\end{equation*}
+This reduces to $\delta_{ij} \delta_{pq}$ when $y_1 = y_2-\ell \eta$.
+\end{proof}
+
+\begin{prop}
+The standard basis of $\C^\ell$ gives a $Y(\mathfrak{gl}_\ell)$-linear map
+\begin{equation*}
+\C[\eta] \to V_{y+\ell \eta}^- \otimes V_y^+, \quad 1 \mapsto \sum_p e_p \otimes e_p.
+\end{equation*}
+\end{prop}
+
+\begin{proof}
+The Yangian generator $t_{ij}(z)$ acts in the following way:
+\begin{align*}
+&\sum_p \sum_k \left( \delta_{ik}+\frac{\eta e_{ik}}{z-y_1} \right) e_p \otimes \left( \delta_{kj}-\frac{\eta e_{jk}}{z-y_2} \right) e_p \\
+&= \sum_p \sum_k \delta_{ik} e_p \otimes \delta_{kj} e_p - \frac{\eta}{z-y_2} \sum_p \sum_k \delta_{ik} e_p \otimes e_{jk} e_p \\
+& \quad \quad + \frac{\eta}{z-y_1} \sum_p \sum_k e_{ik} e_p \otimes \delta_{kj} e_p
+- \frac{\eta^2}{(z-y_1)(z-y_2)} \sum_p \sum_k e_{ik} e_p \otimes e_{jk} e_p \\
+&= \delta_{ij} \sum_p e_p \otimes e_p
+- \frac{\eta}{z-y_2} \sum_p \delta_{ip} e_p\otimes e_j
++ \frac{\eta}{z-y_1} \sum_p \delta_{jp} e_i \otimes e_p
+- \frac{\eta^2 \ell}{(z-y_1)(z-y_2)} e_i \otimes e_j \\
+&= \delta_{ij} \sum_p e_p \otimes e_p
++ \left(- \frac{\eta}{z-y_2}
++ \frac{\eta}{z-y_1}
+- \frac{\eta^2 \ell}{(z-y_1)(z-y_2)} \right) e_i \otimes e_j
+\end{align*}
+The second term becomes zero when $y_1 = y_2 + \ell \eta$.
 \end{proof}
 
 \subsection{The Heisenberg model}
@@ -1400,10 +1402,10 @@ with $L_{t_\lambda} \cong L(\lambda)$ as $\mathfrak{gl}_\ell$-modules.
 See \cite{article:molev:2008} or section 6.4 in \cite{book:molev}.
 \end{proof}
 
-\begin{prop}
-Let $t_\lambda$ be a standard Young tableau of shape $\lambda$ with content vector $(c_1,...,c_k)$ and consider $(\C^\ell)^{\otimes k}$ as the monodromy representation
+\begin{prop}\label{prop:fusionReps}
+Let $t_\lambda$ be a standard Young tableau of shape $\lambda$ with content vector $(c_1,...,c_k)$ and consider $(\C^\ell)^{\otimes k}$ under the $Y(\mathfrak{gl}_\ell)$-action of the monodromy representation
 \begin{equation*}
-L(\ydiagram{1})_{\eta c_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{\eta c_k}^t.
+V_{\eta c_1}^+ \otimes \cdots \otimes V_{\eta c_k}^+.
 \end{equation*}
 Then $L_{t_\lambda}$ is a $Y(\mathfrak{gl}_\ell)$-submodule isomorphic to $L(\lambda)_0^t$.
 \end{prop}
@@ -1412,7 +1414,7 @@ Then $L_{t_\lambda}$ is a $Y(\mathfrak{gl}_\ell)$-submodule isomorphic to $L(\la
 This is proposition 6.5.1 in \cite{book:molev}.
 \end{proof}
 
-This procedure makes it possible to reduce calculations in higher representations to tensor products of the fundamental representation. It is called the \emph{fusion procedure}. In particular, we can express higher transfer matrices in a very concrete way using $(\C^\ell)^{\otimes k}$ as the auxiliary space. To see this, define
+This procedure makes it possible to reduce calculations in higher representations to tensor products of the vector representation. It is called the \emph{fusion procedure}. In particular, we can express higher transfer matrices in a very concrete way using $(\C^\ell)^{\otimes k}$ as the auxiliary space. To see this, define
 \begin{equation*}
 T_{t_\lambda}(z) := T_k(z+\eta c_k) \cdots T_1(z+\eta c_1), \quad g_{t_\lambda} := g_k \cdots g_1.
 \end{equation*}
@@ -1570,9 +1572,9 @@ There is an exact sequence
 \begin{proof}
 Consider the fundamental monodromy representation
 \begin{equation*}
-L(\ydiagram{1})_0^t \otimes L(\ydiagram{1})_{-\eta}^t \otimes \cdots \otimes L(\ydiagram{1})_{-\eta(k-1)}^t \otimes L(\ydiagram{1})_1^t.
+V_0^+ \otimes V_{-\eta}^+ \otimes \cdots \otimes V_{-\eta(k-1)}^+ \otimes V_1^+.
 \end{equation*}
-By the previous proposition, the fusion projectors $\Pi_{t_{[2,1^{k-1}]}}$ and $\Pi_{t_{[1^k]}} \otimes 1$ project onto the left and middle pieces $L([2,1^{k-1}])_0^t$ and $L([1^k])_0^t \otimes L(\ydiagram{1})_1^t$. The Littlewood-Richardson rule gives
+By proposition \ref{prop:fusionReps}, the fusion projectors $\Pi_{t_{[2,1^{k-1}]}}$ and $\Pi_{t_{[1^k]}} \otimes 1$ project onto the left and middle pieces $L([2,1^{k-1}])_0^t$ and $L([1^k])_0^t \otimes L(\ydiagram{1})_1^t$. The Littlewood-Richardson rule gives
 \begin{equation*}
 \Pi_{t_{[1^k]}} \otimes 1 = \Pi_{t_{[2,1^{k-1}]}} + \Pi_{t_{[1^{k+1}]}},
 \end{equation*}
@@ -1707,7 +1709,7 @@ with
 \begin{equation*}
 L_{ij} := \frac{\eta H_j}{y_i-y_j+\eta} = \frac{\eta}{y_i-y_j+\eta} \bigg( \prod_{j \neq k} \frac{y_j-y_k-\eta}{y_j-y_k} \bigg) \check H_j.
 \end{equation*}
-This looks awfully close to the Lax matrix (\ref{equation:RSLaxMatrix}) of the rational Ruijsenaars-Schneider model when we substitute $e^{-p_j}$ for $\check H_j$! Remember that $X_j$ is the operator that under quantization correponds to $e^{-p_j}$, so we would hypothesize that $X_j$ and $\check H_j$ will in some sense turn out to be one and the same operator. This will turn out to be true in the next section.
+This looks awfully close to the Lax matrix (\ref{equation:RSLaxMatrix}) of the rational Ruijsenaars-Schneider model when we substitute $e^{-p_j}$ for $\check H_j$! Remember that $X_j$ is the operator that under quantization correponds to $e^{-p_j}$, which leads us to hypothesize that $X_j$ and $\check H_j$ will in some sense turn out to be one and the same operator. This the main result of the next section.
 
 Iterating the matrix equation and combining with the formula for the quantum determinant from corollary \ref{corollary:quantumDet} finally gives the spectral equation, resembling a Cayley-Hamilton-type identity:
 
@@ -1739,7 +1741,7 @@ The eigenvalues of $H_1,...,H_N$ are exactly the complex roots of the spectral e
 
 \section{Generalized Schur-Weyl duality}
 
-Why should the Lax matrix of the rational Ruijsenaars-Schneider model appear in the spectral equation? A first clue is given by the fact that the Yangian allows for residual symmetries through its various automorphisms, the most peculiar of which is the shift automorphism. It has no analogue for $\mathfrak{gl}_\ell$ and is thus special to the Yangian. This non-rigidity gives additional degrees of freedom for monodromy representations: the inhomogeneities. These seem to play the role of the position variables of the rational Ruijsenaars-Schneider model. What is the mathematical reason for their appearance? Most simply, it is because the Schur-Weyl dual of the Yangian is the degenerate affine Hecke algebra, whose generators include polynomial generators that act as inhomogeneities. To introduce this, we will start with a discussion of classical Schur-Weyl duality between the symmetric groups $S_N$ and the Lie algebras $\mathfrak{gl}_\ell$. A detailed account of various generalized Schur-Weyl dualities can be found in \cite{thesis:antor:2020}.
+Why should the Lax matrix of the rational Ruijsenaars-Schneider model appear in the spectral equation? A first clue is given by the fact that the Yangian allows for residual symmetries through its various automorphisms, the most peculiar of which is the shift automorphism. It has no analogue for $\mathfrak{gl}_\ell$ and is thus special to the Yangian. This non-rigidity gives additional degrees of freedom for monodromy representations: the inhomogeneities. They seem to play the role of the position variables of the rational Ruijsenaars-Schneider model. What is the mathematical reason for their appearance? Most simply, it is because the Schur-Weyl dual of the Yangian is the degenerate affine Hecke algebra, whose generators include polynomial generators that act as inhomogeneities. To introduce this, we will start with a discussion of classical Schur-Weyl duality between the symmetric groups $S_N$ and the Lie algebras $\mathfrak{gl}_\ell$. A detailed account of various generalized Schur-Weyl dualities can be found in \cite{thesis:antor:2020}.
 
 \subsection{Classical Schur-Weyl duality}
 
@@ -1873,7 +1875,7 @@ tba
 
 We can already see how this is beginning to resemble the structure we are looking for: The Drinfeld functor takes representations of the degenerate affine Hecke algebra $\dot H_N$, such as the wave function representation of the quantum rational Ruijsenaars-Schneider model, and produces a representation of the Yangian clearly resembling fundamental monodromy representations with inhomogeneities given by the polynomial generators $y_i$ of the degenerate affine Hecke algebra. More precisely, when $\mathfrak{m} = (y_1-\bar y_1,...,y_N-\bar y_N)$ for complex numbers $\bar y_i$, we have an isomorphism
 \begin{equation*}
-D_{\ell,N}(\C[y_1,...,y_N]) \otimes_{\C[y_1,...,y_N]} \C[y_1,...,y_N]/\mathfrak{m} \cong L(\ydiagram{1})_{\bar y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{\bar y_N}^t
+D_{\ell,N}(\C[y_1,...,y_N]) \otimes_{\C[y_1,...,y_N]} \C[y_1,...,y_N]/\mathfrak{m} \cong V_{\bar y_1}^+ \otimes \cdots \otimes V_{\bar y_N}^+
 \end{equation*}
 of $Y(\mathfrak{gl}_\ell)$-modules. However, we are still missing two important ingredients: Firstly, the twist matrix does not enter into the structure at any point, and secondly, we are disregarding the Laurent generators $X_i$ of the degenerate double affine Hecke algebra $\ddot H_N$, which play an important role in defining the Hamiltonians of the quantum rational Ruijsenaars-Schneider model. These shortcomings will be remedied in the next section.
 
@@ -1907,11 +1909,11 @@ With this definition, we are finally ready to show explicitly how the preaffine 
 
 \subsection{Fundamental spin chain}
 
-Let us show how the wave function representation $\C[y_1,...,y_N]$ of the quantum rational Ruijsenaars-Schneider model produces the the fundamental spin chain, \emph{i.e.}
+We are now ready to show how the Hamiltonian operators acting on the wave function representation $\C[y_1,...,y_N]$ of the quantum rational Ruijsenaars-Schneider model produce the Hamiltonian operators on the fundamental spin chain, \emph{i.e.}
 \begin{equation*}
-L(\ydiagram{1})_{y_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y_N}^t
+V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+,
 \end{equation*}
-via the preaffine Drinfeld functor. Our first step is a simple but powerful observation:
+via the preaffine Drinfeld functor. This result rests on the following key observation:
 
 \begin{lemma}
 On $(\C^\ell)^{\otimes N} \otimes_{S_N} \C[y_1,...,y_N]$, we have
@@ -1968,6 +1970,7 @@ Let us finish off this section by giving a Rosetta stone for quantum-classical d
 twisted inhomogeneous Heisenberg model & rational Ruijsenaars-Schneider model \\
 \hline
 Yangian $Y(\mathfrak{gl}_\ell)$ & degenerate affine Hecke algebra $\dot H_N$ \\
+Bethe subalgebra $B^g(\mathfrak{gl}_\ell)$ & spherical subalgebra $S\ddot H_N$ \\
 fundamental monodromy representation & wave function representation \\
 $i$th atom & $i$th particle \\
 inhomogeneities $y_i$ & positions $y_i$ \\
@@ -1981,9 +1984,9 @@ Planck constant $\eta$ & coupling constant $\eta$ \\
 
 The way we have introduced the duality between the Heisenberg and Ruijsenaars-Schneider models easily lends itself to a generalization to spins in non-fundamental representations: Consider a Young diagram $\lambda$ of $N$ boxes with Specht module $S(\lambda)$ and pull back along the evaluation morphism. This yields the $\dot H_N$-module $S(\lambda)[y]$ with $y_i$ acting as $y + \eta c_i$ on the basis vector $v_{t_\lambda}$ labeled by a standard Young tableau $t_\lambda$ of shape $\lambda$ with content vector $(c_1,...,c_N)$. We conclude that $S(\lambda)[y]$ maps to $L(\lambda)[y]$ under the Drinfeld functor.
 
-On the other hand, we may equivalently try to apply the fusion procedure, taking the limit $y_i \to y + \eta c_i$ and projecting onto the subspace $L_{t_\lambda} \subset L(\ydiagram{1})_{y+\eta c_1}^t \otimes \cdots \otimes L(\ydiagram{1})_{y+\eta c_N}^t$ isomorphic to $L(\lambda)_y^t$.
+On the other hand, we may equivalently try to apply the fusion procedure, taking the limit $y_i \to y + \eta c_i$ and projecting onto the subspace $L_{t_\lambda} \subset V_{y+\eta c_1}^+ \otimes \cdots \otimes V_{y+\eta c_N}^+$ isomorphic to $L(\lambda)_y^t$.
 
-We conclude that a single atom with spin representation labeled by $\lambda$ is equivalently a \emph{stack of $N$ particles} at relative positions determined by the content vectors, whose quantum state transforms in the representation given by the Specht module $S(\lambda)$.
+We conclude that a single atom with spin representation labeled by $\lambda$ is equivalently a \emph{stack of $N$ particles} that sit at relative positions determined by content vectors for standard Young tableaux of shape $\lambda$. A general quantum state is a superposition of such configurations and transforms under $S_N$ in the representation given by the Specht module $S(\lambda)$.
 
 \begin{center}
 \begin{tabular}{|r||l|}
@@ -2127,12 +2130,14 @@ When $\hbar = 0$, this becomes the Gaudin Hamiltonian $G_i$. tba
 The aim of this section is to reformulate Schur-Weyl duality for the Yangian in terms of a 2-functorial quantum field theory that will later turn out to represent four-dimensional Chern-Simons theory. The mathematical structures used so far have been heavily representation theoretical. Nonetheless, we have seen some hints that there is an underlying geometry at play: We have made use of braids on cylinders as well as complex coordinates that may be reinterpreted as $(1+N)$-pointed Riemann spheres. 
 
 \begin{definition}
+\begin{enumerate}[label=(\roman*)]
 \item A \emph{$(1+N)$-pointed curve $C$} is a smooth complex projective curve together with $1+N$ distinct points $y_\infty,y_1,...,y_N \in C$ and non-zero tangent vectors $v_\infty,v_1,...,v_N \in T_{y_i} C$. We write these data as $(C;y_\infty,y_1,...,y_N;v_\infty,v_1,...,v_N)$.
 \item A \emph{morphism of $(1+N)$-pointed curves}
 \begin{equation*}
 f: (C;y_\infty,y_1,...,y_N;v_\infty,v_1,...,v_N) \to (C';y_\infty',y_1',...,y_N';v_\infty',v_1',...,v_N')
 \end{equation*}
 is a bijection $\sigma: \{ \infty,1,...,N \} \to \{ \infty,1,...,N \}$ fixing $\infty$ and a morphism $f: C \to C'$ of complex projective curves, such that $f(y_i) = y_{\sigma(i)}'$ and $df_{y_i}(v_i) = v_{\sigma(i)}'$. 
+\end{enumerate}
 \end{definition}
 
 \begin{remark}
@@ -2212,36 +2217,31 @@ $\quad \quad$
 \end{center}
 \end{figure}
 
-We will use this in conjunction with the results of \cite{article:benzvi:2018} to construct a 2-functorial field theory on $\mathcal{ES}$ via factorization homology. To accomplish this, we need a balanced braided abelian tensor category as the $E_2$-algebra of coefficients. Such a category is readily provided by a certain category of $Y(\mathfrak{gl}_\ell)$-modules:
+We will use this in conjunction with the results of \cite{article:benzvi:2018} to construct a 2-functorial field theory on $\mathcal{ES}$ via factorization homology. To accomplish this, we need an abelian braided rigid tensor category as the $E_2$-algebra of coefficients. Such a category is readily provided by a certain category of $Y(\mathfrak{gl}_\ell)$-modules:
 
 \begin{definition}
 Consider $\eta$ as a non-zero purely imaginary number. Let $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$ be the subcategory of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ generated by generator modules of the form
 \begin{equation*}
-L(\ydiagram{1})_{y_1}^{(t)} \otimes \cdots \otimes L(\ydiagram{1})_{y_N}^{(t)},
+V_{y_1}^\pm \otimes \cdots \otimes V_{y_N}^\pm,
 \end{equation*}
-under finite (co)limits. Here,  the superscript $(-)^{(t)}$ indicates a possible $(-)^t$, in which case $y_i \in \R \times 2\ell\eta\Z$, otherwise $y_i \in \R \times (\ell\eta + 2\ell\eta\Z)$.
+under finite (co)limits. Here, the superscript $(-)^\pm$ indicates either $V_{y_i}^+$, in which case $y_i \in \R + 2\ell\eta\Z$, or $V_{y_i}^-$, in which case $y_i \in \R + \ell\eta + 2\ell\eta\Z$.
 \end{definition}
 
 \begin{prop}
-$Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$ is a symmetric rigid monoidal abelian category.
+$Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$ is an abelian braided rigid tensor category.
 \end{prop}
 
 \begin{proof}
 \begin{enumerate}
 \item Abelian: The category is preabelian by closedness under finite (co)limits and preadditivity. Normality of mono- and epimorphisms is inherited from $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$.
-\item Duals for generators: Note that the right dual of any generator module is again a generator module. It is obtained by reversing the order of the tensor product, flipping the superscripts, and shifting the subscripts by $\ell \eta$. The same holds for left duals, except we shift by $-\ell\eta$. Double right dualization induces a shift by $2\ell\eta$, which is an equivalence. In particular, right dualization is exact on generator modules, so we can extend right dualization to all of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
+\item Duals for generators: Note that the right dual of any generator module is again a generator module. It is obtained by reversing the order of the tensor product, flipping the signs, and shifting by $+\ell \eta$. The same holds for left duals, except we shift by $-\ell\eta$. Double right dualization induces a shift by $2\ell\eta$, which is an equivalence. In particular, right dualization is exact on generator modules, so we can extend right dualization to all of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
 \item Symmetric braiding for generators: First note that
 \begin{equation*}
-\check R(y_1-y_2): L(\ydiagram{1})_{y_1}^t \otimes L(\ydiagram{1})_{y_2}^t \to L(\ydiagram{1})_{y_2}^t \otimes L(\ydiagram{1})_{y_1}^t
+\check R(y_1-y_2): V_{y_1}^+ \otimes V_{y_2}^+ \to V_{y_2}^+ \otimes V_{y_1}^+
 \end{equation*}
-gives a braiding on generator modules of the form $L(\ydiagram{1})_y^t$ due to the Yang-Baxter equation. Moreover, it is symmetric due to unitarity. We remark that $\check R(y_1-y_2)$ is invertible for all admissible $y_1$ and $y_2$, since $y_1-y_2 \neq \pm \eta$ by construction. By dualization, we also obtain maps
-\begin{equation*}
-L(\ydiagram{1})_{y_2-\ell\eta} \otimes L(\ydiagram{1})_{y_1}^t \to L(\ydiagram{1})_{y_1}^t \otimes L(\ydiagram{1})_{y_2+\ell\eta},
-\end{equation*}
-which become braidings when composed with the isomorphism induced by $\exp(2\ell\eta \partial)$-equivariance. These simple braids generate braidings for all generator modules.
+gives a braiding on generator modules of the form $L(\ydiagram{1})_y^t$ due to the Yang-Baxter equation. Moreover, it is symmetric due to unitarity. We remark that $\check R(y_1-y_2)$ is invertible for all admissible $y_1$ and $y_2$, since $y_1-y_2 \neq \pm \eta$ by construction.
 \item Everything in sight commutes with finite (co)limits, so we may extend to all of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
 \end{enumerate}
-If we introduce shift equivariance, preadditivity will be destroyed, but the essential features should survive.
 \end{proof}
 
 \begin{prop}
@@ -2262,14 +2262,10 @@ commutes. The image of $1 \in Y(\mathfrak{gl}_\ell)_k$ defines elements $\wideti
 \begin{corollary}
 Factorization homology gives a 2-functor
 \begin{equation*}
-\mathcal{Z} := \int_{(-)} Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\Omega: \mathcal{ES} \to \mathcal{M}on_\textnormal{sym}.
+\mathcal{Z} := \int_{(-)} Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R: \mathcal{ES} \to \mathcal{M}on_\textnormal{sym}.
 \end{equation*}
-that sends $\Sigma_{1+N}^g$ to the category of $Y^\vee(\mathfrak{gl}_\ell)^{\otimes (g+N)}$-modules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\Omega$.
+that sends $\Sigma_{1+N}^g$ to the category of $Y^\vee(\mathfrak{gl}_\ell)^{\otimes (2g+N)}$-modules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
 \end{corollary}
-
-\begin{remark}
-The action of the mapping class group $B_N \ltimes \Z^N$ factors through the homomorphism $B_N \ltimes \Z^N \to S_N \ltimes \Z^N$. Together with the complex parameters $y_1,...,y_N \in \C$ parametrizing complex structures on the $(1+N)$-pointed spheres $\Sigma_{1,N}^0$, we essentially obtain an action of $\ddot H_N$ on $\mathcal{Z}(\Sigma_{1,N}^0)$. The functor $\mathcal{Z}$ is pointed, also giving distinguished representations, which should be the fundamental monodromy representations. One would have to include equivariant module maps for pivotality and such
-\end{remark}
 
 \pagebreak
 
