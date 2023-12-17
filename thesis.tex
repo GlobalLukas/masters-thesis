@@ -102,7 +102,7 @@ We examine a quantum-classical duality between inhomogeneous Heisenberg models a
 \setcounter{chapter}{-1}
 \chapter{Introduction}
 
-Integrability \cite{book:arutyunov:elements} is a key phenomenon in many physical models that allows for exact solutions. Nonetheless, solving integrable models often necessitates surprisingly non-trivial methods. Abstractly, integrability can be understood as the presence of some highly organized structure. Though this can happen in many different ways, a common theme among integrable models is the existence of a large number of commuting conserved quantities. An important tool in discovering such conserved quantities are certain algebras that act on states and observables. Famous representatives in this class of algebras are (double) affine Hecke algebras and affine quantum groups as well as Yangians and their various degenerations, which allow for a reduction of many phenomena in the study of integrable models to phenomena in the representation theory of these algebras. In particular, sharing the same representation theory gives rise to many coincidences in the mathematical descriptions of integrable models, even when these models look very different on the surface. This has led to the discovery of many dualities between integrable models.
+Integrability \cite{book:arutyunov:elements} is a key phenomenon in many physical models that allows for exact solutions. Nonetheless, solving integrable models often necessitates surprisingly non-trivial methods. Abstractly, integrability can be understood as the presence of some highly organized structure. Though this can happen in many different ways, a common theme among integrable models is the existence of a large number of commuting conserved quantities. An important tool in diskovering such conserved quantities are certain algebras that act on states and observables. Famous representatives in this class of algebras are (double) affine Hecke algebras and affine quantum groups as well as Yangians and their various degenerations, which allow for a reduction of many phenomena in the study of integrable models to phenomena in the representation theory of these algebras. In particular, sharing the same representation theory gives rise to many coincidences in the mathematical descriptions of integrable models, even when these models look very different on the surface. This has led to the diskovery of many dualities between integrable models.
 
 In \cite{article:gorsky:2014}, a \emph{quantum-classical} duality between the quantum twisted inhomogeneous Heisenberg $\mathfrak{gl}_\ell$-spin chain and the classical rational Ruijsenaars-Schneider model was first worked out. For our purposes, we will simply refer to this duality as \emph{the} quantum-classical duality. The first model describes a chain of $N$ atoms, labeled by inhomogeneities $y_1,...,y_N \in \C$, whose local Hilbert spaces\footnote{We use the term \emph{Hilbert space} in the loose sense of describing the state space of a quantum system, \emph{i.e.} it does not necessarily come equipped with an inner product. In accordance, we will generally not be careful about Hermiticity.} are given by the vector representation of $\mathfrak{gl}_\ell$. The Hamiltonian imposes nearest-neighbor interactions with boundary conditions that are periodic up to a twist matrix. The second model describes $N$ relativistic point particles acting on each other by mutual centrifugal forces. In this model, the conserved quantities can be neatly described via eigenvalues of a Lax matrix. \emph{Loc. cit.} then describes the quantum-classical duality in terms of a coincidence of spectra of the twist and Lax matrices on the quantum and classical side respectively. This involves the following substitutions: The inhomogeneities of the Heisenberg spin chain model become the positions of the particles in the Ruijsenaars-Schneider model and the eigenvalues of certain non-local spin chain Hamiltonians correspond to the momenta of these particles.
 
@@ -124,7 +124,7 @@ of the Yangian, on which the momentum-like operators $X_i$ act exactly as the no
 
 This is however not the full picture. The fact that we are suddenly dealing with the Laurent generators $X_i$ from the degenerate \emph{double} affine Hecke algebra points to a missing piece. Recall that \emph{non}-degenerate double affine Hecke algebras have an $S$-duality automorphism by way of interchanging their two sets of Laurent generators. As a remnant of this $S$-duality, the representation of $\ddot H_N$ on $\C[y_1,...,y_N]$ above has an $S$-dual representation on $\C[X_1^{\pm 1},...,X_N^{\pm 1}]$ via Dunkl differential operators. This representation describes the quantum trigonometric Calogero-Moser model. In a similar fashion as above, we can view it as a representation of the affine symmetric group $\dot S_N = S_N \ltimes \Z^N$ which sits inside $\ddot H_N$. Using Schur-Weyl duality for affine symmetric groups, we obtain a representation of the loop algebra $L(\mathfrak{gl}_\ell)$. We then combine the action of the loop algebra and the action of the Yangian to an action of the loop Yangian $LY(\mathfrak{gl}_\ell)$, unifying all four models using generalized Schur-Weyl duality between the degenerate double affine Hecke algebra and the loop Yangian \cite{article:guay:2005}.%, to unify all four models: The rational Ruijsenaars-Schneider model, the Heisenberg model, the trigonometric Calogero-Moser model, and the trigonometric Gaudin model all arise as representations of the loop Yangian.
 
-To finish our discussion, we will reframe this representation theoretic picture in a more geometric setting, thus connecting it to gauge theory. It will turn out that the whole story can be retold in terms of four-dimensional Chern-Simons theory, which was first described in \cite{article:costello:2013} and subsequently expanded on in a series of papers starting with \cite{article:costello:2018}. Four-dimensional Chern-Simons theory is a semi-topological quantum field theory or, more precisely, holomorphic in two directions with complex coordinate $z$ and topological in the other two directions. Thus, it lives on a four-manifold $C \times \Sigma$, where $C$ is a complex curve and $\Sigma$ an oriented surface. Its main dynamical variable is a $\mathfrak{gl}_\ell$-valued connection 1-form $A(z)$ on $\Sigma$, which is meromorphic in $z \in C$. One also fixes a meromorphic 1-form $\omega$ on $C$, which is wedged with the Chern-Simons 3-form of $A$ to obtain the Langrangian density of the theory. Its poles and zeros respectively give rise to order and disorder defects of the gauge field $A$.
+To finish our diskussion, we will reframe this representation theoretic picture in a more geometric setting, thus connecting it to gauge theory. It will turn out that the whole story can be retold in terms of four-dimensional Chern-Simons theory, which was first described in \cite{article:costello:2013} and subsequently expanded on in a series of papers starting with \cite{article:costello:2018}. Four-dimensional Chern-Simons theory is a semi-topological quantum field theory or, more precisely, holomorphic in two directions with complex coordinate $z$ and topological in the other two directions. Thus, it lives on a four-manifold $C \times \Sigma$, where $C$ is a complex curve and $\Sigma$ an oriented surface. Its main dynamical variable is a $\mathfrak{gl}_\ell$-valued connection 1-form $A(z)$ on $\Sigma$, which is meromorphic in $z \in C$. One also fixes a meromorphic 1-form $\omega$ on $C$, which is wedged with the Chern-Simons 3-form of $A$ to obtain the Langrangian density of the theory. Its poles and zeros respectively give rise to order and disorder defects of the gauge field $A$.
 
 \begin{figure}
 \begin{tikzpicture}[remember picture,overlay]
@@ -163,7 +163,7 @@ In short, the novel contributions of this thesis are the following:
 \item We compute the genus one case where $C$ is an elliptic curve and connect it to the elliptic Ruijsenaars-Schneider model.
 \end{itemize}
 
-The remaining chapters of this thesis are structured as follows. Chapter \ref{chapter:integrability} gives a full review from the basics of integrability to the state of the art of the pertinent models and establishes the setup that frames our discussion. Chapter \ref{chapter:duality} begins with a detailed discussion of the recent appearance of the Lax matrix of the rational Ruijsenaars-Schneider model in the functional relations for transfer matrices of the Heisenberg model used to derive the spectral equation whose solutions yield the energy spectrum of the Heisenberg model. We then move on to describe the mathematical underpinnings of generalized Schur-Weyl duality and how it gives rise to quantum-classical duality. The end of chapter \ref{chapter:duality} is dedicated to explicating $S$-duality, showing how the $S$-dual models, \emph{i.e.} the trigonometric Gaudin model and the trigonometric Calogero-Moser model are also related by quantum-classical duality. Chapter \ref{chapter:geometry} then continues with a description of the geometry behind the mathematical structures of chapter \ref{chapter:duality}, constructing two functorial field theories: One encapsulating Heisenberg-Ruijsenaars-Schneider duality and the other $S$-dual theory encapsulating Gaudin-Calogero-Moser duality. Each are shown to arise from four-dimensional Chern-Simons theory. After the conclusion (chapter \ref{chapter:conclusion}), we give supplementary material on Young diagrams (appendix \ref{appendix:youngdiagrams}) as well as results on Dunkl operators for the trigonometric Calogero-Moser model (appendix \ref{appendix:dunklOperators}).
+The remaining chapters of this thesis are structured as follows. Chapter \ref{chapter:integrability} gives a full review from the basics of integrability to the state of the art of the pertinent models and establishes the setup that frames our diskussion. Chapter \ref{chapter:duality} begins with a detailed diskussion of the recent appearance of the Lax matrix of the rational Ruijsenaars-Schneider model in the functional relations for transfer matrices of the Heisenberg model used to derive the spectral equation whose solutions yield the energy spectrum of the Heisenberg model. We then move on to describe the mathematical underpinnings of generalized Schur-Weyl duality and how it gives rise to quantum-classical duality. The end of chapter \ref{chapter:duality} is dedicated to explicating $S$-duality, showing how the $S$-dual models, \emph{i.e.} the trigonometric Gaudin model and the trigonometric Calogero-Moser model are also related by quantum-classical duality. Chapter \ref{chapter:geometry} then continues with a description of the geometry behind the mathematical structures of chapter \ref{chapter:duality}, constructing two functorial field theories: One encapsulating Heisenberg-Ruijsenaars-Schneider duality and the other $S$-dual theory encapsulating Gaudin-Calogero-Moser duality. Each are shown to arise from four-dimensional Chern-Simons theory. After the conclusion (chapter \ref{chapter:conclusion}), we give supplementary material on Young diagrams (appendix \ref{appendix:youngdiagrams}) as well as results on Dunkl operators for the trigonometric Calogero-Moser model (appendix \ref{appendix:dunklOperators}).
 
 ~\\
 
@@ -198,7 +198,7 @@ for $\varphi_i$ the $i$th angular coordinate and $\omega_i$ a frequency dependen
 \end{theorem}
 
 \begin{proof}
-Part (i) is an application of the Frobenius theorem. To show (ii), observe that the Hamiltonian flow of the commuting conserved quantities $f_1,...,f_N$ generate an action of the $N$-dimensional commutative Lie algebra $\R^N$ on $M_c$. The 1-forms $df_i$ were assumed to be linearly independent, which implies that this action is locally free and hence is transitive and has discrete stabilizer, which must then be of the form $\Z^k \subseteq \R^N$. Compactness of $M_c$ implies $k=N$ and $M_c \cong \R^N / \Z^N \cong (S^1)^N$.
+Part (i) is an application of the Frobenius theorem. To show (ii), observe that the Hamiltonian flow of the commuting conserved quantities $f_1,...,f_N$ generate an action of the $N$-dimensional commutative Lie algebra $\R^N$ on $M_c$. The 1-forms $df_i$ were assumed to be linearly independent, which implies that this action is locally free and hence is transitive and has diskrete stabilizer, which must then be of the form $\Z^k \subseteq \R^N$. Compactness of $M_c$ implies $k=N$ and $M_c \cong \R^N / \Z^N \cong (S^1)^N$.
 \end{proof}
 
 \begin{example}
@@ -412,7 +412,7 @@ due to $\theta_{ij} \theta_{ji} = 1/(4 \sinh^2((y_i-y_j)/2))$.
 
 Integrability in the quantum context is generally considered to be a more diffuse concept than classical integrability. The basic definition generalizing Liouville integrability is the existence of a large set of mutually commuting quantum observables that include the Hamiltonian. Such can often be guaranteed by the existence of operators fulfilling the quantum Yang-Baxter equation or the applicability of various Bethe ansätze \cite{book:arutyunov:betheAnsatz}. This usually comes hand-in-hand with the existence of large symmetries, especially \emph{Hecke symmetries} and \emph{Yangian symmetries}, which automatically generate sets of commuting operators via their commutative subalgebras.
 
-In order to quantize the rational Ruijsenaars-Schneider and trigonometric Calogero-Moser model, we will start with a discussion of Hecke algebras and their representations, after which we move on to the Yangian of $\mathfrak{gl}_\ell$, whose representation theory gives rise to the Heisenberg model.
+In order to quantize the rational Ruijsenaars-Schneider and trigonometric Calogero-Moser model, we will start with a diskussion of Hecke algebras and their representations, after which we move on to the Yangian of $\mathfrak{gl}_\ell$, whose representation theory gives rise to the Heisenberg model.
 
 \subsection{Weyl groups and Hecke algebras of type $A$}
 
@@ -482,7 +482,7 @@ The spherical degenerate double affine Hecke algebra will be of great importance
 See \cite{article:oblomkov:2003}.
 \end{proof}
 
-Much of the following is parallel to \cite{article:lamers:2022}, where the non-degenerate case is discussed. We construct a representation of $\dot H_N$ on polynomials $\C[y_1,...,y_N]$. This is supposed to become the wave function representation for the rational Ruijsenaars-Schneider model. Let us begin by considering the action where $S_N$ acts by permutation of the variables. This allows us to introduce the following operators:
+Much of the following is parallel to \cite{article:lamers:2022}, where the non-degenerate case is diskussed. We construct a representation of $\dot H_N$ on polynomials $\C[y_1,...,y_N]$. This is supposed to become the wave function representation for the rational Ruijsenaars-Schneider model. Let us begin by considering the action where $S_N$ acts by permutation of the variables. This allows us to introduce the following operators:
 \begin{enumerate}[label=(\roman*)]
 \item The \emph{divided difference operators} are defined as
 \begin{equation*}
@@ -841,7 +841,7 @@ This also yields a general evaluation homomorphism
 
 \subsection{The dual Yangian of $\mathfrak{gl}_\ell$}
 
-In addition to the Yangian $Y(\mathfrak{gl}_\ell)$, we will later make use of the \emph{dual Yangian} $Y^*(\mathfrak{gl}_\ell)$, which was studied in detail in the paper \cite{article:nazarov:2019}. Essentially, while the Yangian describes the disc at infinity with local coordinate $z^{-1}$, the dual Yangian describes the disc around zero with local coordinate $z$. We proceed parallel to the construction of the Yangian:
+In addition to the Yangian $Y(\mathfrak{gl}_\ell)$, we will later make use of the \emph{dual Yangian} $Y^*(\mathfrak{gl}_\ell)$, which was studied in detail in the paper \cite{article:nazarov:2019}. Essentially, while the Yangian describes the disk at infinity with local coordinate $z^{-1}$, the dual Yangian describes the disk around zero with local coordinate $z$. We proceed parallel to the construction of the Yangian:
 
 \begin{definition}
 The \emph{dual Yangian}\index{Dual Yangian} for the complex Lie algebra $\mathfrak{gl}_\ell$, written $Y^\vee(\mathfrak{gl}_\ell)$, is defined as the unital associative $\C[\eta]$-algebra with the following presentation: It has generators $t_{ij}^{(-r)}$ for $1 \leq i,j \leq \ell$ and $r \geq 1$. To describe the defining relations, we again let $t_{ij}^{(0)} = \delta_{ij}/\eta$ and introduce
@@ -895,7 +895,7 @@ This allows us to define left and right actions of $Y(\mathfrak{gl}_\ell)$ on $Y
 \end{remark}
 
 \begin{lemma}
-There is a filtered basis $X_1,X_2,...$ of $Y(\mathfrak{gl}_\ell)$ and a filtered basis $X_1',X_2',... \in \hat Y^\vee(\mathfrak{gl}_\ell)$ with $\langle X_i,X_j' \rangle = \delta_{ij}$.
+There is a filtered basis $X_1,X_2,...$ of $Y(\mathfrak{gl}_\ell)$ and a filtered basis $X_1^\vee,X_2^\vee,... \in \hat Y^\vee(\mathfrak{gl}_\ell)$ with $\langle X_i,X_j^\vee \rangle = \delta_{ij}$.
 \end{lemma}
 
 \begin{proof}
@@ -904,9 +904,9 @@ This is a result of \cite{article:nazarov:2019}.
 
 \begin{definition}
 The elements
-\begin{equation*}
-\mathcal{R}_N := \sum_{\deg X_i \leq N} X_i' \otimes X_i \in \hat Y^\vee(\mathfrak{gl}_\ell) \otimes F_N Y(\mathfrak{gl}_\ell)
-\end{equation*}
+\begin{equation}\label{equation:universalRMatrixN}
+\mathcal{R}_N := \sum_{\deg X_i \leq N} X_i^\vee \otimes X_i \in \hat Y^\vee(\mathfrak{gl}_\ell) \otimes F_N Y(\mathfrak{gl}_\ell)
+\end{equation}
 define an element $\mathcal{R} \in \hat Y^\vee(\mathfrak{gl}_\ell) \operatorname{\hat \otimes} Y(\mathfrak{gl}_\ell)$ called \emph{the universal $R$-matrix}.
 \end{definition}
 
@@ -1364,7 +1364,7 @@ which will be our basis for deriving the spectral equation. The analogous short 
 \end{equation*}
 which is the usual Littlewood-Richardson rule, except crucially we have an added dependence on the parameter $z$, which makes this short exact sequence non-split in general.
 
-Let us now set out to show this, starting with a discussion of the \emph{fusion procedure} \cite{article:molev:2008}, originating in works such as \cite{article:kulish:1981}. To this end, fix a standard Young tableau $t_\lambda$ of shape $\lambda$ with content vector $(c_1,...,c_k)$ and let
+Let us now set out to show this, starting with a diskussion of the \emph{fusion procedure} \cite{article:molev:2008}, originating in works such as \cite{article:kulish:1981}. To this end, fix a standard Young tableau $t_\lambda$ of shape $\lambda$ with content vector $(c_1,...,c_k)$ and let
 \begin{equation*}
 R(z_1,...,z_k) := \overset{\longrightarrow}{\prod_{i<j}} R_{ij}(z_i-z_j),
 \end{equation*}
@@ -1736,7 +1736,7 @@ The eigenvalues of $H_1,...,H_N$ are exactly the complex roots of the spectral e
 
 \section{Generalized Schur-Weyl duality}
 
-Why should the Lax matrix of the rational Ruijsenaars-Schneider model appear in the spectral equation? A first clue is given by the fact that the Yangian allows for residual symmetries through its various automorphisms, the most peculiar of which is the shift automorphism. It has no analogue for $\mathfrak{gl}_\ell$ and is thus special to the Yangian. This non-rigidity gives additional degrees of freedom for monodromy representations: the inhomogeneities. They seem to play the role of the position variables of the rational Ruijsenaars-Schneider model. What is the mathematical reason for their appearance? Most simply, it is because the Schur-Weyl dual of the Yangian is the degenerate affine Hecke algebra, whose generators include polynomial generators that act as inhomogeneities. To introduce this, we will start with a discussion of classical Schur-Weyl duality between the symmetric groups $S_N$ and the Lie algebras $\mathfrak{gl}_\ell$. A detailed account of various generalized Schur-Weyl dualities can be found in \cite{thesis:antor:2020}.
+Why should the Lax matrix of the rational Ruijsenaars-Schneider model appear in the spectral equation? A first clue is given by the fact that the Yangian allows for residual symmetries through its various automorphisms, the most peculiar of which is the shift automorphism. It has no analogue for $\mathfrak{gl}_\ell$ and is thus special to the Yangian. This non-rigidity gives additional degrees of freedom for monodromy representations: the inhomogeneities. They seem to play the role of the position variables of the rational Ruijsenaars-Schneider model. What is the mathematical reason for their appearance? Most simply, it is because the Schur-Weyl dual of the Yangian is the degenerate affine Hecke algebra, whose generators include polynomial generators that act as inhomogeneities. To introduce this, we will start with a diskussion of classical Schur-Weyl duality between the symmetric groups $S_N$ and the Lie algebras $\mathfrak{gl}_\ell$. A detailed account of various generalized Schur-Weyl dualities can be found in \cite{thesis:antor:2020}.
 
 \subsection{Classical Schur-Weyl duality}
 
@@ -2143,6 +2143,7 @@ These data are combined in the complex Teichmüller tower, whose genus zero part
 \begin{figure}
 \centering
 \begin{center}
+\begin{tabular}{cc}
 \begin{tikzpicture}
 \draw[gray] (0,0) ellipse (2cm and 0.7cm);
 \node[right] at (2cm,0) {$\infty$};
@@ -2167,10 +2168,21 @@ These data are combined in the complex Teichmüller tower, whose genus zero part
 
 \draw[dotted,very thick] (-0.62,0) .. controls (-0.62,1) and (0.62,1) .. (0.62,2);
 \draw (-0.7,0) .. controls (-0.7,1) and (0.7,1) .. (0.7,2);
-
-\node[below] at (0,-1) {(a)};
 \end{tikzpicture}
-$\quad \quad$
+&
+\begin{tikzpicture}
+\draw[red,dashed] (-1.5,-0.5) -- (-1.5,1.5);
+
+\draw (0.5,-0.5) .. controls (0.5,0.5) and (-0.5,0.5) .. (-0.5,1.5);
+\draw (-0.5,-0.5) .. controls (-0.5,0.5) and (0.5,0.5) .. (0.5,1.5);
+\draw (0.1,0.6) arc (45:135:0.15);
+
+\node[below] at (-0.5,-0.5) {$y_1$};
+\node[below] at (0.5,-0.5) {$y_2$};
+
+\draw[red,dashed] (1.5,-0.5) -- (1.5,1.5);
+\end{tikzpicture}
+\\ (a) & (b) \\~\\
 \begin{tikzpicture}
 \draw[gray] (0,0) ellipse (2cm and 0.7cm);
 \node[right] at (2cm,0) {$\infty$};
@@ -2187,24 +2199,35 @@ $\quad \quad$
 \draw[dotted,very thick] (0.08,0) .. controls (0.08,0.5) and (-0.08,0.5) .. (-0.08,1);
 \draw[dotted,very thick] (-0.07,1.07) .. controls (-0.07,1.5) and (0.07,1.5) .. (0.07,2);
 \draw (0,0) -- (0,2);
-
-\node[below] at (0,-1) {(b)};
 \end{tikzpicture}
-\caption{(a) A framed braiding in the $(1+2)$-pointed Riemann sphere. (b) A counter-clockwise $2\pi$-twist of the framing around a single strand in the $(1+1)$-pointed Riemann sphere.}
+&
+\begin{tikzpicture}
+\draw[red,dashed] (-0.5,-0.5) -- (-0.5,1.5);
+\draw (-0.5,0.5) -- (0.5,0.5);
+\draw (0.5,0.5) .. controls (1,0.5) .. (1,1.5);
+\draw (1,-0.5) .. controls (1,0.5) .. (1.5,0.5);
+\draw (1.5,0.5) -- (2.5,0.5);
+\node[below] at (1,-0.5) {$y$};
+\draw[red,dashed] (2.5,-0.5) -- (2.5,1.5);
+\end{tikzpicture}
+\\
+(c) & (d)
+\end{tabular}
+\caption{(a) A framed braiding in the $(1+2)$-pointed Riemann sphere. (b) The corresponding diagram on a cylinder as we would have drawn it until now. (c) A counter-clockwise $2\pi$-twist of the framing around a single strand in the $(1+1)$-pointed Riemann sphere. (d) The corresponding diagram on a cylinder.}
 \label{figure:braidTwist}
 \end{center}
 \end{figure}
 
-Note that the parametrizations of the boundary components of an extended surface $\Sigma$ may equivalently be thought of as an embedding of a disc $D^2$ into the surface that results from gluing the boundary component of $\Sigma$ closed. It will thus be enough to look at the following category of embeddings:
+Note that the parametrizations of the boundary components of an extended surface $\Sigma$ may equivalently be thought of as an embedding of a disk $D^2$ into the surface that results from gluing the boundary component of $\Sigma$ closed. It will thus be enough to look at the following category of embeddings:
 
 \begin{definition}
-Let $\mathsf{Mfld}_\text{fr}^2$ be the $(\infty,1)$-category whose objects are framed 2-manifolds, whose 1-morphisms are smooth embeddings, whose 2-morphisms are isotopies between embeddings, and whose higher morphisms are higher homotopies between these.
+Let $\mathsf{Mfld}_\text{fr}^2$ be the $(\infty,1)$-category whose objects are framed 2-manifolds and whose 1-morphisms are framed smooth embeddings, equipped with the compact-open topology. This means that 2-morphisms are isotopies between embeddings and higher morphisms are higher homotopies between these.
 \end{definition}
 
-Given the data of an abelian rigid braided monoidal category, \cite{article:benzvi:2018} constructs a 2-functorial field theory on $\mathsf{Mfld}_\text{fr}^2$ via factorization homology. To accomplish this, we need an abelian braided rigid tensor category as the (framed) $E_2$-algebra of coefficients. Such a category is readily provided by a certain category of $Y(\mathfrak{gl}_\ell)$-modules:
+In \cite{article:benzvi:2018}, a 2-functorial field theory on $\mathsf{Mfld}_\text{fr}^2$ is constructed via factorization homology, taking an abelian braided rigid tensor category as the (framed) $E_2$-algebra of coefficients. In our case, such coefficients are readily provided by a certain category of $Y(\mathfrak{gl}_\ell)$-modules:
 
 \begin{definition}
-Consider $\eta$ as a non-zero purely imaginary number. Let $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$ be the subcategory of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ generated by modules of the form
+Consider $\eta$ as a non-zero purely imaginary number. Let $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$ be the (ind-completion of the) subcategory of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ generated by modules of the form
 \begin{equation*}
 V_{y_1}^\pm \otimes \cdots \otimes V_{y_N}^\pm,
 \end{equation*}
@@ -2218,9 +2241,9 @@ $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$ is an abelian braided rigid tensor catego
 \begin{proof}
 \begin{enumerate}
 \item Abelian: The category is preabelian by closedness under finite (co)limits and preadditivity. Normality of mono- and epimorphisms is inherited from $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$.
-\item Braidings for generators: Define the braidings
+\item Braidings for generators: Let $\otimes'$ denote the tensor product with respect to the reverse coproduct and define the braidings
 \begin{equation*}
-c_{\pm\pm}: V_{y_1}^\pm \otimes V_{y_2}^\pm \to V_{y_2}^\pm \otimes V_{y_1}^\pm
+c_{\pm\pm}: V_{y_1}^\pm \otimes V_{y_2}^\pm \to V_{y_1}^\pm \otimes' V_{y_2}^\pm
 \end{equation*}
 via higher $R$-matrices, confer (\ref{equation:higherRMatrix}):
 \begin{align*}
@@ -2245,22 +2268,23 @@ We remark that these may only become singular when $y_1-y_2 = \eta d_j - \eta c_
 \check R_{1,1'}(y_1-y_2) & \check R_{1,2'}(y_1-y_2+\eta)
 \end{matrix}
 \end{equation*}
-We check with Mathematica that this reduces to $P_{1,1'} P_{2,2'}$ in the limit $y_1 - y_2 \to 0$.
+We check with Mathematica that this product is non-singular in the limit $y_1 - y_2 \to 0$ ($\to$ \texttt{RMatrixProduct.nb}).
 \end{itemize}
 Consider the double braidings:
 \begin{itemize}
 \item Case “$++$”: In this case we have $c_{++} c_{++} = \check R(y_2-y_1) \check R(y_1-y_2) = 1$.
 \item Case “$+-$”: We have $c_{-+} c_{+-} = \check R_{\ell 1}(y_2-y_1-(\ell-2)\eta) \cdots \check R_{31}(y_2-y_1-\eta) \check R_{21}(y_2-y_1) \check R_{12}(y_1-y_2) \check R_{13}(y_1-y_2+\eta) \cdots \check R_{1\ell}(y_1-y_2+(\ell-2)\eta) = 1$.
-\item Case “$-+$”: This is similarly the identity.
+\item Case “$-+$”: Similarly.
 \item Case “$--$”: Similarly.
 \end{itemize}
 \item Duals for generators: Note that the right dual of any generator module is again a generator module. It is obtained by reversing the order of the tensor product, flipping the signs, and shifting by $+\ell \eta$. The same holds for left duals, except we shift by $-\ell\eta$. Double right dualization induces a shift by $2\ell\eta$, which is an equivalence. In particular, right dualization is exact on generator modules, so we can extend right dualization to all of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
-\item Everything in sight commutes with finite (co)limits, so we may extend to all of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
+\item Everything in sight commutes with finite (co)limits, so we may extend the braided rigid structure to all of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
 \end{enumerate}
+\vspace{-\baselineskip}
 \end{proof}
 
 \begin{lemma}
-There exist finitely many configurations $(y_1,...,y_N)$ such that $x \in F_N Y(\mathfrak{gl}_\ell)$ is zero if and only if $x$ acts as zero on all $V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$.
+There exist finitely many tuples $(y_1,...,y_N)$ such that $x \in F_N Y(\mathfrak{gl}_\ell)$ is zero if and only if $x$ acts as zero on all $V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$.
 \end{lemma}
 
 \begin{proof}
@@ -2268,46 +2292,65 @@ Let $\rho_{y_1,...,y_N}: Y(\mathfrak{gl}_\ell) \to \End V_{y_1}^+ \otimes \cdots
 \end{proof}
 
 \begin{prop}
-The dual Yangian $Y^\vee(\mathfrak{gl}_\ell)$ is the coend $\int^{X \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R} X \otimes X^\vee$.
+The dual Yangian $Y^\vee(\mathfrak{gl}_\ell)$ is the coend $\int^{M \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R} M \otimes M^\vee$.
 \end{prop}
 
 \begin{proof}
-Let $\mathsf{M}_N$ be the full subcategory spanned by $V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$ for the finitely many configurations $(y_1,...,y_N)$ of the previous lemma. Let
+Let $\mathsf{M}_N$ be the full subcategory spanned by $V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$ for the finitely many tuples $(y_1,...,y_N)$ of the previous lemma. Let
 \begin{equation*}
-E_N := \bigoplus_{M \in \mathsf{M}_N} M \otimes M^\vee \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R.
+E_N := \bigoplus_{M \in \mathsf{M}_N} M \otimes M^\vee \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R
 \end{equation*}
-with the special element $1_N: \C[\eta] \to E_N$ representing the sum of identities. By the previous lemma, we can identify $F_N Y(\mathfrak{gl}_\ell)$ as a subspace of $E_N$ via the map $Y(\mathfrak{gl}_\ell) \to E_N$. Further let $L := \int^{X \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R} X \otimes X^\vee$. The coactions of the dual Yangian give a map $\psi: L \to Y^\vee(\mathfrak{gl}_\ell)$ that commutes with the coactions $E_N \to L \otimes E_N$ and $E_N \to Y^\vee(\mathfrak{gl}_\ell) \otimes E_N$. We may look at the image of $1_N$
+with the special element $1_N: \C[\eta] \to E_N$ representing the sum of identities. By the previous lemma, we can identify $F_N Y(\mathfrak{gl}_\ell)$ as a subspace of $E_N$ via the map $Y(\mathfrak{gl}_\ell) \to E_N$ induced by the actions. Further let $L := \int^{M \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R} M \otimes M^\vee$. The coactions of the dual Yangian give a map $\psi: L \to Y^\vee(\mathfrak{gl}_\ell)$ that commutes with the coactions $E_N \to L \otimes E_N$ and $E_N \to Y^\vee(\mathfrak{gl}_\ell) \otimes E_N$. We may look at the image of $1_N$
 \begin{equation*}
-\widetilde{\mathcal{R}}_N: \C[\eta] \to E_N \to L \otimes L \otimes F_N Y(\mathfrak{gl}_\ell \subseteq L \otimes E_N,
+\widetilde{\mathcal{R}}_N: \C[\eta] \to E_N \to L \otimes F_N Y(\mathfrak{gl}_\ell) \subseteq L \otimes E_N,
 \end{equation*}
-which under $\psi \otimes \id$ gets mapped to $\mathcal{R}(1 \otimes 1_N)$, which is nothing but $\mathcal{R}_N \in Y^\vee(\mathfrak{gl}_\ell) \otimes F_N Y(\mathfrak{gl}_\ell)$. In the limit, we obtain an element
+which under $\psi \otimes \id$ gets mapped to $\mathcal{R}(1 \otimes 1_N)$, which is nothing but $\mathcal{R}_N \in Y^\vee(\mathfrak{gl}_\ell) \otimes F_N Y(\mathfrak{gl}_\ell)$, confer (\ref{equation:universalRMatrixN}). In the limit, we obtain an element
 \begin{equation*}
-\widetilde{\mathcal{R}} \in \varprojlim_N L \otimes E_N
+\widetilde{\mathcal{R}} \in \varprojlim_N L \otimes F_N Y(\mathfrak{gl}_\ell)
 \end{equation*}
 mapping to the universal $R$-matrix $\mathcal{R}$. The element $\widetilde{\mathcal{R}}$ then witnesses that the composition $Y(\mathfrak{gl}_\ell) \otimes L \to Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to \C[\eta]$ is a non-degenerate pairing, implying that $\psi$ is an isomorphism (tba).
 \end{proof}
 
-\begin{corollary}
+\begin{theorem}
 Factorization homology gives a 2-functor
 \begin{equation*}
-\mathcal{Z} := \int_{(-)} Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R: \mathsf{Mfld}_\textnormal{fr}^2 \to \mathsf{BrMonCat}.
+\int_{(-)} Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R: \mathsf{Mfld}_\textnormal{fr}^2 \to \mathsf{Pr}_c
 \end{equation*}
-This functor sends $\Sigma_{g,1+N}$ to the category of $Y^\vee(\mathfrak{gl}_\ell)^{\otimes (2g+N)}$-modules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
+such that
+\begin{enumerate}[label=(\roman*)]
+\item The disk $D^2$ (with any framing) gets mapped to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
+\item The torus with one boundary component $T^2 \setminus D^2$ gets mapped to the category \\ $Y^\vee(\mathfrak{gl}_\ell)^{\otimes 2}\textnormal{-}\mathsf{mod}_{Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R}$ of $Y^\vee(\mathfrak{gl}_\ell)^{\otimes 2}$-modules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
+\item The $N$-fold disk embeddings $(D^2)^{\sqcup N} \to D^2$ get mapped to the $N$-fold tensor product functor $(Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R)^{\boxtimes N} \to Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$. The action of the braid group on such embeddings gets mapped to an action on the $N$-fold tensor product functor via the braiding.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+These are results of \cite{article:benzvi:2018}.
+\end{proof}
+
+\begin{corollary}
+The induced action of the braid group on fundamental monodromy representations is given by the action of $S_N \subset \ddot H_N$.
 \end{corollary}
 
-The sphere with one marked boundary component (\emph{i.e.} the disc) gets mapped to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$. We may look at embeddings of $N$ discs into it. Isotopies between such embeddings modulo homotopy form the framed braid group $B_N \ltimes \Z^N$. This equips the functor
-\begin{equation*}
-V_1 \boxtimes \cdots \boxtimes V_N \mapsto V_1 \otimes \cdots \otimes V_N
-\end{equation*}
-with an $S_N$-equivariant action of $B_N \ltimes \Z^N$ via the braiding and the balancing.
+This may be seen as a geometric reason for generalized Schur-Weyl duality between the Yangian $Y(\mathfrak{gl}_\ell)$ and the degenerate affine Hecke algebra $\dot H_N$: The Yangian provides the local observables of the functorial field theory while the degenerate affine Hecke algebra controls the global, topological braid group action commuting with the Yangian action via $S_N$, as well as the parametrization of the complex structure via $y_1,...,y_N$ in the setting of genus zero.
+
+However, we are again missing an action of the Laurent generators $X_1,...,X_N$. Pictorially, we know that these should represent Dehn twists, which are only allowed in the case of \emph{oriented} surfaces since they distort the blackboard framing. If we were working over oriented manifolds, we would be required to equip our category of coefficients with a balancing, or equivalently a pivotal structure. It is at this point that we face an obstruction: The Yangian is a well-known example of a Hopf algebra whose module category is \emph{not} pivotal. We have already seen that this is the case, since the double (right) dual of $V_y^+$ is $V_{y+2\ell\eta}^+$, which is non-isomorphic to $V_y^+$. In short, we may say that our functorial field theory has a \emph{framing anomaly}, which forces us to work in the category of framed surfaces.
+
+But not all is lost. Let $D_k^2$ denote the disk with the framing obtained by applying $k$ Dehn twists to the blackboard framing. \cite{article:benzvi:2018} then gives:
 
 \begin{prop}
-The induced action of the framed braid group on fundamental monodromy representations is given by the action of $\ddot H_N$.
+The Dehn twist $D_0^2 \to D_1^2$ gets mapped to the shift functor $\exp(2\ell\eta\partial)^*: Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R \to Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
 \end{prop}
+
+%In the tandem paper \cite{article:benzvi2:2018}, it is described how to compute insertions at codimension two defects. Possible insertions are given by \emph{braided module categories}. In our case, according to corollary 4.11 of \emph{loc. cit.}, these are characterized by pairs of an algebra $E$ internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$ and an algebra morphism $Y^\vee(\mathfrak{gl}_\ell) \to E$. In particular, we may consider the endomorphism algebra $E := V_y^+ \otimes V_{y+\ell\eta}^-$. This corresponds to an insertion of the module $V_y^+$.
+
+\begin{remark}
+There is an unrelated appearance of the \emph{trigonometric} Ruijsenaars-Schneider model of $\ell$ particles in \cite{article:benzvi2:2018} when the category of coefficients is the module category of a quantum group $U_q(\mathfrak{gl}_\ell)$.
+\end{remark}
 
 \subsection{In terms of four-dimensional Chern-Simons theory}
 
-The above description looks like a four-dimensional functorial field theory. Hence, it is natural to ask which physical theory gives rise to it. Considering that we are looking at complex curves as 1-morphisms and braids in two dimensions as 2-morphisms, we are already given a hint that the theory should have two holomorphic directions and two topological directions. The functors should assign holonomies of some flat connection on $S^1 \times \R$ to the braids. Furthermore, we have a Yangian appearing. These observations all point to four-dimensional Chern-Simons theory, whose local observables are essentially given by the Yangian.
+The above description looks like a four-dimensional functorial field theory. Hence, it is natural to ask which physical theory gives rise to it. Considering that we are looking at complex curves as 1-morphisms and braids in two dimensions as 2-morphisms, we are already given a hint that the theory should have two holomorphic directions and two topological directions. The functors should assign holonomies of some flat connection on $S^1 \times \R$ to the braids. Furthermore, the Yangian controls the local observables. These observations all point to four-dimensional Chern-Simons theory.
 
 Four-dimensional Chern-Simons theory was first described in \cite{article:costello:2013}, a recent review can be found in \cite{article:lacroix:2022}. It\index{Four-dimensional Chern-Simons theory} is easily constructed by promoting one coordinate of standard three-dimensional Chern Simons theory to a complex coordinate $z$ on a complex curve $C$ and introducing an additional meromorphic 1-form $\omega = \varphi(z) dz$ on $C$ to be able to integrate the Chern-Simons 3-form over a four-dimensional manifold $C \times \Sigma$ with $\Sigma$ an oriented surface, yielding the following action:
 \begin{equation*}
@@ -2327,9 +2370,13 @@ Essentially: Take $\tau$ in the pole representation $\tau(y_j)$, put it into the
 
 \subsection{The elliptic case}
 
-In this section, we explore the representation theory set up by the functorial quantum field theory defined earlier in the case of genus one where $C$ is an elliptic curve.
+In this section, we explore the representation theory set up by the functorial quantum field theory defined earlier in the case of an elliptic curve $C$. Topologically, this corresponds to the case of a torus $T^2 \setminus D^2$ with one boundary component. We already know that our functorial quantum field theory sends the torus with one (marked) boundary component to the category of $Y^\vee(\mathfrak{gl}_\ell)^{\otimes 2}$-modules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$. Again, we may look at embeddings $(D^2)^{\sqcup N} \to T^2 \setminus D^2$, which by \cite{article:benzvi:2018} all correspond to the functor
+\begin{equation*}
+Y(\mathfrak{gl}_\ell)\mathsf{Mod}^{\boxtimes N} \to Y^\vee(\mathfrak{gl}_\ell)^{\otimes 2}\textnormal{-}\mathsf{mod}_{Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R}, \quad V_1 \boxtimes \cdots \boxtimes V_N \mapsto Y^\vee(\mathfrak{gl}_\ell)^{\otimes 2} \otimes V_1 \otimes \cdots \otimes V_N.
+\end{equation*}
+We again obtain an action of the (framed) braid group of the torus, where the braids going through the handle add two additional sets of affine generators. These may possibly be thought of as coefficients of a series depending on the modulus determining the complex structure.
 
-The 2-functor $\mathcal{Z}$ sends the torus with one marked boundary component to $DY(\mathfrak{gl}_\ell)$-modules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
+Do we have a correspondence $X_1 X_2 \mapsto 1, s_i \mapsto s_i, y_1-y_2 \mapsto j = 256 \frac{((y_1-y_2)^2-y_1+y_2+1)^2}{(y_1-y_2)^2(y_1-y_2-1)^2}$?
 
 \section{$S$-dual geometry}
 
