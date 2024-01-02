@@ -91,11 +91,11 @@ Ort und Datum: & Hamburg im (tba) 2024
 
 \chapter*{Abstract}
 
-We examine a quantum-classical duality between inhomogeneous Heisenberg models and rational Ruijsenaars-Schneider models building on observations of \cite{article:gorsky:2014} and \cite{book:arutyunov:betheAnsatz}. We show how generalized Schur-Weyl duality between the Yangian and the degenerate affine Hecke algebra provides a clear structural reason for the existence of this duality, also giving a generalization to spins in non-fundamental representations. Employing the theory of degenerate double affine Hecke algebras, we extend this point of view to a quantum-classical duality between trigonometric Gaudin and Calogero-Moser models, showing how all four models arise from two $S$-dual representations of the loop Yangian. Finally, we give a geometric picture of generalized Schur-Weyl duality that makes apparent how all of these models emerge naturally in four-dimensional Chern-Simons theory when constructed as a 2-functorial quantum field theory and use this to extend our results to the elliptic case. \\
+We examine a quantum-classical duality between inhomogeneous Heisenberg models and rational Ruijsenaars-Schneider models building on observations of \cite{article:gorsky:2014} and \cite{book:arutyunov:betheAnsatz}. We show how generalized Schur-Weyl duality between the Yangian and the degenerate affine Hecke algebra provides a clear structural reason for the existence of this duality, also giving a generalization to spins in non-fundamental representations. Employing the theory of degenerate double affine Hecke algebras, we extend this point of view to a quantum-classical duality between trigonometric Gaudin and Calogero-Moser models, showing how all four models arise from two $S$-dual representations of the loop Yangian. Finally, we give a geometric picture of generalized Schur-Weyl duality that makes apparent how the rational Ruijsenaars-Schneider and inhomogeneous Heisenberg models emerge naturally in four-dimensional Chern-Simons theory when constructed as a category valued functorial quantum field theory on surfaces. We then use this functorial quantum field theory to extrapolate our results to the case of the elliptic Ruijsenaars-Schneider model. \\
 
 \section*{Acknowledgments}
 
-%I sincerely want to thank my advisor Prof. Dr. Gleb Arutyunov for his feedback and guidance in the research process and for sparking my interest in this wonderful topic as well as my coadvisor Prof. Dr. Paul Wedrich for pointing me to some relevant research. I also thank (tba) for proofreading the text. Finally, I would like to thank my family for supporting me in my studies.
+%I sincerely want to thank my advisor Prof. Dr. Gleb Arutyunov for his feedback and guidance in the research process and for sparking my interest in this wonderful topic as well as my coadvisor Prof. Dr. Paul Wedrich for pointing me to the work by Ben-Zvi et al. I also thank (tba) for proofreading the text. Finally, I would like to thank my family for supporting me in my studies.
 
 \tableofcontents
 
@@ -834,14 +834,14 @@ This also yields a general evaluation homomorphism
 \operatorname{ev}: Y(\mathfrak{gl}_\ell) \to U(\mathfrak{gl}_\ell)[y], \quad t_{ij}(z) \mapsto \delta_{ij} + \frac{\eta e_{ij}}{z-y}.
 \end{equation*}
 \item There is the \emph{transposition automorphism} $T(z) \mapsto T^t(-z)$, or $t_{ij}(z) \mapsto t_{ji}(-z)$.
-%\item Given any $f(z) \in \C\llbracket \eta,z^{-1} \rrbracket$ with leading term one, there is an automorphism $T(z) \mapsto f(z) T(z)$.
-%\item Given any $g \in \operatorname{GL}_\ell$, there is an automorphism $T(z) \mapsto g T(z) g^{-1}$.
+\item Given any $f(z) \in \C\llbracket \eta,z^{-1} \rrbracket$ with leading term equal to one, there is an automorphism $T(z) \mapsto f(z) T(z)$.
+\item Given any $g \in \operatorname{GL}_\ell$, there is an automorphism $T(z) \mapsto g T(z) g^{-1}$.
 \end{enumerate}
 \end{definition}
 
 \subsection{The dual Yangian of $\mathfrak{gl}_\ell$}
 
-In addition to the Yangian $Y(\mathfrak{gl}_\ell)$, we will later make use of the \emph{dual Yangian} $Y^*(\mathfrak{gl}_\ell)$, which was studied in detail in the paper \cite{article:nazarov:2019}. Essentially, while the Yangian describes the disk at infinity with local coordinate $z^{-1}$, the dual Yangian describes the disk around zero with local coordinate $z$. We proceed parallel to the construction of the Yangian:
+In addition to the Yangian $Y(\mathfrak{gl}_\ell)$, we will later make use of the \emph{dual Yangian} $Y^\vee(\mathfrak{gl}_\ell)$, which was studied in detail in the paper \cite{article:nazarov:2019}. Essentially, while the Yangian describes the disk at infinity with local coordinate $z^{-1}$, the dual Yangian describes the disk around zero with local coordinate $z$. We proceed parallel to the construction of the Yangian:
 
 \begin{definition}
 The \emph{dual Yangian}\index{Dual Yangian} for the complex Lie algebra $\mathfrak{gl}_\ell$, written $Y^\vee(\mathfrak{gl}_\ell)$, is defined as the unital associative $\C[\eta]$-algebra with the following presentation: It has generators $t_{ij}^{(-r)}$ for $1 \leq i,j \leq \ell$ and $r \geq 1$. To describe the defining relations, we again let $t_{ij}^{(0)} = \delta_{ij}/\eta$ and introduce
@@ -856,7 +856,7 @@ The defining relation of the dual Yangian then is the \emph{TTR relation}:
 \begin{equation}\label{equation:TTRRelation}
 T_1^\vee(z) T_2^\vee(w) R_{12}(z-w) = R_{12}(z-w) T_2^\vee(w) T_1^\vee(z).
 \end{equation}
-We may equip the dual Yangian with a descending filtration by giving $t_{ij}^{(-r)}$ the degree $r$. Denote the $N$th filtered piece by $F_N Y^\vee(\mathfrak{gl}_\ell)$ and let $\hat Y^\vee(\mathfrak{gl}_\ell)$ be the completion with respect to this filtration.
+We may equip the dual Yangian with a descending filtration by giving $t_{ij}^{(-r)}$ the degree $r$. Denote the $N$th filtered piece by $F_N Y^\vee(\mathfrak{gl}_\ell)$ and the completion with respect to this filtration by $\hat Y^\vee(\mathfrak{gl}_\ell)$.
 \end{definition}
 
 \begin{prop}
@@ -871,7 +871,7 @@ This appears in \cite{article:nazarov:2019}.
 \end{proof}
 
 \begin{remark}
-The bialgebra structure of $Y^\vee(\mathfrak{gl}_\ell)$ extends to the $\hat Y^\vee(\mathfrak{gl}_\ell)$. We may additionally define an antipode on $\hat Y^\vee(\mathfrak{gl}_\ell)$, see \cite{article:nazarov:2019}, making $\hat Y^\vee(\mathfrak{gl}_\ell)$ into a Hopf algebra.
+The bialgebra structure of $Y^\vee(\mathfrak{gl}_\ell)$ extends to the completion $\hat Y^\vee(\mathfrak{gl}_\ell)$. We may additionally define an antipode on $\hat Y^\vee(\mathfrak{gl}_\ell)$, see \cite{article:nazarov:2019}, making $\hat Y^\vee(\mathfrak{gl}_\ell)$ into a Hopf algebra.
 \end{remark}
 
 \begin{prop}
@@ -910,14 +910,10 @@ The elements
 define an element $\mathcal{R} \in \hat Y^\vee(\mathfrak{gl}_\ell) \operatorname{\hat \otimes} Y(\mathfrak{gl}_\ell)$ called \emph{the universal $R$-matrix}.
 \end{definition}
 
-\begin{definition}
-A $Y(\mathfrak{gl}_\ell)$-module $M$ is said to be \emph{of finite level} if it descends to a $Y(\mathfrak{gl}_\ell)_k$-module for some $k$, \emph{i.e.} if the generators $t_{ij}^{(r)}$ act as zero on $M$ for all $r > k$.
-\end{definition}
-
 \begin{lemma}
-The modules $V_y^\pm$ are left $\hat Y^\vee(\mathfrak{gl}_\ell)$-comodules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ via
+Any finite-dimensional $Y(\mathfrak{gl}_\ell)$-module $M$ is a left $\hat Y^\vee(\mathfrak{gl}_\ell)$-comodule internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ via
 \begin{equation*}
-\delta: V_y^\pm \to \hat Y^\vee(\mathfrak{gl}_\ell) \otimes V_y^\pm, \quad v \mapsto \mathcal{R}(1 \otimes v).
+\delta: M \to \hat Y^\vee(\mathfrak{gl}_\ell) \otimes M, \quad m \mapsto \mathcal{R}(1 \otimes m).
 \end{equation*}
 \end{lemma}
 
@@ -1023,7 +1019,7 @@ L(\lambda^{(1)})_{y_1}^t \otimes \cdots \otimes L(\lambda^{(N)})_{y_N}^t,
 as above are called \emph{monodromy representations}\index{Monodromy representation} with \emph{inhomogeneities} $y_1,...,y_N$. The highest weight vector $\omega$ is called the \emph{pseudovacuum}.
 \end{definition}
 
-We now take a closer look at how transfer matrices act on monodromy representations. Let us introduce the notation $V_y^- := L(\ydiagram{1})_y$ for the vector representation, and $V_y^+ := L(\ydiagram{1})_y^t \cong L([1^{\ell-1}])_y$ for the covector representation. Our starting observation is the following:
+We now take a closer look at how transfer matrices act on monodromy representations. Let us introduce the notation $V_y^- := L(\ydiagram{1})_y$ for the vector representation, and $V_y^+ := L(\ydiagram{1})_y^t$ for the covector representation. Our starting observation is the following:
 
 \begin{lemma}
 The generator matrix $T(z)$ acts on $V_y^+$ via the $R$-matrix:
@@ -1119,10 +1115,10 @@ where $0$ is the auxiliary space index and $1,...,N$ are quantum space indices. 
 This follows from the previous lemma and the formula for the coproduct (\ref{equation:coproduct}), except the order is reversed since we used the transposition automorphism.
 \end{proof}
 
-We remark that $L(\ydiagram{1})$ and $L([1^{\ell-1}])$ are dual as $U(\mathfrak{gl}_\ell)$-modules, as they are both given by $\C^\ell$ with the standard and negative transposed action, respectively. This duality extends to the Yangian up to a shift of the spectral parameter:
+We remark that $L(\ydiagram{1})$ and its transpose are dual as $U(\mathfrak{gl}_\ell)$-modules, as they are both given by $\C^\ell$ with the standard and negative transposed action, respectively. This duality extends to the Yangian up to a shift of the spectral parameter:
 
 \begin{lemma}
-The standard dot product on $\C^\ell$ gives a $Y(\mathfrak{gl}_\ell)$-linear map
+The standard scalar product on $\C^\ell$ gives a $Y(\mathfrak{gl}_\ell)$-linear map
 \begin{equation*}
 V_y^+ \otimes V_{y+\ell \eta}^- \to \C[\eta], \quad e_p \otimes e_q \mapsto \delta_{pq}.
 \end{equation*}
@@ -1177,11 +1173,11 @@ The second term becomes zero when $y_1 = y_2 + \ell \eta$.
 \end{proof}
 
 \begin{prop}
-The left and right duals of $V_y^+$ are $V_{y-\eta\ell}^-$ and $V_{y+\eta\ell}^-$.
+The left and right duals of $V_y^+$ are $V_{y+\eta\ell}^-$ and $V_{y-\eta\ell}^-$.
 \end{prop}
 
 \begin{proof}
-The fact that $V_{y+\eta\ell}^-$ is the right dual for $V_y^+$ follows from the previous lemmata. Twisting by the transposition automorphism of the Yangian turns $\pm$ into $\mp$, showing that $V_{y-\eta\ell}^-$ is the left dual by the same argument.
+The fact that $V_{y+\eta\ell}^-$ is the left dual for $V_y^+$ follows from the previous lemmata. Twisting by the transposition automorphism of the Yangian turns $V_y^\pm$ into $V_y^\mp$, showing that $V_{y-\eta\ell}^-$ is the right dual by the same argument.
 \end{proof}
 
 \subsection{The Heisenberg model}
@@ -1314,7 +1310,7 @@ Let $\ell = 2$ and $\sigma^x,\sigma^y,\sigma^z$ be the Pauli matrices. Then
 \end{corollary}
 
 \begin{proof}
-This follows from the identity $1 + \sigma^x \otimes \sigma^x + \sigma^y \otimes \sigma^y + \sigma^z \otimes \sigma^z = 2P$.
+This follows from the well-known identity $1 + \sigma^x \otimes \sigma^x + \sigma^y \otimes \sigma^y + \sigma^z \otimes \sigma^z = 2P$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1392,7 +1388,7 @@ See \cite{article:molev:2008} or section 6.4 in \cite{book:molev}.
 \begin{prop}\label{prop:fusionReps}
 Consider $(\C^\ell)^{\otimes k}$ under the $Y(\mathfrak{gl}_\ell)$-action of the monodromy representation
 \begin{equation*}
-V_{\eta c_1}^+ \otimes \cdots \otimes V_{\eta c_k}^+.
+V_{-\eta c_1}^+ \otimes \cdots \otimes V_{-\eta c_k}^+.
 \end{equation*}
 Then $L_{t_\lambda}$ is a $Y(\mathfrak{gl}_\ell)$-submodule isomorphic to $L(\lambda)_0^t$.
 \end{prop}
@@ -1461,7 +1457,7 @@ We can now also see that the highest transfer matrix $\tau_{[1^\ell]}^g(z)$ has 
 
 \begin{corollary}
 \begin{equation*}
-\tau_{[1^\ell]}^g(z) = \sum_\sigma \operatorname{sgn} \sigma \cdot \gamma_1 \gamma_2 \cdots \gamma_\ell \cdot t_{\sigma(1) 1}(z) t_{\sigma(2) 2}(z-\eta) \cdots t_{\sigma(\ell) \ell}(z-\eta (\ell-1)).
+\tau_{[1^\ell]}^g(z) = \sum_\sigma \operatorname{sgn} \sigma \cdot \gamma_1 \gamma_2 \cdots \gamma_\ell \cdot t_{\sigma(\ell)\ell}(z-\eta (\ell-1)) \cdots t_{\sigma(1)1}(z).
 \end{equation*}
 \end{corollary}
 
@@ -1470,9 +1466,9 @@ From the previous proposition, we have
 \begin{equation*}
 \tau_{[1^\ell]}^g(z) = \operatorname{tr}_{t_{[1^\ell]}} g_{t_{[1^\ell]}} T_{t_{[1^\ell]}}(z) = \operatorname{tr}_{1,...,\ell} \Pi_{t_{[1^\ell]}} g_k \cdots g_1 T_\ell(z-\eta(\ell-1)) \cdots T_1(z).
 \end{equation*}
-Noting that $\Pi_{t_{[1^\ell]}} = \sum_\sigma \operatorname{sgn} \sigma \cdot \sigma$, we apply the right hand side to $e_1 \otimes \cdots \otimes e_\ell$ and obtain
+Knowing that $\Pi_{t_{[1^\ell]}} = \sum_\sigma \operatorname{sgn} \sigma \cdot \sigma$, we apply the right hand side to $e_1 \otimes \cdots \otimes e_\ell$ and obtain
 \begin{equation*}
-\sum_{i_1,...,i_\ell} \Pi_{t_{[1^\ell]}} (e_{i_1} \otimes \cdots \otimes e_{i_\ell}) \otimes t_{i_1,1}(z) t_{i_2,2}(z-\eta) \cdots t_{i_\ell,\ell}(z-\eta(\ell-1)).
+\sum_{i_1,...,i_\ell} \Pi_{t_{[1^\ell]}} (e_{i_1} \otimes \cdots \otimes e_{i_\ell}) \otimes t_{i_\ell,\ell}(z-\eta(\ell-1)) \cdots t_{i_1,1}(z).
 \end{equation*}
 But $\Pi_{t_{[1^\ell]}} (\gamma_{i_1} e_{i_1} \otimes \cdots \otimes \gamma_{i_\ell} e_{i_\ell})$ is only non-zero when the $i_1,...,i_\ell$ define a permutation $\sigma$, in which case it reduces to $\operatorname{sgn} \sigma \cdot \gamma_1 \cdots \gamma_\ell (e_1 \otimes \cdots \otimes e_\ell)$.
 \end{proof}
@@ -1502,6 +1498,36 @@ Let $V$ be a highest weight representation of $Y(\mathfrak{gl}_\ell)$ with highe
 \begin{proof}
 This is proposition 3.2.5 of \cite{book:molev}. Since $T(z)$ acts as a lower-triangular matrix on the highest weight vector, the only non-zero term in the Leibniz formula above is the term for $\sigma = \id$, which acts exactly as described. Since $\operatorname{qdet}^g T(z)$ lies in the center of $Y(\mathfrak{gl}_\ell)$, it will act on all vectors of $V$ via this scalar.
 \end{proof}
+
+%Using the fusion procedure and the quantum determinant, we may characterize dual representations in a new way. Recall that $V_y^+ = L(\ydiagram{1})_y^t$ and that $V_{y-\ell\eta}^- = L(\ydiagram{1})_{y-\ell\eta}$ and $V_{y+\ell\eta}^- = L(\ydiagram{1})_{y+\ell\eta}$ are its left and right duals. There is another convenient way to express duals. Let $\check V_y^+$ denote $V_y^+$ twisted by $\operatorname{qdet} T(z)^{-1}$, so that $T(z)$ acts via $(\operatorname{qdet} T(z)^{-1}) T(z)$. We note that by corollary \ref{corollary:quantumDet}, the quantum determinant acts via the scalar $1-\frac{\eta}{z-y} = \frac{z-y-\eta}{z-y}$, so that
+%\begin{equation*}
+%(\operatorname{qdet} T(z)^{-1}) T(z) \mapsto \tfrac{z-y}{z-y-\eta} R(z-y) = \check R(z-y).
+%\end{equation*}
+%We further let $\check L(\lambda)_y^t$ denote the twist of $L(\lambda)_y^t$ by the inverse quantum determinant.
+%
+%\begin{prop}
+%The left and right duals of $\check V_y^+$ are $\check L([1^{\ell-1}])_{y+?}^t$ and $\check L([1^{\ell-1}])_{y+\eta}^t$.
+%\end{prop}
+%
+%\begin{proof}
+%We have a $Y(\mathfrak{gl}_\ell)$-linear map
+%\begin{equation*}
+%L([1^{\ell-1}])_\eta^t \otimes L(\ydiagram{1})_0^t \to L([1^\ell])_0^t.
+%\end{equation*}
+%Note that the codomain is the one-dimensional quantum determinant representation. It follows that twisting with the inverse quantum determinant yields a $Y(\mathfrak{gl}_\ell)$-linear map
+%\begin{equation*}
+%\check L([1^{\ell-1}])_{\eta}^t \otimes \check L(\ydiagram{1})_0^t \to \C[\eta]
+%\end{equation*}
+%We similarly obtain a $Y(\mathfrak{gl}_\ell)$-linear map
+%\begin{equation*}
+%\C[\eta] \to \check L(\ydiagram{1})_0^t \otimes \check L([1^{\ell-1}])_{\eta}^t
+%\end{equation*}
+%and these provide right (co)evaluation maps.
+%\end{proof}
+%
+%\begin{definition}
+%Accordingly, we let $\check V_y^- := \check L([1^{\ell-1}])_y^t$.
+%\end{definition}
 
 \begin{definition}
 Let $\lambda,\mu$ be Young diagrams and $t_\lambda,t_\mu$ standard tableaux of shape $\lambda,\mu$ with content vectors $(c_1,...,c_k),(d_1,...,d_l)$. Define the \emph{higher $R$-matrices}
@@ -1560,14 +1586,14 @@ To finish off this section, let us finally prove the exactness of our sequence:
 \begin{prop}
 There is an exact sequence
 \begin{equation*}
-0 \to L([2,1^{k-1}])_0^t \to L([1^k])_0^t \otimes L(\ydiagram{1})_\eta^t \to L([1^{k+1}])_\eta^t \to 0.
+0 \to L([2,1^{k-1}])_0^t \to L([1^k])_0^t \otimes L(\ydiagram{1})_{-\eta}^t \to L([1^{k+1}])_{-\eta}^t \to 0.
 \end{equation*}
 \end{prop}
 
 \begin{proof}
 Consider the fundamental monodromy representation
 \begin{equation*}
-V_0^+ \otimes V_{-\eta}^+ \otimes \cdots \otimes V_{-\eta(k-1)}^+ \otimes V_\eta^+.
+V_0^+ \otimes V_{\eta}^+ \otimes \cdots \otimes V_{\eta(k-1)}^+ \otimes V_{-\eta}^+.
 \end{equation*}
 By proposition \ref{prop:fusionReps}, the fusion projectors $\Pi_{t_{[2,1^{k-1}]}}$ and $\Pi_{t_{[1^k]}} \otimes 1$ project onto the left and middle pieces $L([2,1^{k-1}])_0^t$ and $L([1^k])_0^t \otimes L(\ydiagram{1})_1^t$. The Littlewood-Richardson rule gives
 \begin{equation*}
@@ -2129,9 +2155,9 @@ When $\hbar = 0$, this becomes the Gaudin Hamiltonian $G_i$. tba
 
 \subsection{In terms of functorial quantum field theory}
 
-The aim of this section is to reformulate Schur-Weyl duality for the Yangian in terms of a 2-functorial quantum field theory that will later turn out to represent four-dimensional Chern-Simons theory. The mathematical structures used so far have been heavily representation theoretical. Nonetheless, we have seen some hints that there is an underlying geometry at play: We have made use of braids on cylinders as well as complex coordinates that may be reinterpreted as $(1+N)$-pointed Riemann spheres. 
+The aim of this section is to reformulate Schur-Weyl duality for the Yangian in terms of a higher functorial quantum field theory that will later turn out to represent four-dimensional Chern-Simons theory. The mathematical structures used so far have been heavily representation theoretical. Nonetheless, we have seen some hints that there is an underlying geometry at play: We have made use of braids on cylinders as well as complex coordinates that may be reinterpreted as $(1+N)$-pointed Riemann spheres. 
 
-These data are combined in the complex Teichmüller tower, whose genus zero part is given by $(1+N)$-pointed Riemann spheres $(\P^1;\infty,y_1,...,y_N;-\partial_{z^{-1}},v_1,...,v_N)$, where $y_1,...,y_N$ are distinct complex numbers and $v_1,...,v_N$ are non-zero tangent vectors at $y_1,...,y_N$, respectively. The morphisms in genus zero are generated by braidings and twists, visualized in figure \ref{figure:braidTwist}. In \cite{book:bakalov}, it is proved that the complex Teichmüller groupoid is equivalent to the topological Teichmüller groupoid, coming from the following construction:
+These data are combined in the complex Teichmüller tower, whose genus zero part describes $(1+N)$-pointed Riemann spheres $(\P^1;\infty,y_1,...,y_N;-\partial_{z^{-1}},v_1,...,v_N)$, where $y_1,...,y_N$ are distinct complex numbers and $v_1,...,v_N$ are non-zero tangent vectors at $y_1,...,y_N$, respectively. The morphisms in genus zero are generated by braidings and twists, visualized in figure \ref{figure:braidTwist}. In \cite{book:bakalov}, it is proved that the complex Teichmüller groupoid is equivalent to the topological Teichmüller groupoid, coming from the following construction:
 
 \begin{definition}
 \begin{enumerate}[label=(\roman*)]
@@ -2231,7 +2257,7 @@ Consider $\eta$ as a non-zero purely imaginary number. Let $Y(\mathfrak{gl}_\ell
 \begin{equation*}
 V_{y_1}^\pm \otimes \cdots \otimes V_{y_N}^\pm,
 \end{equation*}
-under finite (co)limits. Here, the superscript $(-)^\pm$ indicates either $V_{y_i}^+$, in which case we take $y_i \in \R + 4\eta\Z$, or $V_{y_i}^-$, in which case we take $y_i \in \R + 2\eta + 4\eta\Z$.
+under finite (co)limits. Here, the superscript $(-)^\pm$ indicates either $V_{y_i}^+$, in which case we take $y_i \in \R + 2\ell\eta\Z$, or $V_{y_i}^-$, in which case we take $y_i \in \R + \ell\eta + 2\ell\eta\Z$.
 \end{definition}
 
 \begin{prop}
@@ -2249,9 +2275,9 @@ via higher $R$-matrices, confer (\ref{equation:higherRMatrix}):
 \begin{align*}
 c_{++} &:= \check R_{t_{[1]},t_{[1]}}(y_1-y_2) = \check R_{12}(y_1-y_2), \\
 c_{+-} &:= \check R_{t_{[1]},t_{[1^{\ell-1}]}}(y_1-y_2) \\
-&= \check R_{12}(y_1-y_2) \check R_{13}(y_1-y_2+\eta) \cdots \check R_{1\ell}(y_1-y_2+(\ell-2)\eta), \\
+&= \check R_{12}(y_1-y_2) \cdots \check R_{1\ell}(y_1-y_2+(\ell-2)\eta), \\
 c_{-+} &:= \check R_{t_{[1^{\ell-1}]},t_{[1]}}(y_1-y_2) \\
-&= \check R_{\ell 1}(y_1-y_2-(\ell-2)\eta) \cdots \check R_{31}(y_1-y_2-\eta) \check R_{21}(y_1-y_2), \\
+&= \check R_{\ell 1}(y_1-y_2-(\ell-2)\eta) \cdots \check R_{21}(y_1-y_2), \\
 c_{--} &:= \check R_{t_{[1^{\ell-1}]},t_{[1^{\ell-1}]}}(y_1-y_2) \\
 &= \check R_{\ell-1,1'}(y_1-y_2-(\ell-2)\eta) \cdots \check R_{\ell-1,(\ell-2)'}(y_1-y_2-\eta) \check R_{\ell-1,(\ell-1)'}(y_1-y_2) \\
 & \times \cdots \times \check R_{1,1'}(y_1-y_2) \check R_{1,2'}(y_1-y_2+\eta) \cdots \check R_{1,(\ell-1)'}(y_1-y_2+(\ell-2)\eta)
@@ -2259,7 +2285,11 @@ c_{--} &:= \check R_{t_{[1^{\ell-1}]},t_{[1^{\ell-1}]}}(y_1-y_2) \\
 We remark that these may only become singular when $y_1-y_2 = \eta d_j - \eta c_i \pm \eta$ for $(c_1,...,c_k)$ and $(d_1,...,d_l)$ the appropriate content vectors. Let us check that this does not happen:
 \begin{itemize}
 \item Case “$++$”: $y_1-y_2 \neq \pm \eta$,
-\item Case “$+-$”: $y_1-y_2 \neq \eta k \pm \eta$ for $k = 0,...,\ell-2$,
+\item Case “$+-$”: We have
+\begin{equation*}
+c_{+-} = \frac{y_1-y_2+(\ell-2)\eta}{y_1-y_2-\eta} \cdots \frac{}{y_1-y_2+(\ell-3)\eta} R_{12}(y_1-y_2) \cdots R_{1\ell}(y_1-y_2+(\ell-2)\eta),
+\end{equation*}
+so we expect singularities at $y_1-y_2=\eta$ 
 \item Case “$-+$”: $y_1-y_2 \neq -\eta k \pm \eta$ for $k = 0,...,\ell-2$,
 \item Case “$--$”: This case is more complicated, since we have possible singularities on the off-anti-diagonals when $y_1-y_2 \to 0$. These occur always in $2 \times 2$ blocks of the form
 \begin{equation*}
@@ -2300,7 +2330,7 @@ Let $\mathsf{M}_N$ be the full subcategory spanned by $V_{y_1}^+ \otimes \cdots 
 \begin{equation*}
 E_N := \bigoplus_{M \in \mathsf{M}_N} M \otimes M^\vee \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R
 \end{equation*}
-with the special element $1_N: \C[\eta] \to E_N$ representing the sum of identities. By the previous lemma, we can identify $F_N Y(\mathfrak{gl}_\ell)$ as a subspace of $E_N$ via the map $Y(\mathfrak{gl}_\ell) \to E_N$ induced by the actions. Further let $L := \int^{M \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R} M \otimes M^\vee$. The coactions of the dual Yangian give a map $\psi: L \to Y^\vee(\mathfrak{gl}_\ell)$ that commutes with the coactions $E_N \to L \otimes E_N$ and $E_N \to Y^\vee(\mathfrak{gl}_\ell) \otimes E_N$. We may look at the image of $1_N$
+with the special element $1_N: \C[\eta] \to E_N$ representing the sum of identities. By the previous lemma, we can identify $F_N Y(\mathfrak{gl}_\ell)$ as a subspace of $E_N$ via the injective map $Y(\mathfrak{gl}_\ell) \to E_N$ induced by the jointly faithful actions. Further let $L := \int^{M \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R} M \otimes M^\vee$. The coactions of the dual Yangian give a map $\psi: L \to Y^\vee(\mathfrak{gl}_\ell)$ that commutes with the coactions $E_N \to L \otimes E_N$ and $E_N \to Y^\vee(\mathfrak{gl}_\ell) \otimes E_N$. We may look at the image of $1_N$
 \begin{equation*}
 \widetilde{\mathcal{R}}_N: \C[\eta] \to E_N \to L \otimes F_N Y(\mathfrak{gl}_\ell) \subseteq L \otimes E_N,
 \end{equation*}
@@ -2312,13 +2342,13 @@ mapping to the universal $R$-matrix $\mathcal{R}$. The element $\widetilde{\math
 \end{proof}
 
 \begin{theorem}
-Factorization homology gives a 2-functor
+Factorization homology gives an $(\infty,1)$-functor
 \begin{equation*}
 \int_{(-)} Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R: \mathsf{Mfld}_\textnormal{fr}^2 \to \mathsf{Pr}_c
 \end{equation*}
 such that
 \begin{enumerate}[label=(\roman*)]
-\item The disk $D^2$ (with any framing) gets mapped to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
+\item The disk $D^2$ (with blackboard framing) gets mapped to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
 \item The torus with one boundary component $T^2 \setminus D^2$ gets mapped to the category \\ $Y^\vee(\mathfrak{gl}_\ell)^{\otimes 2}\textnormal{-}\mathsf{mod}_{Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R}$ of $Y^\vee(\mathfrak{gl}_\ell)^{\otimes 2}$-modules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
 \item The $N$-fold disk embeddings $(D^2)^{\sqcup N} \to D^2$ get mapped to the $N$-fold tensor product functor $(Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R)^{\boxtimes N} \to Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$. The action of the braid group on such embeddings gets mapped to an action on the $N$-fold tensor product functor via the braiding.
 \end{enumerate}
@@ -2334,15 +2364,9 @@ The induced action of the braid group on fundamental monodromy representations i
 
 This may be seen as a geometric reason for generalized Schur-Weyl duality between the Yangian $Y(\mathfrak{gl}_\ell)$ and the degenerate affine Hecke algebra $\dot H_N$: The Yangian provides the local observables of the functorial field theory while the degenerate affine Hecke algebra controls the global, topological braid group action commuting with the Yangian action via $S_N$, as well as the parametrization of the complex structure via $y_1,...,y_N$ in the setting of genus zero.
 
-However, we are again missing an action of the Laurent generators $X_1,...,X_N$. Pictorially, we know that these should represent Dehn twists, which are only allowed in the case of \emph{oriented} surfaces since they distort the blackboard framing. If we were working over oriented manifolds, we would be required to equip our category of coefficients with a balancing, or equivalently a pivotal structure. It is at this point that we face an obstruction: The Yangian is a well-known example of a Hopf algebra whose module category is \emph{not} pivotal. We have already seen that this is the case, since the double (right) dual of $V_y^+$ is $V_{y+2\ell\eta}^+$, which is non-isomorphic to $V_y^+$. In short, we may say that our functorial field theory has a \emph{framing anomaly}, which forces us to work in the category of framed surfaces.
+However, we are again missing an action of the Laurent generators $X_1,...,X_N$. Pictorially, we know that these should represent Dehn twists, which are only allowed in the case of \emph{oriented} surfaces since they distort the blackboard framing. If we were working over oriented manifolds, we would be required to equip our category of coefficients with a balancing, or equivalently a pivotal structure. It is at this point that we face an obstruction: The Yangian is a well-known example of a Hopf algebra whose module category is \emph{not} pivotal. We have already seen that this is the case, since the double (left) dual of $V_y^+$ is $V_{y+2\ell\eta}^+$, which is non-isomorphic to $V_y^+$. In short, we may say that our functorial field theory has a \emph{framing anomaly}, which forces us to work in the category of framed surfaces.
 
-But not all is lost. Let $D_k^2$ denote the disk with the framing obtained by applying $k$ Dehn twists to the blackboard framing. \cite{article:benzvi:2018} then gives:
-
-\begin{prop}
-The Dehn twist $D_0^2 \to D_1^2$ gets mapped to the shift functor $\exp(2\ell\eta\partial)^*: Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R \to Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
-\end{prop}
-
-%In the tandem paper \cite{article:benzvi2:2018}, it is described how to compute insertions at codimension two defects. Possible insertions are given by \emph{braided module categories}. In our case, according to corollary 4.11 of \emph{loc. cit.}, these are characterized by pairs of an algebra $E$ internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$ and an algebra morphism $Y^\vee(\mathfrak{gl}_\ell) \to E$. In particular, we may consider the endomorphism algebra $E := V_y^+ \otimes V_{y+\ell\eta}^-$. This corresponds to an insertion of the module $V_y^+$.
+One would expect as before that the action of the Laurent generators $X_1,...,X_N$ finds its geometric interpretation once we incorporate the full loop Yangian $LY(\mathfrak{gl}_\ell)$. However, due its complex nature, more work needs to be done in order to establish some necessary properties of $LY(\mathfrak{gl}_\ell)$, such as irreducibility criteria or pivotality, as well as the construction of a dual loop Yangian, so we leave this for future work.
 
 \begin{remark}
 There is an unrelated appearance of the \emph{trigonometric} Ruijsenaars-Schneider model of $\ell$ particles in \cite{article:benzvi2:2018} when the category of coefficients is the module category of a quantum group $U_q(\mathfrak{gl}_\ell)$.
@@ -2350,17 +2374,17 @@ There is an unrelated appearance of the \emph{trigonometric} Ruijsenaars-Schneid
 
 \subsection{In terms of four-dimensional Chern-Simons theory}
 
-The above description looks like a four-dimensional functorial field theory. Hence, it is natural to ask which physical theory gives rise to it. Considering that we are looking at complex curves as 1-morphisms and braids in two dimensions as 2-morphisms, we are already given a hint that the theory should have two holomorphic directions and two topological directions. The functors should assign holonomies of some flat connection on $S^1 \times \R$ to the braids. Furthermore, the Yangian controls the local observables. These observations all point to four-dimensional Chern-Simons theory.
+It is evident that the above description looks like the two-dimensional part of a fully extended four-dimensional functorial field theory. Hence, it is natural to ask which physical theory gives rise to it. Considering that we are looking at complex curves as 1-morphisms and braids in two dimensions as 2-morphisms, we are already given a hint that the theory should have two holomorphic directions and two topological directions. The functors should assign holonomies of some flat connection on $S^1 \times \R$ to the braids. Furthermore, the Yangian controls the local observables. These observations all point to four-dimensional Chern-Simons theory.
 
-Four-dimensional Chern-Simons theory was first described in \cite{article:costello:2013}, a recent review can be found in \cite{article:lacroix:2022}. It\index{Four-dimensional Chern-Simons theory} is easily constructed by promoting one coordinate of standard three-dimensional Chern Simons theory to a complex coordinate $z$ on a complex curve $C$ and introducing an additional meromorphic 1-form $\omega = \varphi(z) dz$ on $C$ to be able to integrate the Chern-Simons 3-form over a four-dimensional manifold $C \times \Sigma$ with $\Sigma$ an oriented surface, yielding the following action:
+Four-dimensional Chern-Simons theory was first described in \cite{article:costello:2013}, a recent review can be found in \cite{article:lacroix:2022}. It\index{Four-dimensional Chern-Simons theory} is easily constructed by promoting one coordinate of the usual three-dimensional Chern Simons theory to a complex coordinate $z$ on a complex curve $C$ and introducing an additional meromorphic 1-form $\omega = \varphi(z) dz$ on $C$ to be able to integrate the Chern-Simons 3-form over a four-dimensional manifold $C \times \Sigma$ with $\Sigma$ an oriented surface, yielding the following action:
 \begin{equation*}
 S_\omega(A) = \frac{i}{4\pi} \int_{C \times \Sigma} \omega \wedge \textnormal{CS}(A), \quad \textnormal{CS}(A) := \langle A, dA + \tfrac 23 A \wedge A \rangle.
 \end{equation*}
-The field $A$ is a $\mathfrak{gl}_\ell$-valued 1-form on $C \times \Sigma$ that has no components in the $z,\bar z$ direction: $A = A_t dt + A_x dx$ (up to gauge). It should be interpreted as a Lax connection on $\Sigma$ with spectral parameter $z$. Its poles lie at the zeros of $\omega$, which are called \emph{disorder defects}. We set
+The field $A$ is a $\mathfrak{gl}_\ell$-valued 1-form on $C \times \Sigma$ that has no components in the $z,\bar z$ direction, meaning we can write it as $A = A_t dt + A_x dx$ up to some gauge transformation. We interpret $A$ as a Lax connection on $\Sigma$ with spectral parameter $z$, writing $A(z) \in \Omega^1(\Sigma,\mathfrak{gl}_\ell)$. It is known \cite{article:lacroix:2021} that the poles of $A(z)$ lie at the zeros of $\omega$, which are called \emph{disorder defects}. In order to compare with the previous section, we set
 \begin{equation*}
 \omega = \frac{(z-y_1-\eta) \cdots (z-y_N-\eta)}{(z-y_1) \cdots (z-y_N)} dz.
 \end{equation*}
-The solution for $A(z)$ in \cite{article:lacroix:2021} gives $A(y_i) = J_i$ and $A(z)$ has poles at $y_i+\eta$. This happens when we use the normalized $R$-matrix $\check R(z-y_i)$. We obtain the Cauchy matrix $C_{ij} = \frac{1}{y_i-y_j+\eta}$, which has inverse
+The classical solutions for $A(z)$ determined in \cite{article:lacroix:2021} give $A(y_i) = J_i$ and $A(z)$ has poles at $y_i+\eta$. This is congruent to the analytic structure of the $R$-matrix $\check R(z-y_i)$. We obtain the Cauchy matrix $C_{ij} = \frac{1}{y_i-y_j+\eta}$, which has inverse
 \begin{equation*}
 (C^{-1})_{ij} = -(y_j-y_i+\eta) \prod_{k \neq i} \frac{y_j-y_k+\eta}{y_i-y_k} \prod_{k \neq j} \frac{y_k-y_i+\eta}{y_i-y_k}
 \end{equation*}
@@ -2368,21 +2392,64 @@ The Cauchy matrix should be seen as a linear map $\mathfrak{gl}_\ell^{(\zeta)} \
 
 Essentially: Take $\tau$ in the pole representation $\tau(y_j)$, put it into the zero representation $\tau(y_i+\eta)$, then multiply by $X_i$, then go back to the pole representation. This should give the Lax matrix of the RS model, so its just a conjugation away! It also makes apparent why the elementary symmetric polynomials in the $X_i$ are good invariants.
 
+\section{Extending to the elliptic case}
+
+\subsection{The trigonometric case}
+
+Before we move onto the elliptic case, let us warm up with the trigonometric case. This leads us to consider our functorial quantum field theory on the annulus $A^2$, which gives us the category of $Y^\vee(\mathfrak{gl}_\ell)$-modules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$. Again, we may look at embeddings $(D^2)^{\sqcup N} \to A^2$, which by \cite{article:benzvi:2018} all correspond to the functor
+\begin{equation*}
+Y(\mathfrak{gl}_\ell)\mathsf{Mod}^{\boxtimes N} \to Y^\vee(\mathfrak{gl}_\ell)\textnormal{-}\mathsf{mod}_{Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R}, \quad V_1 \boxtimes \cdots \boxtimes V_N \mapsto Y^\vee(\mathfrak{gl}_\ell) \otimes V_1 \otimes \cdots \otimes V_N.
+\end{equation*}
+This gives an action of the braid group of the annulus.
+
+\begin{definition}
+The \emph{braid group $B_N(A^2)$ on $N$ strands in $A^2$} is generated by elements $b_1,...,b_{N-1}$ subject to the braid relations and $Z_1$. We may recursively define $Z_i := b_{i-1} Z_{i-1} b_{i-1}$.
+\end{definition}
+
+The action action of $B_N(A^2)$ on $Y^\vee(\mathfrak{gl}_\ell) \otimes V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$ is such that the simple braids act on the last tensorands via the braiding and the element $Z_i$ should act as
+\begin{equation*}
+R_{i,i-1}(y_i-y_{i-1}) \cdots R_{i,1}(y_i-y_1) T_i^\vee(z) R_{i,N}(y_i-y_N) R_{i,N-1}(y_i-y_{N-1}) \cdots R_{i,i+1}(y_i-y_{i+1}).
+\end{equation*}
+
+If we do a quantum Hamiltonian reduction $Y^\vee(\mathfrak{gl}_\ell) \to \underline{\operatorname{End}(V_0^+)}$, we should recover the action we had before.
+
+The rational RS model corresponds to the 4d geometry $\R^2 \times S^1 \times \R$. The trigonometric RS model corresponds to $\R \times (S^1)^2 \times \R$ and the elliptic RS model corresponds to $(S^1)^3 \times \R$. This could become a problem, since our TQFT only considers two fully extended dimensions. We can account for two of the $S^1$ by considering the torus, which gets mapped to $Y(\mathfrak{gl}_\ell)$-equivariant modules over $EY(\mathfrak{gl}_\ell)$. The third $S^1$ would have to come from some additional functors between these categories. However, the need for this third $S^1$ would be eliminated if we were to consider a balancing.
+
+The TQFT assigns to $(S^1)^2 \times \R$ just the elliptic Yangian/the free module functor over the elliptic Yangian. On the other hand, to $(S^1)^2 \times S^1$, it will assign the composition of the dualizing maps, which is nothing but the coend over the category assigned to the torus. The question is: What happens when we do quantum Hamiltonian reduction. The boundary components give module structures over the elliptic Yangian. The math in Ben-Zvi et al. only accounts for line markings in 3d, but we would need point markings in 3d to get modules.
+
 \subsection{The elliptic case}
 
-In this section, we explore the representation theory set up by the functorial quantum field theory defined earlier in the case of an elliptic curve $C$. Topologically, this corresponds to the case of a torus $T^2 \setminus D^2$ with one boundary component. We already know that our functorial quantum field theory sends the torus with one (marked) boundary component to the category of $Y^\vee(\mathfrak{gl}_\ell)^{\otimes 2}$-modules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$. Again, we may look at embeddings $(D^2)^{\sqcup N} \to T^2 \setminus D^2$, which by \cite{article:benzvi:2018} all correspond to the functor
+In this section, we explore the representation theory set up by the functorial quantum field theory representing four-dimensional Chern-Simons theory on $C \times S^1 \times \R$ in the case where $C$ is an elliptic curve. Topologically, this corresponds to the case of a torus $T^2 \setminus D^2$ with one boundary component. We already know that our functorial quantum field theory sends the torus with one (marked) boundary component to the category of $Y^\vee(\mathfrak{gl}_\ell)^{\otimes 2}$-modules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$. Again, we may look at embeddings $(D^2)^{\sqcup N} \to T^2 \setminus D^2$, which by \cite{article:benzvi:2018} all correspond to the functor
 \begin{equation*}
 Y(\mathfrak{gl}_\ell)\mathsf{Mod}^{\boxtimes N} \to Y^\vee(\mathfrak{gl}_\ell)^{\otimes 2}\textnormal{-}\mathsf{mod}_{Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R}, \quad V_1 \boxtimes \cdots \boxtimes V_N \mapsto Y^\vee(\mathfrak{gl}_\ell)^{\otimes 2} \otimes V_1 \otimes \cdots \otimes V_N.
 \end{equation*}
-We again obtain an action of the (framed) braid group of the torus, where the braids going through the handle add two additional sets of affine generators. These may possibly be thought of as coefficients of a series depending on the modulus determining the complex structure.
+We again obtain an action of the (framed) braid group of the torus, where the braids going through the handle add two additional sets of affine generators.
 
-Do we have a correspondence $X_1 X_2 \mapsto 1, s_i \mapsto s_i, y_1-y_2 \mapsto j = 256 \frac{((y_1-y_2)^2-y_1+y_2+1)^2}{(y_1-y_2)^2(y_1-y_2-1)^2}$?
+We are led to consider modules over the algebra $EY(\mathfrak{gl}_\ell) := Y^\vee(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell)$, which we call the \emph{elliptic Yangian}. Let $A(z)$ and $B(w)$ denote the canonical elements $EY(\mathfrak{gl}_\ell) \otimes \operatorname{End}(V_z^+) \otimes \operatorname{End}(V_w^+)$. Then
+\begin{equation*}
+R_{12}(z-w) A_1(z) R_{21}(w-z) B_2(w) = B_2(w) R_{12}(z-w) A_1(z) R_{21}(w-z).
+\end{equation*}
+This is exactly what we would expect from the relations for the torus/quantum Heisenberg double.
 
-\section{$S$-dual geometry}
+Similarly, we may consider the torus with one boundary component, to which the TQFT assigns modules over $Y^\vee(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \otimes Y(\mathfrak{gl}_\ell)$. We have the $y_1,...,y_N$ from the rational case as well as the $X_1,...,X_N$ that arise from the transfer matrix. In addition, we also have $Z_1,...,Z_N$ and $W_1,...,W_N$ arising from the additional two tensorands, having their own equivalent of transfer matrices $\sigma_A,\sigma_B$. We may hopefully combine the $Z$s, $W$s, and $y$s into elliptic functions after some reparametrization. We need functions of the form $\Phi(z,q_{ij}+\gamma)$ as well as $\Phi(\gamma,q_{kj})$ or $\sigma(q_{ij}+\eta)/\sigma(q_{ij})$. What are the relations among $\tau,\sigma_A,\sigma_B$? They should come from the torus braid group, meaning $\sigma_A$ and $\sigma_B$ commute among each other and something else for $\tau$ and $\sigma_{A/B}$.
 
-Take 4d CS on $\C^\times \times \R^2$ instead. Also look at 5d CS on $\C^\times \times \C \times \R$.
+Structurally, we have $\Phi(z,x) \Phi(z,y) \sim \Phi(z,x+y)$, meaning $\Phi(z,q_{ij})$ could come about by some product $W_i W_j^{-1}$. The $R$-matrix quantization suggests that what previously was the transfer matrix arises as a product of the form $Z W^{-1} P$. This could be something like $\sigma_A \sigma_B^{-1} \tau$.
 
-\subsection{In terms of functorial quantum field theory}
+Since we should have a duality with the XYZ Heisenberg spin chain, we may compare with that literature. An important quantity is a transfer matrix of the form
+\begin{equation*}
+\sigma(z) = \operatorname{tr} A(z) T(z) B(z) T(-z)^{-1},
+\end{equation*}
+where $A$ and $B$ satisfy the reflection equation. This also fits the data we have. However, the matrices $A$ and $B$ are used for open boundary conditions, apparently. This is probably what happens if we consider a disk with two marked points. But gluing the marked points together yields the torus, so the same formula should work. There should also be an additional spectral parameter?
+
+I would expect the elliptic transfer matrix to act on a spin chain tensored with two reps of the dual Yangian. It will also satisfy fusion relations, but the expansion in terms of residues will be different, since we are doing it on an elliptic curve. Do we have something like
+\begin{equation*}
+f(y_i+\eta;z) = \sigma(0;z) + \sum_i \Phi(z,y_i-y_j+\eta) \operatorname{Res}_{y_i} f(-;z) \frac{dx}{y}
+\end{equation*}
+If $\sigma$ is doubly periodic, then it is amenable to such "elliptic partial fraction" expansions.
+
+Previously, we had the parameter $k$ in the Young diagram $[1^k]$ labeling the winding number for the higher transfer matrices. Now we should have two additional parameters $m,n$, labeling the winding number for the toroidal directions? These could label the additional representations we are inserting at the ends of the spin chain. We then get complicated fusion relations and $k=m=n=\ell$ gives a nice case from which we can determine the spectrum. But we would have three $L$-matrices, one for each direction. Their product might be the actual $L$-matrix we are after.
+
+The elliptic Cauchy matrix is $\Phi(z,y_i-y_j+\eta)$.
 
 \chapter{Conclusion}\label{chapter:conclusion}
 
@@ -2559,7 +2626,7 @@ $\Pi_{t_\lambda}$ & fusion projector for $t_\lambda$
 $L(\lambda)$ & irreducible $\mathfrak{gl}_\ell$-module with highest weight $\lambda$ \\
 $S(\lambda)$ & Specht module for $\lambda$ \\
 $L(\lambda)_y^t$ & evaluation module of $Y(\mathfrak{gl}_\ell)$, transposed and shifted by $y \in \C$ \\
-$V_y^\pm$ & $L([1])_y^t$ for “$+$” or $L([1^{\ell-1}])_y^t$ for “$-$” \\
+$V_y^\pm$ & $\ytableausetup{boxsize=0.5em}L(\ydiagram{1})_y^t$ for “$+$” or $L(\ydiagram{1})_y$ for “$-$” \\
 $g$ & twist matrix \\
 $\gamma_i$ & diagonal components of the twist matrix \\
 $\tau^g(u)$ & $g$-twisted (fundamental) transfer matrix \\
