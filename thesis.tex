@@ -2261,12 +2261,12 @@ $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$ is an abelian braided rigid tensor catego
 \begin{proof}
 \begin{enumerate}
 \item Abelian: The category is preabelian by closedness under finite (co)limits and preadditivity. Normality of mono- and epimorphisms is inherited from $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$.
-\item Braidings for generators: Let $\check R_+(z) := P \check R(z) = \frac{z}{z-\eta} - \frac{\eta}{z-\eta} P$ and $\check R_-(z) := \frac{z}{z-\eta} P - \frac{\eta}{z-\eta} P^t$. Define the braidings
+\item Braidings for generators: Let $\check R_+(z) := P \check R(z) = \frac{z}{z-\eta} P - \frac{\eta}{z-\eta}$ and $\check R_-(z) := \frac{z}{z-\eta} P - \frac{\eta}{z-\eta} P^t$. Define the braidings
 \begin{align*}
 c_{\pm\pm}:= \check R_+(y_1-y_2)&: V_{y_1}^\pm \otimes V_{y_2}^\pm \to V_{y_2}^\pm \otimes V_{y_1}^\pm \\
 c_{\pm\mp}:= \check R_-(y_2-y_1-\ell\eta)&: V_{y_1}^\pm \otimes V_{y_2}^\mp \to V_{y_2}^\mp \otimes V_{y_1}^\pm.
 \end{align*}
-One may check that $c_{\pm\mp}$ and $c_{--}$ come about by dualizing the legs of $c_{++}$. In particular, we check that the braiding is well-defined and invertible for all admissible values of $y_1$ and $y_2$.
+One may check that $c_{\pm\mp}$ and $c_{--}$ come about by dualizing the legs of $c_{++}$. We have a problem however when $y_2-y_1=\ell\eta$ for $c_{\pm\mp}$, since $\check R_-(0) = P^t$ is singular.
 \item Duals for generators: Note that the right dual of any generator module is again a generator module. It is obtained by reversing the order of the tensor product, flipping the signs, and shifting by $+\ell \eta$. The same holds for left duals, except we shift by $-\ell\eta$. Double right dualization induces a shift by $2\ell\eta$, which is an equivalence. In particular, right dualization is exact on generator modules, so we can extend right dualization to all of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
 \item Everything in sight commutes with finite (co)limits, so we may extend the braided rigid structure to all of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
 \end{enumerate}
@@ -2276,7 +2276,7 @@ One may check that $c_{\pm\mp}$ and $c_{--}$ come about by dualizing the legs of
 \begin{lemma}
 The map
 \begin{equation*}
-\delta: V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+ \to Y^\vee(\mathfrak{gl}_\ell) \otimes V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+, \quad v \mapsto T_N^\vee(y_N) \cdots T_1^\vee(y_1)
+\delta: V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+ \to Y^\vee(\mathfrak{gl}_\ell) \otimes V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+, \quad v \mapsto T_N^\vee(y_N) \cdots T_1^\vee(y_1)(1 \otimes v)
 \end{equation*}
 equips $V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$ with the structure of a $Y^\vee(\mathfrak{gl}_\ell)$-comodule internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\R$.
 \end{lemma}
