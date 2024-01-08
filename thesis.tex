@@ -468,6 +468,7 @@ The spherical degenerate double affine Hecke algebra will be of great importance
 \begin{prop}
 \begin{enumerate}[label=(\roman*)]
 \item $S\ddot H_N$ is finitely generated and commutative.
+\item $S\ddot H_N$ is generated as a commutative algebra by elementary symmetric polynomials in $X_1,...,X_N$ and $y_1,...,y_N$.
 \item The degenerate double affine Hecke algebra $\ddot H_N$ is finite over $S\ddot H_N$.
 \item Specializing to $\hbar = 0$, there is the Satake isomorphism $Z(\ddot H_N) \overset \sim \to S\ddot H_N, z \mapsto ze$, while one has $Z(\ddot H_N) = \C$ for $\hbar \neq 0$.
 \item The spectrum of $S\ddot H_N$ is the configuration space of the classical rational Ruijsenaars-Schneider and trigonometric Calogero-Moser model.
@@ -2360,6 +2361,101 @@ If we do a quantum Hamiltonian reduction $Y^\vee(\mathfrak{gl}_\ell) \to \underl
 \begin{remark}
 There is an unrelated appearance of the \emph{trigonometric} Ruijsenaars-Schneider model of $\ell$ particles in \cite{article:benzvi2:2018} when the category of coefficients is the module category of a quantum group $U_q(\mathfrak{gl}_\ell)$.
 \end{remark}
+
+\subsection{Meromorphic factorization homology}
+
+Let us start with the naive definition:
+
+\begin{definition}
+Let $\C\mathsf{Cob}'$ denote the monoidal $(2,1)$-category whose
+\begin{enumerate}[label=(\roman*)]
+\item objects are natural numbers $[N]$, thought of as a disjoint union of $N$ formal disks $D := \operatorname{Spec} \C[\eta]\llbracket z \rrbracket$,
+\item 1-morphisms $[N] \to [M]$ are Riemann surfaces marked with $N$ ingoing and $M$ outgoing ordered points, each equipped with a non-zero tangent vector. Composition is defined by gluing and identities are given by $\P^1$ marked with $0$ and $\infty$ with non-zero tangent vectors $\partial_z$ and $-\partial_{z^{-1}}$,
+\item 2-morphisms are homotopy classes of paths in the moduli space of Riemann surfaces,
+\item the tensor product is disjoint union.
+\end{enumerate}
+Let $\C\mathsf{Cob}_0'$ denote the same $(2,1)$-category, but where we additionally require morphisms to have genus zero and have exactly one outgoing point per connected component. This last condition is needed to make the set of genus zero morphisms closed under composition.
+\end{definition}
+
+We remark:
+\begin{enumerate}[label=(\roman*)]
+\item The objects of $\C\mathsf{Cob}_0'$ are generated under the tensor product by the formal disks $D$. There are no relations.
+\item The 1-morphisms of $\C\mathsf{Cob}_0'$ are generated under composition by the pairs-of-pants that are Riemann spheres $\P^1$, marked with the two ingoing points $y_1 \neq y_2$ in the complex plane with non-zero tangent vectors $X_1,X_2 \in \C^\times$ and outoing point $\infty$ with tangent vector $-\partial_{z^{-1}}$ modulo translations of $y_1,y_2$. Hence, such a pair-of-pants is labeled by three non-zero complex numbers $y_1-y_2,X_1,X_2$. The only relation is associativity. (What about the twisting cylinder? It seems to give an isomorphism, modding out the variation in the tangent vectors)
+\item The 2-morphisms of $\C\mathsf{Cob}_0'$ modulo higher morphisms are generated under composition by the Dehn twist on the identity cylinder and the braiding on the pair of pants. The relations are those of the framed braid group $B_N \ltimes \Z^N$.
+\end{enumerate}
+
+With this, we would like to be able to define a monoidal $(2,1)$-functor
+\begin{equation*}
+\mathcal{Z}_0': \C\mathsf{Cob}_0' \to \mathsf{Rex}
+\end{equation*}
+by sending
+\begin{enumerate}[label=(\roman*)]
+\item the formal disk $D$ to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$,
+\item the twisting cylinders to the shift functors,
+\item the pair-of-pants labeled by $y_1,y_2$ to the tensor product functor
+\begin{equation*}
+Y(\mathfrak{gl}_\ell)\mathsf{Mod}^{\boxtimes 2} \to Y(\mathfrak{gl}_\ell)\mathsf{Mod}, \quad U \boxtimes V \mapsto U(y_1) \otimes V(y_2).
+\end{equation*}
+\item the action of the framed braid group on 2-morphisms to the action of the framed braid group on the tensor product functor.
+\end{enumerate}
+
+It is here that we run into problems: The braiding of the Yangian is not invertible for all values of the spectral parameter. For example, the braiding degenerates when we try to braid an object with its dual. Rather, the braiding is invertible \emph{almost} everywhere. To get something well-defined, we hence should replace single complex curves by sheaves on the moduli space $M_{0,1+N}$.
+
+\begin{definition}
+Let $\C\mathsf{Cob}$ denote the monoidal $2$-category whose
+\begin{enumerate}[label=(\roman*)]
+\item objects are natural numbers $[N]$,
+\item 1-morphisms $[N] \to [1]$ are quasi-coherent sheaves on $M_{0,N+1}$,
+\item 2-morphisms are morphisms of quasi-coherent sheaves,
+\item tensor product is tensor product of sheaves.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+A quasi-coherent sheaf $U$ on $M_{0,N+1}$ is an $S_N \times \C$-equivariant $\C[y_1,...,y_N]_\delta$-module. This means that $U$ comes equipped with an action of the group $S_N \times \C$ such that
+\begin{equation*}
+\sigma(fu) = \sigma(f) \sigma(u), \quad \sigma \in S_N \times \C, \quad f \in \C[y_1,...,y_N]_\delta, \quad u \in U,
+\end{equation*}
+where $\sigma(f)$ is defined using the natural action of $S_N \times \C$ on $\C[y_1,...,y_N]_\delta$ by permutations and shifts.
+\end{definition}
+
+\begin{lemma}
+A quasi-coherent sheaf on $M_{0,N+1}$ is equivalently a $\C$-equivariant module over $S_N \ltimes \C[y_1,...,y_N]_\delta$.
+\end{lemma}
+
+\begin{remark}
+The operators
+\begin{equation*}
+T_i := \frac{y_i-y_{i+1}-\eta}{y_i-y_{i+1}} s_i + \frac{\eta}{y_i-y_{i+1}}
+\end{equation*}
+together with $y_1,...,y_N$ generate a subalgebra of $S_N \ltimes \C[y_1,...,y_N]_\delta$ isomorphic to $\dot H_N$. Also note that $s_i = \frac{y_i-y_{i+1}}{y_i-y_{i+1}-\eta} T_i - \frac{\eta}{y_i-y_{i+1}-\eta}$, so that localizing at $y_i-y_{i+1}$ and $y_i-y_{i+1}-\eta$ makes both algebras isomorphic.
+%We know $\pi s_i \pi^{-1} = s_{i+1}$ and $\pi s_{N-1} \pi^{-1} = X_1 X_N^{-1} s_{N-1} \cdots s_2  s_1 \cdots s_{N-1} = \pi^{-1} s_1 \pi$, so $\pi T_i \pi^{-1} = T_{i+1}$ and
+%\begin{equation*}
+%\pi T_{N-1} \pi^{-1} = \frac{y_N-y_1-\eta}{y_N-y_1} \pi^{-1} s_1 \pi + \frac{\eta}{y_N-y_1} = \pi^{-1} \left( \frac{y_1-y_2-\eta}{y_1-y_2} s_1 + \frac{\eta}{y_1-y_2} \right) \pi = \pi^{-1} T_1 \pi.
+%\end{equation*}
+\end{remark}
+
+\begin{theorem}
+There is a monoidal $(2,1)$-functor
+\begin{equation*}
+\mathcal{Z}_0: \C\mathsf{Cob}_0 \to \mathsf{Rex}
+\end{equation*}
+that sends
+\begin{enumerate}[label=(\roman*)]
+\item $[1]$ to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}_f$, the category of Yangian modules of finite level,
+\item 1-morphisms $U: [N] \to [1]$, which are modules over $S_N \ltimes \C[y_1,...,y_N]_\delta$, to the functor
+\begin{equation*}
+Y(\mathfrak{gl}_\ell)\mathsf{Mod}_f^{\boxtimes N} \to Y(\mathfrak{gl}_\ell)\mathsf{Mod}_f, \quad V_1 \boxtimes \cdots \boxtimes V_N \mapsto (V_1 \otimes \cdots \otimes V_N) \otimes_{S_N} U.
+\end{equation*}
+\end{enumerate}
+\end{theorem}
+
+Previously, composition of 1-morphisms was defined using the gluing map
+\begin{equation*}
+\gamma: \overline{M}_{0,2+1} \times \overline{M}_{0,N_1+1} \times \overline{M}_{0,N_2+1} \to \overline{M}_{N_1+N_2+1}.
+\end{equation*}
+
+Given sheaves $U_i$ on $\overline{M}_{0,N_i+1}$, we may form the external product $\mathcal{O}_{\overline{M}_{0,2+1}} \boxtimes U_1 \boxtimes U_2$, which is a sheaf on $\overline{M}_{0,2+1} \times \overline{M}_{0,N_1+1} \times \overline{M}_{0,N_2+1}$, and push forward along $\gamma$ to obtain the composition. This is nothing but the external tensor product of $\dot H_N$-modules we looked at previously.
 
 \subsection{In terms of four-dimensional Chern-Simons theory}
 
