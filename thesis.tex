@@ -2369,7 +2369,7 @@ Let us start with the naive definition:
 \begin{definition}
 Let $\C\mathsf{Cob}'$ denote the monoidal $(2,1)$-category whose
 \begin{enumerate}[label=(\roman*)]
-\item objects are natural numbers $[N]$, thought of as a disjoint union of $N$ formal disks $D := \operatorname{Spec} \C[\eta]\llbracket z \rrbracket$,
+\item objects are natural numbers $[N]$, thought of as a disjoint union of $N$ circles,
 \item 1-morphisms $[N] \to [M]$ are Riemann surfaces marked with $N$ ingoing and $M$ outgoing ordered points, each equipped with a non-zero tangent vector. Composition is defined by gluing and identities are given by $\P^1$ marked with $0$ and $\infty$ with non-zero tangent vectors $\partial_z$ and $-\partial_{z^{-1}}$,
 \item 2-morphisms are homotopy classes of paths in the moduli space of Riemann surfaces,
 \item the tensor product is disjoint union.
@@ -2402,12 +2402,14 @@ Y(\mathfrak{gl}_\ell)\mathsf{Mod}^{\boxtimes 2} \to Y(\mathfrak{gl}_\ell)\mathsf
 It is here that we run into problems: The braiding of the Yangian is not invertible for all values of the spectral parameter. For example, the braiding degenerates when we try to braid an object with its dual. Rather, the braiding is invertible \emph{almost} everywhere. To get something well-defined, we hence should replace single complex curves by sheaves on the moduli space $M_{0,1+N}$.
 
 \begin{definition}
-Let $\C\mathsf{Cob}$ denote the monoidal $2$-category whose
+Let $\C\mathsf{Cob}_0$ denote the $2$-category whose
 \begin{enumerate}[label=(\roman*)]
 \item objects are natural numbers $[N]$,
-\item 1-morphisms $[N] \to [1]$ are quasi-coherent sheaves on $M_{0,N+1}$,
+\item 1-morphisms $[N] \to [1]$ are quasi-coherent sheaves on $M_{0,N+1}$, or more generally for $[N] \to [M]$ on
+\begin{equation*}
+M_{0,N+M}^\text{nc} := \bigsqcup_{N_1+\cdots+N_M=N} M_{0,N_1+1} \times \cdots \times M_{0,N_M+1}.
+\end{equation*}
 \item 2-morphisms are morphisms of quasi-coherent sheaves,
-\item tensor product is tensor product of sheaves.
 \end{enumerate}
 \end{definition}
 
@@ -2416,7 +2418,7 @@ A quasi-coherent sheaf $U$ on $M_{0,N+1}$ is an $S_N \times \C$-equivariant $\C[
 \begin{equation*}
 \sigma(fu) = \sigma(f) \sigma(u), \quad \sigma \in S_N \times \C, \quad f \in \C[y_1,...,y_N]_\delta, \quad u \in U,
 \end{equation*}
-where $\sigma(f)$ is defined using the natural action of $S_N \times \C$ on $\C[y_1,...,y_N]_\delta$ by permutations and shifts.
+where $\sigma(f)$ is defined using the natural action of $S_N \times \C$ on $\C[y_1,...,y_N]_\delta$ by permutations and shifts. A morphism $\alpha: U_1 \to U_2$ is a $\C[y_1,...,y_N]_\delta$-linear and $S_N \times \C$-linear map.
 \end{definition}
 
 \begin{lemma}
@@ -2436,26 +2438,134 @@ together with $y_1,...,y_N$ generate a subalgebra of $S_N \ltimes \C[y_1,...,y_N
 \end{remark}
 
 \begin{theorem}
-There is a monoidal $(2,1)$-functor
+There is a 2-functor
 \begin{equation*}
 \mathcal{Z}_0: \C\mathsf{Cob}_0 \to \mathsf{Rex}
 \end{equation*}
 that sends
 \begin{enumerate}[label=(\roman*)]
 \item $[1]$ to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}_f$, the category of Yangian modules of finite level,
-\item 1-morphisms $U: [N] \to [1]$, which are modules over $S_N \ltimes \C[y_1,...,y_N]_\delta$, to the functor
+\item 1-morphisms $U: [N] \to [1]$, which are modules over $S_N \ltimes \C[y_1,...,y_N]_\delta$, to the right exact functor
 \begin{equation*}
-Y(\mathfrak{gl}_\ell)\mathsf{Mod}_f^{\boxtimes N} \to Y(\mathfrak{gl}_\ell)\mathsf{Mod}_f, \quad V_1 \boxtimes \cdots \boxtimes V_N \mapsto (V_1 \otimes \cdots \otimes V_N) \otimes_{S_N} U.
+Y(\mathfrak{gl}_\ell)\mathsf{Mod}_f^{\boxtimes N} \to Y(\mathfrak{gl}_\ell)\mathsf{Mod}_f, \quad V_1 \boxtimes \cdots \boxtimes V_N \mapsto (V_1 \otimes \cdots \otimes V_N) \otimes_{S_N} U,
 \end{equation*}
+\item 2-morphisms get mapped to the corresponding natural transformation.
 \end{enumerate}
 \end{theorem}
 
-Previously, composition of 1-morphisms was defined using the gluing map
-\begin{equation*}
-\gamma: \overline{M}_{0,2+1} \times \overline{M}_{0,N_1+1} \times \overline{M}_{0,N_2+1} \to \overline{M}_{N_1+N_2+1}.
-\end{equation*}
+\begin{remark}
+The topologically accurate definition would have to make use of the full equivariant dg category of sheaves. We are just looking at zeroth cohomology.
+\end{remark}
 
-Given sheaves $U_i$ on $\overline{M}_{0,N_i+1}$, we may form the external product $\mathcal{O}_{\overline{M}_{0,2+1}} \boxtimes U_1 \boxtimes U_2$, which is a sheaf on $\overline{M}_{0,2+1} \times \overline{M}_{0,N_1+1} \times \overline{M}_{0,N_2+1}$, and push forward along $\gamma$ to obtain the composition. This is nothing but the external tensor product of $\dot H_N$-modules we looked at previously.
+To extend this definition to the case of non-zero genus, we need to use the dual Yangian and introduce an orientation on circles. We then have connected Riemann surfaces $+- \to \varnothing$ and $\varnothing \to -+$. The first is the usual Hom. The second usually needs a finiteness condition to exist, so we have to use a “completed tensor product”. From this, we can glue a punctured torus: Compose the cup with the pair-of-pants. This gives something like the functor $\mathsf{Vect} \to Y(\mathfrak{gl}_\ell)\mathsf{Mod}, \C \mapsto Y^\vee(\mathfrak{gl}_\ell) \otimes_{S_2} U$.
+
+To get quasi-coherent sheaves on $M_{1,N+1}$, start with $\C[\tau^{\pm},y_1,...,y_N][(y_i+n+\tau m)^{-1},(y_i-y_j+n+\tau m)^{-1}]$. This has an action of $S_N \times GL_2(\Z) \ltimes \Z^2$ by
+\begin{equation*}
+\sigma \cdot (n,m) \cdot
+\begin{pmatrix}
+a & b \\ c & d
+\end{pmatrix}
+\cdot f(\tau,y_i) := f\left(\frac{a\tau+b}{c\tau+d},y_{\sigma(i)}+n+\tau m\right).
+\end{equation*}
+Then take equivariant modules. We can define $y_0 := 0$. Then look at $\C[\tau^{\pm},y_1,...,y_N]\llbracket (y_i-y_j+n+\tau m)^{-1} \rrbracket$, which contains $\wp(y_i)$ and $\wp(y_i-y_j)$ as well as the derivatives.
+
+We identify the Hilbert space on the circle with the space of operators on the disk via $[0] \to [1]$. This corresponds to the canonical functor $\mathsf{Vect} \to Y(\mathfrak{gl}_\ell)\mathsf{Mod}$. This is not enough, we have to consider the twice-categorified picture.
+
+In terms of double categories:
+
+\begin{definition}
+Let $\mathsf{STCob}_0$ denote the double category whose
+\begin{enumerate}[label=(\roman*)]
+\item objects are pairs of finite pointed sets $[N,M]$, representing a product of a meromorphic circle and a topological circle,
+\item horizontal morphisms $[N,M] \to [1,M']$ are genus zero Riemann surfaces with $N+1$ marked points,
+\item vertical morphisms $[N,M] \to [1,M']$ are topological cobordisms $(S^1)^{\sqcup M} \to (S^1)^{\sqcup M'}$,
+\item squares homotopy classes of smooth families of Riemann surfaces and diffeomorphisms of topological surfaces.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}
+There is a double functor
+\begin{equation*}
+\mathcal{Z}_0: \mathsf{STCob}_0 \to \mathsf{Rex}
+\end{equation*}
+that sends
+\begin{enumerate}[label=(\roman*)]
+\item $[N,M]$ to $Y^\vee(\mathfrak{gl}_\ell)^{\otimes M} \mathsf{mod}_{Y(\mathfrak{gl}_\ell)\mathsf{Mod}}^{\boxtimes N}$,
+\item a genus zero Riemann surface $[N,0] \to [1,0]$ to the tensor functor inside $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$,
+\item the pair-of-pants cobordism $[1,2] \to [1,1]$ goes to the tensor product inside $Y^\vee(\mathfrak{gl}_\ell) \mathsf{mod}_{Y(\mathfrak{gl}_\ell)\mathsf{Mod}}$
+\item braids act on tensor functors. The topological direction also gives a Dehn twist.
+\end{enumerate}
+\end{theorem}
+
+We may insert representations on the topological circles via quantum Hamiltonian reduction. The Dehn twist will then give the $X_1,...,X_N$.
+
+In the elliptic case, we want to look at $E_\tau \times S^1$, seen as a horizontal morphism $[0,1] \to [1,1]$. The structure sheaf on $M_{1,N+1}$ gives a functor
+\begin{equation*}
+\mathsf{Vect} \to Y^\vee(\mathfrak{gl}_\ell)\mathsf{mod}_{Y(\mathfrak{gl}_\ell)\mathsf{Mod}}, \quad \C \mapsto Y^\vee(\mathfrak{gl}_\ell)
+\end{equation*}
+and we should interpret this as an algebra object in the ambient category $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$. This algebra object is the $Y(\mathfrak{gl}_\ell)$-equivariant elliptic double Yangian $EY(\mathfrak{gl}_\ell) = Y^\vee(\mathfrak{gl}_\ell)^{\otimes 2}$!! See \cite{article:brochier:2017}. Making insertions on the circle makes a quantum Hamiltonian reduction \cite{article:benzvi2:2018} on one of the factors of $EY(\mathfrak{gl}_\ell)$. The resulting Dehn twist operators will give us the $X_1,...,X_N$.
+
+There are various problems with finiteness conditions. For example, $Y^\vee(\mathfrak{gl}_\ell)$ is not finite-dimesional, even though it arises as a (commutative) Frobenius algebra assigned to a circle in a TFT. This problem could be remedied by quantum Hamiltonion reducing $Y^\vee(\mathfrak{gl}_\ell)$ to a finite-dimensional endomorphism algebra. We also have to restrict to certain representations of $Y(\mathfrak{gl}_\ell)$ that have a symmetric meromorphic braiding \emph{and} are closed under the tensor functors we defined.
+
+How do we write this in the Morita picture? On the object level, we have internal algebra objects inside $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$. On the horizonal morphism level, we have bimodules over the internal algebras. On the vertical morphism level, we have internal algebra morphisms. On the square level, we have internal equivariant bimodule maps?
+
+Instead of punctured Riemann surfaces, we might want to look at Riemann surfaces equipped with a 1-form that only has double poles and no zeros.
+
+We should put the topological direction into the tight morphisms, since they compose strictly.
+
+The tensor product is disjoint union in the topological direction.
+
+\subsection{In terms of functorial quantum field theory}
+
+\begin{definition}
+Let $\mathsf{STCob}_0$ denote the partially monoidal double category whose
+\begin{enumerate}[label=(\roman*)]
+\item objects are pairs $[N,M]$ of natural numbers,
+\item tight morphisms $\Sigma: [N,M] \to [N,M']$ are oriented cobordisms $(S^1)^{\sqcup M} \to (S^1)^{\sqcup M'}$,
+\item loose morphisms $U: [N,M] \to [1,M]$ are quasi-coherent sheaves on $\overline{M}_{0,N+1}$,
+\item squares
+\begin{center}
+\begin{tikzcd}
+{[N,M]} \arrow{d}{\Sigma} \arrow{r}{U} & {[1,M]} \arrow{d}{\Sigma'} \\
+{[N,M']} \arrow{r}{V} & {[1,M']}
+\end{tikzcd}
+\end{center}
+are isotopy classes of diffeomorphisms $\psi: \Sigma \overset \sim \to \Sigma'$ equipped with a morphism $\alpha: U \to V$ of quasi-coherent sheaves,
+\item tight composition is given by gluing cobordisms,
+\item loose composition of sheaves $U_1: [N_1,M] \to [1,M]$ and $U_2: [N_2,M] \to [1,M]$ with $W: [2,M] \to [1,M]$ is given by $\gamma_*(W \boxtimes U_1 \boxtimes U_2)$, where $\gamma$ is the gluing map
+\begin{equation*}
+\gamma: \overline{M}_{0,2+1} \times \overline{M}_{0,N_1+1} \times \overline{M}_{0,N_2+1} \to \overline{M}_{0,N_1+N_2+1},
+\end{equation*}
+\item composition of squares is composition of diffeomorphisms and sheaf morphisms,
+\item the partial tensor product is given by $[N,M] \otimes [N,M'] := [N,M+M']$ as well as disjoint union on tight morphisms and direct sum on loose morphisms.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+Let $Y(\mathsf{gl}_\ell)\mathsf{Alg}$ denote the monoidal double category whose
+\begin{enumerate}[label=(\roman*)]
+\item objects are algebras internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$,
+\item tight morphisms are algebra maps internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$,
+\item loose morphisms are bimodules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$,
+\item squares are equivariant bimodule maps internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$,
+\item tight composition is composition of algebra maps,
+\item loose composition is tensor product of bimodules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$,
+\item composition of squares is composition of equivariant bimodule maps,
+\item the tensor product is given by the tensor product in $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}
+There is a monoidal double functor $\mathcal{Z}_0: \mathsf{STCob}_0 \to Y(\mathfrak{gl}_\ell)\mathsf{Alg}$ that sends
+\begin{enumerate}[label=(\roman*)]
+\item $[N,M]$ to $(\mathbf{1}^{\oplus N}) \otimes Y^\vee(\mathfrak{gl}_\ell)^{\otimes M}$,
+\item tight morphisms to the corresponding algebra map between copies of $Y^\vee(\mathfrak{gl}_\ell)$ using its Frobenius algebra structure,
+\item loose morphisms $U: [N,0] \to [1,0]$ to $Y(\mathfrak{gl}_\ell)^{\otimes N} \otimes_{S_N} U$, (??)
+\item squares to the corresponding action of the mapping class group as in \cite{article:benzvi:2018}.
+\end{enumerate}
+\end{theorem}
+
+We may modify this by introducing marking on the topological circles or by making the cobordisms non-compact.
 
 \subsection{In terms of four-dimensional Chern-Simons theory}
 
