@@ -2494,24 +2494,27 @@ Essentially: Take $\tau$ in the pole representation $\tau(y_j)$, put it into the
 
 \section{Musings on the elliptic Ruijsenaars-Schneider model}
 
-If we want to extrapolate to the elliptic case, we have to look at the composition of a coevaluation $[0] \to [2]$ with a pair-of-pants $[2] \to [1]$. The 1-forms we would want to look at on $E = \C/\Lambda$ are
+We have seen how the rational Ruijsenaars-Schneider model arises from the dynamics of order defects in four-dimensional Chern-Simons theory on $\P^1 \times S^1 \times [0,1]$. One might hope that the functorial quantum field theory we constructed has an extension to complex curves of higher genus. In the case of an elliptic curve $E = \C/\Lambda$, we can then look at $E \times S^1 \times [0,1]$ and hope for a description of the dynamics of the 1-form
 \begin{equation*}
-\omega = K \prod_i \frac{\sigma(z-y_i-\eta)}{\sigma(z-y_i)} dz,
+\omega = K \prod_i \frac{\sigma(z-y_i-\eta)}{\sigma(z-y_i)} dz
 \end{equation*}
-again with $N$ simple poles and zeros away from the origin, so $y_i,y_i-y_j,y_i-y_j-\eta \notin \Lambda$.
+in terms of the elliptic Ruijsenaars-Schneider model.
 
-Define a degenerate elliptic Hecke algebra
+To this end, we have to determine which bimodule the extended functorial quantum field theory assigns to $E \times S^1$, or more precisely, we have to determine the Drinfeld-type functor
 \begin{equation*}
-E\dot H_0 := \widetilde{SL_2(\Z)} \ltimes \C[\lambda][\lambda^{-1},(\lambda-1)^{-1}]
+\mathsf{Qcoh}(M_{1,1+N}^\omega) \to Y^\vee(\mathfrak{gl}_\ell)^{\otimes N}\text{-}Y^\vee(\mathfrak{gl}_\ell)\mathsf{Bimod}_{Y(\mathfrak{gl}_\ell)\mathsf{Mod}},
 \end{equation*}
-where $\lambda$ is the $\lambda$-function, so that $j=256 \frac{(\lambda^2-\lambda+1)^3}{\lambda^2(\lambda-1)^2}$ is the $j$-invariant. Then $S \cdot \lambda = 1-\lambda$ and $T \cdot \lambda = \frac{\lambda}{\lambda-1}$. The algebra $E\dot H_0$ has to have a map from $\dot H_1 \otimes \dot H_2$. This would provide three complex numbers $y,y_1,y_2$, which could give the branch points defining the elliptic curve:
+where we denote by $M_{1,1+N}^\omega$ the moduli space of elliptic curves equipped with a 1-form $\omega$ as above. This moduli space is given by
 \begin{equation*}
-\dot H_1 \otimes \dot H_2 \to E\dot H_0, \quad \wp(y) \mapsto \lambda, \wp(y_1) \mapsto 0, \wp(y_2) \mapsto 1, 1 \otimes s_2 \mapsto S.
+\{ (K,y_1,...,y_N,\tau) \in \C^\times \times \C^N \times \mathbb{H} \mid y_i,y_i-y_j,y_i-y_j-\eta \notin \Z \oplus \Z \tau \}/SL_2(\Z) \ltimes \ddot S_N.
 \end{equation*}
-We would then expect
+As such, we may approximate $\mathsf{Qcoh}(M_{1,1+N}^\omega)$ by the category of $SL_2(\Z) \ltimes \ddot S_N$-equivariant modules over $\C[K^{\pm 1},y_1,...,y_N] \otimes \mathcal{O}(\mathbb{H})$. 
+
+To construct a Drinfeld-type functor from this category, we resort to \cite{article:brochier:2017} to define an action of $\widetilde{SL_2(\Z)} \ltimes \ddot S_N$ on the $Y^\vee(\mathfrak{gl}_\ell)^{\otimes N}\text{-}Y^\vee(\mathfrak{gl}_\ell)$-bimodules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ resulting from
 \begin{equation*}
-U \in \mathsf{Qcoh}(M_{1,1}) \mapsto EY(\mathfrak{gl}_\ell) \otimes_{\widetilde{SL_2(\Z)}} U.
+V_1 \boxtimes \cdots \boxtimes V_N \mapsto EY(\mathfrak{gl}_\ell) \otimes V_1 \otimes \cdots \otimes V_N.
 \end{equation*}
+Here $EY(\mathfrak{gl}_\ell)$ denotes the elliptic Yangian:
 
 \begin{definition}
 The elliptic Yangian $EY(\mathfrak{gl}_\ell)$ is given by $Y^\vee(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell)$ with cross relations
@@ -2521,6 +2524,22 @@ T_1^\vee(z) R_{21}(w-z) \bar T_2^\vee(w) R_{12}(z-w) = R_{21}(w-z) \bar T_2^\vee
 in $Y^\vee(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \otimes \overset{1}{\operatorname{End} V} \otimes \overset{2}{\operatorname{End} V}$. Here $T^\vee(z)$ and $\bar T^\vee(w)$ respectively denote the generator matrix of the first and second tensorand.
 \end{definition}
 
+\begin{remark}
+An invertible solution seems to be given by
+\begin{align*}
+T_{10}^\vee(z) &\mapsto f(z) K(z;a) \otimes 1 + f(z) K(z;b) \otimes \sigma_1 \\
+\bar T_{10}^\vee(z) &\mapsto \bar f(z) K(z;\bar a) \otimes 1 - \bar f(z) K(z;\bar b) \otimes \sigma_1,
+\end{align*}
+where $\sigma_1 =
+\begin{pmatrix}
+0 & 1 \\ 1 & 0
+\end{pmatrix}$ is the first Pauli matrix and $K(z;a) = a + z \sigma_1, a \in \C$ is a solution to the reflection equation
+\begin{equation*}
+R(z-w) K_1(z) R(z+w) K_2(w) = K_2(w) R(z+w) K_1(z) R(z-w)
+\end{equation*}
+and $a \neq b, \bar a \neq \bar b$.
+\end{remark}
+
 \begin{prop}
 There is an action of $\widetilde{SL_2(\Z)}$ on $EY(\mathfrak{gl}_\ell)$ via
 \begin{align*}
@@ -2529,7 +2548,76 @@ S T^\vee(z) &= T^\vee(w), \quad S \bar T^\vee(w) = \bar T^\vee(w) T^\vee(z)^{-1}
 \end{align*}
 \end{prop}
 
-It is known that the double braiding of the Yangian is a $2\ell\eta$-periodic function \cite{article:soibelman:1997} and that its exponential, the double braiding of the affine quantum group, is an elliptic function. We expect that there is an elliptic Drinfeld functor sending sheaves on $\overline{M}_{1,1+N}$ to modules over the elliptic Yangian.
+\begin{definition}
+The \emph{elliptic degenerate affine Hecke algebra} $E\dot H_N$ is the algebra
+\begin{equation*}
+SL_2(\Z) \ltimes \ddot S_N \ltimes \C[y_1,...,y_N] \otimes \mathcal{O}(\mathbb{H}).
+\end{equation*}
+\end{definition}
+
+\begin{theorem}
+There is an elliptic Drinfeld functor
+\begin{equation*}
+ED_{\ell,N}: E\dot H_N \mathsf{Mod} \to Y^\vee(\mathfrak{gl}_\ell)^{\otimes N}\text{-}Y^\vee(\mathfrak{gl}_\ell)\mathsf{Bimod}_{Y(\mathfrak{gl}_\ell)\mathsf{Mod}}.
+\end{equation*}
+\end{theorem}
+
+What does a transfer matrix look like for this extended spin chain? If we just consider a trace over a product of $R$-matrices then we won't gain anything new. We have to look at the elliptic generators as well and trace over them. In the end, we have to obtain an elliptic function as transfer matrix, which we may then examine for fusion relations.
+
+By Akhiezer "Elements of the Theory of Elliptic Functions" page 40, we have
+\begin{lemma}
+Let $f(z)$ be an elliptic function. Then we may write $f$ as
+\begin{equation*}
+f(z) = C + \sum_k A_k \zeta(z-y_k).
+\end{equation*}
+\end{lemma}
+In our case, we want to be able to write
+\begin{equation*}
+\tau_{[1^k]}^g(z;w) = \widehat{\chi}_\lambda(g) + \sum_j \Phi(w,z-y_j) \operatorname{Res}_{z=y_j} \tau_{[1^k]}^g(z;w)
+\end{equation*}
+to obtain
+\begin{equation*}
+\Phi(w,y_i-y_j-\eta) \prod_{k \neq j} \frac{\sigma(y_j-y_k+\eta)}{\sigma(\eta)\sigma(y_j-y_k)} e^{-\I \hbar \partial_j}
+\end{equation*}
+
+\begin{definition}
+The \emph{elliptic transfer matrix} is given by
+\begin{equation*}
+\tau^\text{ell}(z) := \operatorname{tr}_{-1,0} R_{0N} \cdots R_{01}, \quad R_{0i} := R_{0i}(z-y_i),
+\end{equation*}
+acting on
+\begin{equation*}
+(\overset{-1}{EY(\mathfrak{gl}_\ell)} \otimes \overset{1}{V_{y_1}^+} \otimes \cdots \otimes \overset{N}{V_{y_N}^+}) \otimes_{\ddot S_N} \C[y_1,...,y_N].
+\end{equation*}
+\end{definition}
+
+\begin{prop}
+The elliptic transfer matrix $\tau^\textnormal{ell}(z)$ is a doubly quasi-periodic function.
+\end{prop}
+
+\begin{proof}
+Evaluating $\tau^\text{ell}(z+\omega_i)$ is the same as evaluating $\tau^\text{ell}(z)$ where all the $y_i$ are shifted by $-\omega_i$. By the definition of the Drinfeld functor, this is the same as applying $T_1^\vee(y_1)$ and its conjugates. Tracing might give
+\begin{equation*}
+\tau^\text{ell}(z+\omega_i) = Z_i \tau^\text{ell}(z).
+\end{equation*}
+This looks similar to theta functions.
+We have
+\begin{align*}
+\tau_\text{ell}(z;y_1,...,y_i+1,...,y_N)
+&= \operatorname{tr}_{-1,0} R_{0N}(z-y_N) \cdots R_{0i}(z-y_i-1) \cdots R_{01}(z-y_1) \\
+&= \operatorname{tr}_{-1,0} T^\vee_{i,-1}(y_i) R_{0N}(z-y_N) \cdots R_{0i}(z-y_i) \cdots R_{01}(z-y_1) \\
+&= f(y_i) K(y_i;a) \tau_\text{ell}(z;y_1,...,y_N).
+\end{align*}
+We can take $a=0$ and $f(z) = \exp(2\eta_1 (z+\omega_1))/z$ and get the equation
+\begin{equation*}
+\tau_\text{ell}(z;y_1,...,y_i+2 \omega_1,...,y_N) = \exp(2\eta_1 (y_i+\omega_1)) \sigma_1 \tau_\text{ell}(z;y_1,...,y_N)
+\end{equation*}
+which is fulfilled by a Weierstraß $\sigma$-function in $y_i$. We can also choose a representation in which $\tau_\text{ell}(z)$ becomes a theta function or elliptic function. Then we can do the expansions from Akhiezer. For example, we can make an expansion
+\begin{equation*}
+\tau_\text{ell}(z) = \widehat{\chi}(1) \sum_j \phi(w;z-y_j) X_j
+\end{equation*}
+by matching the quasi-periodicity of $\tau_\text{ell}(z)$ to that of $\phi(w;z)$ and arguing that the relevant quotient is a holomorphic elliptic function.
+\end{proof}
 
 \chapter{Conclusion}\label{chapter:conclusion}
 
@@ -2706,6 +2794,21 @@ We can think of the $\C^\times$-equivariance as similar to the action of $t^{\pm
 We have
 \begin{equation*}
 \sum_i \frac{X_i}{z-y_i} = \sum_r z^{-1} \sum_i X_i y_i^{r-1}.
+\end{equation*}
+
+\chapter{Elliptic functions}
+
+Let
+\begin{equation*}
+\Phi(x,z) := \frac{\sigma(x+z)}{\sigma(x)\sigma(z)} \exp(-\zeta(z)x).
+\end{equation*}
+This has a simple pole at $x=0$ with residue 1 and
+\begin{equation*}
+\Phi(x,z) = \frac{1}{x} - \frac{1}{2} \wp(z) x + \mathcal{O}(x^2)
+\end{equation*}
+It is doubly quasi-periodic with
+\begin{equation*}
+\Phi(x+2\omega_\alpha,z) = \exp(2(\zeta(\omega_\alpha)z-\zeta(z)\omega_\alpha) \Phi(x,z) 
 \end{equation*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
