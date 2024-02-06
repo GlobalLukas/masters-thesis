@@ -163,7 +163,7 @@ which contains both the RS and Heisenberg model. It may be thought of as the Hil
 \end{frame}
 
 \begin{frame}{Extending the Drinfeld functor}
-We may extend and twist the Drinfeld functor, yielding
+We may extend and $g$-twist the Drinfeld functor, yielding
 \begin{equation*}
 D_{\ell,N}^g: \ddot H_N \to \ddot H_N^{S_N} \# Y(\mathfrak{gl}_\ell)\mathsf{Mod}.
 \end{equation*}
@@ -177,19 +177,19 @@ acts on $D_{\ell,N}^g(\C[y_1,...,y_N])$ in the same way as $\tau^g(z)$ when $\hb
 \end{theorem}
 
 \begin{slogan}
-The extended Drinfeld functor maps the Hamiltonians of the rational RS model to an $\hbar_{RS}$-deformation of the Hamiltonians of the Heisenberg model.
+The $g$-twisted Drinfeld functor maps the Hamiltonians of the rational RS model to an $\hbar_{RS}$-deformation of the Hamiltonians of the Heisenberg model.
 \end{slogan}
 \end{frame}
 
 \begin{frame}{Loop Yangian}
 What happens when $\hbar_{RS} \neq 0$? Here we resort to a result of Guay \cite{article:guay:2005}, constructing a Schur-Weyl functor
 \begin{equation*}
-\dot D_{\ell,N}: \ddot H_N\mathsf{Mod} \to LY(\mathfrak{gl}_\ell)\mathsf{Mod},
+LD_{\ell,N}: \ddot H_N\mathsf{Mod} \to LY(\mathfrak{gl}_\ell)\mathsf{Mod},
 \end{equation*}
 where $LY(\mathfrak{gl}_\ell)$ is the \emph{loop Yangian}, which is a quotient of $L(\mathfrak{gl}_\ell) \# Y(\mathfrak{gl}_\ell)$ as well as $Y(\widehat{\mathfrak{gl}}_\ell)$.
 \\~\\
 \begin{theorem}
-The loop variable $t$ living in the center of $L(\mathfrak{gl}_\ell)$ acts on $\dot D_{\ell,N}(\C[y_1,...,y_N])$ in the same way as the standard Hamiltonian of the rational RS model.
+The loop variable $t$ living in the center of $L(\mathfrak{gl}_\ell)$ acts on $LD_{\ell,N}(\C[y_1,...,y_N])$ in the same way as the standard Hamiltonian of the rational RS model.
 \end{theorem}
 \end{frame}
 
@@ -251,14 +251,14 @@ the second are purely holomorphic cobordisms
 \begin{center}
 \begin{tikzpicture}
 \draw (0,0) circle (1cm);
-\filldraw (-0.5,0.4) circle (1pt);
-\node[right] at (-0.5,0.4) {$y_1$};
-\filldraw (-0.6,0) circle (1pt);
-\node[right] at (-0.6,0) {$y_2$};
-\filldraw (-0.5,-0.4) circle (1pt);
-\node[right] at (-0.5,-0.4) {$y_3$};
-\filldraw (0.6,0) circle (1pt);
-\node[right] at (0.6,0) {$\infty$};
+\filldraw (0.45,-0.5) circle (1pt);
+\node[above] at (0.45,-0.5) {$y_1$};
+\filldraw (0,-0.65) circle (1pt);
+\node[above] at (0,-0.55) {$y_2$};
+\filldraw (-0.45,-0.5) circle (1pt);
+\node[above] at (-0.45,-0.5) {$y_3$};
+\filldraw (0,0.65) circle (1pt);
+\node[below] at (0,0.65) {$\infty$};
 \node[right] at (1,0.9) {$\P^1$};
 \end{tikzpicture}
 \end{center}
@@ -288,7 +288,7 @@ The above considerations motivate the study of 4d Chern-Simons theory on $E \tim
 \begin{equation*}
 E(\mathfrak{gl}_\ell) \curvearrowright (\C^\ell)^{\otimes N} \otimes \mathcal{O}(Y_N^\text{ell}) \curvearrowleft \underline{\dot H}_N^\text{ell}.
 \end{equation*}
-where $E(\mathfrak{gl}_\ell)$ is Belavin's elliptic quantum group. Tensoring with $\mathcal{O}(Y_N^\text{ell})$ over $\underline{\dot H}_N^\text{ell}$ should give the Hilbert space for the elliptic spin RS model. Its Hamiltonians will be elliptic difference operators deforming the residues of the elliptic transfer matrix.
+where $E(\mathfrak{gl}_\ell)$ is Belavin's elliptic quantum group \cite{article:costello:2018b,article:etingof:1998}. Tensoring with $\mathcal{O}(Y_N^\text{ell})$ over $\underline{\dot H}_N^\text{ell}$ should give the Hilbert space for the elliptic spin RS model. Its Hamiltonians will be elliptic difference operators deforming the residues of the elliptic transfer matrix.
 \\~\\
 The full picture comes from 5d Chern-Simons theory on $E \times \C^\times \times [0,1]$ and an elliptic quantum group for $\widehat{\mathfrak{gl}}_\ell$.
 \end{frame}

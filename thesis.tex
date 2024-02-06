@@ -2148,10 +2148,10 @@ We also obtain the following result for the $S$-dual representation, which shoul
 On $(\C^\ell)^{\otimes N} \otimes_{S_N} \C[X_1^{\pm 1},...,X_N^{\pm 1}]$, the quantum determinant has the following expansion:
 \begin{align*}
 \operatorname{qdet}^1 T(z)
-= 1 &- \frac{\eta}{z} N - \frac{\eta}{z^2} \bigg( N S_1 + \eta \frac{N(N-1)}{2} \bigg) \\
-&- \frac{\eta}{z^3} \bigg( N S_2 + \eta N (N-1) S_1 + \eta^2 \frac{N(N-1)(N-2)}{4} \bigg) + \cdots,
+= 1 &- \frac{\eta}{z} N - \frac{\eta}{z^2} \bigg( N C_1 + \eta \frac{N(N-1)}{2} \bigg) \\
+&- \frac{\eta}{z^3} \bigg( N C_2 + \eta N (N-1) C_1 + \eta^2 \frac{N(N-1)(N-2)}{4} \bigg) + \cdots,
 \end{align*}
-where $S_1$ and $S_2$ are the first two Hamiltonians of the trigonometric Calogero-Moser model.
+where $C_1$ and $C_2$ are the first two Hamiltonians of the trigonometric Calogero-Moser model.
 \end{prop}
 
 \begin{proof}
@@ -2177,44 +2177,39 @@ which reduces to what we wanted to show.
 
 In order to define the trigonometric Gaudin model, let us introduce the generating function
 \begin{equation*}
-G(t) = \sum_i \frac{\eta tP_{0i}}{t-X_i}.
+G(t) = \sum_i \frac{\eta X_i P_{0i}}{t-X_i}.
 \end{equation*}
 We then have
 \begin{equation*}
-\frac{1}{2} \operatorname{tr} G(t)^2 = \frac{1}{2} \sum_{ij} \frac{\eta^2 t^2 P_{ij}}{(t-X_i)(t-X_j)} = \frac{1}{2} \sum_i \frac{\eta^2 t^2}{(t-X_i)^2} + \sum_i \frac{\eta X_i G_i}{t-X_i},
+\frac{1}{2} \operatorname{tr} G(t)^2 = \frac{1}{2} \sum_{ij} \frac{\eta^2 X_i X_j P_{ij}}{(t-X_i)(t-X_j)} = \frac{1}{2} \sum_i \frac{\eta^2 X_i^2}{(t-X_i)^2} + \sum_i \frac{\eta X_i G_i}{t-X_i},
 \end{equation*}
-where we have introduced the Hamiltonian
+where we have introduced the Hamiltonians
 \begin{equation*}
-G_i := \sum_{i \neq j} \frac{\eta X_i P_{ij}}{X_i-X_j}.
+G_i := \eta \sum_{j < i} \frac{X_j}{X_i-X_j} P_{ij} + \eta \sum_{j > i} \frac{X_i}{X_i-X_j} P_{ij}.
 \end{equation*}
-
-\begin{prop}
-The Hamiltonians $G_1,...,G_N$ commute among each other.
-\end{prop}
-
-\begin{proof}
-tba
-\end{proof}
 
 \begin{theorem}
 The elements
 \begin{equation*}
-\frac{1}{2} \sum_i \frac{\eta^2 t^2}{(t-X_i)^2} + \sum_i \frac{\delta^{-1} y_i \delta + \eta + \frac{\eta}{2} \sum_{i \neq j} (i \ j)}{t-X_i} \in \delta^{-1} S\ddot H_N \delta\llbracket t^{\pm 1} \rrbracket
+\frac{1}{2} \sum_i \frac{\eta^2 t^2}{(t-X_i)^2} + \sum_i \frac{\eta X_i (\delta^{-1} y_i \delta + \eta)}{t-X_i} \in \delta^{-1} S\ddot H_N \delta[t;t^{-1} \rrbracket
 \end{equation*}
 act on $D_{\ell,N}(\C[X_1^{\pm 1},...,X_N^{\pm 1}])$ in the same way as $\frac{1}{2} \operatorname{tr} G(t)^2$ when $\hbar = 0$.
 \end{theorem}
 
 \begin{proof}
-We check that the residues coincide.
+We check that the residues coincide:
 \begin{align*}
-\delta^{-1} y_i \delta + \eta + \frac{\eta}{2} \sum_{i \neq j} (i \ j)
-&= y_i + \eta + \eta \sum_{i \neq j} \theta_{ij} + \eta \sum_{j<i} (i \ j) \\
-&= -\I \hbar X_i \partial_i - i \eta + \eta \sum_{j < i} \theta_{ji} (1-(i \ j)) - \eta \sum_{j > i} \theta_{ij} (1-(i \ j)) + \eta + \eta \sum_{i \neq j} \theta_{ij} + \eta \sum_{j<i} (i \ j) \\
-&= -\I \hbar X_i \partial_i - \eta \sum_{j < i} \theta_{ji} (i \ j) + \eta \sum_{j > i} \theta_{ij} (i \ j) + \eta \sum_{j<i} (i \ j) \\
-&= -\I \hbar X_i \partial_i + \eta \sum_{i \neq j} \frac{X_i P_{ij}}{X_i-X_j}
+\delta^{-1} y_i \delta + \eta
+&= y_i + \eta + \eta \sum_{i \neq j} \theta_{ij} \\
+&= -\I \hbar X_i \partial_i - (i-1) \eta + \eta \sum_{j < i} \theta_{ji} (1-(i \ j)) - \eta \sum_{j > i} \theta_{ij} (1-(i \ j)) + \eta \sum_{i \neq j} \theta_{ij} \\
+&= -\I \hbar X_i \partial_i - \eta \sum_{j < i} \theta_{ji} (i \ j) + \eta \sum_{j > i} \theta_{ij} (i \ j)
 \end{align*}
 When $\hbar = 0$, this becomes the Hamiltonian $G_i$.
 \end{proof}
+
+\begin{corollary}
+The Hamiltonians $G_1,...,G_N$ commute among each other.
+\end{corollary}
 
 \chapter{Geometry}\label{chapter:geometry}
 
@@ -2384,7 +2379,7 @@ mapping to the universal $R$-matrix $\mathcal{R}$. The element $\widetilde{\math
 %\item the action of the braid group via 2-morphisms to the action of the braid group on the tensor product functor via a braiding.
 %\end{enumerate}
 
-Let us start with a naive definition: Let $\mathsf{STCob}_0'$ denote the (pseudo) double category \cite{article:hansen:2019} whose
+Let us start with a naive definition: Let $\mathbb{C}\textnormal{ob}_0'$ denote the double category (appendix \ref{appendix:doubleCats}) whose
 \begin{enumerate}[label=(\roman*)]
 \item objects $[N]$ are disjoint unions of $N$ copies of $D^\times \times S_*^1$, where $D^\times$ is the formal punctured disc and $S_*^1$ is a circle with a chosen basepoint.
 \item Tight morphisms $[N] \to [N]$ are cylinder cobordisms equipped with isotopy classes of paths connecting the basepoints of the boundary circles. This specifies an element in $\dot S_N$.
@@ -2399,7 +2394,7 @@ Let us start with a naive definition: Let $\mathsf{STCob}_0'$ denote the (pseudo
 are homotopy classes of paths in the moduli space of complex cobordisms.
 \end{enumerate}
 
-We note that this is already suspect because composition of loose morphisms is not well-defined unless we allow nodal curves as complex cobordisms. Nonetheless, we would want to define a double functor $\mathsf{STCob}_0' \to \mathsf{Sq}(\mathsf{Rex})$ that sends
+We note that this is already suspect because composition of loose morphisms is not well-defined unless we allow nodal curves as complex cobordisms. Nonetheless, we would want to define a double functor $\mathbb{C}\textnormal{ob}_0' \to \mathbb{S}\textnormal{q}(\mathcal{R}ex)$ that sends
 \begin{enumerate}[label=(\roman*)]
 \item the object $[1]$ to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$,
 \item the cobordism specifying a simple permutation $s_i$ to the permutation map $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^{\boxtimes 2} \to Y(\mathfrak{gl}_\ell)\mathsf{Mod}^{\boxtimes 2}$,
@@ -2573,7 +2568,7 @@ We may add boundary points to $Y_N$ via the fusion procedure. The ingoing points
 With this in hand, we can give a serious definition for our functorial quantum field theory:
 
 \begin{definition}
-Let $\mathsf{STCob}_0$ denote the monoidal (pseudo) double category of \emph{semi-topological cobordisms}:
+Let $\mathbb{C}\textnormal{ob}_0$ denote the following monoidal (pseudo) double category:
 \begin{enumerate}[label=(\roman*)]
 \item Objects are natural numbers $[N]$, representing a disjoint union of $N$ copies of the cartesian product of a formal punctured disc with a pointed circle $D^\times \times S_*^1$.
 \item Tight morphisms $\sigma: [N] \to [N]$ are diffeomorphism classes of cobordisms which are disjoint unions of cylinders equipped with isotopy classes of paths connecting the basepoints. This specifies an element of $\dot S_N$.
@@ -2604,7 +2599,7 @@ The identity is given by $\underline{\ddot H}_N$.
 For concreteness, let us work in the Morita picture for the target category of our functorial quantum field theory:
 
 \begin{definition}
-Let $Y(\mathfrak{gl}_\ell)\mathsf{Alg}$ denote the monoidal (pseudo) double category whose
+Let $Y(\mathfrak{gl}_\ell)\mathbb{A}\textnormal{lg}$ denote the monoidal (pseudo) double category whose
 \begin{enumerate}[label=(\roman*)]
 \item objects are algebras internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$,
 \item tight morphisms are algebra maps,
@@ -2620,7 +2615,7 @@ Let $Y(\mathfrak{gl}_\ell)\mathsf{Alg}$ denote the monoidal (pseudo) double cate
 Let $E[y]$ denote the algebra $\underline{\operatorname{End}}(V_0^+)[y]$ internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$. There is a quantum moment map $\mu: Y^\vee(\mathfrak{gl}_\ell) \to E[y], T^\vee(z) \mapsto R(y-z)$.
 
 \begin{theorem}
-There is a monoidal (pseudo) double functor $\mathcal{Z}: \mathsf{STCob}_0 \to Y(\mathfrak{gl}_\ell)\mathsf{Alg}$ that sends
+There is a monoidal double functor $Z: \mathbb{C}\textnormal{ob}_0 \to Y(\mathfrak{gl}_\ell)\mathbb{A}\textnormal{lg}$ that sends
 \begin{enumerate}[label=(\roman*)]
 \item $[N]$ to $Y^\vee(\mathfrak{gl}_\ell)^{\otimes N}$,
 \item tight morphisms to permutations of tensorands,
@@ -2635,7 +2630,7 @@ The $Y^\vee(\mathfrak{gl}_\ell)^{\otimes N}$-$Y^\vee(\mathfrak{gl}_\ell)$-bimodu
 
 \section{Quantum-classical duality in terms of four-dimensional Chern-Simons theory}
 
-It is natural to ask which physical theory gives rise to the functorial quantum field theory $\mathcal{Z}$ we have defined. Considering that we are looking at topological surfaces as tight morphisms and (sheaves on moduli spaces of) complex curves equipped with meromorphic 1-forms as loose morphisms, we are already given a hint that the theory should include a meromorphic 1-form as well as two holomorphic and two topological dimensions. The functorial field theory should assign holonomies of some flat connection on $S^1 \times [0,1]$ to braids. Furthermore, the Yangian provides the 2-Hilbert space of the formal punctured disc. These observations all point to four-dimensional Chern-Simons theory.
+It is natural to ask which physical theory gives rise to the functorial quantum field theory $Z$ we have defined. Considering that we are looking at topological surfaces as tight morphisms and (sheaves on moduli spaces of) complex curves equipped with meromorphic 1-forms as loose morphisms, we are already given a hint that the theory should include a meromorphic 1-form as well as two holomorphic and two topological dimensions. The functorial field theory should assign holonomies of some flat connection on $S^1 \times [0,1]$ to braids. Furthermore, the Yangian provides the 2-Hilbert space of the formal punctured disc. These observations all point to four-dimensional Chern-Simons theory.
 
 Four-dimensional Chern-Simons theory was first described in \cite{article:costello:2013}, a recent review can be found in \cite{article:lacroix:2022}. It\index{Four-dimensional Chern-Simons theory} is easily constructed by promoting one coordinate of the usual three-dimensional Chern Simons theory to a complex coordinate $z$ on a complex curve $C$ and introducing an additional meromorphic 1-form $\omega$ on $C$ to be able to integrate the Chern-Simons 3-form over a four-dimensional manifold $C \times \Sigma$ with $\Sigma$ an oriented surface, yielding the following action:
 \begin{equation*}
@@ -3185,6 +3180,67 @@ Let $\varphi(z,w) := \frac{\sigma(z+w)}{\sigma(z)\sigma(w)}$. Then
 \varphi(z+2\omega_1,w) = \frac{e^{2\eta_1(z+w+\omega_1)}\sigma(z+w)}{e^{2\eta_1(z+\omega_1)}\sigma(z)\sigma(w)} = e^{2\eta_1 w} \varphi(z,w).
 \end{equation*}
 \end{lemma}
+
+\chapter{Double categories}\label{appendix:doubleCats}
+
+Let us follow \cite{article:hansen:2019}:
+
+\begin{definition}
+A \emph{(pseudo) double category} $\mathbb{D}$ is a weak category internal to the bicategory $\mathcal{C}at$ of categories. This means that $\mathbb{D}$ consists of a category of objects $\mathbb{D}_0$ and a category of morphisms $\mathbb{D}_1$ together with functors
+\begin{equation*}
+I: \mathbb{D}_0 \to \mathbb{D}_1, \quad S,T: \mathbb{D}_1 \to \mathbb{D}_0, \quad \diamond: \mathbb{D}_1 \times_{\mathbb{D}_0} \mathbb{D}_1 \to \mathbb{D}_1
+\end{equation*}
+and natural isomorphisms
+\begin{align*}
+\alpha: (L \diamond M) \diamond N \to L \diamond (M \diamond N), \quad \lambda: I(B) \diamond M \to M, \quad \rho: M \diamond I(A) \to M
+\end{align*}
+such that
+\begin{enumerate}[label=(\roman*)]
+\item $SI = \operatorname{Id}$ and $TI = \operatorname{Id}$,
+\item $S(M \diamond N) = SN$ and $T(M \diamond N) = TM$,
+\item $S(\alpha), T(\alpha), S(\lambda), T(\lambda), S(\rho), T(\rho)$ are identities,
+\item $\alpha$ fulfills the pentagon axiom,
+\item $\lambda$ and $\rho$ fulfill the left and right unitor axioms.
+\end{enumerate}
+The morphisms in $\mathbb{D}_0$ are also called \emph{tight morphisms} and the objects of $\mathbb{D}_1$ are also called \emph{loose morphisms}. Morphisms $\alpha: M \to N$ in $\mathbb{D}_1$ are called \emph{squares} and drawn as
+\begin{center}
+\begin{tikzcd}[column sep=0.1cm,row sep=0.1cm]
+SM \arrow{rr}{M} \arrow[swap]{dd}{S\alpha} & & TM \arrow{dd}{T\alpha} \\
+& \alpha & \\
+SN \arrow[swap]{rr}{N} & & TN \\
+\end{tikzcd}
+\end{center}
+If $S\alpha$ and $T\alpha$ are identities, it is called \emph{globular}.
+\end{definition}
+
+\begin{example}
+Every (strict) 2-category $\mathcal{B}$ gives rise to a double category $\mathbb{S}\textnormal{q}(\mathcal{B})$ tba
+\end{example}
+
+\begin{definition}
+A \emph{(pseudo) double functor} $F: \mathbb{D} \to \mathbb{E}$ consists of functors $F_0: \mathbb{D}_0 \to \mathbb{E}_0$ and $F_1: \mathbb{D}_1 \to \mathbb{E}_1$ as well as natural transformations
+\begin{equation*}
+F_\diamond: F_1 M \diamond F_1 N \to F_1(M \diamond N), \quad F_I: I F_0 \to F_1 I
+\end{equation*}
+such that
+\begin{enumerate}[label=(\roman*)]
+\item the components of $F_\diamond$ and $F_I$ are globular isomorphisms,
+\item $F_\diamond$ and $F_I$ fulfill the coherence axioms with the associator and unitors analogous to pseudofunctors.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+A \emph{monoidal double category} is a double category $\mathbb{D}$ such that $\mathbb{D}_0$ and $\mathbb{D}_1$ are monoidal categories together with globular isomorphisms
+\begin{equation*}
+\xi: (M_1 \otimes M_2) \diamond (N_1 \otimes N_2) \to (M_1 \diamond N_1) \otimes (M_2 \diamond N_2), \quad \iota: I(A \otimes B) \to I(A) \otimes I(B),
+\end{equation*}
+such that
+\begin{enumerate}[label=(\roman*)]
+\item $I(\mathbf{1})$ is the monoidal unit of $\mathbb{D}_1$, where $\mathbf{1}$ is the monoidal unit of $\mathbb{D}_0$,
+\item $S$ and $T$ are strict monoidal,
+\item a whole slew of coherence axioms are satisfied.
+\end{enumerate}
+\end{definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
