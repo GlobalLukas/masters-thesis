@@ -39,13 +39,13 @@
 \newcommand{\I}{\mathrm{i}}
 \renewcommand{\P}{\mathbb{P}}
 
-\AtBeginSection[]
-{
-  \begin{frame}
-    \frametitle{Table of Contents}
-    \tableofcontents[currentsection]
-  \end{frame}
-}
+%\AtBeginSection[]
+%{
+%  \begin{frame}
+%    \frametitle{Table of Contents}
+%    \tableofcontents[currentsection]
+%  \end{frame}
+%}
 
 \author{Lukas Johannsen}
 \title{Quantum-classical duality}
@@ -96,14 +96,14 @@ from which we derive the recursion relation
 \begin{equation*}
 \operatorname{Res}_{z=y_i} \tau_{[1^{k+1}]}(z) = e_k(g) H_i + \sum_j \underset{\text{Lax matrix}}{\underbrace{\frac{\eta H_i}{y_i-y_j-\eta}}} \operatorname{Res}_{z=y_j} \tau_{[1^k]}(z).
 \end{equation*}
-We see the Lax matrix of the rational RS model appearing.
+We see the Lax matrix of the rational RS model appearing!
 \end{frame}
 
 \begin{frame}{Spectral equation}
-Iterating the recursion relation and plugging in well-known eigenvalues of the quantum determinant
-\begin{equation*}
-\det g \operatorname{qdet} T(z) = \tau_{[1^\ell]}^g(z)
-\end{equation*}
+Iterating the recursion relation %and plugging in well-known eigenvalues of the quantum determinant
+%\begin{equation*}
+%\det g \operatorname{qdet} T(z) = \tau_{[1^\ell]}^g(z)
+%\end{equation*}
 yields a Cayley-Hamilton-like identity consistent with \cite{article:gorsky:2014}:
 \begin{equation*}
 \sum_{k=0}^\ell e_k(g) L^k
@@ -277,8 +277,8 @@ With this identification, we can view the Drinfeld functor as a functor
 \mathsf{Qcoh}(Y_N) \to Y(\mathfrak{gl}_\ell)\mathsf{Mod},
 \end{equation*}
 giving the part of 4d Chern-Simons theory that assigns Yangian modules to $\P^1 \times S^1$ with $N$ distinguished points on which Wilson lines may end.
-\\~\\
-I expect that the full picture in terms of the loop Yangian is recovered from 5d Chern-Simons theory on $\C \times \C^\times \times [0,1]$.
+%\\~\\
+%I expect that the full picture in terms of the loop Yangian is recovered from 5d Chern-Simons theory on $\C \times \C^\times \times [0,1]$.
 \end{frame}
 
 \section{Towards a quantum elliptic spin RS model}
@@ -288,9 +288,9 @@ The above considerations motivate the study of 4d Chern-Simons theory on $E \tim
 \begin{equation*}
 E(\mathfrak{gl}_\ell) \curvearrowright (\C^\ell)^{\otimes N} \otimes \mathcal{O}(Y_N^\text{ell}) \curvearrowleft \underline{\dot H}_N^\text{ell}.
 \end{equation*}
-where $E(\mathfrak{gl}_\ell)$ is Belavin's elliptic quantum group \cite{article:costello:2018b,article:etingof:1998}. Tensoring with $\mathcal{O}(Y_N^\text{ell})$ over $\underline{\dot H}_N^\text{ell}$ should give the Hilbert space for the elliptic spin RS model. Its Hamiltonians will be elliptic difference operators deforming the residues of the elliptic transfer matrix.
-\\~\\
-The full picture comes from 5d Chern-Simons theory on $E \times \C^\times \times [0,1]$ and an elliptic quantum group for $\widehat{\mathfrak{gl}}_\ell$.
+where $E(\mathfrak{gl}_\ell)$ is Belavin's elliptic quantum group \cite{article:costello:2018b,article:etingof:1998}. Tensoring with $\mathcal{O}(Y_N^\text{ell})$ over $\underline{\dot H}_N^\text{ell}$ should give the Hilbert space for the elliptic spin RS model. The Hamiltonians are Ruijsenaars' elliptic difference operators acting on $\mathcal{O}(Y_N^\text{ell})$.
+%\\~\\
+%The full picture comes from 5d Chern-Simons theory on $E \times \C^\times \times [0,1]$ and an elliptic quantum group for $\widehat{\mathfrak{gl}}_\ell$.
 \end{frame}
 
 \begin{frame}[allowframebreaks]
@@ -298,3 +298,20 @@ The full picture comes from 5d Chern-Simons theory on $E \times \C^\times \times
 \bibliography{bibliography.bib}
 \end{frame}
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%

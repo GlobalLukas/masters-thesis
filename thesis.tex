@@ -146,7 +146,7 @@ This is however not the full picture. The fact that we are suddenly dealing with
 \label{figure:dualities}
 \end{figure}
 
-To finish our discussion, we will reframe this representation theoretic picture in a more geometric setting, thus connecting it to gauge theory. We will show that the Drinfeld functor defines part of a functorial quantum field theory representing four-dimensional Chern-Simons theory, which was first described in \cite{article:costello:2013} and subsequently expanded on in a series of papers starting with \cite{article:costello:2018} and \cite{article:costello:2018b}. Four-dimensional Chern-Simons theory is a semi-topological quantum field theory or, more precisely, holomorphic in the first two dimensions and topological in the other two dimensions. Thus, it lives on a four-manifold $C \times \Sigma$, where $C$ is a complex curve and $\Sigma$ an oriented surface. Its main dynamical variable is a $\mathfrak{gl}_\ell$-valued connection 1-form $A(z)$ on $\Sigma$, which is meromorphic in $z \in C$. One also fixes a meromorphic 1-form $\omega$ on $C$, which is wedged with the Chern-Simons 3-form of $A$ to obtain the Langrangian density of the theory. Its poles and zeros respectively give rise to order and disorder defects of the gauge field $A$.
+To finish our discussion, we will reframe this representation theoretic picture in a more geometric setting, thus connecting it to gauge theory. We will show that the Drinfeld functor defines part of a functorial quantum field theory representing four-dimensional Chern-Simons theory, which was first described in \cite{article:costello:2013} and subsequently expanded on in a series of papers starting with \cite{article:costello:2018}. Four-dimensional Chern-Simons theory is a semi-topological quantum field theory or, more precisely, holomorphic in the first two dimensions and topological in the other two dimensions. Thus, it lives on a four-manifold $C \times \Sigma$, where $C$ is a complex curve and $\Sigma$ an oriented surface. Its main dynamical variable is a $\mathfrak{gl}_\ell$-valued connection 1-form $A(z)$ on $\Sigma$, which is meromorphic in $z \in C$. One also fixes a meromorphic 1-form $\omega$ on $C$, which is wedged with the Chern-Simons 3-form of $A$ to obtain the Langrangian density of the theory. Its poles and zeros respectively give rise to order and disorder defects of the gauge field $A$.
 
 Specializing four-dimensional Chern-Simons theory to the four-manifold $C \times \Sigma$ with $C = \P^1$ and $\omega = dz$ as well as $\Sigma = S^1 \times [0,1]$ a cylinder, we will see how the rational Ruijsenaars-Schneider model describes the dynamics of the coordinates $y_i$ of Wilson lines along $[0,1]$, while Wilson loops winding around $S^1$ describe the transfer matrix of the Heisenberg model.
 
@@ -2077,8 +2077,6 @@ non-local Hamiltonians $\check H_i$ & higher Macdonald operators $\mathbf{X}_i$ 
 \end{tabular}
 \end{center}
 
-
-
 \begin{example}
 Let us look at the two site spin chain
 \begin{equation*}
@@ -2108,7 +2106,7 @@ Note that there is an asymmetry in its definition: It prioritizes the polynomial
 \begin{equation*}
 (x t)(v \otimes u) := \sum_i x_i v \otimes X_i u.
 \end{equation*}
-This yields an action of $L(\mathfrak{gl}_\ell) \# Y(\mathfrak{gl}_\ell)$ on $(\C^\ell)^{\otimes N} \otimes_{S_N} U$. This action in fact descends to the \emph{loop Yangian $LY(\mathfrak{gl}_\ell)$}\index{Loop Yangian}, which is a $\C[\eta,\hbar]$-algebra and a quotient of $L(\mathfrak{gl}_\ell) \# Y(\mathfrak{gl}_\ell)$:
+This yields an action of $L(\mathfrak{gl}_\ell) \# Y(\mathfrak{gl}_\ell)$ on $(\C^\ell)^{\otimes N} \otimes_{S_N} U$. By \cite{article:guay:2005}, this action in fact descends to the \emph{loop Yangian $LY(\mathfrak{gl}_\ell)$}\index{Loop Yangian}, which is a quotient of $L(\mathfrak{gl}_\ell) \# Y(\mathfrak{gl}_\ell)$:
 
 \begin{theorem}
 The action of the Yangian $Y(\mathfrak{gl}_\ell)$ and the loop algebra $L(\mathfrak{gl}_\ell)$ glue together to an action of the loop Yangian $LY(\mathfrak{gl}_\ell)$.
@@ -2142,13 +2140,13 @@ t(v \otimes f) = \sum_i v \otimes X_i f = v \otimes D_1 f.
 \end{equation*}
 \end{proof}
 
-We also obtain the following result for the $S$-dual representation, which should be compared to the results in \cite{article:bernard:1993}:
+We also obtain the following result for the $S$-dual representation, which should be compared to equation (4.2) in \cite{article:bernard:1993}:
 
 \begin{prop}
 On $(\C^\ell)^{\otimes N} \otimes_{S_N} \C[X_1^{\pm 1},...,X_N^{\pm 1}]$, the quantum determinant has the following expansion:
 \begin{align*}
 \operatorname{qdet}^1 T(z)
-= 1 &- \frac{\eta}{z} N - \frac{\eta}{z^2} \bigg( N C_1 + \eta \frac{N(N-1)}{2} \bigg) \\
+= 1 &- \frac{\eta}{z} N - \frac{\eta}{z^2} \bigg( N C_1 - \eta \frac{N(N-1)}{2} \bigg) \\
 &- \frac{\eta}{z^3} \bigg( N C_2 + \eta N (N-1) C_1 + \eta^2 \frac{N(N-1)(N-2)}{4} \bigg) + \cdots,
 \end{align*}
 where $C_1$ and $C_2$ are the first two Hamiltonians of the trigonometric Calogero-Moser model.
@@ -2166,64 +2164,63 @@ This implies the following expansion for the quantum determinant acting on the r
 &= \operatorname{tr}_{1...\ell} \Pi_{1...\ell}^- \bigg( 1
 - \frac{\eta}{z} \sum_{ij} P_{ij}
 - \frac{\eta}{z^2} \sum_{ij} \bigg( (y_j-i\eta) P_{ij} + \sum_{kl} P_{ij} P_{kl} \bigg) \\
-&+ \frac{\eta}{z^3} \sum_{ij} \bigg( (y_j-i\eta)^2 P_{ij} + \sum_{kl} (y_j-i\eta) P_{ij} P_{kl} + \sum_{klmn} P_{ij} P_{kl} P_{mn} \bigg) \bigg) + \cdots \\
-&= 1 - \frac{\eta}{z} N - \frac{\eta}{z^2} \sum_{ij} (y_j-i\eta) \\
-&+ \frac{\eta}{z^3} \bigg( \sum_{ij} (y_j-i\eta)^2 + \sum_{ijkl} (y_j-i\eta) \operatorname{tr}_{1...\ell} \Pi_{1...\ell}^- P_{ij} P_{kl} \bigg) + \cdots,
+&- \frac{\eta}{z^3} \sum_{ij} \bigg( (y_j-i\eta)^2 P_{ij} + \sum_{kl} (y_j-i\eta) P_{ij} P_{kl} + \sum_{klmn} P_{ij} P_{kl} P_{mn} \bigg) \bigg) + \cdots \\
+&= 1 - \frac{\eta}{z} N - \frac{\eta}{z^2} \sum_{ij} (y_j-i\eta) - \frac{\eta}{z^3} \sum_{ij} (y_j-i\eta)^2 + \cdots,
 \end{align*}
-which reduces to what we wanted to show.
+where the mixed terms of the product expansion vanish after antisymmetrization since they are symmetric in the auxiliary indices. Plugging in the definition of $C_1$ and $C_2$ then yields the claim.
 \end{proof}
 
 \subsection{The trigonometric Gaudin model}
 
-In order to define the trigonometric Gaudin model, let us introduce the generating function
+In order to define the trigonometric Gaudin model\index{Trigonometric Gaudin model}, let us follow \cite{article:molev:2019} by introducing the trigonometric $r$-matrix\index{Trigonometric $r$-matrix}
 \begin{equation*}
-G(t) = \sum_i \frac{\eta X_i P_{0i}}{t-X_i}.
+r(t) = \frac{t+1}{t-1} P + Q, \quad Q = \sum_{ab} \operatorname{sgn}(b-a) e_{ab} \otimes e_{ba}
 \end{equation*}
-We then have
+and considering the generating function
 \begin{equation*}
-\frac{1}{2} \operatorname{tr} G(t)^2 = \frac{1}{2} \sum_{ij} \frac{\eta^2 X_i X_j P_{ij}}{(t-X_i)(t-X_j)} = \frac{1}{2} \sum_i \frac{\eta^2 X_i^2}{(t-X_i)^2} + \sum_i \frac{\eta X_i G_i}{t-X_i},
+G(t) = \sum_i r_{0i}(t/X_i) = \sum_i \left( \frac{t+X_i}{t-X_i} P_{0i} + Q_{0i} \right),
 \end{equation*}
-where we have introduced the Hamiltonians
+from which we obtain the \emph{Gaudin Hamiltonians}:
 \begin{equation*}
-G_i := \eta \sum_{j < i} \frac{X_j}{X_i-X_j} P_{ij} + \eta \sum_{j > i} \frac{X_i}{X_i-X_j} P_{ij}.
+G_i := \operatorname{Res}_{t=X_i} \frac{\operatorname{tr}_0 G(t)^2}{2 X_i} = \sum_{i \neq j} r_{ij}(X_i/X_j) = \sum_{i \neq j} \left( \frac{X_i+X_j}{X_i-X_j} P_{ij} + Q_{ij} \right).
 \end{equation*}
 
 \begin{theorem}
-The elements
-\begin{equation*}
-\frac{1}{2} \sum_i \frac{\eta^2 t^2}{(t-X_i)^2} + \sum_i \frac{\eta X_i (\delta^{-1} y_i \delta + \eta)}{t-X_i} \in \delta^{-1} S\ddot H_N \delta[t;t^{-1} \rrbracket
-\end{equation*}
-act on $D_{\ell,N}(\C[X_1^{\pm 1},...,X_N^{\pm 1}])$ in the same way as $\frac{1}{2} \operatorname{tr} G(t)^2$ when $\hbar = 0$.
+The Hamiltonian $\delta^{-1} C_1 \delta \in \delta^{-1} S\ddot H_N \delta$ acts on $D_{\ell,N}(\C[X_1^{\pm 1},...,X_N^{\pm 1}])$ in the same way as $-N\eta -\frac{\eta}{2} \sum_i G_i$ when $\hbar = 0$.
 \end{theorem}
 
 \begin{proof}
-We check that the residues coincide:
+First note that:
 \begin{align*}
-\delta^{-1} y_i \delta + \eta
-&= y_i + \eta + \eta \sum_{i \neq j} \theta_{ij} \\
-&= -\I \hbar X_i \partial_i - (i-1) \eta + \eta \sum_{j < i} \theta_{ji} (1-(i \ j)) - \eta \sum_{j > i} \theta_{ij} (1-(i \ j)) + \eta \sum_{i \neq j} \theta_{ij} \\
-&= -\I \hbar X_i \partial_i - \eta \sum_{j < i} \theta_{ji} (i \ j) + \eta \sum_{j > i} \theta_{ij} (i \ j)
+\delta^{-1} y_i \delta
+&= y_i + \eta \sum_{i \neq j} \theta_{ij} \\
+&= -\I \hbar X_i \partial_i - i \eta + \eta \sum_{j < i} \theta_{ji} (1+(i \ j)) - \eta \sum_{j > i} \theta_{ij} (1+(i \ j)) + \eta \sum_{i \neq j} \theta_{ij} \\
+&= -\I \hbar X_i \partial_i - \eta + \eta \sum_{j < i} \theta_{ji} (i \ j) - \eta \sum_{j > i} \theta_{ij} (i \ j) \\
+&= -\I \hbar X_i \partial_i - \eta + \eta \sum_{j < i} \frac{\theta_{ji}+1-\theta_{ij}}{2} (i \ j) - \eta \sum_{j > i} \frac{\theta_{ij}+1-\theta_{ji}}{2} (i \ j) \\
+&= -\I \hbar X_i \partial_i - \eta - \eta \sum_{i \neq j} \frac{\theta_{ij}-\theta_{ji}}{2} (i \ j) - \eta \sum_{i \neq j} \operatorname{sgn}(j-i) (i \ j)
 \end{align*}
-When $\hbar = 0$, this becomes the Hamiltonian $G_i$.
+Summing over $i$ cancels the last term, giving
+\begin{align*}
+\sum_i \delta^{-1} y_i \delta
+&= -\I\hbar \sum_i X_i \partial_i - N\eta - \frac{\eta}{2} \sum_{i \neq j} \frac{X_i+X_j}{X_i-X_j} P_{ij} \\
+&\overset{\hbar \to 0}\longrightarrow -N\eta - \frac{\eta}{2} \sum_{i \neq j} \frac{X_i+X_j}{X_i-X_j} P_{ij} = -N\eta -\frac{\eta}{2} \sum_i G_i.
+\end{align*}
+where in the last step we have used that $Q_{ij} + Q_{ji} = 0$.
 \end{proof}
-
-\begin{corollary}
-The Hamiltonians $G_1,...,G_N$ commute among each other.
-\end{corollary}
 
 \chapter{Geometry}\label{chapter:geometry}
 
 \section{Quantum-classical duality in terms of functorial quantum field theory}
 
-The aim of this section is to reformulate Yangian Schur-Weyl duality in terms of a functorial quantum field theory. The mathematical structures used so far have been heavily representation theoretical. Nonetheless, we have seen some hints that there is an underlying geometry at play: We have made use of braids on cylinders as well as complex coordinates that may be reinterpreted geometrically as punctures on a Riemann surface. Together, they give two holomorphic and two topological dimensions, and both may be formulated in terms of cobordisms.
+The aim of this section is to reformulate Yangian Schur-Weyl duality in terms of a functorial quantum field theory. The mathematical structures used so far have been heavily representation theoretical. Nonetheless, we have seen some hints that there is an underlying geometry at play: We have made use of braids on cylinders as well as complex coordinates that may be reinterpreted geometrically as punctures on a Riemann surface. Together, they give two topological and two holomorphic dimensions, and both may be formulated in terms of cobordisms.
 
 \subsection{From diagrams to field theory}
 
-The diagrams on cylinders suggest that we should assign the delooping $\mathbf{B}Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ to the direct product of a formal punctured disc and a point $D^\times \times *$. But what should be assigned to $D^\times \times S_*^1$, where $S_*^1$ is a circle with basepoint? By general abstract arguments from topological quantum field theory, a sensible guess would be the coend
+The diagrams on cylinders suggest that we should assign the delooping $\mathcal{B}Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ to the direct product of a formal punctured disc and a point $D^\times \times *$. But what should be assigned to $D^\times \times S_*^1$, where $S_*^1$ is a circle with basepoint? By general abstract arguments from topological quantum field theory, a sensible guess would be the vertical trace
 \begin{equation*}
-\int^{V \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}} V \otimes V^\vee.
+\operatorname{Tr}(Y(\mathfrak{gl}_\ell)\mathsf{Mod}) := \int^{V \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}} \Hom_{Y(\mathfrak{gl}_\ell)}(V,V).
 \end{equation*}
-We would expect that this coend is some kind of coadjoint representation of the Yangian. Thus, the best candidate would be the dual Yangian $Y^\vee(\mathfrak{gl}_\ell)$. Indeed, we have:
+We would expect that this coend is given by the invariants of some kind of coadjoint representation of the Yangian. Thus, the best candidate would be the dual Bethe subalgebra $C(\mathfrak{gl}_\ell)$ of the dual Yangian $Y^\vee(\mathfrak{gl}_\ell)$. Indeed, we have:
 
 \begin{lemma}
 The map
@@ -2379,7 +2376,7 @@ mapping to the universal $R$-matrix $\mathcal{R}$. The element $\widetilde{\math
 %\item the action of the braid group via 2-morphisms to the action of the braid group on the tensor product functor via a braiding.
 %\end{enumerate}
 
-Let us start with a naive definition: Let $\mathbb{C}\textnormal{ob}_0'$ denote the double category (appendix \ref{appendix:doubleCats}) whose
+Let us start with a naive definition: Let $\mathbb{C}\textnormal{ob}'$ denote the double category (appendix \ref{appendix:doubleCats}) whose
 \begin{enumerate}[label=(\roman*)]
 \item objects $[N]$ are disjoint unions of $N$ copies of $D^\times \times S_*^1$, where $D^\times$ is the formal punctured disc and $S_*^1$ is a circle with a chosen basepoint.
 \item Tight morphisms $[N] \to [N]$ are cylinder cobordisms equipped with isotopy classes of paths connecting the basepoints of the boundary circles. This specifies an element in $\dot S_N$.
@@ -2394,7 +2391,7 @@ Let us start with a naive definition: Let $\mathbb{C}\textnormal{ob}_0'$ denote 
 are homotopy classes of paths in the moduli space of complex cobordisms.
 \end{enumerate}
 
-We note that this is already suspect because composition of loose morphisms is not well-defined unless we allow nodal curves as complex cobordisms. Nonetheless, we would want to define a double functor $\mathbb{C}\textnormal{ob}_0' \to \mathbb{S}\textnormal{q}(\mathcal{R}ex)$ that sends
+We note that this is already suspect because composition of loose morphisms is not well-defined unless we allow nodal curves as complex cobordisms. Nonetheless, we would want to define a double functor $\mathbb{C}\textnormal{ob}' \to \mathbb{S}\textnormal{q}(\mathcal{R}ex)$ that sends
 \begin{enumerate}[label=(\roman*)]
 \item the object $[1]$ to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$,
 \item the cobordism specifying a simple permutation $s_i$ to the permutation map $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^{\boxtimes 2} \to Y(\mathfrak{gl}_\ell)\mathsf{Mod}^{\boxtimes 2}$,
@@ -2439,9 +2436,9 @@ A := \C[y_1,...,y_N][(y_i-y_j)^{-1}][(y_i-y_j-\eta)^{-1}].
 \end{equation*}
 Being $\C$-equivariant means that $U$ comes equipped with a coaction $U \to U[y]$ compatible with the algebra map $A \to A[y], y_i \mapsto y_i+y$. Being $S_N$-equivariant means that $U$ comes equipped with an action of $S_N$ satisfying
 \begin{equation*}
-\sigma f u = f^\sigma \sigma u, \quad \forall \sigma \in S_N, f \in A, u \in U,
+\sigma (f u) = (\sigma f) (\sigma u), \quad \forall \sigma \in S_N, f \in A, u \in U,
 \end{equation*}
-where $f^\sigma$ denotes $f$ with coordinates permuted according to $\sigma$. This means that we can think of $U$ as a module over the semidirect product algebra $S_N \ltimes A$. Note that the operators
+This means that we can think of $U$ as a module over the semidirect product algebra $S_N \ltimes A$. Note that the operators
 \begin{equation*}
 T_i = \frac{y_i-y_{i+1}-\eta}{y_i-y_{i+1}} s_i + \frac{\eta}{y_i-y_{i+1}} \in S_N \ltimes A
 \end{equation*}
@@ -2568,10 +2565,10 @@ We may add boundary points to $Y_N$ via the fusion procedure. The ingoing points
 With this in hand, we can give a serious definition for our functorial quantum field theory:
 
 \begin{definition}
-Let $\mathbb{C}\textnormal{ob}_0$ denote the following monoidal (pseudo) double category:
+Let $\mathbb{C}\textnormal{ob}$ denote the following monoidal (pseudo) double category:
 \begin{enumerate}[label=(\roman*)]
 \item Objects are natural numbers $[N]$, representing a disjoint union of $N$ copies of the cartesian product of a formal punctured disc with a pointed circle $D^\times \times S_*^1$.
-\item Tight morphisms $\sigma: [N] \to [N]$ are diffeomorphism classes of cobordisms which are disjoint unions of cylinders equipped with isotopy classes of paths connecting the basepoints. This specifies an element of $\dot S_N$.
+\item Tight morphisms $\sigma: [N] \to [N]$ are diffeomorphism classes of cobordisms which are disjoint unions of cylinders equipped with isotopy classes of paths connecting the basepoints of the boundary circles. This specifies an element of $\dot S_N$.
 \item Loose morphisms $U: [N] \to [1]$ are $\ddot H_N$-modules, giving distributions over complex cobordisms. General loose morphisms are tensor products of these.
 \item Squares are tensor products of
 \begin{center}
@@ -2612,10 +2609,10 @@ Let $Y(\mathfrak{gl}_\ell)\mathbb{A}\textnormal{lg}$ denote the monoidal (pseudo
 \end{enumerate}
 \end{definition}
 
-Let $E[y]$ denote the algebra $\underline{\operatorname{End}}(V_0^+)[y]$ internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$. There is a quantum moment map $\mu: Y^\vee(\mathfrak{gl}_\ell) \to E[y], T^\vee(z) \mapsto R(y-z)$.
+Let $E[y^{\pm 1}]$ denote the algebra $\underline{\operatorname{End}}(V_0^+)[y^{\pm 1}]$ internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$. There is a quantum moment map $\mu: Y^\vee(\mathfrak{gl}_\ell) \to E[y^{\pm 1}], T^\vee(z) \mapsto R(y-z)$.
 
 \begin{theorem}
-There is a monoidal double functor $Z: \mathbb{C}\textnormal{ob}_0 \to Y(\mathfrak{gl}_\ell)\mathbb{A}\textnormal{lg}$ that sends
+There is a monoidal double functor $Z: \mathbb{C}\textnormal{ob} \to Y(\mathfrak{gl}_\ell)\mathbb{A}\textnormal{lg}$ that sends
 \begin{enumerate}[label=(\roman*)]
 \item $[N]$ to $Y^\vee(\mathfrak{gl}_\ell)^{\otimes N}$,
 \item tight morphisms to permutations of tensorands,
@@ -2638,7 +2635,9 @@ S_\omega(A) = \frac{i}{4\pi} \int_{C \times \Sigma} \omega \wedge \textnormal{CS
 \end{equation*}
 The field $A$ is a $\mathfrak{gl}_\ell$-valued 1-form on $C \times \Sigma$ that has no components in the $z,\bar z$ direction, meaning we can write it as $A = A_t dt + A_x dx$ up to some gauge transformation. The equations of motion let us interpret $A$ as a Lax connection on $\Sigma$ with spectral parameter $z$, writing $A(z) \in \Omega^1(\Sigma,\mathfrak{gl}_\ell)$.
 
-The functorial quantum field theory $\mathcal{Z}$ we constructed above exactly represents four-dimen\-sional Chern-Simons theory for $C=\P^1$ with $\omega = dz$ and $\Sigma = S^1 \times [0,1]$. The tight morphisms are nothing but Wilson lines along $S^1 \times [0,1]$ and the loose morphisms specify their (constant) coordinate in $\P^1 \setminus \{ \infty \}$ as well as the representation labeling them. The twist matrix parametrizes the background principal $GL_\ell$-bundle.
+The functorial quantum field theory $Z$ we constructed above exactly represents four-dimen\-sional Chern-Simons theory for $C=\P^1$ with $\omega = dz$ and $\Sigma = S^1 \times [0,1]$. The tight morphisms are nothing but Wilson lines along $S^1 \times [0,1]$ and the loose morphisms specify their (constant) coordinate in $\P^1 \setminus \{ \infty \}$ as well as the representation labeling them. The twist matrix parametrizes the background principal $GL_\ell$-bundle.
+
+We can now perform two dimensional reductions: Firstly, we may shrink $S^1 \times [0,1]$ to a point, so that our Wilson lines become point particles on $\P^1 \setminus \{ \infty \}$ that carry internal spin degrees of freedom. Secondly, we may shrink $\P^1$ to a point, which gives the homogeneous limit $y_1,...,y_N \to 0$, in which we obtain the homogeneous spin chain with its local Hamiltonian. This paints a nicely intuitive picture of quantum-classical duality.
 
 %Certain classical solutions for $A(z)$ are determined in \cite{article:lacroix:2021}. They satisfy $A(y_i) = J_i$ and have poles at $y_i-\eta$. This is consistent with the analytic structure of the unitary transfer matrix. We obtain the Cauchy matrix $C_{ij} = \frac{1}{y_i-y_j+\eta}$, which has inverse
 %\begin{equation*}
@@ -2646,17 +2645,7 @@ The functorial quantum field theory $\mathcal{Z}$ we constructed above exactly r
 %\end{equation*}
 %The Cauchy matrix should be seen as a linear map $\mathfrak{gl}_\ell^{(\zeta)} \to \mathfrak{gl}_\ell^{(z)}$.
 
-\section{Towards an elliptic Ruijsenaars-Schneider model with spin}
-
-We have seen how the rational Ruijsenaars-Schneider model with spin arises from the dynamics of Wilson lines in four-dimensional Chern-Simons theory on $\P^1 \times S^1 \times [0,1]$. One might hope that the functorial quantum field theory we constructed has an extension to complex curves of higher genus. In the case of an elliptic curve $E = \C/\Lambda$, we can look at $E \times S^1 \times [0,1]$ and hope for a description of Wilson lines in terms of the elliptic Ruijsenaars-Schneider model with spin.
-
-To this end, we have to determine which module the functorial quantum field theory assigns to $E \times S^1$, or more precisely, we have to determine the Drinfeld-type functor defined on quasi-coherent sheaves on
-\begin{equation*}
-Y_N^\text{ell} := \{ (y_1,...,y_N,\tau) \in \C^N \times \mathbb{H} \mid y_i-y_j,y_i-y_j-\eta \notin \Z \oplus \Z \tau \}/S_N \times SL_2(\Z) \ltimes (\Z^2)^N.
-\end{equation*}
-In accordance with \cite{article:costello:2018b}, we have to replace the Yangian with Belavin's elliptic quantum group $E(\mathfrak{gl}_\ell)$, so our Drinfeld functor will be valued in modules over $E(\mathfrak{gl}_\ell)$.
-
-\subsection{The elliptic Drinfeld functor}
+%\subsection{The elliptic Drinfeld functor}
 %
 %To construct this $\ddot S_N$-action, let us warm up with an $\dot S_N$-action involving the dual Yangian. We shorten our notation by suppressing the spectral parameters, implicitly making the association that $z$ corresponds to the auxiliary space index $0$, while $y_i$ corresponds to the quantum space index $i$:
 %
@@ -2859,23 +2848,23 @@ In accordance with \cite{article:costello:2018b}, we have to replace the Yangian
 %\begin{proof}
 %We let $s$ and $t$ act via the corresponding automorphisms of $DY_0(\mathfrak{gl}_\ell)$. This is compatible with the action of $SL_2(\Z)$ on $\ddot S_N$ by construction.
 %\end{proof}
-
-\begin{definition}
-The \emph{elliptic degenerate affine Hecke algebra} $\dot H_N^\textnormal{ell}$ is the algebra
-\begin{equation*}
-S_N \times SL_2(\Z) \ltimes (\Z^2)^N \ltimes \mathcal{O}(Y_N^\text{ell}).
-\end{equation*}
-\end{definition}
-
-\begin{theorem}
-There is an elliptic Drinfeld functor
-\begin{align*}
-D_{\ell,N}^\textnormal{ell}: \dot H_N^\textnormal{ell} \mathsf{Mod} &\to E(\mathfrak{gl}_\ell)\mathsf{Mod}, \\
-U &\mapsto ?
-\end{align*}
-\end{theorem}
-
-\subsection{From the elliptic transfer matrix to the elliptic Lax matrix}
+%
+%\begin{definition}
+%The \emph{elliptic degenerate affine Hecke algebra} $\dot H_N^\textnormal{ell}$ is the algebra
+%\begin{equation*}
+%S_N \times SL_2(\Z) \ltimes (\Z^2)^N \ltimes \mathcal{O}(Y_N^\text{ell}).
+%\end{equation*}
+%\end{definition}
+%
+%\begin{theorem}
+%There is an elliptic Drinfeld functor
+%\begin{align*}
+%D_{\ell,N}^\textnormal{ell}: \dot H_N^\textnormal{ell} \mathsf{Mod} &\to E(\mathfrak{gl}_\ell)\mathsf{Mod}, \\
+%U &\mapsto ?
+%\end{align*}
+%\end{theorem}
+%
+%\subsection{From the elliptic transfer matrix to the elliptic Lax matrix}
 %
 %\begin{prop}
 %There is a homomorphism $DY_0(\mathfrak{gl}_\ell) \to \operatorname{End} V[w^{\pm 1}]$ via
@@ -2930,28 +2919,28 @@ U &\mapsto ?
 %\end{align*}
 %Can we do it such that $f(y_1) \cdots f(y_N) \epsilon(w) = 1$ and $\bar f(y_1) \cdots \bar f(y_N) \epsilon(w) = e^{-2\pi\I u}$?
 
-\begin{lemma}
-We have
-\begin{equation*}
-\tau(z;w) = C + \sum_j \phi(u,z-y_j) \operatorname{Res}_{z=y_j} \tau(z;w).
-\end{equation*}
-\end{lemma}
-
-\begin{proof}
-Let
-\begin{equation*}
-\Phi(w,z) := C + \sum_j \phi(u,z-y_j) \operatorname{Res}_{z=y_j} \tau(z;w).
-\end{equation*}
-Then $\Phi(w,z)$ and $\tau(z;w)$ both have only simple poles at $y_1,...,y_N$ and no zeros. Furthermore, let us match the quasi-periodicity of $\tau(z;w)$ and $\Phi(w,z)$. It follows that $\tau(z;w)/\Phi(w,z)$ is a holomorpic elliptic function, hence constant. But both have the same residues, so they must be identical.
-\end{proof}
-
-\begin{prop}
-We have
-\begin{equation*}
-\operatorname{Res}_{z=y_i} \tau_{[1^{k+1}]}(z) = \widehat{\chi}_{[1^k]}(1) H_i + \sum_j \phi(w,y_i-y_j-\eta) \eta H_i \operatorname{Res}_{z=y_j} \tau_{[1^k]}(z)
-\end{equation*}
-Again we find $\phi(x,y_i-y_j-\eta) \eta H_i \sim -L_{ji}$?
-\end{prop}
+%\begin{lemma}
+%We have
+%\begin{equation*}
+%\tau(z;w) = C + \sum_j \phi(u,z-y_j) \operatorname{Res}_{z=y_j} \tau(z;w).
+%\end{equation*}
+%\end{lemma}
+%
+%\begin{proof}
+%Let
+%\begin{equation*}
+%\Phi(w,z) := C + \sum_j \phi(u,z-y_j) \operatorname{Res}_{z=y_j} \tau(z;w).
+%\end{equation*}
+%Then $\Phi(w,z)$ and $\tau(z;w)$ both have only simple poles at $y_1,...,y_N$ and no zeros. Furthermore, let us match the quasi-periodicity of $\tau(z;w)$ and $\Phi(w,z)$. It follows that $\tau(z;w)/\Phi(w,z)$ is a holomorpic elliptic function, hence constant. But both have the same residues, so they must be identical.
+%\end{proof}
+%
+%\begin{prop}
+%We have
+%\begin{equation*}
+%\operatorname{Res}_{z=y_i} \tau_{[1^{k+1}]}(z) = \widehat{\chi}_{[1^k]}(1) H_i + \sum_j \phi(w,y_i-y_j-\eta) \eta H_i \operatorname{Res}_{z=y_j} \tau_{[1^k]}(z)
+%\end{equation*}
+%Again we find $\phi(x,y_i-y_j-\eta) \eta H_i \sim -L_{ji}$?
+%\end{prop}
 
 \chapter{Conclusion}\label{chapter:conclusion}
 
@@ -2959,7 +2948,23 @@ Starting from the appearance of the Lax matrix of the classical rational Ruijsen
 
 \section*{Future work}
 
-One would expect as before that the action of the Laurent generators $X_1,...,X_N$ finds its geometric interpretation once we incorporate the full loop Yangian $LY(\mathfrak{gl}_\ell)$. However, due its complex nature, more work needs to be done in order to establish some necessary properties of $LY(\mathfrak{gl}_\ell)$, such as the construction of a dual loop Yangian, so we leave this for future work. We expect that the corresponding quantum field theory is given by five-dimensional Chern-Simons theory on $\C \times \C^\times \times [0,1]$.
+One would expect as before that the action of the Laurent generators $X_1,...,X_N$ in 4d Chern-Simons theory is placed on a more equal footing with that of the polynomial generators $y_1,...,y_N$ once we incorporate the full loop Yangian $LY(\mathfrak{gl}_\ell)$. However, due its complex nature, more work needs to be done in order to establish some necessary properties of $LY(\mathfrak{gl}_\ell)$, such as the construction of a dual loop Yangian, so we leave this for future work. We expect that the corresponding quantum field theory is given by five-dimensional Chern-Simons theory on $\C \times \C^\times \times [0,1]$.
+
+Another fruitful direction might be the quantization of the elliptic Ruijsenaars-Schneider model with spin. We have seen how the rational Ruijsenaars-Schneider model with spin arises from the dynamics of Wilson lines in four-dimensional Chern-Simons theory on $\P^1 \times S^1 \times [0,1]$. One might hope that the functorial quantum field theory we constructed has an extension to complex curves of higher genus. In the case of an elliptic curve $E = \C/\Lambda$, we can look at $E \times S^1 \times [0,1]$ and hope for a description of Wilson lines in terms of the elliptic Ruijsenaars-Schneider model with spin.
+
+To this end, we will have to determine which module the functorial quantum field theory assigns to $E \times S^1$, or more precisely, we have to determine the Drinfeld-type functor defined on quasi-coherent sheaves on
+\begin{equation*}
+Y_N^\text{ell} := \{ (y_1,...,y_N,\tau) \in \C^N \times \mathbb{H} \mid y_i-y_j,y_i-y_j-\eta \notin \Z \oplus \Z \tau \}/S_N \times SL_2(\Z) \ltimes (\Z^2)^N.
+\end{equation*}
+In accordance with \cite{article:costello:2018b}, we have to replace the Yangian with Belavin's elliptic quantum group $E(\mathfrak{gl}_\ell)$, so our Drinfeld functor will be valued in modules over $E(\mathfrak{gl}_\ell)$. Thus, we will have to construct a bimodule
+\begin{equation*}
+E(\mathfrak{gl}_\ell) \curvearrowright (\C^\ell)^{\otimes N} \otimes \mathcal{O}(Y_N^\textnormal{ell}) \curvearrowleft \dot H_N^\text{ell},
+\end{equation*}
+where $\dot H_N^\text{ell}$ is the algebra whole modules model quasi-coherent sheaves on $Y_N^\textnormal{ell}$. The quantum elliptic Ruijsenaars-Schneider model with spin will be given by
+\begin{equation*}
+(\C^\ell)^{\otimes N} \otimes \mathcal{O}(Y_N^\textnormal{ell}) \otimes_{\dot H_N^\text{ell}} \mathcal{O}(Y_N^\textnormal{ell})
+\end{equation*}
+with Hamiltonians given by the usual elliptic difference operators acting in this representation.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3294,10 +3299,7 @@ $\tau_\lambda^g(z)$ & $g$-twisted transfer matrix of shape $\lambda$ \\
 $C$ & complex curve \\
 $\Sigma$ & oriented surface \\
 $\omega$ & meromorphic 1-form on $C$ \\
-$A$ & $\mathfrak{gl}_\ell$-valued 1-form on $\Sigma$ \\
-$\tau$ & half-period ratio of an elliptic curve \\
-$\vartheta(z)$ & first Jacobi theta function \\
-$\phi(w,z)$ & Kronecker function
+$A$ & $\mathfrak{gl}_\ell$-valued 1-form on $\Sigma$
 \end{tabular}
 
 \pagebreak
