@@ -145,7 +145,7 @@ that induces a functor
 D_{\ell,N}: \dot H_N\mathsf{Mod} &\to Y(\mathfrak{gl}_\ell)\mathsf{Mod}, \\
 U &\mapsto  (\C^\ell[y_1] \otimes \cdots \otimes \C^\ell[y_N]) \otimes_{\dot H_N} U,
 \end{align*}
-called the \emph{Drinfeld functor} \cite{article:drinfeld:1986}. This restricts to the well-known correspondence between representations of $S_N$ and $\mathfrak{gl}_\ell$.
+called the \emph{Drinfeld functor} \cite{article:drinfeld:1986}. %This restricts to the well-known correspondence between representations of $S_N$ and $\mathfrak{gl}_\ell$.
 \end{frame}
 
 \begin{frame}{Quantum rational (spin) RS model}
@@ -177,7 +177,7 @@ acts on $D_{\ell,N}^g(\C[y_1,...,y_N])$ in the same way as $\tau^g(z)$ when $\hb
 \end{theorem}
 
 \begin{slogan}
-The $g$-twisted Drinfeld functor maps the Hamiltonians of the rational RS model to an $\hbar_{RS}$-deformation of the Hamiltonians of the Heisenberg model.
+The $g$-twisted extended Drinfeld functor $D_{\ell,N}^g$ maps the Hamiltonians of the rational RS model to an $\hbar_{RS}$-deformation of the Hamiltonians of the Heisenberg model.
 \end{slogan}
 \end{frame}
 
@@ -201,9 +201,9 @@ The loop variable $t$ living in the center of $L(\mathfrak{gl}_\ell)$ acts on $L
 \end{tikzpicture}
 \begin{center}
 \begin{tikzcd}[column sep=0.35cm,row sep=1.2cm]
-\text{Heisenberg model} \arrow[leftrightarrow,bend right=50]{dd} \arrow[leftrightarrow,bend left=40]{rr} & & \text{trig. Gaudin model} \arrow[leftrightarrow,bend left=50]{dd} \\
+\text{Heisenberg model} \arrow[swap,leftrightarrow,bend right=50]{dd}{\text{QC}} \arrow[leftrightarrow,bend left=40]{rr}{\text{S}} & & \text{trig. Gaudin model} \arrow[leftrightarrow,bend left=50]{dd}{\text{QC}} \\
  & \arrow[bend left=20]{ul} \arrow[bend right=20]{dl} LY(\mathfrak{gl}_\ell) \arrow[bend right=20]{ur} \arrow[bend left=20]{dr} & \\
-\text{rat. RS model} \arrow[leftrightarrow,bend right=40]{rr} & & \text{trig. CM model}
+\text{rat. RS model} \arrow[swap,leftrightarrow,bend right=40]{rr}{\text{S}} & & \text{trig. CM model}
 \end{tikzcd}
 \end{center}
 \end{frame}
@@ -216,12 +216,10 @@ They consider the rational spin RS and trigonometric spin CM models by Hamiltoni
 
 \section{QC duality in terms of 4d Chern-Simons theory}
 
-\begin{frame}{4d Chern-Simons theory}
+\begin{frame}{The geometric picture}
 It is reasonable to ask for a geometric picture of the representation theoretic structures thus far. A natural guess where to look is 4d Chern-Simons theory, since it is known to assign the (delooping of the) category of representations of the Yangian to the formal punctured disc.
 \\~\\
-4d Chern-Simons theory is defined for a $\mathfrak{gl}_\ell$-gauge field $A$ on a 4-manifold $C \times \Sigma$, where $C$ is a complex curve equipped with a meromorphic 1-form $\omega$ and $\Sigma$ is an oriented surface. In our case, we look at $C = \P^1$ with $\omega = dz$ and $\Sigma = S^1 \times [0,1]$.
-\\~\\
-It was realized by Costello \cite{article:costello:2013} that Wilson lines along $S^1 \times [0,1]$ with constant coordinate in $\P^1$ recover the Heisenberg model.
+For our purposes, 4d Chern-Simons theory is defined for a $\mathfrak{gl}_\ell$-gauge field on the 4-manifold $\P^1 \times S^1 \times [0,1]$. It was realized by Costello \cite{article:costello:2013} that Wilson lines along $S^1 \times [0,1]$ with constant coordinate in $\P^1$ recover the Heisenberg model.
 \end{frame}
 
 \begin{frame}[fragile]{Double category of cobordisms}
@@ -272,6 +270,7 @@ Quasi-coherent sheaves on $Y_N$ are equivalently modules over
 \underline{\dot H}_N := \dot H_N[(y_i-y_j)^{-1},(y_i-y_j-\eta)^{-1}].
 \end{equation*}
 \end{prop}
+~\\
 With this identification, we can view the Drinfeld functor as a functor
 \begin{equation*}
 \mathsf{Qcoh}(Y_N) \to Y(\mathfrak{gl}_\ell)\mathsf{Mod},
@@ -283,14 +282,24 @@ giving the part of 4d Chern-Simons theory that assigns Yangian modules to $\P^1 
 
 \section{Towards a quantum elliptic spin RS model}
 
-\begin{frame}{4d CS on $E \times S^1 \times [0,1]$}
-The above considerations motivate the study of 4d Chern-Simons theory on $E \times S^1 \times [0,1]$, where $E = \C/\Lambda$ is an elliptic curve. We similarly look at configurations of points $Y_N^\text{ell}$ and let $\underline{\dot H}_N^\text{ell}$ denote the algebra whose modules model quasi-coherent sheaves on $Y_N^\text{ell}$. I expect that there is a Schur-Weyl bimodule
+\begin{frame}{Towards a quantum elliptic spin RS model}
+The above considerations motivate the study of 4d Chern-Simons theory on $E \times S^1 \times [0,1]$, where $E$ is an elliptic curve.
+\\~\\
+We similarly look at the space of cobordisms $Y_N^\text{ell}$ and let $\underline{\dot H}_N^\text{ell}$ denote the algebra whose modules model quasi-coherent sheaves on $Y_N^\text{ell}$. I expect that there is a Schur-Weyl bimodule
 \begin{equation*}
 E(\mathfrak{gl}_\ell) \curvearrowright (\C^\ell)^{\otimes N} \otimes \mathcal{O}(Y_N^\text{ell}) \curvearrowleft \underline{\dot H}_N^\text{ell}.
 \end{equation*}
-where $E(\mathfrak{gl}_\ell)$ is Belavin's elliptic quantum group \cite{article:costello:2018b,article:etingof:1998}. Tensoring with $\mathcal{O}(Y_N^\text{ell})$ over $\underline{\dot H}_N^\text{ell}$ should give the Hilbert space for the elliptic spin RS model. The Hamiltonians are Ruijsenaars' elliptic difference operators acting on $\mathcal{O}(Y_N^\text{ell})$.
+where $E(\mathfrak{gl}_\ell)$ is Belavin's elliptic quantum group \cite{article:costello:2018b,article:etingof:1998}.
+\\~\\
+Tensoring with $\mathcal{O}(Y_N^\text{ell})$ over $\underline{\dot H}_N^\text{ell}$ should give the Hilbert space for the elliptic spin RS model. The Hamiltonians are Ruijsenaars' elliptic difference operators acting in this new representation.
 %\\~\\
 %The full picture comes from 5d Chern-Simons theory on $E \times \C^\times \times [0,1]$ and an elliptic quantum group for $\widehat{\mathfrak{gl}}_\ell$.
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\textit{Thank you for your time and attention!}
+\end{center}
 \end{frame}
 
 \begin{frame}[allowframebreaks]

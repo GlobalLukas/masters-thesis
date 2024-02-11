@@ -1671,7 +1671,7 @@ The functional relation (\ref{equation:functionalRelation}) can be rewritten as
 \begin{equation*}
 \tau_{[1^{k+1}]}^g(z) = \tau_{[1^k]}^g(z-\eta) \tau_{\ydiagram{1}}^g(z) - \tau_{[2,1^{k-1}]}^g(z-\eta).
 \end{equation*}
-Let us take the residue at $z=y_i$. We remark that $\tau_{[1^k]}^g(z-\eta)$ does not have a pole at $y_i$, which can immediately be seen by expanding it in terms of $R$-matrices using the fusion procedure. On the other hand, taking the row tableau $t_{[2,1^{k-1}]}$, we find
+Let us take the residue at $z=y_i$. We remark that $\tau_{[1^k]}^g(z-\eta)$ does not have a pole at $y_i$, which can be seen immediately by expanding it in terms of $R$-matrices using the fusion procedure. On the other hand, taking the row tableau $t_{[2,1^{k-1}]}$, we find
 \begin{align*}
 \tau_{[2,1^{k-1}]}^g(z-\eta)
 &= \operatorname{tr}_{1...k} \Pi_{t_{[2,1^{k-1}]}} g_k \cdots g_1 M_k(z-\eta(k-1)) \cdots M_3(z-2\eta) M_2(z) M_1(z-\eta).
@@ -1775,19 +1775,19 @@ that
 This is consistent with the findings of \cite{article:gorsky:2014}, where it is shown that the twist parameters $g_1,...,g_\ell$ give the eigenvalues of the Lax matrix $L$ with multiplicity given by occupation numbers.
 \end{remark}
 
-\begin{corollary}
-The eigenvalues of $H_1,...,H_N$ are exactly the complex roots of the spectral equation.
-\end{corollary}
-
-\begin{proof}
-?? tba
-\end{proof}
-
-Conjecture: $\operatorname{tr} L^k = \operatorname{Res}_{z=\infty} \tau_{[1^k]}^g(z)$.
+%\begin{corollary}
+%The eigenvalues of $H_1,...,H_N$ are exactly the complex roots of the spectral equation.
+%\end{corollary}
+%
+%\begin{proof}
+%?? tba
+%\end{proof}
+%
+%Conjecture: $\operatorname{tr} L^k = \operatorname{Res}_{z=\infty} \tau_{[1^k]}^g(z)$.
 
 \section{Generalized Schur-Weyl duality}
 
-Why should the Lax matrix of the rational Ruijsenaars-Schneider model appear in the spectral equation? A first clue is given by the fact that the Yangian allows for residual symmetries through its various automorphisms, the most peculiar of which is the shift automorphism. It has no analogue for $\mathfrak{gl}_\ell$ and is thus special to the Yangian. This non-rigidity gives additional degrees of freedom for monodromy representations: the inhomogeneities. They seem to play the role of the position variables of the rational Ruijsenaars-Schneider model. What is the mathematical reason for their appearance? Most simply, it is because the Schur-Weyl dual of the Yangian is the degenerate affine Hecke algebra, whose generators include polynomial generators that act as inhomogeneities. To introduce this, we will start with a discussion of classical Schur-Weyl duality between the symmetric groups $S_N$ and the Lie algebras $\mathfrak{gl}_\ell$. A detailed account of various generalized Schur-Weyl dualities can be found in \cite{thesis:antor:2020}.
+Why should the Lax matrix of the rational Ruijsenaars-Schneider model appear in the spectral equation? A first clue is the fact that the Yangian allows for residual symmetries through its various automorphisms, the most peculiar of which is the shift automorphism. It has no analogue for $\mathfrak{gl}_\ell$ and is thus special to the Yangian. This non-rigidity gives additional degrees of freedom for monodromy representations: the inhomogeneities. They seem to play the role of the position variables of the rational Ruijsenaars-Schneider model. What is the mathematical reason for their appearance? Most simply, it is because the Schur-Weyl dual of the Yangian is the degenerate affine Hecke algebra, whose generators include polynomial generators that act as inhomogeneities. To introduce this, we will start with a discussion of classical Schur-Weyl duality between the symmetric groups $S_N$ and the Lie algebras $\mathfrak{gl}_\ell$. A detailed account of various generalized Schur-Weyl dualities can be found in \cite{thesis:antor:2020}.
 
 \subsection{Classical Schur-Weyl duality}
 
@@ -1936,7 +1936,7 @@ Crucially however, we still have the action of the Laurent generators $X_i$ on $
 where “$\#$” denotes the free product. Let us now twist this using the twist matrix $g$:
 
 \begin{definition}
-Define the \emph{preaffine Drinfeld functor}
+Define the \emph{twist-extended Drinfeld functor}\index{Twist-extended Drinfeld functor}
 \begin{equation*}
 D_{\ell,N}^g: \ddot H_N\mathsf{Mod} \to S\ddot H_N \# Y(\mathfrak{gl}_\ell)\mathsf{Mod}, \quad U \mapsto (\C^\ell)^{\otimes N} \otimes_{S_N} U,
 \end{equation*}
@@ -2051,7 +2051,7 @@ where
 \begin{equation*}
 R_{0\lambda^{(i)}}(z-y_i) = R_{0k}(z-y_i+\eta c_k) \cdots R_{01}(z-y_i+\eta c_1)
 \end{equation*}
-is the fused $R$-matrix for the Young diagram $\lambda^{(i)}$ of $k$ boxes with a chosen standard Young tableau that has content vector $(c_1,...,c_k)$. Thus, we find that $\tau_g(z)$ obtains poles at $z = y_i-\eta c_j$, but these in general may not be simple poles. The relevant Hamiltonians then are the coefficients of the principal parts at the poles $z = y_i-\eta c_j$. In general, these have the form
+is the fused $R$-matrix for the Young diagram $\lambda^{(i)}$ of $k$ boxes with a chosen standard Young tableau that has content vector $(c_1,...,c_k)$. Thus, we find that $\tau^g(z)$ obtains poles at $z = y_i-\eta c_j$, but these in general may not be simple poles. The relevant Hamiltonians then are the coefficients of the principal parts at the poles $z = y_i-\eta c_j$. In general, these have the form
 \begin{align*}
 R_{\lambda^{(i)}\lambda^{(i-1)}}(y_i-y_{i-1}) \cdots R_{\lambda^{(i)}\lambda^{(1)}}(y_i-y_1) \times W \times R_{\lambda^{(i)}\lambda^{(N)}}(y_i-y_N) \cdots R_{\lambda^{(i)}\lambda^{(i+1)}}(y_i-y_{i+1}),
 \end{align*}
@@ -2098,7 +2098,7 @@ for the $\ydiagram{4}$-multiplet, which is exactly correct up to the factor $(z-
 
 \subsection{Schur-Weyl duality for the loop Yangian}
 
-Let us reexamine the preaffine Drinfeld functor
+Let us reexamine the twist-extended Drinfeld functor
 \begin{equation*}
 D_{\ell,N}^g: \ddot H_N\mathsf{Mod} \to S\ddot H_N \# Y(\mathfrak{gl}_\ell) \mathsf{Mod}.
 \end{equation*}
@@ -2117,16 +2117,16 @@ This is proved in \cite{article:guay:2005}, also see \cite{article:kodera:2016}.
 \end{proof}
 
 \begin{definition}
-This defines the \emph{affine Drinfeld functor}
+This defines the \emph{loop-extended Drinfeld functor}\index{Loop-extended Drinfeld functor}
 \begin{equation*}
-\dot D_{\ell,N}: \ddot H_N\mathsf{Mod} \to LY(\mathfrak{gl}_\ell) \mathsf{Mod}.
+LD_{\ell,N}: \ddot H_N\mathsf{Mod} \to LY(\mathfrak{gl}_\ell) \mathsf{Mod}.
 \end{equation*}
 \end{definition}
 
 We can now identify the Hamiltonians of the quantum rational Ruijsenaars-Schneider model and the quantum trigonometric Calogero-Moser model as elements of the loop Yangian, or more precisely of the centers of the loop algebra and the Yangian:
 
 \begin{prop}
-On $(\C^\ell)^{\otimes N} \otimes_{S_N} \C[y_1,...,y_N]$, we have
+On $LD_{\ell,N}(\C[y_1,...,y_N])$, we have
 \begin{equation*}
 t(v \otimes f) = v \otimes D_1 f,
 \end{equation*}
@@ -2143,7 +2143,7 @@ t(v \otimes f) = \sum_i v \otimes X_i f = v \otimes D_1 f.
 We also obtain the following result for the $S$-dual representation, which should be compared to equation (4.2) in \cite{article:bernard:1993}:
 
 \begin{prop}
-On $(\C^\ell)^{\otimes N} \otimes_{S_N} \C[X_1^{\pm 1},...,X_N^{\pm 1}]$, the quantum determinant has the following expansion:
+On $LD_{\ell,N}(\C[X_1^{\pm 1},...,X_N^{\pm 1}])$, the quantum determinant has the following expansion:
 \begin{align*}
 \operatorname{qdet}^1 T(z)
 = 1 &- \frac{\eta}{z} N - \frac{\eta}{z^2} \bigg( N C_1 - \eta \frac{N(N-1)}{2} \bigg) \\
@@ -2157,16 +2157,39 @@ Recall that the $R$-matrix has the expansion:
 \begin{equation*}
 R(z-y) = 1 - \frac{\eta P}{z-y} = 1 - \frac{\eta}{z} P - \frac{\eta}{z^2} y P - \frac{\eta}{z^3} y^2 P + \cdots
 \end{equation*}
-This implies the following expansion for the quantum determinant acting on the representation $(\C^\ell)^{\otimes N} \otimes_{S_N} \C[X_1^{\pm 1},...,X_N^{\pm 1}]$:
+The monodromy matrix on $LD_{\ell,N}(\C[X_1^{\pm 1},...,X_N^{\pm 1}])$ then has the expansion:
+\begin{align*}
+M_a(z-y) &= R_{aN}(z-y-y_N) \cdots R_{a1}(z-y-y_1) \\
+&= 1 - \frac{\eta}{z} \sum_i P_{ai} - \frac{\eta}{z^2} \bigg( \sum_i (y_i+y) P_{ai} - \sum_{i < j} P_{ai} P_{aj} \bigg) \\
+&- \frac{\eta}{z^3} \bigg( \sum_i (y_i+y)^2 P_{ai} - \sum_{i < j} (y_i+y) P_{ai} P_{aj}
++ \sum_{i < j < k} P_{ai} P_{aj} P_{ak} \bigg) + \cdots
+\end{align*}
+and their product becomes
+\begin{align*}
+M_\ell(z-(\ell-1)\eta) \cdots M_1(z)
+&= 1 - \frac{\eta}{z} \sum_{a=1}^\ell \sum_{i=1}^N P_{ai} \\
+&- \frac{\eta}{z^2} \bigg( \sum_a \bigg( \sum_i (y_i+(a-1)\eta) P_{ai} - \sum_{i < j} P_{ai} P_{aj} \bigg) - \sum_{a < b} \sum_{i,j} P_{ai} P_{bj} \bigg) \\
+&- \frac{\eta}{z^3} \bigg( \sum_a \bigg( \sum_i (y_i+(a-1)\eta)^2 P_{ai} - \sum_{i < j} (y_i+(a-1)\eta) P_{ai} P_{aj}
++ \sum_{i < j < k} P_{ai} P_{aj} P_{ak} \bigg) \\
+&- \sum_{a < b} \sum_i P_{ai} \bigg( \sum_j (y_j+(b-1)\eta) P_{bj} - \sum_{j < k} P_{bj} P_{bk} \bigg) + \sum_{a < b < c} \sum_{i,j,k} P_{ai} P_{bj} P_{ck} \bigg) + \cdots
+\end{align*}
+Using the identity $\Pi_{1...\ell}^- P_{ab} = -\Pi_{1...\ell}^-$ and $\operatorname{tr}_{1...\ell} \Pi_{1...\ell}^- P_{ai} = 1$ as well as $\operatorname{tr}_{1...\ell} \Pi_{1...\ell}^- = 1$, this implies the following expansion for the quantum determinant:
 \begin{align*}
 \operatorname{qdet}^1 T(z)
-&= \operatorname{tr}_{1...\ell} \Pi_{1...\ell}^- \prod_{ij} R_{ij}(z-y_j-i\eta) \\
-&= \operatorname{tr}_{1...\ell} \Pi_{1...\ell}^- \bigg( 1
-- \frac{\eta}{z} \sum_{ij} P_{ij}
-- \frac{\eta}{z^2} \sum_{ij} \bigg( (y_j-i\eta) P_{ij} + \sum_{kl} P_{ij} P_{kl} \bigg) \\
-&- \frac{\eta}{z^3} \sum_{ij} \bigg( (y_j-i\eta)^2 P_{ij} + \sum_{kl} (y_j-i\eta) P_{ij} P_{kl} + \sum_{klmn} P_{ij} P_{kl} P_{mn} \bigg) \bigg) + \cdots \\
-&= 1 - \frac{\eta}{z} N - \frac{\eta}{z^2} \sum_{ij} (y_j-i\eta) - \frac{\eta}{z^3} \sum_{ij} (y_j-i\eta)^2 + \cdots,
+&= \operatorname{tr}_{1...\ell} \Pi_{1...\ell}^- M_\ell(z-(\ell-1)\eta) \cdots M_1(z) \\
+&= 1 + \frac{\eta}{z} \ell N
+- \frac{\eta}{z^2} \bigg( -\sum_a \bigg( \sum_i (y_i+(a-1)\eta) + \sum_{i < j} P_{ij} \bigg) - \sum_{a < b} N^2 \bigg) \\
 \end{align*}
+tba
+%\begin{align*}
+%\operatorname{qdet}^1 T(z)
+%&= \operatorname{tr}_{1...\ell} \Pi_{1...\ell}^- \prod_{ij} R_{ij}(z-y_j-i\eta) \\
+%&= \operatorname{tr}_{1...\ell} \Pi_{1...\ell}^- \bigg( 1
+%- \frac{\eta}{z} \sum_{ij} P_{ij}
+%- \frac{\eta}{z^2} \sum_{ij} \bigg( (y_j-i\eta) P_{ij} - \sum_{kl} P_{ij} P_{kl} \bigg) \\
+%&- \frac{\eta}{z^3} \sum_{ij} \bigg( (y_j-i\eta)^2 P_{ij} + \sum_{kl} (y_j-i\eta) P_{ij} P_{kl} + \sum_{klmn} P_{ij} P_{kl} P_{mn} \bigg) \bigg) + \cdots \\
+%&= 1 - \frac{\eta}{z} N - \frac{\eta}{z^2} \sum_{ij} (y_j-i\eta) - \frac{\eta}{z^3} \sum_{ij} (y_j-i\eta)^2 + \cdots,
+%\end{align*}
 where the mixed terms of the product expansion vanish after antisymmetrization since they are symmetric in the auxiliary indices. Plugging in the definition of $C_1$ and $C_2$ then yields the claim.
 \end{proof}
 
@@ -2186,7 +2209,7 @@ G_i := \operatorname{Res}_{t=X_i} \frac{\operatorname{tr}_0 G(t)^2}{2 X_i} = \su
 \end{equation*}
 
 \begin{theorem}
-The Hamiltonian $\delta^{-1} C_1 \delta \in \delta^{-1} S\ddot H_N \delta$ acts on $D_{\ell,N}(\C[X_1^{\pm 1},...,X_N^{\pm 1}])$ in the same way as $-N\eta -\frac{\eta}{2} \sum_i G_i$ when $\hbar = 0$.
+The Hamiltonian $\delta^{-1} C_1 \delta \in \delta^{-1} S\ddot H_N \delta$ acts on $LD_{\ell,N}(\C[X_1^{\pm 1},...,X_N^{\pm 1}])$ in the same way as $-N\eta -\frac{\eta}{2} \sum_i G_i$ when $\hbar = 0$.
 \end{theorem}
 
 \begin{proof}
@@ -2216,11 +2239,12 @@ The aim of this section is to reformulate Yangian Schur-Weyl duality in terms of
 
 \subsection{From diagrams to field theory}
 
-The diagrams on cylinders suggest that we should assign the delooping $\mathcal{B}Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ to the direct product of a formal punctured disc and a point $D^\times \times *$. But what should be assigned to $D^\times \times S_*^1$, where $S_*^1$ is a circle with basepoint? By general abstract arguments from topological quantum field theory, a sensible guess would be the vertical trace
-\begin{equation*}
-\operatorname{Tr}(Y(\mathfrak{gl}_\ell)\mathsf{Mod}) := \int^{V \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}} \Hom_{Y(\mathfrak{gl}_\ell)}(V,V).
-\end{equation*}
-We would expect that this coend is given by the invariants of some kind of coadjoint representation of the Yangian. Thus, the best candidate would be the dual Bethe subalgebra $C(\mathfrak{gl}_\ell)$ of the dual Yangian $Y^\vee(\mathfrak{gl}_\ell)$. Indeed, we have:
+Since we are working in four total dimensions, the diagrams on cylinders suggest that we should assign a bicategory to the direct product of a formal punctured disc and a point $D^\times \times *$, which should be seen as a one-dimensional object. We also know that these are labeled by representations $V_y^+$ of the Yangian, so we conclude that this bicategory should be the delooping of the monoidal category $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$. It remains to determine what should be assigned to $D^\times \times S_*^1$, where $S_*^1$ is a circle with basepoint. By general abstract arguments from topological quantum field theory, this will be given by the zeroth Hochschild homology of $Y(\mathfrak{gl}_\ell)$, which is the dual Bethe algebra $C(\mathfrak{gl}_\ell)$.
+%a sensible guess would be the vertical trace
+%\begin{equation*}
+%\operatorname{Tr}(Y(\mathfrak{gl}_\ell)\mathsf{Mod}) := \int^{V \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}} \Hom_{Y(\mathfrak{gl}_\ell)}(V,V).
+%\end{equation*}
+%We would expect that this coend is given by the invariants of some kind of coadjoint representation of the Yangian. Thus, the best candidate would be the dual Bethe subalgebra $C(\mathfrak{gl}_\ell)$ of the dual Yangian $Y^\vee(\mathfrak{gl}_\ell)$. Indeed, we have:
 
 \begin{lemma}
 The map
