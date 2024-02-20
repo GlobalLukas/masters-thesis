@@ -153,10 +153,9 @@ Specializing four-dimensional Chern-Simons theory to the four-manifold $C \times
 In short, the novel contributions of this thesis are the following:
 \begin{itemize}
 \item We explicitly show that the quantum trigonometric Calogero-Moser model and rational Ruijsenaars-Schneider model are realized as $S$-dual representations of the degenerate double affine Hecke algebra $\ddot H_N$ with commuting Hamiltonians living in the spherical subalgebra $S\ddot H_N$. This is largely parallel to existing literature on the trigonometric Ruijsenaars-Schneider model, see \cite{article:lamers:2022}.
-\item We twist the Drinfeld functor $D_{\ell,N}: \dot H_N \mathsf{Mod} \to Y(\mathfrak{gl}_\ell) \mathsf{Mod}$ to give the \emph{preaffine Drinfeld functor} $D_{\ell,N}^g: \ddot H_N \mathsf{Mod} \to S\ddot H_N \# Y(\mathfrak{gl}_\ell) \mathsf{Mod}$ and show that it maps the Hilbert space and Hamiltonians of the quantum rational Ruijsenaars-Schneider model to the Hilbert space and Hamiltonians of the twisted inhomogeneous Heisenberg model in the limit where the Planck constant for the rational Ruijsenaars-Schneider model $\hbar$ goes to zero.
+\item We twist the Drinfeld functor $D_{\ell,N}: \dot H_N \mathsf{Mod} \to Y(\mathfrak{gl}_\ell) \mathsf{Mod}$ to give the \emph{twist-extended Drinfeld functor} $D_{\ell,N}^g: \ddot H_N \mathsf{Mod} \to S\ddot H_N \# Y(\mathfrak{gl}_\ell) \mathsf{Mod}$ and show that it maps the Hamiltonians of the quantum rational Ruijsenaars-Schneider model to the Hamiltonians of the twisted inhomogeneous Heisenberg model in the limit where the Planck constant for the rational Ruijsenaars-Schneider model $\hbar$ goes to zero.
 \item We show the same for the quantum trigonometric Calogero-Moser model, mapping to the trigonometric Gaudin model when $\hbar \to 0$.
-\item We construct a functorial quantum field theory representing four-dimensional Chern-Simons theory on $\P^1 \times S^1 \times [0,1]$.
-\item We show that the dynamics of Wilson lines in four-dimensional Chern-Simons theory is described by the rational Ruijsenaars-Schneider model with spin.
+\item We construct a functorial quantum field theory representing four-dimensional Chern-Simons theory on $\P^1 \times S^1 \times [0,1]$ and show how it describes the rational Ruijsenaars-Schneider model with spin.
 \item We extrapolate our description to four-dimensional Chern-Simons theory on $E \times S^1 \times [0,1]$, where $E$ is an elliptic curve, giving insights into the quantization of the elliptic Ruijsenaars-Schneider model with spin.
 \end{itemize}
 
@@ -186,11 +185,7 @@ M_c := \{ p \in M \mid f_i(p) = c_i \}.
 If the 1-forms $df_i$ are linearly independent on $M_c$, then:
 \begin{enumerate}[label=(\roman*)]
 \item $M_c$ is a smooth submanifold invariant under the Hamiltonian flow.
-\item If $M_c$ is compact and connected, then $M_c$ is diffeomorphic to $(S^1)^N$. In this case, the Hamiltonian flow for $H$ is linearly periodic, \emph{i.e.}
-\begin{equation*}
-\dot \varphi_i = \omega_i
-\end{equation*}
-for $\varphi_i$ the $i$th angular coordinate and $\omega_i$ a frequency dependent only on $c$ and $H$.
+\item If $M_c$ is compact and connected, then $M_c$ is diffeomorphic to $(S^1)^N$. In this case, the Hamiltonian flow for $H$ is linearly periodic, \emph{i.e.} $\dot \varphi_i = \omega_i$ for $\varphi_i$ the $i$th angular coordinate and $\omega_i$ a frequency dependent only on $c$ and $H$.
 \end{enumerate}
 \end{theorem}
 
@@ -318,7 +313,7 @@ in local coordinates $t,x$, this means
 \end{equation*}
 \end{definition}
 
-\begin{prop}[\cite{notes:beisert:2014}]
+\begin{prop}
 Let $\Sigma = \R \times S^1$ be a cylinder with axial coordinate $t$ and angular coordinate $x$ and $A(z) = A_t(z) dt + A_x(z) dx$ be a Lax connection. Let $z$ not be a pole and
 \begin{equation*}
 L(z) := \operatorname{Hol}_\gamma(A(z)), \quad M(z) := A_t(z)|_{x=0},
@@ -327,7 +322,7 @@ where $\gamma$ is a loop winding once around the cylinder and $\operatorname{Hol
 \end{prop}
 
 \begin{proof}
-Let $\gamma$ be a curve starting at $(t_0,x_0) \in \Sigma$ and ending at $(t_1,x_1) \in \Sigma$. The defining partial differential equations for the holonomy give
+Let us follow \cite{notes:beisert:2014} and let $\gamma$ be a curve starting at $(t_0,x_0) \in \Sigma$ and ending at $(t_1,x_1) \in \Sigma$. The defining partial differential equations for the holonomy give
 \begin{equation*}
 \frac{\partial}{\partial t_0} \operatorname{Hol}_\gamma(A(z)) = -A_t(z)|_{x=x_0} \operatorname{Hol}_\gamma(A(z)), \quad \frac{\partial}{\partial t_1} \operatorname{Hol}_\gamma(A(z)) = A_t(z)|_{x=x_1} \operatorname{Hol}_\gamma(A(z)).
 \end{equation*}
@@ -346,7 +341,7 @@ The conserved quantities $I_k(z) = \operatorname{tr} L(z)^k$ arising from Lax co
 
 \subsection{Ruijsenaars-Schneider and Calogero-Moser models}
 
-We now come to two very important classes of examples of classical integrable models: The Ruijsenaars-Schneider and Calogero-Moser models.
+We now come to two very important classes of examples of classical integrable models: The Ruijsenaars-Schneider and Calogero-Moser models. Fix for the rest of this thesis two non-zero complex numbers $\hbar$ and $\eta$, respectively describing the Planck constant and coupling constant of the Ruijsenaars-Schneider and Calogero-Moser models. We will later also be interested in the limit $\hbar \to 0$.
 
 \begin{definition}
 The \emph{classical Ruijsenaars-Schneider models}\index{Ruijsenaars-Schneider model}, originally constructed in \cite{article:ruijsenaars:1987}, for $N$ particles of positions $y_i$ and momenta $p_i$, speed of light $c$, and coupling constant $\eta$ have the Hamiltonians
@@ -376,7 +371,7 @@ This is a quick computation with Mathematica ($\to$ \texttt{RSHamiltonianExpansi
 The function $H^\text{CM}$ from equation (\ref{equation:trigCMHamiltonian}) defines the Hamiltonians for the \emph{classical Calogero-Moser models}\index{Calogero-Moser model}.
 \end{definition}
 
-The Hamiltonian (\ref{equation:trigCMHamiltonian}) of the rational Calogero-Moser model evidently describes point particles repelling each other through centrifugal inverse-cube forces. \cite{article:ruijsenaars:1987} hence argues that the rational Ruijsenaars-Schneider model describes the same phenomenon in the relativistic setting with finite speed of light $c$. We further remark that the trigonometric case might be thought of as having periodic coordinates after taking the position variables $y_i$ to be purely imaginary, hence describing particles on a circle. Our focus will be on the rational Ruijsenaars-Schneider model and the trigonometric Calogero-Moser model.
+The Hamiltonian (\ref{equation:trigCMHamiltonian}) of the rational Calogero-Moser model evidently describes point particles repelling each other through centrifugal inverse-cube forces. \cite{article:ruijsenaars:1987} hence argues that the rational Ruijsenaars-Schneider model describes the same phenomenon in the relativistic setting with finite speed of light $c$. We further remark that the trigonometric case might be thought of as having periodic coordinates after taking the position variables $y_i$ to be purely imaginary, hence describing particles moving on a circle. Our focus will be on the rational Ruijsenaars-Schneider model and the trigonometric Calogero-Moser model.
 
 \begin{prop}
 Lax matrices ensuring Liouville integrability for the rational Ruijsenaars-Schneider and the trigonometric Calogero-Moser model are given by
@@ -416,7 +411,7 @@ In order to quantize the rational Ruijsenaars-Schneider and trigonometric Caloge
 \begin{definition}
 \begin{enumerate}[label=(\roman*)]
 \item The Weyl group of type $A_{N-1}$ is the symmetric group $S_N$ on $N$ letters. We write cycles in standard form $(1 \ 2 \ 3)$, mapping 1 to 2, 2 to 3, and 3 to 1, and denote the simple transpositions $(i \ i+1)$ by $s_i$ for $1 \leq i < N$. Finally, we let $w := s_1 \cdots s_{N-1} = (1 \ \cdots \ N)$ denote the Coxeter element.
-\item Define the \emph{Jucys-Murphy elements} $Y_i := \sum_{k=1}^{i-1} (k \ i) \in \C[S_N]$. They commute among each other and fulfill $s_i Y_j = Y_j s_i$ for $|i-j|>1$ as well as $s_i Y_i = Y_{i+1} s_i-1$.
+\item Define the \emph{Jucys-Murphy elements}\index{Jucys-Murphy elements} $Y_i := \sum_{k=1}^{i-1} (k \ i) \in \C[S_N]$. They commute among each other and fulfill $s_i Y_j = Y_j s_i$ for $|i-j|>1$ as well as $s_i Y_i = Y_{i+1} s_i-1$.
 \item Given a standard Young tableau $t$ of shape $\lambda$ partitioning $N$, define the \emph{Specht polynomial}
 \begin{equation*}
 f_t(y_1,...,y_N) := \prod_{i<j \text{ in a column of } t} (y_j-y_i).
@@ -437,14 +432,14 @@ where $c_i(t)$ is the content of $i$ in $t$.
 \end{prop}
 
 \begin{proof}
-For (i), see (tba), for (ii), see \cite{article:murphy:1981}.
+For (ii), see \cite{article:murphy:1981}, and (i) is a well-known result.
 \end{proof}
 
 \begin{definition}
 \begin{enumerate}[label=(\roman*)]
 \item The \emph{affine Weyl group of type $A_{N-1}$} is the group $\dot S_N := S_N \ltimes \Z^N$, where $S_N$ acts on $\Z^N$ by permutation of coordinates. The group algebra $\C[\dot S_N]$ is canonically generated by the group algebra $\C[S_N]$ of the symmetric group and an algebra of Laurent polynomials $\C[X_1^{\pm 1},...,X_N^{\pm 1}]$. In fact, it is generated by the simple transpositions $s_i$ and the element $\pi := X_1 w$.
-\item We also define the \emph{elliptic Weyl group} $\ddot S_N$. It is generated by $S_N$ as well as two sets of Laurent generators $X_1,...,X_N$ and $\bar X_1,...,\bar X_N$ forming two copies of $\dot S_N$ and fulfilling the relation $X_1 \bar X_2 = \bar X_2 X_1$. We again introduce the elements $\pi$ and $\bar pi$ as above in the two copies of $\dot S_N$.
-\item The \emph{degenerate double affine Hecke algebra (of type $A_{N-1}$)}\index{Degenerate double affine Hecke algebra} is the $\C[\eta,\hbar]$-algebra $\ddot H_N$ generated by the group algebra $\C[\dot S_N]$ and the polynomial algebra $\C[y_1,...,y_N]$ subject to the cross-relations
+%\item We also define the \emph{elliptic Weyl group} $\ddot S_N$. It is generated by $S_N$ as well as two sets of Laurent generators $X_1,...,X_N$ and $\bar X_1,...,\bar X_N$ forming two copies of $\dot S_N$ and fulfilling the relation $X_1 \bar X_2 = \bar X_2 X_1$. We again introduce the elements $\pi$ and $\bar pi$ as above in the two copies of $\dot S_N$.
+\item The \emph{degenerate double affine Hecke algebra (of type $A_{N-1}$)}\index{Degenerate double affine Hecke algebra} is the complex associative algebra $\ddot H_N$ generated by the group algebra $\C[\dot S_N]$ and the polynomial algebra $\C[y_1,...,y_N]$ subject to the cross-relations
 \begin{align*}
 s_i y_j = y_j s_i, \quad s_i y_i = y_{i+1} s_i + \eta, \quad \pi y_i \pi^{-1} = y_{i+1}, \quad \pi y_N \pi^{-1} = y_1 + \I \hbar,
 \end{align*}
@@ -453,7 +448,7 @@ where $1 \leq i < N, 1 \leq j \leq N$ and $|i-j|>1$. It can thus be seen to be g
 s_i \mapsto s_i, \quad X_i \mapsto X_i^{-1}, \quad y_i \mapsto y_i,
 \end{equation*}
 making left modules equivalent to right modules.
-\item The $\C[\eta]$-subalgebra $\dot H_N \subset \ddot H_N$ generated only by $\C[S_N]$ and $\C[y_1,...,y_N]$ is the \emph{degenerate affine Hecke algebra (of type $A_{N-1}$)}\index{Degenerate affine Hecke algebra}. It is also generated by the $s_i$ and $y_1$. There is an evaluation homomorphism
+\item The subalgebra $\dot H_N \subset \ddot H_N$ generated only by $\C[S_N]$ and $\C[y_1,...,y_N]$ is the \emph{degenerate affine Hecke algebra (of type $A_{N-1}$)}\index{Degenerate affine Hecke algebra}. It is also generated by the $s_i$ and $y_1$. There is an evaluation homomorphism
 \begin{equation*}
 \operatorname{ev}: \dot H_N \to S_N[y], \quad s_i \mapsto s_i, y_i \mapsto y - \eta Y_i.
 \end{equation*}
@@ -484,45 +479,87 @@ Much of the following is parallel to \cite{article:lamers:2022}, where the non-d
 \Delta_i := (y_i-y_{i+1})^{-1} (1-s_i).
 \end{equation*}
 Note that the anti-symmetrization implies that $\Delta_i^2 = 0$ and that $\Delta_i f$ for any polynomial $f$ will again be a polynomial despite its denominator. We further note that $\Delta_i y_i = y_{i+1} \Delta_i + 1$.
-\item The \emph{$T$-operators} are defined as
+\item The \emph{$t$-operators} are defined as
 \begin{equation*}
-T_i := s_i + \eta \Delta_i = \frac{y_i-y_{i+1}-\eta}{y_i-y_{i+1}} s_i + \frac{\eta}{y_i-y_{i+1}}.
+t_i := s_i + \eta \Delta_i = \frac{y_i-y_{i+1}-\eta}{y_i-y_{i+1}} s_i + \frac{\eta}{y_i-y_{i+1}}.
 \end{equation*}
 \end{enumerate}
 
-\begin{lemma}
+\begin{prop}
 The mapping
 \begin{align*}
-s_i \mapsto T_i, \quad y_i \mapsto y_i
+s_i \mapsto t_i, \quad y_i \mapsto y_i
 \end{align*}
 gives rise to a representation of $\dot H_N$ on $\C[y_1,...,y_N]$.
+\end{prop}
+
+\begin{proof}
+It is clear that $t_i$ and $t_j$ as well as $t_i$ and $y_j$ commute for $|i-j|>1$. We also have
+\begin{equation*}
+t_i^2 = 1 + s_i \eta \Delta_i + \eta \Delta_i s_i + \eta^2 \Delta_i^2 = 1 + \eta \Delta_i - \eta \Delta_i = 1.
+\end{equation*}
+as well as the braid relation $t_i t_{i-1} t_i = t_{i-1} t_i t_{i-1}$, which may be quickly checked in Mathematica ($\to$ \texttt{TOperatorRelations.nb}). The relation $t_i y_i = y_{i+1} t_i + \eta$ follows readily from $\Delta_i y_i = y_{i+1} \Delta_i + 1$.
+\end{proof}
+
+To extend this representation to the degenerate double affine Hecke algebra $\ddot H_N$, introduce the $x$-operators
+\begin{equation*}
+x_{ji} := \frac{y_i-y_j-\eta}{y_i-y_j} + \frac{\eta}{y_i-y_j} (i \ j).
+\end{equation*}
+
+\begin{lemma}\label{lemma:xOpLemma}
+The $x$-operators fulfill the quantum Yang-Baxter equation $x_{ij} x_{ik} x_{jk} = x_{jk} x_{ik} x_{ij}$ as well as $x_{ij} e^{\I\hbar \partial_i} e^{\I\hbar \partial_j} = e^{\I\hbar \partial_j} e^{\I\hbar \partial_i} x_{ij}$.
 \end{lemma}
 
 \begin{proof}
-It is clear that $T_i$ and $T_j$ as well as $T_i$ and $y_j$ commute for $|i-j|>1$. We also have
+The second identity follows because $e^{\I\hbar \partial_i}$ and $e^{\I\hbar \partial_j}$ commute and their combination $e^{\I\hbar \partial_i} e^{\I\hbar \partial_j}$ preserves the coefficients of $x_{ij}$. To tackle the first identity, note that $\sigma x_{ij} \sigma^{-1} = x_{\sigma(i)\sigma(j)}$ as well as $t_i s_i = x_{i+1,i}$ and $s_i t_i = x_{i,i+1}$. The quantum Yang-Baxter equation for the $x$-operators then reduces to the equation
 \begin{equation*}
-T_i^2 = 1 + s_i \eta \Delta_i + \eta \Delta_i s_i = 1 + \eta \Delta_i - \eta \Delta_i = 1.
+x_{i-1,i+1} x_{i-1,i} x_{i+1,i} = x_{i+1,i} x_{i-1,i} x_{i-1,i+1},
 \end{equation*}
-as well as the braid relation $T_i T_{i-1} T_i = T_{i-1} T_i T_{i-1}$, which may be quickly checked in Mathematica ($\to$ \texttt{TOperatorRelations.nb}). The relation $T_i y_i = y_{i+1} T_i + \eta$ follows readily from $\Delta_i y_i = y_{i+1} \Delta_i + 1$.
+which follows from the braid relation $t_i t_{i-1} t_i = t_{i-1} t_i t_{i-1}$:
+\begin{align*}
+x_{i-1,i+1} x_{i-1,i} x_{i+1,i}
+&= x_{i-1,i+1} s_{i-1} t_{i-1} t_i s_i \\
+&= s_{i-1} x_{i,i+1} t_{i-1} t_i s_i \\
+&= s_{i-1} s_i t_i t_{i-1} t_i s_i \\
+&= s_{i-1} s_i t_{i-1} t_i t_{i-1} s_i \\
+&= s_{i-1} s_i s_{i-1} s_{i-1} t_{i-1} t_i t_{i-1} s_{i-1} s_{i-1} s_i \\
+&= s_i s_{i-1} s_i x_{i-1,i} t_i x_{i,i-1} s_{i-1} s_i \\
+&= s_i s_{i-1} x_{i-1,i+1} s_i t_i x_{i,i-1} s_{i-1} s_i \\
+&= s_i s_{i-1} x_{i-1,i+1} x_{i,i+1} x_{i,i-1} s_{i-1} s_i \\
+&= x_{i+1,i} x_{i-1,i} x_{i-1,i+1}.
+\end{align*}
 \end{proof}
 
 \begin{prop}
-Let $\pi$ act on $\C[y_1,...,y_N]$ by
-\begin{equation*}
-(\pi f)(y_1,...,y_N) := f(y_2,...,y_N,y_1 + \I \hbar).
-\end{equation*}
 The mapping
 \begin{align*}
-s_i \mapsto T_i, \quad X_i \mapsto T_{i-1} \cdots T_1 \pi T_{N-1} \cdots T_i, \quad y_i \mapsto y_i
+s_i \mapsto t_i, \quad X_i \mapsto x_{i,i-1} \cdots x_{i1} e^{\I \hbar \partial_i} x_{iN} \cdots x_{i,i+1}, \quad y_i \mapsto y_i
 \end{align*}
 gives rise to a representation of $\ddot H_N$ on $\C[y_1,...,y_N]$.
 \end{prop}
 
 \begin{proof}
-It is clear that the action of $\pi$ fulfills the necessary relations between $\pi$ and the $y_i$. Furthermore, we see that $X_1 = \pi w^{-1}$ acts as $\pi T_{N-1} \cdots T_1$, from which the general form for $X_i$ follows.
+Let $\pi$ act on $\C[y_1,...,y_N]$ by
+\begin{equation*}
+(\pi f)(y_1,...,y_N) := f(y_2,...,y_N,y_1 + \I \hbar).
+\end{equation*}
+It is clear that this action fulfills the necessary relations between $\pi$ and the $y_i$. Furthermore, we see that $X_1 = \pi w^{-1}$ acts as $\pi t_{N-1} \cdots t_1$, which implies that $X_i$ acts as $t_{i-1} \cdots t_1 \pi t_{N-1} \cdots t_i$. We arrive at
+\begin{align*}
+t_{i-1} \cdots t_1 \pi t_{N-1} \cdots t_i
+&= t_{i-1} \cdots t_1 e^{\I \hbar \partial_1} s_1 \cdots s_{N-1} t_{N-1} \cdots t_i \\
+&= t_{i-1} \cdots t_1 s_1 \cdots s_{i-1} e^{\I \hbar \partial_i} s_i \cdots s_{N-1} t_{N-1} \cdots t_i \\
+&= x_{i,i-1} \cdots x_{i1} e^{\I \hbar \partial_i} x_{iN} \cdots x_{i,i+1}.
+\end{align*}
+It remains to show commutativity of $X_1,...,X_N$, and it suffices to check $X_2 X_1 = X_1 X_2$. Indeed,
+\begin{align*}
+&x_{21} e^{\I\hbar \partial_2} x_{2N} \cdots x_{23} e^{\I\hbar \partial_1} x_{1N} \cdots x_{13} x_{12} \\
+&= e^{\I\hbar \partial_1} x_{1N} \cdots x_{13} e^{\I\hbar \partial_2} x_{2N} \cdots x_{23} x_{21} x_{12} \\
+&= e^{\I\hbar \partial_1} x_{1N} \cdots x_{13} x_{12} x_{21} e^{\I\hbar \partial_2} x_{2N} \cdots x_{23},
+\end{align*}
+where we made use of lemma \ref{lemma:xOpLemma} as well as $x_{ij} x_{ji} = 1$.
 \end{proof}
 
-There is an obvious representation of $\dot S_N$ on Laurent polynomials $\C[X_1^{\pm 1},...,X_N^{\pm 1}]$ where $S_N$ permutes the variables and $X_i$ acts simply by multiplication. This representation also extends to $\ddot H_N$ in the following way:
+We may also construct a representation on the $S$-dual Laurent generators: Clearly, there is a representation of $\dot S_N$ on $\C[X_1^{\pm 1},...,X_N^{\pm 1}]$ where $S_N$ permutes the variables and $X_i$ acts simply by multiplication. Furthermore, we can extend this representation to $\ddot H_N$ in the following way:
 
 \begin{prop}\label{prop:trigCMRepresentation}
 Let $\theta_{ij} := X_i/(X_i-X_j)$. The mapping
@@ -537,7 +574,7 @@ We refer to appendix \ref{appendix:dunklOperators}, lemma \ref{lemma:trigCMRepre
 \end{proof}
 
 \begin{remark}
-The operators $X_i$ acting on $\C[y_1,...,y_N]$ are called \emph{Macdonald operators}, while the operators $y_i$ acting on $\C[X_1^{\pm 1},...,X_N^{\pm 1}]$ are called \emph{Dunkl operators}.
+The operators $X_i$ acting on $\C[y_1,...,y_N]$ are called \emph{rational Macdonald operators}, while the operators $y_i$ acting on $\C[X_1^{\pm 1},...,X_N^{\pm 1}]$ are called \emph{trigonometric Dunkl operators} in the literature.
 \end{remark}
 
 \subsection{Quantization of Ruijsenaars-Schneider and Calogero-Moser models}
@@ -551,28 +588,6 @@ D_k := e_k(X_1,...,X_N) \in S\ddot H_N,
 \end{equation*}
 with $e_k$ the $k$th elementary symmetric polynomial.
 \end{definition}
-
-\begin{lemma}
-Let
-\begin{equation*}
-x_{ji} := \frac{y_i-y_j-\eta}{y_i-y_j} + \frac{\eta}{y_i-y_j} (i \ j).
-\end{equation*}
-Then
-\begin{equation*}
-X_i = x_{i,i-1} \cdots x_{i1} e^{\I \hbar \partial_i} x_{iN} \cdots x_{i,i+1}.
-\end{equation*}
-when acting on $\C[y_1,...,y_N]$.
-\end{lemma}
-
-\begin{proof}
-Observe that $T_i s_i = x_{i+1,i}$ and $s_i T_i = x_{i,i+1}$, hence
-\begin{align*}
-T_{i-1} \cdots T_1 \pi T_{N-1} \cdots T_i
-&= T_{i-1} \cdots T_1 e^{\I \hbar \partial_1} s_1 \cdots s_{N-1} T_{N-1} \cdots T_i \\
-&= T_{i-1} \cdots T_1 s_1 \cdots s_{i-1} e^{\I \hbar \partial_i} s_i \cdots s_{N-1} T_{N-1} \cdots T_i \\
-&= x_{i,i-1} \cdots x_{i1} e^{\I \hbar \partial_i} x_{iN} \cdots x_{i,i+1}.
-\end{align*}
-\end{proof}
 
 \begin{prop}
 On symmetric polynomials, \emph{i.e.} bosonic wave functions, $D_1$ reduces to the canonically quantized Hamiltonian (\ref{equation:ratRSHamiltonianPrime}) of the rational Ruijsenaars-Schneider model:
@@ -630,7 +645,7 @@ so $C_2$ will indeed reduce to the classical Hamiltonian (\ref{equation:trigCMHa
 In order to define the Heisenberg model, we will make use of the representation theory of the \emph{Yangian}. The Yangian $Y(\mathfrak{gl}_\ell)$ was first defined by Drinfeld in his seminal paper \cite{article:drinfeld:1985} introducing quantum groups. An extensive textbook review can be found in \cite{book:molev}, which we follow closely.
 
 \begin{definition}
-The \emph{Yangian}\index{Yangian} for the complex Lie algebra $\mathfrak{gl}_\ell$, written $Y(\mathfrak{gl}_\ell)$, is defined as the unital associative $\C[\eta]$-algebra with the following presentation: It has generators $t_{ij}^{(r)}$ for $1 \leq i,j \leq \ell$ and $r \geq 1$, which are subject to the relations
+The \emph{Yangian}\index{Yangian} for the complex Lie algebra $\mathfrak{gl}_\ell$, written $Y(\mathfrak{gl}_\ell)$, is defined as the complex associative algebra with the following presentation: It has generators $t_{ij}^{(r)}$ for $1 \leq i,j \leq \ell$ and $r \geq 1$, which are subject to the relations
 \begin{equation}\label{equation:yangianDefiningRelation}
 [t_{ij}^{(r+1)},t_{kl}^{(s)}] - [t_{ij}^{(r)},t_{kl}^{(s+1)}] = \eta(t_{kj}^{(r)} t_{il}^{(s)} - t_{kj}^{(s)} t_{il}^{(r)}),
 \end{equation}
@@ -673,17 +688,17 @@ which should be understood coefficient-wise.
 \end{enumerate}
 \end{prop}
 
-We saw that it can be notationally convenient to introduce the formal parameter $z$ and work inside the algebra $Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$. In the same vein, it will also be convenient to work inside the algebra $\End V \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$, where $V := \C^\ell[\eta]$ and write the generators of $Y(\mathfrak{gl}_\ell)$ in matrix form:
+We saw that it can be notationally convenient to introduce the formal parameter $z$ and work inside the algebra $Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$. In the same vein, it will also be convenient to work inside the algebra $\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$ and write the generators of $Y(\mathfrak{gl}_\ell)$ in matrix form:
 \begin{equation*}
-T(z) := \sum_{ij} e_{ij} \otimes t_{ij}(z) \in \End V \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket.
+T(z) := \sum_{ij} e_{ij} \otimes t_{ij}(z) \in \End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket.
 \end{equation*}
-The additional vector space $V$ is usually called the \emph{auxiliary space} to distinguish it from representation spaces, usually called \emph{quantum spaces}. The expression might be thought of as a power series of matrices with coefficients in $Y(\mathfrak{gl}_\ell)$. With this in hand, define the following elements in $\End V \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket^{\otimes N}$:
+The additional vector space $\C^\ell$ is usually called the \emph{auxiliary space} to distinguish it from representation spaces, usually called \emph{quantum spaces}. The expression may be thought of as a power series of matrices with coefficients in $Y(\mathfrak{gl}_\ell)$. With this in hand, define the following elements in $\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket^{\otimes N}$:
 \begin{equation*}
 T_{[a]}(z) := \sum_{ij} \overset{0}{e_{ij}} \otimes \overset{1}{1} \otimes \cdots \otimes \overset{a}{t_{ij}(z)} \otimes \cdots \otimes \overset{N}{1},
 \end{equation*}
 where we have used $0$ to denote the auxiliary space index and $1,...,a,...,N$ to denote quantum space indices. We can now define the map
 \begin{equation*}
-\End V \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \to \End V \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket^{\otimes 2}, \quad T(z) \mapsto T_{[1]}(z) T_{[2]}(z).
+\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \to \End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket^{\otimes 2}, \quad T(z) \mapsto T_{[1]}(z) T_{[2]}(z).
 \end{equation*}
 Using the identity $e_{ij} e_{kl} = \delta_{jk} e_{il}$, we see that on $Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$ this reduces to
 \begin{equation*}
@@ -697,9 +712,9 @@ which degree-wise gives the map
 \begin{prop}
 The map $\Delta$ from (\ref{equation:coproduct}) is an algebra homomorphism. It equips $Y(\mathfrak{gl}_\ell)$ with the structure of a bialgebra with counit
 \begin{equation*}
-\epsilon: Y(\mathfrak{gl}_\ell) \to \C[\eta], \quad t_{ij}^{(r)} \mapsto 0.
+\epsilon: Y(\mathfrak{gl}_\ell) \to \C, \quad t_{ij}^{(r)} \mapsto 0.
 \end{equation*}
-Furthermore, $Y(\mathfrak{gl}_\ell)$ is a Hopf algebra. The antipode can be represented on the level of the algebra $\End V \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$ as
+Furthermore, $Y(\mathfrak{gl}_\ell)$ is a Hopf algebra. The antipode can be represented on the level of the algebra $\End \C^\ell \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$ as
 \begin{equation*}
 S: T(z) \mapsto T(z)^{-1}.
 \end{equation*}
@@ -711,7 +726,7 @@ This is theorem 1.5.1 of \cite{book:molev}.
 \end{proof}
 
 \begin{remark}
-Similar to the definition of the $T_{[a]}(z)$, we may define the following elements of the algebra $(\End V)^{\otimes k} \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$:
+Similar to the definition of the $T_{[a]}(z)$, we may define the following elements of the algebra $(\End \C^\ell)^{\otimes k} \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$:
 \begin{equation*}
 T_a(z) := \sum_{ij} \overset{1}{1} \otimes \cdots \otimes \overset{a}{e_{ij}} \otimes \cdots \otimes \overset{k}{1} \otimes \overset{0}{t_{ij}(z)},
 \end{equation*}
@@ -722,7 +737,7 @@ R(z) := 1 - \frac{\eta P}{z}
 be \emph{Yang's rational $R$-matrix}\index{Rational $R$-matrix}, we obtain the following proposition:
 \end{remark}
 
-\begin{prop}[RTT relation]
+\begin{prop}
 \index{RTT relation}The defining relations (\ref{equation:yangianDefiningRelationUV}) of the Yangian may equivalently be written as
 \begin{equation}\label{equation:RTTRelation}
 R_{12}(z-w) T_1(z) T_2(w) = T_2(w) T_1(z) R_{12}(z-w),
@@ -731,7 +746,7 @@ where $R_{12}(z-w)$ is understood to act on the two auxiliary spaces labeled $1$
 \end{prop}
 
 \begin{proof}
-Consider the result of acting on $e_j \otimes e_l \in V \otimes V$. The left hand side gives
+Consider the result of acting on $e_j \otimes e_l \in \C^\ell \otimes \C^\ell$. The left hand side gives
 \begin{equation*}
 \sum_{ik} e_i \otimes e_k \otimes t_{ij}(z) t_{kl}(w) - \frac{\eta}{z-w} \sum_{ik} e_i \otimes e_k \otimes t_{kj}(z) t_{il}(w)
 \end{equation*}
@@ -804,19 +819,19 @@ illustrated with the diagram
 \node[below left] at (3,-0.5) {$w$};
 \end{tikzpicture}
 \end{center}
-which is essentially the second Reidemeister move. We can always switch from one convention to the other at the cost of normalization factors. The crucial difference between conventions lies in their analytic structure, which we will make use of extensively. More specifically:
+which is essentially the second Reidemeister move. We can always switch from one convention to the other at the cost of normalization factors. The crucial difference between conventions lies in their analytic structure, which we will make use of extensively. More specifically, we summarize:
 \begin{align*}
 1 &= R(\infty) = \lim_{z \to \infty} \hat{R}(z)/z = \check R(\infty), \\
 P &= -\operatorname{Res}_{z=0} R(z)/\eta = -\hat{R}(0)/\eta = \check R(0), \\
 \Pi^+ &= R(-\eta)/2 = -\hat{R}(-\eta)/2\eta = \check R(-\eta), \\
 \Pi^- &= R(\eta)/2 = \hat{R}(\eta)/2\eta = \operatorname{Res}_{z=\eta} \check R(z)/2\eta,
 \end{align*}
-where $\Pi^\pm = (1 \pm P)/2$ are the symmetrizer and antisymmetrizer respectively. This is where the $R$-matrix becomes singular.
+where $\Pi^\pm = (1 \pm P)/2$ are the symmetrizer and antisymmetrizer respectively. This is where the $R$-matrix becomes non-invertible.
 \end{remark}
 
 \begin{definition}
 \begin{enumerate}[label=(\roman*)]
-\item There is a homomorphism of $\C[\eta]$-algebras
+\item There is an algebra map
 \begin{equation*}
 e^{-y\partial}: Y(\mathfrak{gl}_\ell) \to Y(\mathfrak{gl}_\ell)[y], \quad t_{ij}(z) \mapsto t_{ij}(z-y).
 \end{equation*}
@@ -829,7 +844,7 @@ This also yields a general evaluation homomorphism
 \operatorname{ev}: Y(\mathfrak{gl}_\ell) \to U(\mathfrak{gl}_\ell)[y], \quad t_{ij}(z) \mapsto \delta_{ij} + \frac{\eta e_{ij}}{z-y}.
 \end{equation*}
 \item There is the \emph{transposition automorphism} $T(z) \mapsto T^t(-z)$, or $t_{ij}(z) \mapsto t_{ji}(-z)$.
-\item Given any $f(z) \in \C[\eta]\llbracket z^{-1} \rrbracket$ with leading term equal to one, there is an automorphism $T(z) \mapsto f(z) T(z)$.
+\item Given any $f(z) \in \C\llbracket z^{-1} \rrbracket$ with leading term equal to one, there is an automorphism $T(z) \mapsto f(z) T(z)$.
 \item Given any $g \in \operatorname{GL}_\ell$, there is an automorphism $T(z) \mapsto g T(z) g^{-1}$.
 \end{enumerate}
 \end{definition}
@@ -839,9 +854,9 @@ This also yields a general evaluation homomorphism
 In addition to the Yangian $Y(\mathfrak{gl}_\ell)$, we will later make use of the \emph{dual Yangian} $Y^\vee(\mathfrak{gl}_\ell)$, which was studied in detail in the paper \cite{article:nazarov:2019}. Essentially, while the Yangian describes the disc at infinity with local coordinate $z^{-1}$, the dual Yangian describes the disc around zero with local coordinate $z$. We proceed parallel to the construction of the Yangian:
 
 \begin{definition}
-The \emph{dual Yangian}\index{Dual Yangian} for the complex Lie algebra $\mathfrak{gl}_\ell$, written $Y^\vee(\mathfrak{gl}_\ell)$, is defined as the unital associative $\C[\eta]$-algebra with the following presentation: It has generators $t_{ij}^{(-r)}$ for $1 \leq i,j \leq \ell$ and $r \geq 1$. To describe the defining relations, we again let $t_{ij}^{(0)} = \delta_{ij}/\eta$ and introduce
+The \emph{dual Yangian}\index{Dual Yangian} for the complex Lie algebra $\mathfrak{gl}_\ell$, written $Y^\vee(\mathfrak{gl}_\ell)$, is defined as the complex associative algebra with the following presentation: It has generators $t_{ij}^{(-r)}$ for $1 \leq i,j \leq \ell$ and $r \geq 1$. To describe the defining relations, we again let $t_{ij}^{(0)} = \delta_{ij}/\eta$ and introduce
 \begin{equation*}
-T^\vee(z) := \sum_{ij} t_{ij}^\vee(z) \otimes e_{ij} \in Y^\vee(\mathfrak{gl}_\ell)\llbracket z \rrbracket \otimes V, \quad t_{ij}^\vee(z) = \eta \sum_{r \geq 0} t_{ij}^{(-r)} z^r \in Y^\vee(\mathfrak{gl}_\ell)\llbracket z \rrbracket,
+T^\vee(z) := \sum_{ij} t_{ij}^\vee(z) \otimes e_{ij} \in Y^\vee(\mathfrak{gl}_\ell)\llbracket z \rrbracket \otimes \C^\ell, \quad t_{ij}^\vee(z) = \eta \sum_{r \geq 0} t_{ij}^{(-r)} z^r \in Y^\vee(\mathfrak{gl}_\ell)\llbracket z \rrbracket,
 \end{equation*}
 as well as
 \begin{equation*}
@@ -851,11 +866,7 @@ The defining relation of the dual Yangian then is the \emph{TTR relation}:
 \begin{equation}\label{equation:TTRRelation}
 T_1^\vee(z) T_2^\vee(w) R_{12}(z-w) = R_{12}(z-w) T_2^\vee(w) T_1^\vee(z).
 \end{equation}
-This relation may also be written as
-\begin{equation*}
-R_{12}(z-w) T_2^\vee(w) P_{12} T_2^\vee(z) P_{12} = P_{12} T_2^\vee(z) P_{12} T_2^\vee(w) R_{12}(z-w)
-\end{equation*}
-We may equip the dual Yangian with a descending filtration by giving $t_{ij}^{(-r)}$ the degree $r$. Denote the $N$th filtered piece by $F_N Y^\vee(\mathfrak{gl}_\ell)$ and the completion with respect to this filtration by $\hat Y^\vee(\mathfrak{gl}_\ell)$.
+We may equip the dual Yangian with a descending filtration by giving $t_{ij}^{(-r)}$ the degree $r$. Denote the $N$th filtered piece by $F_N Y^\vee(\mathfrak{gl}_\ell)$ and the completion with respect to this filtration by $\widehat Y^\vee(\mathfrak{gl}_\ell)$.
 \end{definition}
 
 \begin{prop}
@@ -870,13 +881,13 @@ This appears in \cite{article:nazarov:2019}.
 \end{proof}
 
 \begin{remark}
-The bialgebra structure of $Y^\vee(\mathfrak{gl}_\ell)$ extends to the completion $\hat Y^\vee(\mathfrak{gl}_\ell)$. We may additionally define an antipode on $\hat Y^\vee(\mathfrak{gl}_\ell)$, see \cite{article:nazarov:2019}, making $\hat Y^\vee(\mathfrak{gl}_\ell)$ into a Hopf algebra.
+The bialgebra structure of $Y^\vee(\mathfrak{gl}_\ell)$ extends to the completion $\widehat Y^\vee(\mathfrak{gl}_\ell)$. We may additionally define an antipode on $\widehat Y^\vee(\mathfrak{gl}_\ell)$, see \cite{article:nazarov:2019}, making $\widehat Y^\vee(\mathfrak{gl}_\ell)$ into a Hopf algebra.
 \end{remark}
 
 \begin{prop}
 There is a canonical non-degenerate pairing
 \begin{equation*}
-\langle \cdot,\cdot \rangle: Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to \C[\eta],
+\langle \cdot,\cdot \rangle: Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to \C,
 \end{equation*}
 such that multiplications and comultiplications become dual to each other in the sense that $\langle a,bc \rangle = \langle \Delta(a),b \otimes c \rangle$ and $\langle ab,c \rangle = \langle a \otimes b,\Delta(c) \rangle$, understanding that $\langle a \otimes b, c \otimes d \rangle := \langle a,c \rangle \langle b,d \rangle$.
 \end{prop}
@@ -898,7 +909,7 @@ The elements
 \begin{equation}\label{equation:universalRMatrixN}
 \mathcal{R}_N := \sum_{\deg X_i \leq N} X_i^\vee \otimes X_i \in Y^\vee(\mathfrak{gl}_\ell)/F_{N+1} Y^\vee(\mathfrak{gl}_\ell) \otimes F_N Y(\mathfrak{gl}_\ell)
 \end{equation}
-define an element $\mathcal{R} \in Y^\vee(\mathfrak{gl}_\ell) \operatorname{\hat \otimes} Y(\mathfrak{gl}_\ell)$ called \emph{the universal $R$-matrix}.
+define an element $\mathcal{R} \in Y^\vee(\mathfrak{gl}_\ell) \operatorname{\widehat \otimes} Y(\mathfrak{gl}_\ell)$ called \emph{the universal $R$-matrix}.
 \end{definition}
 
 %\begin{definition}
@@ -923,7 +934,7 @@ If $V$ is generated by $\omega$, $V$ is a highest weight representation with hig
 We now proceed similarly with the Yangian:
 
 \begin{definition}
-Let $V$ be a representation of $Y(\mathfrak{gl}_\ell)$. A non-zero element $\omega \in V$ is of \emph{highest weight} $\lambda(z) = (\lambda_1(z),...,\lambda_\ell(z))$ for $\lambda_i(z) \in \C[\eta]\llbracket z^{-1} \rrbracket$ if the following relations hold:
+Let $V$ be a representation of $Y(\mathfrak{gl}_\ell)$. A non-zero element $\omega \in V$ is of \emph{highest weight} $\lambda(z) = (\lambda_1(z),...,\lambda_\ell(z))$ for $\lambda_i(z) \in \C\llbracket z^{-1} \rrbracket$ if the following relations hold:
 \begin{align*}
 t_{ij}(z) \omega &= 0, \quad 1 \leq i < j \leq \ell \\
 t_{ii}(z) \omega &= \lambda_i(z) \omega, \quad 1 \leq i \leq \ell.
@@ -944,11 +955,11 @@ The irreducible highest weight representation $L(\lambda(z))$ of $Y(\mathfrak{gl
 \begin{equation*}
 \frac{\lambda_i(z)}{\lambda_{i+1}(z)} = \frac{p_i(z+\eta)}{p_i(z)}
 \end{equation*}
-for $i=1,...,\ell-1$ and unique monic polynomials $p_i(z) \in \C[\eta,z]$ called \emph{Drinfeld polynomials}.
+for $i=1,...,\ell-1$ and unique monic polynomials $p_i(z) \in \C[z]$ called \emph{Drinfeld polynomials}.
 \end{theorem}
 
 \begin{proof}
-This is theorem 3.4.1 of \cite{book:molev}. We consider the case $\ell = 2$. Essentially, one first finds a power series $f(z) \in \C[\eta]\llbracket z^{-1} \rrbracket$ such that $f(z) \lambda_1(z)$ and $f(z) \lambda_2(z)$ are polynomials, so that we can say without loss of generality that
+This is theorem 3.4.1 of \cite{book:molev}. We consider the case $\ell = 2$. Essentially, one first finds a power series $f(z) \in \C\llbracket z^{-1} \rrbracket$ such that $f(z) \lambda_1(z)$ and $f(z) \lambda_2(z)$ are polynomials, so that we can say without loss of generality that
 \begin{equation*}
 \lambda_1(z) = (1+\alpha_1 z^{-1}) \cdots (1+\alpha_k z^{-1}), \quad \lambda_2(z) = (1+\beta_1 z^{-1}) \cdots (1+\beta_k z^{-1}).
 \end{equation*}
@@ -976,11 +987,11 @@ Given a weight $\lambda = (\lambda_1,...,\lambda_\ell) \in \C^\ell$ for $\mathfr
 \begin{equation*}
 p_i(z) = (z+\eta \lambda_{i+1})(z+\eta \lambda_{i+1}+\eta) \cdots (z+\eta \lambda_i-2\eta)(z+\eta \lambda_i-\eta),
 \end{equation*}
-which is makes sense due to $(\lambda_i - \lambda_{i+1})/\eta \in \Z_+$. We may twist evaluation modules by the shift automorphism for $y \in \C[\eta]$ or the transposition and respectively obtain modules we denote by $L(\lambda)_y$ and $L(\lambda)^t$ as well as $L(\lambda)_y^t$.
+which is makes sense due to $(\lambda_i - \lambda_{i+1})/\eta \in \Z_+$. We may twist evaluation modules by the shift automorphism for $y \in \C$ or the transposition and respectively obtain modules we denote by $L(\lambda)_y$ and $L(\lambda)^t$ as well as $L(\lambda)_y^t$.
 \end{definition}
 
 \begin{remark}
-Let $y_1,...,y_N \in \C[\eta]$ and consider a tensor product
+Let $y_1,...,y_N \in \C$ and consider a tensor product
 \begin{equation*}
 L(\lambda^{(1)})_{y_1}^t \otimes \cdots \otimes L(\lambda^{(N)})_{y_N}^t,
 \end{equation*}
@@ -988,7 +999,7 @@ which inherits the structure of a $Y(\mathfrak{gl}_\ell)$-module via the coprodu
 \begin{equation*}
 \lambda_i(z) := \left( 1 - \frac{\eta \lambda_i^{(1)}}{z-y_1} \right) \cdots \left( 1 - \frac{\eta \lambda_i^{(N)}}{z-y_N} \right).
 \end{equation*}
-Note that these weight components are not linear polynomials anymore. This is because such representations are genuine representations of $Y(\mathfrak{gl}_\ell)$, not of $\mathfrak{gl}_\ell$. Physically, this reflects the fact that local sites usually transform in representations of $\mathfrak{gl}_\ell$ while the extended Yangian symmetry acts non-locally, \emph{i.e.} on multiple tensorands. Hence, a large class of physically relevant representations of the Yangian are given by representations of this form:
+Note that these weight components are not first order polynomials anymore. This is because such representations are genuine representations of $Y(\mathfrak{gl}_\ell)$, not of $\mathfrak{gl}_\ell$. Physically, this reflects the fact that local sites usually transform in representations of $\mathfrak{gl}_\ell$ while the extended Yangian symmetry acts non-locally, \emph{i.e.} on multiple tensorands. Hence, a large class of physically relevant representations of the Yangian are given by representations of this form:
 \end{remark}
 
 \begin{definition}
@@ -1017,7 +1028,7 @@ Inserting the definition of evaluation modules as well as the transposition and 
 \end{proof}
 
 \begin{remark}
-This shows that the RTT relation (\ref{equation:RTTRelation}) in the fundamental representation becomes the \emph{quantum Yang-Baxter equation}
+This shows that the RTT relation (\ref{equation:RTTRelation}) in the fundamental representation becomes the \emph{quantum Yang-Baxter equation}\index{Quantum Yang-Baxter equation}
 \begin{equation*}
 R_{12}(z-w) R_{13}(z) R_{23}(w) = R_{23}(w) R_{13}(z) R_{12}(z-w) \in (\End V)^{\otimes 3},
 \end{equation*}
@@ -1103,12 +1114,12 @@ where $0$ is the auxiliary space index and $1,...,N$ are quantum space indices. 
 This follows from the previous lemma and the formula for the coproduct (\ref{equation:coproduct}), except the order is reversed since we used the transposition automorphism.
 \end{proof}
 
-We remark that $V_0^-$ and $V_0^+$ are dual as $U(\mathfrak{gl}_\ell)$-modules, as they are both given by $\C^\ell$ with the standard and negative transposed action, respectively. This duality extends to the Yangian up to a shift of the spectral parameter:
+We remark that $V_y^-$ and $V_y^+$ are dual as $U(\mathfrak{gl}_\ell)$-modules, as they are both given by $\C^\ell$ with the standard and negative transposed action, respectively. This duality extends to the Yangian up to a shift of the spectral parameter:
 
 \begin{lemma}
 The standard scalar product on $\C^\ell$ gives a $Y(\mathfrak{gl}_\ell)$-linear map
 \begin{equation*}
-V_y^+ \otimes V_{y+\ell \eta}^- \to \C[\eta], \quad e_p \otimes e_q \mapsto \delta_{pq}.
+V_y^+ \otimes V_{y+\ell \eta}^- \to \C, \quad e_p \otimes e_q \mapsto \delta_{pq}.
 \end{equation*}
 \end{lemma}
 
@@ -1137,7 +1148,7 @@ This reduces to $\delta_{ij} \delta_{pq}$ when $y_1 = y_2-\ell \eta$.
 \begin{lemma}
 The standard basis of $\C^\ell$ gives a $Y(\mathfrak{gl}_\ell)$-linear map
 \begin{equation*}
-\C[\eta] \to V_{y+\ell \eta}^- \otimes V_y^+, \quad 1 \mapsto \sum_p e_p \otimes e_p.
+\C \to V_{y+\ell \eta}^- \otimes V_y^+, \quad 1 \mapsto \sum_p e_p \otimes e_p.
 \end{equation*}
 \end{lemma}
 
@@ -1165,7 +1176,7 @@ The left and right duals of $V_y^+$ are $V_{y+\ell\eta}^-$ and $V_{y-\ell\eta}^-
 \end{prop}
 
 \begin{proof}
-The fact that $V_{y+\eta\ell}^-$ is the left dual for $V_y^+$ follows from the previous lemmata. Twisting by the transposition automorphism of the Yangian turns $V_y^\pm$ into $V_y^\mp$, showing that $V_{y-\eta\ell}^-$ is the right dual by the same argument.
+The fact that $V_{y+\ell\eta}^-$ is the left dual for $V_y^+$ follows from the previous lemmata. Twisting by the transposition automorphism of the Yangian turns $V_y^\pm$ into $V_y^\mp$, showing that $V_{y-\ell\eta}^-$ is the right dual by the same argument.
 \end{proof}
 
 \subsection{The Heisenberg model}
@@ -1317,7 +1328,7 @@ There is an enormous body of work on solving the Heisenberg model, \emph{i.e.} d
 
 \subsection{Functional relations}
 
-Our key to solving the Heisenberg model is to enlargen our consideration of the $g$-twisted transfer matrix $\tau^g(z)$ to a big commutative subalgebra that contains it and make use of functional relations inside this subalgebra to arrive at a set of polynomial equations, the \emph{spectral equation}, that the eigenvalues of the non-local Hamiltonians $H_1,...,H_N$, \emph{i.e.} the residues of $\tau^g(z)$, must satisfy. To this end, we consider the \emph{Bethe subalgebra}:
+Our key to solving the Heisenberg model is to enlargen our consideration of the $g$-twisted transfer matrix $\tau^g(z)$ to a large commutative subalgebra that contains it and make use of functional relations inside this subalgebra to arrive at a set of polynomial equations, the \emph{spectral equation}, that the eigenvalues of the non-local Hamiltonians $H_1,...,H_N$, \emph{i.e.} the residues of $\tau^g(z)$, must satisfy. To this end, we consider the \emph{Bethe subalgebra}:
 
 \begin{definition}
 The \emph{$g$-twisted Bethe subalgebra}\index{Bethe subalgebra} is the subalgebra $B^g(\mathfrak{gl}_\ell)$ of $Y(\mathfrak{gl}_\ell)$ generated by the coefficients of the higher $g$-twisted transfer matrices $\tau_\lambda^g(z)$, where $\lambda$ ranges over Young diagrams.
@@ -1333,28 +1344,7 @@ This appears in \cite{article:nazarov:1996}.
 
 Now, we have left out what we mean by the higher $g$-twisted transfer matrices $\tau_\lambda^g(z)$. The basic idea is to take the definition of the usual transfer matrix and switch the auxiliary space from the fundamental representation to a higher representation labeled by a Young diagram $\lambda$. This defines the higher transfer matrices $\tau_\lambda^g(z)$. In particular of course, $\tau_{\ydiagram{1}}^g(z)$ will coincide with the usual transfer matrix.
 
-\begin{definition}
-Let $\lambda$ be a Young diagram. Let $g_\lambda,(e_{ij})_\lambda \in \operatorname{End} L(\lambda)$ denote the action of the twist matrix and the matrix units on the highest weight representation $L(\lambda)$. Define the \emph{higher $g$-twisted transfer matrix of shape $\lambda$}\index{Higher transfer matrix}
-\begin{equation*}
-\tau_\lambda^g(z) := \operatorname{tr}_\lambda g_\lambda T_\lambda(z), \quad T_\lambda(z) = \sum_{ij} (e_{ij})_\lambda \otimes t_{ij}(z).
-\end{equation*}
-\end{definition}
-
-The functional relations between higher transfer matrices come from the so called \emph{fusion relations}\index{Fusion procedure}, which categorify to short exact sequences of representations of the Yangian. Of particular importance will be the following short exact sequence:
-\begin{equation*}
-0 \to L([2,1^{k-1}])_0^t \to L([1^k])_0^t \otimes L(\ydiagram{1})_\eta^t \to L([1^{k+1}])_\eta^t \to 0.
-\end{equation*}
-the rule for traces over short exact sequences will then give the functional relation
-\begin{equation*}
-\tau_{[1^k]}^g(z) \tau_{\ydiagram{1}}^g(z+\eta) = \tau_{[2,1^{k-1}]}^g(z) + \tau_{[1^{k+1}]}^g(z+\eta),
-\end{equation*}
-which will be our basis for deriving the spectral equation. The analogous short exact sequence for $\mathfrak{sl}_2$ was originally established in \cite{article:chari:1990}. In terms of Young diagrams, the case $k=3$ simply reads
-\begin{equation*}
-\ydiagram{1,1,1} \otimes \ydiagram{1} = \ydiagram{2,1,1} \oplus \ydiagram{1,1,1,1},
-\end{equation*}
-which is the usual Littlewood-Richardson rule, except crucially we have an added dependence on the parameter $z$, which makes this short exact sequence non-split in general.
-
-Let us now set out to show this, starting with a discussion of the \emph{fusion procedure} \cite{article:molev:2008}, originating in works such as \cite{article:kulish:1981}. To this end, fix a standard Young tableau $t_\lambda$ of shape $\lambda$ with content vector $(c_1,...,c_k)$ and let
+Let us start with the construction of \emph{fusion projectors} \cite{article:molev:2008}, originating in works such as \cite{article:kulish:1981}. Fix a standard Young tableau $t_\lambda$ of shape $\lambda$ with content vector $(c_1,...,c_k)$ and let
 \begin{equation*}
 R(z_1,...,z_k) := \overset{\longrightarrow}{\prod_{i<j}} R_{ij}(z_i-z_j),
 \end{equation*}
@@ -1368,51 +1358,71 @@ Taking the following consecutive limits of $R(z_1,...,z_k)$ yields a well-define
 \begin{equation*}
 \Pi_{t_\lambda} = \frac{d_\lambda}{k!} \lim_{z_k \to \eta c_k} \cdots \lim_{z_1 \to \eta c_1} R(z_1,...,z_k),
 \end{equation*}
-with $d_\lambda$ the dimension of the Specht module $S(\lambda)$ given by the hook formula. The fusion projectors form a complete set of primitive orthogonal idempotents decomposing the $\mathfrak{gl}_\ell$-module $(\C^\ell)^{\otimes k}$ into irreducible parts
-\begin{equation*}
-L_{t_\lambda} := \Pi_{t_\lambda} (\C^\ell)^{\otimes k}
-\end{equation*}
-with $L_{t_\lambda} \cong L(\lambda)$ as $\mathfrak{gl}_\ell$-modules.
+with $d_\lambda$ the dimension of the Specht module $S(\lambda)$.
 \end{prop}
 
 \begin{proof}
 See \cite{article:molev:2008} or section 6.4 in \cite{book:molev}.
 \end{proof}
 
-\begin{prop}\label{prop:fusionReps}
-Consider $(\C^\ell)^{\otimes k}$ under the $Y(\mathfrak{gl}_\ell)$-action of the monodromy representation
+\begin{example}
+For $\Pi_{t_{[1^k]}}$ and $\Pi_{t_{[k]}}$, we respectively obtain the (anti-)symmetrizers:
 \begin{equation*}
-V_{-\eta c_1}^+ \otimes \cdots \otimes V_{-\eta c_k}^+.
+\Pi_{1...k}^\pm = \frac{1}{k!} \overset{\longrightarrow}{\prod_{i < j}} \bigg( 1 \pm \frac{P_{ij}}{j-i} \bigg) = \frac{1}{k!} \prod_{i=1}^k (1 \pm Y_i).
 \end{equation*}
-Then $L_{t_\lambda}$ is a $Y(\mathfrak{gl}_\ell)$-submodule isomorphic to $L(\lambda)_0^t$.
-\end{prop}
+where $Y_i$ are the Jucys-Murphy elements. We will also make use of
+\begin{equation*}
+\Pi_{t_{[2,1^{k-1}]}} = \frac{1}{(k+1)!} (k+Y_{k+1}) \prod_{i=1}^k (1-Y_i),
+\end{equation*}
+where we have used the column tablau. These projectors can be checked to satisfy
+\begin{equation}\label{equation:LRRule}
+\Pi_{t_{[1^k]}} \otimes 1 = \Pi_{t_{[1^{k+1}]}} + \Pi_{t_{[2,1^{k-1}]}},
+\end{equation}
+consistent with the Littlewood-Richardson rule.
+\end{example}
+
+\begin{theorem}
+The fusion projectors form a complete set of primitive orthogonal idempotents on $(\C^\ell)^{\otimes k}$ such that
+\begin{equation*}
+L_{t_\lambda} := \Pi_{t_\lambda} (V_{y-\eta c_1}^+ \otimes \cdots V_{y-\eta c_k}^+)
+\end{equation*}
+is a $Y(\mathfrak{gl}_\ell)$-submodule of $V_{y-\eta c_1}^+ \otimes \cdots V_{y-\eta c_k}^+$ isomorphic to $L(\lambda)_y^t$.
+\end{theorem}
 
 \begin{proof}
-This is proposition 6.5.1 in \cite{book:molev}.
+This is is proposition 6.5.1 in \cite{book:molev}.
 \end{proof}
 
-This procedure makes it possible to reduce calculations in higher representations to tensor products of the covector representation. It is called the \emph{fusion procedure}. In particular, we can express higher transfer matrices in a very concrete way using $(\C^\ell)^{\otimes k}$ as the auxiliary space. To see this, define
+This \emph{fusion procedure}\index{Fusion procedure} makes it possible to reduce calculations in higher representations to tensor products of the covector representation $V_y^+$. In particular, it allows us to express higher transfer matrices in a very concrete way from a coaction on the auxiliary space $(\C^\ell)^{\otimes k}$:
+
+\begin{definition}
+Let $t_\lambda$ be a standard Young tableau of shape $\lambda$ with $k$ boxes and content vector $(c_1,...,c_k)$. We may define a coaction
+\begin{align}\label{equation:coaction}
+(\C^\ell)^{\otimes k} \to (\C^\ell)^{\otimes k} \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket
+\end{align}
+via the element
 \begin{equation*}
-T_{t_\lambda}(z) := T_k(z+\eta c_k) \cdots T_1(z+\eta c_1), \quad g_{t_\lambda} := g_k \cdots g_1.
+T_{t_\lambda}^g(z-y) := g_k \cdots g_1 T_k(z-y+\eta c_k) \cdots T_1(z-y+\eta c_1).
 \end{equation*}
-Then $L_{t_\lambda} \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$ is invariant under $g_{t_\lambda} T_{t_\lambda}(z)$ due to
+This coaction preserves the subspace $L_{t_\lambda} \subset (\C^\ell)^{\otimes k}$ due to
 \begin{equation*}
 \Pi_{t_\lambda} T_1(z+\eta c_1) \cdots T_k(z+\eta c_k) = T_k(z+\eta c_k) \cdots T_1(z+\eta c_1) \Pi_{t_\lambda},
 \end{equation*}
-which is derived from the higher RTT relation (\ref{equation:higherRTT}) by taking consecutive limits. It follows that
+which is derived from the higher RTT relation (\ref{equation:higherRTT}) by taking consecutive limits. We denote the comodule resulting from restriction of the coaction (\ref{equation:coaction}) to $L_{t_\lambda}$ by $C(\lambda)_y^g$.
+\end{definition}
 
-\begin{prop}
-We have the identity
+\begin{definition}
+Let $\lambda$ be a Young diagram. We define the \emph{higher $g$-twisted transfer matrix of shape $\lambda$}\index{Higher transfer matrix}, denoted by $\tau_\lambda^g(z-y)$ as the partial trace of the coaction of the comodule $C(\lambda)_y^g$ over $C(\lambda)_y^g$, \emph{i.e.} $\tau_\lambda^g(z-y)$ is the \emph{cocharacter} of the comodule $C(\lambda)_y^g$. Concretely, it is given by
 \begin{equation*}
-\tau_\lambda^g(z) = \operatorname{tr}_{t_\lambda} g_{t_\lambda} T_{t_\lambda}(z)
+\tau_\lambda^g(z) = \operatorname{tr}_{t_\lambda} T_{t_\lambda}^g(z),
 \end{equation*}
-where $\operatorname{tr}_{t_\lambda}$ denotes the partial trace over $L_{t_\lambda}$.
-\end{prop}
+where $\operatorname{tr}_{t_\lambda}$ denotes the partial trace over the subspace $L_{t_\lambda}$.
+\end{definition}
 
 \begin{example}
-Consider $\tau_{[1^2]}^g(z)$. With the previous proposition, we can write this as
+Consider $\tau_{[1^2]}^g(z)$. We can write this as
 \begin{equation*}
-\tau_{[1^2]}^g(z) = \operatorname{tr}_{t_{[1^2]}} g_{t_{[1^2]}} T_{t_{[1^2]}}(z) = \operatorname{tr}_{12} \Pi_{t_{[1^2]}} g_2 g_1 T_2(z) T_1(z-\eta).
+\tau_{[1^2]}^g(z) = \operatorname{tr}_{t_{[1^2]}} T_{t_{[1^2]}}^g(z) = \operatorname{tr}_{12} \Pi_{t_{[1^2]}} g_2 g_1 T_2(z) T_1(z-\eta).
 \end{equation*}
 In particular, in the fundamental monodromy representation $L(\ydiagram{1})_{y_1}^t \otimes L(\ydiagram{1})_{y_2}^t$, this becomes
 \begin{equation*}
@@ -1447,32 +1457,35 @@ In terms of diagrams, this reads
 Note that the auxiliary space loops twice around the cylinder, exactly shifting by $\pm \eta$ when crossing the seam.
 \end{example}
 
-We can now also see that the highest transfer matrix $\tau_{[1^\ell]}^g(z)$ has a particularly nice description in terms of a Leibniz-type formula:
+Further, we see that the highest transfer matrix $\tau_{[1^\ell]}^g(z)$ has a particularly nice description in terms of a Leibniz-type formula:
 
 \begin{corollary}
 \begin{equation*}
-\tau_{[1^\ell]}^g(z) = \sum_\sigma \operatorname{sgn} \sigma \cdot \gamma_1 \gamma_2 \cdots \gamma_\ell \cdot t_{\sigma(\ell)\ell}(z-\eta (\ell-1)) \cdots t_{\sigma(1)1}(z).
+\tau_{[1^\ell]}^g(z) = \gamma_1 \cdots \gamma_\ell \sum_\sigma \operatorname{sgn} \sigma \cdot t_{\sigma(\ell)\ell}(z-\eta (\ell-1)) \cdots t_{\sigma(1)1}(z).
 \end{equation*}
 \end{corollary}
 
 \begin{proof}
 From the previous proposition, we have
 \begin{equation*}
-\tau_{[1^\ell]}^g(z) = \operatorname{tr}_{t_{[1^\ell]}} g_{t_{[1^\ell]}} T_{t_{[1^\ell]}}(z) = \operatorname{tr}_{1...\ell} \Pi_{t_{[1^\ell]}} g_k \cdots g_1 T_\ell(z-\eta(\ell-1)) \cdots T_1(z).
+\tau_{[1^\ell]}^g(z) = \operatorname{tr}_{t_{[1^\ell]}} T_{t_{[1^\ell]}}^g(z) = \operatorname{tr}_{1...\ell} \Pi_{t_{[1^\ell]}} g_\ell \cdots g_1 T_\ell(z-\eta(\ell-1)) \cdots T_1(z).
 \end{equation*}
 Knowing that $\Pi_{t_{[1^\ell]}} = \sum_\sigma \operatorname{sgn} \sigma \cdot \sigma$, we apply the right hand side to $e_1 \otimes \cdots \otimes e_\ell$ and obtain
 \begin{equation*}
-\sum_{i_1,...,i_\ell} \Pi_{t_{[1^\ell]}} (e_{i_1} \otimes \cdots \otimes e_{i_\ell}) \otimes t_{i_\ell,\ell}(z-\eta(\ell-1)) \cdots t_{i_1,1}(z).
+\sum_{i_1,...,i_\ell} \Pi_{t_{[1^\ell]}} (\gamma_{i_1} e_{i_1} \otimes \cdots \otimes \gamma_{i_\ell} e_{i_\ell}) \otimes t_{i_\ell,\ell}(z-\eta(\ell-1)) \cdots t_{i_1,1}(z).
 \end{equation*}
-But $\Pi_{t_{[1^\ell]}} (\gamma_{i_1} e_{i_1} \otimes \cdots \otimes \gamma_{i_\ell} e_{i_\ell})$ is only non-zero when the $i_1,...,i_\ell$ define a permutation $\sigma$, in which case it reduces to $\operatorname{sgn} \sigma \cdot \gamma_1 \cdots \gamma_\ell (e_1 \otimes \cdots \otimes e_\ell)$.
+But $\Pi_{t_{[1^\ell]}} (\gamma_{i_1} e_{i_1} \otimes \cdots \otimes \gamma_{i_\ell} e_{i_\ell})$ is only non-zero when the $i_1,...,i_\ell$ define a permutation $\sigma$, in which case it reduces to $\gamma_1 \cdots \gamma_\ell \cdot \operatorname{sgn} \sigma \cdot (e_1 \otimes \cdots \otimes e_\ell)$.
 \end{proof}
 
 \begin{definition}
-Due to this fact, $\tau_{[1^\ell]}^g(z)$ deserves the name \emph{$g$-twisted quantum determinant}\index{Quantum determinant}. We also write $\operatorname{qdet}^g T(z) := \tau_{[1^\ell]}^g(z)$ and $\operatorname{qdet} T(z) := \tau_{[1^\ell]}^1(z)$.
+Due to this fact, $\tau_{[1^\ell]}^1(z)$ deserves the name \emph{quantum determinant}\index{Quantum determinant}. We also write $\operatorname{qdet} T(z) := \tau_{[1^\ell]}^1(z)$.
 \end{definition}
 
-\begin{prop}
-The quantum determinant $\operatorname{qdet} T(z)$ is a group-like element.
+\begin{prop}\label{prop:quantumDetGroupLike}
+The quantum determinant $\operatorname{qdet} T(z)$ is group-like in the sense that
+\begin{equation*}
+\Delta(\operatorname{qdet} T(z)) = \operatorname{qdet} T(z) \otimes \operatorname{qdet} T(z).
+\end{equation*}
 \end{prop}
 
 \begin{proof}
@@ -1480,7 +1493,7 @@ This is corollary 1.6.10 in \cite{book:molev}.
 \end{proof}
 
 \begin{prop}
-The center of $Y(\mathfrak{gl}_\ell)$ is freely generated by the coefficients of $\operatorname{qdet}^g T(z)$.
+The center of $Y(\mathfrak{gl}_\ell)$ is freely generated by the coefficients of $\operatorname{qdet} T(z)$.
 \end{prop}
 
 \begin{proof}
@@ -1488,14 +1501,14 @@ This is theorem 1.7.5 in \cite{book:molev}.
 \end{proof}
 
 \begin{corollary}\label{corollary:quantumDet}
-Let $V$ be a highest weight representation of $Y(\mathfrak{gl}_\ell)$ with highest weight $\lambda(z) = (\lambda_1(z),...,\lambda_\ell(z))$. Then $\operatorname{qdet}^g T(z)$ acts as a scalar of the form
+Let $V$ be a highest weight representation of $Y(\mathfrak{gl}_\ell)$ with highest weight $\lambda(z) = (\lambda_1(z),...,\lambda_\ell(z))$. Then $\operatorname{qdet} T(z)$ acts as a scalar of the form
 \begin{equation*}
-\gamma_1 \gamma_2 \cdots \gamma_\ell \lambda_1(z) \lambda_2(z-\eta) \cdots \lambda_\ell(z-\eta(\ell-1)).
+\lambda_1(z) \lambda_2(z-\eta) \cdots \lambda_\ell(z-\eta(\ell-1)).
 \end{equation*}
 \end{corollary}
 
 \begin{proof}
-This is proposition 3.2.5 of \cite{book:molev}. Since $T(z)$ acts as a lower-triangular matrix on the highest weight vector, the only non-zero term in the Leibniz formula above is the term for $\sigma = \id$, which acts exactly as described. Since $\operatorname{qdet}^g T(z)$ lies in the center of $Y(\mathfrak{gl}_\ell)$, it will act on all vectors of $V$ via this scalar.
+This is proposition 3.2.5 of \cite{book:molev}. Since $T(z)$ acts as a lower-triangular matrix on the highest weight vector, the only non-zero term in the Leibniz formula above is the term for $\sigma = \id$, which acts exactly as described. Since $\operatorname{qdet} T(z)$ is central in $Y(\mathfrak{gl}_\ell)$, it will act on all vectors of $V$ via this scalar.
 \end{proof}
 
 %Using the fusion procedure and the quantum determinant, we may characterize dual representations in a new way. Recall that $V_y^+ = L(\ydiagram{1})_y^t$ and that $V_{y-\ell\eta}^- = L(\ydiagram{1})_{y-\ell\eta}$ and $V_{y+\ell\eta}^- = L(\ydiagram{1})_{y+\ell\eta}$ are its left and right duals. There is another convenient way to express duals. Let $\check V_y^+$ denote $V_y^+$ twisted by $\operatorname{qdet} T(z)^{-1}$, so that $T(z)$ acts via $(\operatorname{qdet} T(z)^{-1}) T(z)$. We note that by corollary \ref{corollary:quantumDet}, the quantum determinant acts via the scalar $1-\frac{\eta}{z-y} = \frac{z-y-\eta}{z-y}$, so that
@@ -1529,18 +1542,28 @@ This is proposition 3.2.5 of \cite{book:molev}. Since $T(z)$ acts as a lower-tri
 %\end{definition}
 
 \begin{definition}
-Let $\lambda,\mu$ be Young diagrams and $t_\lambda,t_\mu$ standard tableaux of shape $\lambda,\mu$ with content vectors $(c_1,...,c_k),(d_1,...,d_l)$. Define the \emph{higher $R$-matrices}
-\begin{equation*}
+Let $\lambda,\mu$ be Young diagrams and $t_\lambda,t_\mu$ standard tableaux of shape $\lambda,\mu$ with content vectors $(c_1,...,c_k),(d_1,...,d_l)$. Define the \emph{higher $R$-matrices}\index{Higher $R$-matrix}
+\begin{equation}\label{eq:higherRMatrix}
 R_{t_\lambda,t_\mu}(z) := \overset{\longleftarrow}{\prod_i} \overset{\longrightarrow}{\prod_j} R_{i,k+j}(z+\eta c_i - \eta d_j) \in (\End \C^\ell)^{\otimes k} \otimes (\End \C^\ell)^{\otimes l}\llbracket z^{-1} \rrbracket.
+\end{equation}
+We see that $R_{t_\lambda,t_\mu}(z-w)$ preserves the subspace $L_{t_\lambda} \otimes L_{t_\mu}$ due to
+\begin{equation*}
+R_{t_\lambda,t_\mu}(z-w) \Pi_{t_\lambda} \Pi_{t_\mu} = \Pi_{t_\mu} \Pi_{t_\lambda} \overset{\longrightarrow}{\prod_i} \overset{\longleftarrow}{\prod_j} R_{i,k+j}(z+\eta c_i - \eta d_j)
 \end{equation*}
+which follows from the RTT relation and taking consecutive limits.
 %and \emph{unitary higher $R$-matrices}
 %\begin{equation}\label{equation:higherRMatrix}
 %\check R_{t_\lambda,t_\mu}(z) := \prod_{ij} \left( \frac{z + \eta c_i- \eta d_j}{z + \eta c_i- \eta d_j - \eta} \right) R_{t_\lambda,t_\mu}(z).
 %\end{equation}
-Repeated application of the RTT relation (\ref{equation:RTTRelation}) implies
+Further, repeated application of the RTT relation (\ref{equation:RTTRelation}) implies
 \begin{align*}
 R_{t_\lambda,t_\mu}(z-w) T_{t_\lambda}(z) T_{t_\mu}(w) &= T_{t_\mu}(w) T_{t_\lambda}(z) R_{t_\lambda,t_\mu}(z-w).
 \end{align*}
+Similarly, repeated application of the quantum Yang-Baxter equation implies the higher quantum Yang-Baxter equation:
+\begin{equation*}
+R_{t_\mu,t_\nu}(z-w) R_{t_\mu,t_\lambda}(z) R_{t_\nu,t_\lambda}(w) =  R_{t_\nu,t_\lambda}(w) R_{t_\mu,t_\lambda}(z) R_{t_\mu,t_\nu}(z-w).
+\end{equation*}
+(tba)
 \end{definition}
 
 \begin{prop}
@@ -1554,7 +1577,7 @@ we obtain
 R_{t_\lambda,t_\mu}(z) R_{t_\mu,t_\lambda}^{(21)}(-z) = \prod_{ij} \left( 1 - \frac{\eta^2}{(z+\eta c_i-\eta d_j)^2}\right)
 \end{equation*}
 % \quad \text{and} \quad \check R_{t_\lambda,t_\mu}(z) \check R_{t_\mu,t_\lambda}^{(21)}(-z) = 1.
-In particular, higher $R$-matrices are invertible for all but a discrete set of values of $z$.
+In particular, higher $R$-matrices are invertible almost everywhere.
 \end{prop}
 
 \begin{proof}
@@ -1577,77 +1600,104 @@ Since $R_{t_\lambda,t_\mu}(z)$ is generically invertible by the previous proposi
 &= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\mu} T_{t_\mu}(w) g_{t_\lambda} T_{t_\lambda}(z) \\
 &= \tau_\mu^g(w) \tau_\lambda^g(z).
 \end{align*}
-For this to be valid, it remains to check that $R_{t_\lambda,t_\mu}(z-w)$ preserves the subspace $L_{t_\lambda} \otimes L_{t_\mu}$. Indeed, we have
-\begin{equation*}
-R_{t_\lambda,t_\mu}(z-w) \Pi_{t_\lambda} \Pi_{t_\mu} = \Pi_{t_\mu} \Pi_{t_\lambda} \overset{\longrightarrow}{\prod_i} \overset{\longleftarrow}{\prod_j} R_{i,k+j}(z+\eta c_i - \eta d_j)
-\end{equation*}
-by the RTT relation.
 \end{proof}
 
-To finish off this section, let us finally prove the exactness of our sequence:
+The functional relations between higher transfer matrices come from the so called \emph{fusion relations}\index{Fusion procedure}, whose categorification are certain short exact sequences of comodules. Of particular importance will be the following short exact sequence:
+\begin{equation*}
+0 \to C([2,1^{k-1}])_\eta^g \to C([1^k])_\eta^g \otimes C(\ydiagram{1})_0^g \to C([1^{k+1}])_0^g \to 0.
+\end{equation*}
+The rule for traces over short exact sequences immediately implies the functional relation
+\begin{equation*}\label{equation:functionalRelation}
+\tau_{[2,1^{k-1}]}^g(z-\eta) - \tau_{[1^k]}^g(z-\eta) \tau_{\ydiagram{1}}^g(z) + \tau_{[1^{k+1}]}^g(z) = 0,
+\end{equation*}
+which will be our basis for deriving the spectral equation. The analogous short exact sequence for modules over $Y(\mathfrak{sl}_2)$ was originally established in \cite{article:chari:1990}. In terms of Young diagrams, the case $k=3$ simply reads
+\begin{equation*}
+\ydiagram{1,1,1} \otimes \ydiagram{1} = \ydiagram{2,1,1} \oplus \ydiagram{1,1,1,1},
+\end{equation*}
+which is the usual Littlewood-Richardson rule, except crucially we have an added dependence on the parameter $z$, which makes this short exact sequence non-split in general.
 
 \begin{prop}
-There is an exact sequence
+There is a short exact sequence
 \begin{equation*}
-0 \to L([2,1^{k-1}])_\eta^t \to L([1^k])_\eta^t \otimes L(\ydiagram{1})_0^t \to L([1^{k+1}])_0^t \to 0.
+0 \to C([2,1^{k-1}])_\eta^g \to C([1^k])_\eta^g \otimes C(\ydiagram{1})_0^g \to C([1^{k+1}])_0^g \to 0.
 \end{equation*}
+of $Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$-comodules.
 \end{prop}
 
 \begin{proof}
-Consider the fundamental monodromy representation
+Choosing column tableaux $t_{[2,1^{k-1}]},t_{[1^k]},t_{[1^{k+1}]}$, we are led to consider the coaction
 \begin{equation*}
-V_{\eta}^+ \otimes V_{2\eta}^+ \otimes \cdots \otimes V_{k\eta}^+ \otimes V_0^+.
+(\C^\ell)^{\otimes (k+1)} \to (\C^\ell)^{\otimes (k+1)} \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket
 \end{equation*}
-By proposition \ref{prop:fusionReps}, the fusion projectors $\Pi_{t_{[2,1^{k-1}]}}$ and $\Pi_{t_{[1^k]}} \otimes 1$ project onto the left and middle pieces $L([2,1^{k-1}])_\eta^t$ and $L([1^k])_\eta^t \otimes L(\ydiagram{1})_0^t$. The Littlewood-Richardson rule gives
+given by
 \begin{equation*}
-\Pi_{t_{[1^k]}} \otimes 1 = \Pi_{t_{[2,1^{k-1}]}} + \Pi_{t_{[1^{k+1}]}},
+g_{k+1} g_k \cdots g_1 T_{k+1}(z) T_k(z-k\eta) \cdots T_1(z-\eta).
 \end{equation*}
-so that $\Pi_{t_{[2,1^{k-1}]}}$ actually factors through $\Pi_{t_{[1^k]}} \otimes 1$, which yields the inclusion from the left to the middle piece. Then $\Pi_{t_{[1^{k+1}]}}$ will be the projection onto the cokernel of this inclusion. The RTT relation supplemented by $\Pi_{t_{[1^{k+1}]}} \Pi_{t_{[1^k]}} = \Pi_{t_{[1^{k+1}]}}$ gives
+The fusion projectors $\Pi_{t_{[2,1^{k-1}]}}$ and $\Pi_{t_{[1^k]}} \otimes 1$ project onto the left and middle pieces of the exact sequence we are after. From (\ref{equation:LRRule}), it follows that $\Pi_{t_{[2,1^{k-1}]}}$ actually factors through $\Pi_{t_{[1^k]}} \otimes 1$, which yields the inclusion from the left to the middle piece. This respects the coaction by construction. Now, $\Pi_{t_{[1^{k+1}]}}$ will be the projection onto the cokernel of this inclusion and it only remains to be checked that the projection respects the coaction. Indeed, the RTT relation supplemented by $\Pi_{t_{[1^{k+1}]}} \Pi_{t_{[1^k]}} = \Pi_{t_{[1^{k+1}]}}$ implies
 \begin{align*}
-&\Pi_{t_{[1^{k+1}]}} R_{01}(z-\eta) R_{02}(z-2\eta) \cdots R_{0k}(z-k\eta) R_{0,k+1}(z) \\
-&= \Pi_{t_{[1^{k+1}]}} \Pi_{t_{[1^k]}} R_{01}(z-\eta) R_{02}(z-2\eta) \cdots R_{0k}(z-k\eta) R_{0,k+1}(z) \\
-&= \Pi_{t_{[1^{k+1}]}} R_{0k}(z-k\eta) \cdots R_{02}(z-2\eta) R_{01}(z-\eta) R_{0,k+1}(z) \Pi_{t_{[1^k]}} \\
-&= R_{0,k+1}(z) R_{01}(z-\eta) R_{02}(z-2\eta) \cdots R_{0k}(z-k\eta) \Pi_{t_{[1^{k+1}]}} \Pi_{t_{[1^k]}} \\
-&= R_{0,k+1}(z) R_{01}(z-\eta) R_{02}(z-2\eta) \cdots R_{0k}(z-k\eta) \Pi_{t_{[1^{k+1}]}},
+&\Pi_{t_{[1^{k+1}]}} g_{k+1} g_k \cdots g_1 T_{k+1}(z) T_k(z-k\eta) \cdots T_1(z-\eta) \\
+&= \Pi_{t_{[1^{k+1}]}} \Pi_{t_{[1^k]}} g_{k+1} g_k \cdots g_1 T_{k+1}(z) T_k(z-k\eta) \cdots T_1(z-\eta) \\
+&= \Pi_{t_{[1^{k+1}]}}  g_{k+1} g_k \cdots g_1 T_{k+1}(z) T_1(z-\eta) \cdots T_k(z-k\eta) \Pi_{t_{[1^k]}} \\
+&=  g_{k+1} g_k \cdots g_1 T_k(z-k\eta) \cdots T_1(z-\eta) T_{k+1}(z) \cdots \Pi_{t_{[1^{k+1}]}} \Pi_{t_{[1^k]}} \\
+&=  g_{k+1} g_k \cdots g_1 T_k(z-k\eta) T_1(z-\eta) T_{k+1}(z) \Pi_{t_{[1^{k+1}]}}.
 \end{align*}
-so $\Pi_{t_{[1^{k+1}]}}$ is in fact $Y(\mathfrak{gl}_\ell)$-linear, as required.
 \end{proof}
 
-\begin{corollary}
-We obtain the functional relation
-\begin{equation}\label{equation:functionalRelation}
-\tau_{[1^k]}^g(z-\eta) \tau_{\ydiagram{1}}^g(z) = \tau_{[2,1^{k-1}]}^g(z-\eta) + \tau_{[1^{k+1}]}^g(z).
-\end{equation}
-\end{corollary}
-
-\begin{proof}
-By the previous proposition, we have a linear map of short exact sequences: \\
-{\small
-\begin{tikzcd}[column sep=0.3cm]
-\\
-0 \arrow{r}
-& L([2,1^{k-1}])_0 \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r} \arrow{d}{g_{[2,1^{k-1}]} T_{[2,1^{k-1}]}(z-\eta)}
-& L([1^k])_0 \otimes L(\ydiagram{1})_\eta \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r} \arrow{d}{g_{[1^k]} T_{[1^k]}(z-\eta) g_{\ydiagram{1}} T_{\ydiagram{1}}(z)}
-& L([1^{k+1}])_\eta \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r} \arrow{d}{g_{[1^{k+1}]} T_{[1^{k+1}]}(z)}
-& 0 \\
-0 \arrow{r}
-& L([2,1^{k-1}])_0 \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r}
-& L([1^k])_0 \otimes L(\ydiagram{1})_\eta \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r}
-& L([1^{k+1}])_\eta \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r}
-& 0 \\
-\end{tikzcd}
-}
-
-Taking the trace over everything except $Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$ yields
-\begin{equation*}
-0 = \tau_{[2,1^{k-1}]}^g(z-\eta) - \tau_{[1^k]}^g(z-\eta) \tau_{\ydiagram{1}}^g(z) + \tau_{[1^{k+1}]}^g(z)
-\end{equation*}
-as elements of $Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$.
-\end{proof}
+%\begin{proof}
+%Consider the fundamental monodromy representation
+%\begin{equation*}
+%V_{\eta}^+ \otimes V_{2\eta}^+ \otimes \cdots \otimes V_{k\eta}^+ \otimes V_0^+.
+%\end{equation*}
+%By proposition \ref{prop:fusionReps}, the fusion projectors $\Pi_{t_{[2,1^{k-1}]}}$ and $\Pi_{t_{[1^k]}} \otimes 1$ project onto the left and middle pieces $L([2,1^{k-1}])_\eta^t$ and $L([1^k])_\eta^t \otimes L(\ydiagram{1})_0^t$. The Littlewood-Richardson rule gives
+%\begin{equation*}
+%\Pi_{t_{[1^k]}} \otimes 1 = \Pi_{t_{[2,1^{k-1}]}} + \Pi_{t_{[1^{k+1}]}},
+%\end{equation*}
+%so that $\Pi_{t_{[2,1^{k-1}]}}$ actually factors through $\Pi_{t_{[1^k]}} \otimes 1$, which yields the inclusion from the left to the middle piece. Then $\Pi_{t_{[1^{k+1}]}}$ will be the projection onto the cokernel of this inclusion. The RTT relation supplemented by $\Pi_{t_{[1^{k+1}]}} \Pi_{t_{[1^k]}} = \Pi_{t_{[1^{k+1}]}}$ gives
+%\begin{align*}
+%&\Pi_{t_{[1^{k+1}]}} R_{01}(z-\eta) R_{02}(z-2\eta) \cdots R_{0k}(z-k\eta) R_{0,k+1}(z) \\
+%&= \Pi_{t_{[1^{k+1}]}} \Pi_{t_{[1^k]}} R_{01}(z-\eta) R_{02}(z-2\eta) \cdots R_{0k}(z-k\eta) R_{0,k+1}(z) \\
+%&= \Pi_{t_{[1^{k+1}]}} R_{0k}(z-k\eta) \cdots R_{02}(z-2\eta) R_{01}(z-\eta) R_{0,k+1}(z) \Pi_{t_{[1^k]}} \\
+%&= R_{0,k+1}(z) R_{01}(z-\eta) R_{02}(z-2\eta) \cdots R_{0k}(z-k\eta) \Pi_{t_{[1^{k+1}]}} \Pi_{t_{[1^k]}} \\
+%&= R_{0,k+1}(z) R_{01}(z-\eta) R_{02}(z-2\eta) \cdots R_{0k}(z-k\eta) \Pi_{t_{[1^{k+1}]}},
+%\end{align*}
+%so $\Pi_{t_{[1^{k+1}]}}$ is in fact $Y(\mathfrak{gl}_\ell)$-linear, as required.
+%\end{proof}
+%
+%\begin{corollary}
+%We obtain the functional relation
+%\begin{equation}\label{equation:functionalRelation}
+%\tau_{[1^k]}^g(z-\eta) \tau_{\ydiagram{1}}^g(z) = \tau_{[2,1^{k-1}]}^g(z-\eta) + \tau_{[1^{k+1}]}^g(z).
+%\end{equation}
+%\end{corollary}
+%
+%\begin{proof}
+%By the previous proposition, we have a morphism of short exact sequences of comodules: \\
+%{\small
+%\begin{tikzcd}[column sep=0.3cm]
+%\\
+%0 \arrow{r}
+%& L([2,1^{k-1}])_0 \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r} \arrow{d}{g_{[2,1^{k-1}]} T_{[2,1^{k-1}]}(z-\eta)}
+%& L([1^k])_0 \otimes L(\ydiagram{1})_\eta \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r} \arrow{d}{g_{[1^k]} T_{[1^k]}(z-\eta) g_{\ydiagram{1}} T_{\ydiagram{1}}(z)}
+%& L([1^{k+1}])_\eta \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r} \arrow{d}{g_{[1^{k+1}]} T_{[1^{k+1}]}(z)}
+%& 0 \\
+%0 \arrow{r}
+%& L([2,1^{k-1}])_0 \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r}
+%& L([1^k])_0 \otimes L(\ydiagram{1})_\eta \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r}
+%& L([1^{k+1}])_\eta \otimes Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket \arrow{r}
+%& 0 \\
+%\end{tikzcd}
+%}
+%
+%Taking the trace over everything except $Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$ yields
+%\begin{equation*}
+%0 = \tau_{[2,1^{k-1}]}^g(z-\eta) - \tau_{[1^k]}^g(z-\eta) \tau_{\ydiagram{1}}^g(z) + \tau_{[1^{k+1}]}^g(z)
+%\end{equation*}
+%as elements of $Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$.
+%\end{proof}
 
 \subsection{Spectral equation}
 
-In this section, we will derive the \emph{spectral equation} for the non-local Hamiltonians of the Heisenberg model from the functional relation (\ref{equation:functionalRelation}). This is where we will see the Lax matrix of the rational Ruijsenaars-Schneider model appear seemingly out of nowhere. We will work along the lines of \cite{book:arutyunov:betheAnsatz}, but our approach is slightly different since we use Yang's convention for $R$-matrices instead of the polynomial convention and work in the $g$-twisted setting.
+In this section, we will derive the \emph{spectral equation} for the non-local Hamiltonians of the Heisenberg model from the functional relation (\ref{equation:functionalRelation}). This is where we will see the Lax matrix of the rational Ruijsenaars-Schneider model appear seemingly out of nowhere. We will work along the lines of \cite{book:arutyunov:betheAnsatz}, but our approach is slightly different since we use Yang's convention for $R$-matrices instead of the polynomial convention and work in the $g$-twisted setting. The equations in this subsection are valid only in the monodromy representation $V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$.
 
 \begin{lemma}\label{lemma:transferMatrixExpansion}
 Let $\chi_\lambda$ be the character of the highest weight module $L(\lambda)$. Then
@@ -1656,20 +1706,24 @@ Let $\chi_\lambda$ be the character of the highest weight module $L(\lambda)$. T
 \end{equation*}
 \end{lemma}
 
+\begin{remark}
+For this reason, the higher transfer matrices are called \emph{quantum characters} in \cite{book:arutyunov:betheAnsatz}.
+\end{remark}
+
 \begin{proof}
-This is just the canonical partial fraction decomposition of $\tau_\lambda^g(z)$. It still remains to show that $\tau_\lambda^g(\infty) = \chi_\lambda(g)$. Let us take the column tableau $t_\lambda$, giving
+This is just the canonical partial fraction decomposition of $\tau_\lambda^g(z)$. To show that this is indeed the case, we need to show that $\tau_\lambda^g(z)$ only has poles at $y_1,...,y_N$ and that $\tau_\lambda^g(\infty) = \chi_\lambda(g)$. (tba) Let us take the column tableau $t_\lambda$, giving
 \begin{equation*}
-\tau_\lambda^g(\infty) = \operatorname{tr}_{t_\lambda} g_{t_\lambda} T_{t_\lambda}(z).
+\tau_\lambda^g(\infty) = \operatorname{tr}_{t_\lambda} T_{t_\lambda}^g(\infty).
 \end{equation*}
-But $T_{t_\lambda}(\infty)$ is just the identity matrix, yielding
+But $T_{t_\lambda}^g(\infty)$ is just $g$, yielding
 \begin{equation*}
 \tau_{[1^k]}^g(\infty) = \operatorname{tr}_{t_\lambda} g_{t_\lambda},
 \end{equation*}
-which is exactly the character of the highest weight module $L(\lambda)$.
+which is exactly the character $\chi_\lambda(g)$ of the highest weight module $L(\lambda)$.
 \end{proof}
 
-\begin{lemma}
-We have
+\begin{lemma}\label{lemma:recursionRelation}
+We have the recursion relation
 \begin{equation*}
 \operatorname{Res}_{z=y_i} \tau_{[1^{k+1}]}^g(z)
 = \chi_{[1^k]}(g) H_i + \sum_j \frac{\eta H_i}{y_i-y_j-\eta} \operatorname{Res}_{z=y_j} \tau_{[1^k]}^g(z).
@@ -1684,7 +1738,7 @@ The functional relation (\ref{equation:functionalRelation}) can be rewritten as
 Let us take the residue at $z=y_i$. We remark that $\tau_{[1^k]}^g(z-\eta)$ does not have a pole at $y_i$, which can be seen immediately by expanding it in terms of $R$-matrices using the fusion procedure. On the other hand, taking the row tableau $t_{[2,1^{k-1}]}$, we find
 \begin{align*}
 \tau_{[2,1^{k-1}]}^g(z-\eta)
-&= \operatorname{tr}_{1...k} \Pi_{t_{[2,1^{k-1}]}} g_k \cdots g_1 M_k(z-\eta(k-1)) \cdots M_3(z-2\eta) M_2(z) M_1(z-\eta).
+&= \operatorname{tr}_{1...k+1} \Pi_{t_{[2,1^{k-1}]}} g_{k+1} \cdots g_1 M_{k+1}(z-k\eta) \cdots M_3(z-2\eta) M_2(z) M_1(z-\eta).
 \end{align*}
 Introduce the partial monodromy matrix
 \begin{equation*}
@@ -1693,11 +1747,11 @@ M_a^{[i,j]}(z) := R_{ai}(z-y_i) \cdots R_{aj}(z-y_j)
 and compute
 \begin{align*}
 \operatorname{Res}_{z=y_i} M_2(z) M_1(y_i-\eta)
-&= M_2^{[N,i+1]}(y_i) \eta P_{1i} M_2^{[i-1,1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{2i}^+ M_1^{[i-1,1]}(y_i-\eta) \\
-&= M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) \eta P_{1i} 2 \Pi_{2i}^+ M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
-&= M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{21}^+ \eta P_{1i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
-&= \Pi_{21}^+ M_1^{[N,i+1]}(y_i-\eta) M_2^{[N,i+1]}(y_i) 2 \Pi_{21}^+ \eta P_{1i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
-&= \Pi_{21}^+ M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{21}^+ \eta P_{1i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
+&= M_2^{[N,i+1]}(y_i) \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{1i}^+ M_1^{[i-1,1]}(y_i-\eta) \\
+&= M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) \eta P_{2i} 2 \Pi_{1i}^+ M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
+&= M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{12}^+ \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
+&= \Pi_{21}^+ M_1^{[N,i+1]}(y_i-\eta) M_2^{[N,i+1]}(y_i) 2 \Pi_{12}^+ \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
+&= \Pi_{12}^+ M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{12}^+ \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
 &= \Pi_{12}^+ \operatorname{Res}_{z=y_i} M_2(z) M_1(y_i-\eta).
 \end{align*}
 But $\Pi_{t_{[2,1^{k-1}]}}$ antisymmetrizes over the indices 1 and 2, implying $\Pi_{t_{[2,1^{k-1}]}} \Pi_{12}^+ = 0$ and thus $\operatorname{Res}_{z=y_i} \tau_{[2,1^{k-1}]}^g(z-\eta) = 0$. With this, we finally arrive at
@@ -1733,13 +1787,13 @@ with
 \begin{equation*}
 L_{ij} := \frac{\eta H_j}{y_i-y_j+\eta} = \frac{\eta}{y_i-y_j+\eta} \bigg( \prod_{j \neq k} \frac{y_j-y_k-\eta}{y_j-y_k} \bigg) \check H_j.
 \end{equation*}
-This looks awfully close to the Lax matrix (\ref{equation:RSLaxMatrix}) of the rational Ruijsenaars-Schneider model when we substitute $e^{-p_j}$ for $\check H_j$! Remember that $X_j$ is the operator that under quantization corresponds to $e^{-p_j}$, which leads us to hypothesize that $X_j$ and $\check H_j$ will in some sense turn out to be one and the same operator. This the main result of the next section.
+This looks awfully close to the Lax matrix (\ref{equation:RSLaxMatrix}) of the rational Ruijsenaars-Schneider model when we substitute $e^{-p_j}$ for $\check H_j$! Recall that $X_j$ is the operator that under quantization corresponds to $e^{-p_j}$, which leads us to hypothesize that $X_j$ and $\check H_j$ will in some sense turn out to be one and the same operator. This the main result of the next section.
 
 Iterating the matrix equation and combining with the formula for the quantum determinant from corollary \ref{corollary:quantumDet} finally gives the spectral equation, resembling a Cayley-Hamilton-type identity:
 
 \begin{theorem}[Spectral equation]\label{theorem:spectralEq}
 The non-local Hamiltonians $H_1,...,H_N$ of the spin chain fulfill the \emph{spectral equation}
-\begin{equation*}
+\begin{equation}\label{equation:spectralEq}
 \left( \sum_{k=0}^\ell \chi_{[1^{\ell-k}]}(g) (-L^t)^k \right)
 \begin{pmatrix}
 \prod_{j \neq 1} \frac{y_1-y_j-\eta}{y_1-y_j} \\
@@ -1747,42 +1801,33 @@ The non-local Hamiltonians $H_1,...,H_N$ of the spin chain fulfill the \emph{spe
 \prod_{j \neq N} \frac{y_N-y_j-\eta}{y_N-y_j}
 \end{pmatrix}
 = 0.
-\end{equation*}
+\end{equation}
 \end{theorem}
 
 \begin{proof}
-We have
-\begin{equation*}
-\operatorname{qdet}^1 T(z) = \prod_k \frac{z-y_k-\eta}{z-y_k},
-\end{equation*}
-so that
-\begin{equation*}
-\operatorname{Res}_{z=y_j} \operatorname{qdet}^1 T(z) = -\eta \prod_{j \neq k} \frac{y_j-y_k-\eta}{y_j-y_k}.
-\end{equation*}
-On the other hand, we have
-\begin{equation*}
-L = CH \Leftrightarrow H = (-L^t) (-C^{-t})
-\end{equation*}
-where $C_{ij} = \frac{\eta}{y_i-y_j+\eta}$ is the Cauchy matrix and $H = \operatorname{diag}(H_1,...,H_N)$.
-We then get from
+We have $\operatorname{qdet} T(z) = \prod_k \frac{z-y_k-\eta}{z-y_k}$, so that $\operatorname{Res}_{z=y_j} \operatorname{qdet} T(z) = -\eta \prod_{j \neq k} \frac{y_j-y_k-\eta}{y_j-y_k}$. On the other hand, we have $L = CH \Leftrightarrow H = (-L^t) (-C^t)^{-1}$, where $C_{ij} = \frac{\eta}{y_i-y_j+\eta}$ is the Cauchy matrix and $H = \operatorname{diag}(H_1,...,H_N)$. Iterating the recursion relation from lemma \ref{lemma:recursionRelation} until we reach the quantum determinant $\tau_{[1^\ell]}^g(z) = \det g \operatorname{qdet} T(z)$ yields
 \begin{equation*}
 \chi_{[1^\ell]}(g)
 \begin{pmatrix}
-\operatorname{Res}_{z=y_1} \operatorname{qdet}^1 T(z) \\ \vdots \\ \operatorname{Res}_{z=y_N} \operatorname{qdet}^1 T(z)
+\operatorname{Res}_{z=y_1} \operatorname{qdet} T(z) \\ \vdots \\ \operatorname{Res}_{z=y_N} \operatorname{qdet} T(z)
 \end{pmatrix}
 = \sum_{k=1}^\ell \chi_{[1^{\ell-k}]}(g) (-L^t)^{k-1}
 \begin{pmatrix}
 H_1 \\ \vdots \\ H_N
-\end{pmatrix}
+\end{pmatrix},
 \end{equation*}
-that
+which implies
 \begin{equation*}
-\left( \sum_{k=0}^\ell \chi_{[1^{\ell-k}]}(g) (-L^t)^k \right) C^{-t} e = 0
+\left( \sum_{k=0}^\ell \chi_{[1^{\ell-k}]}(g) (-L^t)^k \right) (C^t)^{-1} e = 0
 \end{equation*}
+due to $H e = (-L^t) (-C^t)^{-1} e$, where $e = (1,...,1)$, so that $(C^t)^{-1} e$ is the vector from (\ref{equation:spectralEq})
 \end{proof}
 
 \begin{remark}
-This is consistent with the findings of \cite{article:gorsky:2014}, where it is shown that the twist parameters $g_1,...,g_\ell$ give the eigenvalues of the Lax matrix $L$ with multiplicity given by occupation numbers.
+Recall that $\chi_{[1^k]}(g) = e_k(\gamma_1,...,\gamma_\ell)$. It becomes clear that the Cayley-Hamilton form of the spectral equation is consistent with the findings of \cite{article:gorsky:2014}, where it is shown that the twist parameters $\gamma_1,...,\gamma_\ell$ give the eigenvalues of the Lax matrix $L$ with multiplicities given by the eigenvalues of the occupation number operators\index{Occupation number operators}
+\begin{equation}\label{equation:occupationNumber}
+M_a = \sum_{i=1}^N (e_{aa})_i, \quad a=1,...,\ell.
+\end{equation}
 \end{remark}
 
 %\begin{corollary}
@@ -1797,7 +1842,7 @@ This is consistent with the findings of \cite{article:gorsky:2014}, where it is 
 
 \section{Generalized Schur-Weyl duality}
 
-Why should the Lax matrix of the rational Ruijsenaars-Schneider model appear in the spectral equation? A first clue is the fact that the Yangian allows for residual symmetries through its various automorphisms, the most peculiar of which is the shift automorphism. It has no analogue for $\mathfrak{gl}_\ell$ and is thus special to the Yangian. This non-rigidity gives additional degrees of freedom for monodromy representations: the inhomogeneities. They seem to play the role of the position variables of the rational Ruijsenaars-Schneider model. What is the mathematical reason for their appearance? Most simply, it is because the Schur-Weyl dual of the Yangian is the degenerate affine Hecke algebra, whose generators include polynomial generators that act as inhomogeneities. To introduce this, we will start with a discussion of classical Schur-Weyl duality between the symmetric groups $S_N$ and the Lie algebras $\mathfrak{gl}_\ell$. A detailed account of various generalized Schur-Weyl dualities can be found in \cite{thesis:antor:2020}.
+Why should the Lax matrix of the rational Ruijsenaars-Schneider model appear in the spectral equation? A first clue is given by the fact that the Yangian allows for residual symmetries through its various automorphisms, the most peculiar of which is the shift automorphism. It has no analogue for $\mathfrak{gl}_\ell$ and is thus special to the Yangian. This non-rigidity gives additional degrees of freedom for monodromy representations: the inhomogeneities. They seem to play the role of the position variables of the rational Ruijsenaars-Schneider model. What is the mathematical reason for their appearance? Most simply, it is because the Schur-Weyl dual of the Yangian is the degenerate affine Hecke algebra, whose generators include polynomial generators that act as inhomogeneities. To introduce this, we will start with a discussion of classical Schur-Weyl duality between the symmetric groups $S_N$ and the Lie algebras $\mathfrak{gl}_\ell$. A detailed account of various generalized Schur-Weyl dualities can be found in \cite{thesis:antor:2020}.
 
 \subsection{Classical Schur-Weyl duality}
 
@@ -1845,7 +1890,7 @@ The fact that $U(\mathfrak{gl}_\ell)$ centralizes the action of the symmetric gr
 & U(\mathfrak{gl}_\ell)\mathsf{Mod} \arrow{ur}
 \end{tikzcd}
 \end{center}
-Hence we may say that the algebras $U(\mathfrak{gl}_\ell)$ are Tannaka dual to the algebras $\C[S_N]$.
+Hence we might also say that the algebras $U(\mathfrak{gl}_\ell)$ are Tannaka dual to the algebras $\C[S_N]$.
 
 \begin{theorem}[Classical Schur-Weyl duality]
 The functor
@@ -2051,28 +2096,33 @@ whose spins transform in the representations labeled by Young diagrams $\lambda^
 \begin{equation*}
 S(\lambda^{(1)})_{y_1} \otimes_{\dot H_*} \cdots \otimes_{\dot H_*} S(\lambda^{(N)})_{y_N}
 \end{equation*}
-under the Drinfeld functor: Let us look at a single site $L(\lambda)_y^t$ with a Young diagram $\lambda$ of $k$ boxes. Take the Specht module $S(\lambda)$ and pull back along the evaluation morphism at $y \in \C$. This yields the $\dot H_k$-module $S(\lambda)_y$ with $y_1,...,y_k$ acting as $y - \eta c_i$ on the basis vector $v_t$ labeled by a standard Young tableau $t$ of shape $\lambda$ with content vector $(c_1,...,c_k)$. We also know that $S(\lambda)_y$ maps to $L(\lambda)_y^t$ under the Drinfeld functor. Note that this is exactly in line with the fusion procedure. We conclude that a single site with spin representation labeled by $\lambda$ is equivalently a \emph{stack of $k$ particles} that sit at relative positions determined by content vectors for standard Young tableaux of shape $\lambda$. A general quantum state is a superposition of such configurations and transforms under $S_N$ in the representation given by the Specht module $S(\lambda)$, \emph{i.e.} the particle wave function of the stack satisfies exchange statistics determined by the Specht module $S(\lambda)$.
+under the Drinfeld functor.
 
-What is the correspondence for Hamiltonians? On the spin side, it is clear that we should again look at the residues of the transfer matrix $\tau^g(z)$, which in our chosen monodromy representation has the form
+Let us look at a single site $L(\lambda)_y^t$ with a Young diagram $\lambda$ of $k$ boxes. Take the Specht module $S(\lambda)$ and pull back along the evaluation morphism at $y \in \C$. This yields the $\dot H_k$-module $S(\lambda)_y$ with $y_1,...,y_k$ acting as $y - \eta c_1,...,y-\eta c_k$ on the basis vector $v_t$ labeled by a standard Young tableau $t$ of shape $\lambda$ with content vector $(c_1,...,c_k)$. We also know that $S(\lambda)_y$ maps to $L(\lambda)_y^t$ under the Drinfeld functor. Note that this is exactly in line with the fusion procedure, taking $y_i \to y - \eta c_i$. We conclude that a single site with spin representation labeled by $\lambda$ is equivalently a \emph{stack of $k$ particles} that sit at relative positions determined by content vectors for standard Young tableaux of shape $\lambda$. A general quantum state is a superposition of such configurations and transforms under $S_N$ in the representation given by the Specht module $S(\lambda)$, \emph{i.e.} the particle wave function of the stack satisfies exchange statistics determined by the Specht module $S(\lambda)$.
+
+What is the correspondence for Hamiltonians? On the spin side, %it is clear that we should again look at the poles of the transfer matrix $\tau^g(z)$, which in our chosen monodromy representation has the form
+%\begin{equation*}
+%\tau^g(z) = \operatorname{tr}_0 R_{0\lambda^{(N)}}(z-y_N) \cdots R_{0\lambda^{(1)}}(z-y_1),
+%\end{equation*}
+let us take the generalization
 \begin{equation*}
-\tau_g(z) = \operatorname{tr}_0 R_{0\lambda^{(N)}}(z-y_N) \cdots R_{0\lambda^{(1)}}(z-y_1),
+\mathbf{H}_i := R_{\lambda^{(i)}\lambda^{(i-1)}}(y_i-y_{i-1}) \cdots R_{\lambda^{(i)}\lambda^{(1)}}(y_i-y_1) g_i R_{\lambda^{(i)}\lambda^{(N)}}(y_i-y_N) \cdots R_{\lambda^{(i)}\lambda^{(i+1)}}(y_i-y_{i+1})
 \end{equation*}
-where
+where $R_{\lambda\mu}(z-w)$ denotes the higher $R$-matrix (\ref{eq:higherRMatrix}) for the Young diagram $\lambda^{(i)}$ of $k$ boxes with a chosen standard Young tableau. These are the \emph{higher non-local Hamiltonians}. %Thus, we find that $\tau^g(z)$ obtains poles at $z = y_i-\eta c_j$, but these in general might not be simple. The relevant Hamiltonians then are the coefficients of the principal parts at the poles $z = y_i-\eta c_j$. In general, these have the form
+%\begin{align*}
+%R_{\lambda^{(i)}\lambda^{(i-1)}}(y_i-y_{i-1}) \cdots R_{\lambda^{(i)}\lambda^{(1)}}(y_i-y_1) \times W \times R_{\lambda^{(i)}\lambda^{(N)}}(y_i-y_N) \cdots R_{\lambda^{(i)}\lambda^{(i+1)}}(y_i-y_{i+1}),
+%\end{align*}
+%where $W$ is some operator acting on $L(\lambda^{(i)})_{y_i}^t$.
+
+On the particle side, we may similarly introduce \emph{higher $x$-operators}
 \begin{equation*}
-R_{0\lambda^{(i)}}(z-y_i) = R_{0k}(z-y_i+\eta c_k) \cdots R_{01}(z-y_i+\eta c_1)
-\end{equation*}
-is the fused $R$-matrix for the Young diagram $\lambda^{(i)}$ of $k$ boxes with a chosen standard Young tableau that has content vector $(c_1,...,c_k)$. Thus, we find that $\tau^g(z)$ obtains poles at $z = y_i-\eta c_j$, but these in general may not be simple poles. The relevant Hamiltonians then are the coefficients of the principal parts at the poles $z = y_i-\eta c_j$. In general, these have the form
-\begin{align*}
-R_{\lambda^{(i)}\lambda^{(i-1)}}(y_i-y_{i-1}) \cdots R_{\lambda^{(i)}\lambda^{(1)}}(y_i-y_1) \times W \times R_{\lambda^{(i)}\lambda^{(N)}}(y_i-y_N) \cdots R_{\lambda^{(i)}\lambda^{(i+1)}}(y_i-y_{i+1}),
-\end{align*}
-where $W$ is some operator acting on $L(\lambda^{(i)})_{y_i}^t$. On the particle side, we may similarly introduce \emph{fused $x$-operators}
-\begin{equation*}
-x_{\lambda \mu} := \overleftarrow{\prod_i} \overrightarrow{\prod_j} x_{ij} \in \operatorname{End}(S(\lambda)[y_1] \otimes S(\mu)[y_2])
+x_{\lambda \mu} := \overleftarrow{\prod_i} \overrightarrow{\prod_j} x_{ij} \in \dot H_{k+l}
 \end{equation*}
 and define higher Macdonald operators
 \begin{equation*}
 \mathbf{X}_i := x_{\lambda^{(i)}\lambda^{(i-1)}} \cdots x_{\lambda^{(i)}\lambda^{(1)}} e^{\I\hbar\partial_i} x_{\lambda^{(i)}\lambda^{(N)}} \cdots x_{\lambda^{(i)}\lambda^{(i+1)}}.
 \end{equation*}
+Letting $\mathbf{\check H}_i$ denote the higher non-local Hamiltonian $\mathbf{H}_i$ with unitary normalizations, we obtain the following correspondence:
 
 \begin{center}
 \begin{tabular}{|r||l|}
@@ -2082,7 +2132,7 @@ twisted inhomogeneous Heisenberg model & rational Ruijsenaars-Schneider model \\
 $i$th atom & $i$th stack of particles \\
 spin in representation $\lambda$ & stack satisfying $\lambda$-exchange statistics \\
 inhomogeneities $y_i$ of spins & positions $y_i$ of stacks \\
-non-local Hamiltonians $\check H_i$ & higher Macdonald operators $\mathbf{X}_i$ \\
+higher non-local Hamiltonians $\mathbf{\check H}_i$ & higher Macdonald operators $\mathbf{X}_i$ \\
 \hline
 \end{tabular}
 \end{center}
@@ -2101,7 +2151,7 @@ Instead, solving the Wronskian equation \cite{book:arutyunov:betheAnsatz} for th
 \begin{equation*}
 (z-\eta)^2 (2 z^2 + 4 \eta z + 4 \eta^2)
 \end{equation*}
-for the $\ydiagram{4}$-multiplet, which is exactly correct up to the factor $(z-\eta)^2$, which results from using the polynomial convention.
+for the $\ydiagram{4}$-multiplet, which is exactly correct (compare \cite{book:arutyunov:betheAnsatz}, section 8.7) up to the prefactor $(z-\eta)^2$, which results from the polynomial convention used in \emph{loc. cit.}
 \end{example}
 
 \section{$S$-duality}
@@ -2156,18 +2206,27 @@ We also obtain the following result for the $S$-dual representation, which shoul
 On $LD_{\ell,N}(\C[X_1^{\pm 1},...,X_N^{\pm 1}])$, the quantum determinant has the following expansion:
 \begin{align*}
 \operatorname{qdet}^1 T(z)
-= 1 &- \frac{\eta}{z} N - \frac{\eta}{z^2} \bigg( C_1 - \eta \frac{N(N-1)}{2} \bigg) \\
-&- \frac{\eta}{z^3} \bigg( C_2 + \eta (N-1) C_1 + \eta^2 \frac{N(N-1)(N-2)}{6} \bigg) + \cdots,
+= 1 &- \frac{\eta}{z} N - \frac{\eta}{z^2} \bigg( C_1' - \eta \frac{N(N-1)}{2} \bigg) \\
+&- \frac{\eta}{z^3} \bigg( C_2' - \eta (N-1) C_1' + \eta^2 \frac{N(N-1)(N-2)}{6} \bigg) + \cdots,
 \end{align*}
-where $C_1$ and $C_2$ are the first two Hamiltonians of the trigonometric Calogero-Moser model.
+where $C_1' = \sum_i y_i$ and $C_2' = \sum_i y_i^2$ are the first two Hamiltonians of the trigonometric Calogero-Moser model.
 \end{prop}
 
 \begin{proof}
-Since the quantum determinant is a group-like element, we find that the quantum determinant acting on $LD_{\ell,N}(\C[X_1^{\pm 1},...,X_N^{\pm 1}])$ is given by the product of elementary quantum determinants $1-\frac{\eta}{z-y_i}$, which becomes
+Since the quantum determinant is group-like according to proposition \ref{prop:quantumDetGroupLike}, we find that the quantum determinant acting on $LD_{\ell,N}(\C[X_1^{\pm 1},...,X_N^{\pm 1}])$ is given by the product of elementary quantum determinants $1-\frac{\eta}{z-y_i}$, which becomes
 \begin{equation*}
-\operatorname{qdet} T(z) = \frac{\Delta(z-\eta)}{\Delta(z)}, \quad \Delta(z) = \prod_i (z-y_i).
+\operatorname{qdet} T(z) = \prod_{i=1}^N \left( 1 - \frac{\eta}{z-y_i} \right).
 \end{equation*}
-This has the desired expansion.
+Recalling that
+\begin{equation*}
+1- \frac{\eta}{z-y_i} = 1 - \frac{\eta}{z} - \frac{\eta}{z^2} y_i - \frac{\eta}{z^3} y_i^2 + \cdots,
+\end{equation*}
+we obtain the expansion
+\begin{equation*}
+\operatorname{qdet} T(z) = 1 - \frac{\eta}{z} N - \frac{\eta}{z^2} \bigg( \sum_i y_i - \sum_{i < j} \eta \bigg)
+- \frac{\eta}{z^3} \bigg( \sum_i y_i^2 - \sum_{i < j} y_i \eta - \sum_{j < i} \eta y_j + \sum_{i < j < k} \eta^2 \bigg) + \cdots,
+\end{equation*}
+which reduces to the desired expression.
 %
 %Recall that the $R$-matrix has the expansion:
 %\begin{equation*}
@@ -2227,6 +2286,10 @@ This has the desired expansion.
 %where the mixed terms of the product expansion vanish after antisymmetrization since they are symmetric in the auxiliary indices. Plugging in the definition of $C_1$ and $C_2$ then yields the claim.
 \end{proof}
 
+\begin{remark}
+It is clear from the proof that higher Hamiltonians of the trigonometric Calogero-Moser model can be obtained from higher order expansions of the quantum determinant.
+\end{remark}
+
 \subsection{The trigonometric Gaudin model}
 
 In order to define the trigonometric Gaudin model\index{Trigonometric Gaudin model}, let us follow \cite{article:molev:2019} by introducing the trigonometric $r$-matrix\index{Trigonometric $r$-matrix}
@@ -2254,7 +2317,7 @@ First note that:
 &= -\I \hbar X_i \partial_i - i \eta + \eta \sum_{j < i} \theta_{ji} (1+(i \ j)) - \eta \sum_{j > i} \theta_{ij} (1+(i \ j)) + \eta \sum_{i \neq j} \theta_{ij} \\
 &= -\I \hbar X_i \partial_i - \eta + \eta \sum_{j < i} \theta_{ji} (i \ j) - \eta \sum_{j > i} \theta_{ij} (i \ j) \\
 &= -\I \hbar X_i \partial_i - \eta + \eta \sum_{j < i} \frac{\theta_{ji}+1-\theta_{ij}}{2} (i \ j) - \eta \sum_{j > i} \frac{\theta_{ij}+1-\theta_{ji}}{2} (i \ j) \\
-&= -\I \hbar X_i \partial_i - \eta - \eta \sum_{i \neq j} \frac{\theta_{ij}-\theta_{ji}}{2} (i \ j) - \eta \sum_{i \neq j} \operatorname{sgn}(j-i) (i \ j)
+&= -\I \hbar X_i \partial_i - \eta - \eta \sum_{i \neq j} \frac{\theta_{ij}-\theta_{ji}}{2} (i \ j) - \eta \sum_j \operatorname{sgn}(j-i) (i \ j)
 \end{align*}
 Summing over $i$ cancels the last term, giving
 \begin{align*}
@@ -2264,6 +2327,12 @@ Summing over $i$ cancels the last term, giving
 \end{align*}
 where in the last step we have used that $Q_{ij} + Q_{ji} = 0$.
 \end{proof}
+
+Unfortunately, the higher Hamiltonians of the trigonometric Calogero-Moser model significantly grow in complexity, often positioning statements about them in the conjectural realm. Here, we see a reflection of this phenomenon, since it becomes hard to see how the $Q$-operator enters into higher Hamiltonians. In contrast, it is immediate that the $Q$-operators cancel for the lowest Hamiltonian $\delta^{-1} C_1 \delta$. Nonetheless, the general findings of quantum-classical duality between the trigonometric Calogero-Moser model and the trigonometric Gaudin model in section 4 of \cite{article:zabrodin:2017} lead us to conjecture that the higher Hamiltonians $\delta^{-1} C_k \delta$ yield a generating set of symmetric polynomials in $G_1,...,G_N$ modulo polynomials in the occupation number operators (\ref{equation:occupationNumber}).
+
+%\begin{equation*}
+%\sum_i G_i^2 = \sum_i \sum_{i \neq j} \sum_{i \neq k} \left( \frac{X_i+X_j}{X_i-X_j} \frac{X_i+X_k}{X_i-X_k} P_{ij} P_{ik} + \frac{X_i+X_j}{X_i-X_j} P_{ij} Q_{ik} + \frac{X_i+X_k}{X_i-X_k} Q_{ij} P_{ik} + Q_{ij} Q_{ik} \right)
+%\end{equation*}
 
 \chapter{Geometry}\label{chapter:geometry}
 
@@ -2313,15 +2382,15 @@ Let $\mathsf{M}_N$ be the full subcategory spanned by $V_{y_1}^+ \otimes \cdots 
 \begin{equation*}
 E_N := \bigoplus_{M \in \mathsf{M}_N} M \otimes M^\vee \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}
 \end{equation*}
-with the special element $1_N: \C[\eta] \to E_N$ representing the sum of identities. By the previous lemma, we can identify $F_N Y(\mathfrak{gl}_\ell)$ as a subspace of $E_N$ via the map $Y(\mathfrak{gl}_\ell) \to E_N$ induced by the jointly faithful actions. Further let $L := \int^{V \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}} V \otimes V^\vee$. The coactions of the dual Yangian give a map $\psi: L \to Y^\vee(\mathfrak{gl}_\ell)$ that commutes with the coactions $E_N \to L \otimes E_N$ and $E_N \to Y^\vee(\mathfrak{gl}_\ell) \otimes E_N$. We may look at the image of $1_N$
+with the special element $1_N: \C \to E_N$ representing the sum of identities. By the previous lemma, we can identify $F_N Y(\mathfrak{gl}_\ell)$ as a subspace of $E_N$ via the map $Y(\mathfrak{gl}_\ell) \to E_N$ induced by the jointly faithful actions. Further let $L := \int^{V \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}} V \otimes V^\vee$. The coactions of the dual Yangian give a map $\psi: L \to Y^\vee(\mathfrak{gl}_\ell)$ that commutes with the coactions $E_N \to L \otimes E_N$ and $E_N \to Y^\vee(\mathfrak{gl}_\ell) \otimes E_N$. We may look at the image of $1_N$
 \begin{equation*}
-\widetilde{\mathcal{R}}_N: \C[\eta] \to E_N \to L \otimes F_N Y(\mathfrak{gl}_\ell) \subseteq L \otimes E_N,
+\widetilde{\mathcal{R}}_N: \C \to E_N \to L \otimes F_N Y(\mathfrak{gl}_\ell) \subseteq L \otimes E_N,
 \end{equation*}
 which under $\psi \otimes \id$ gets mapped to $\mathcal{R}(1 \otimes 1_N)$, which is nothing but $\mathcal{R}_N \in Y^\vee(\mathfrak{gl}_\ell) \otimes F_N Y(\mathfrak{gl}_\ell)$, confer (\ref{equation:universalRMatrixN}). In the limit, we obtain an element
 \begin{equation*}
 \widetilde{\mathcal{R}} \in \varprojlim_N L \otimes F_N Y(\mathfrak{gl}_\ell)
 \end{equation*}
-mapping to the universal $R$-matrix $\mathcal{R}$. The element $\widetilde{\mathcal{R}}$ then witnesses that the composition $Y(\mathfrak{gl}_\ell) \otimes L \to Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to \C[\eta]$ is a non-degenerate pairing, implying that $\psi$ is an isomorphism. tba: Resolve topological complications
+mapping to the universal $R$-matrix $\mathcal{R}$. The element $\widetilde{\mathcal{R}}$ then witnesses that the composition $Y(\mathfrak{gl}_\ell) \otimes L \to Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to \C$ is a non-degenerate pairing, implying that $\psi$ is an isomorphism. tba: Resolve topological complications
 \end{proof}
 
 \subsection{A first stab at a category of cobordisms}
@@ -2685,17 +2754,17 @@ The $Y^\vee(\mathfrak{gl}_\ell)^{\otimes N}$-$Y^\vee(\mathfrak{gl}_\ell)$-bimodu
 
 \section{Quantum-classical duality in terms of four-dimensional Chern-Simons theory}
 
-It is natural to ask which physical theory gives rise to the functorial quantum field theory $Z$ we have defined. Considering that we are looking at topological surfaces as tight morphisms and (sheaves on moduli spaces of) complex curves equipped with meromorphic 1-forms as loose morphisms, we are already given a hint that the theory should include a meromorphic 1-form as well as two holomorphic and two topological dimensions. The functorial field theory should assign holonomies of some flat connection on $S^1 \times [0,1]$ to braids. Furthermore, the Yangian provides the 2-Hilbert space of the formal punctured disc. These observations all point to four-dimensional Chern-Simons theory.
+It is natural to ask which physical theory gives rise to the functorial quantum field theory $Z$ we have defined. Considering that we are looking at topological surfaces as tight morphisms and (sheaves on moduli spaces of) complex curves as loose morphisms, we are already given a hint that the theory should include two holomorphic and two topological dimensions. The functorial field theory should assign holonomies of some flat connection on $S^1 \times [0,1]$ to braids. Furthermore, the Yangian provides the 2-Hilbert space of the formal punctured disc. These observations all point to four-dimensional Chern-Simons theory.
 
 Four-dimensional Chern-Simons theory was first described in \cite{article:costello:2013}, a recent review can be found in \cite{article:lacroix:2022}. It\index{Four-dimensional Chern-Simons theory} is easily constructed by promoting one coordinate of the usual three-dimensional Chern Simons theory to a complex coordinate $z$ on a complex curve $C$ and introducing an additional meromorphic 1-form $\omega$ on $C$ to be able to integrate the Chern-Simons 3-form over a four-dimensional manifold $C \times \Sigma$ with $\Sigma$ an oriented surface, yielding the following action:
 \begin{equation*}
 S_\omega(A) = \frac{i}{4\pi} \int_{C \times \Sigma} \omega \wedge \textnormal{CS}(A), \quad \textnormal{CS}(A) := \langle A, dA + \tfrac 23 A \wedge A \rangle.
 \end{equation*}
-The field $A$ is a $\mathfrak{gl}_\ell$-valued 1-form on $C \times \Sigma$ that has no components in the $z,\bar z$ direction, meaning we can write it as $A = A_t dt + A_x dx$ up to some gauge transformation. The equations of motion let us interpret $A$ as a Lax connection on $\Sigma$ with spectral parameter $z$, writing $A(z) \in \Omega^1(\Sigma,\mathfrak{gl}_\ell)$.
+The field $A$ is a $\mathfrak{gl}_\ell$-valued 1-form on $C \times \Sigma$ that has no components in the $z,\bar z$ direction, meaning we can write it as $A = A_t dt + A_x dx$ up to some gauge transformation. The equations of motion let us interpret $A$ as a Lax connection on $\Sigma$ with spectral parameter $z$, writing $A(z) \in \Omega^1(\Sigma,\mathfrak{gl}_\ell)$. Thus, four-dimensional Chern-Simons theory reduces to a two-dimensional integrable field theory on $\Sigma$ with spectral parameter in $C$.
 
-The functorial quantum field theory $Z$ we constructed above exactly represents four-dimen\-sional Chern-Simons theory for $C=\P^1$ with $\omega = dz$ and $\Sigma = S^1 \times [0,1]$. The tight morphisms are nothing but Wilson lines along $S^1 \times [0,1]$ and the loose morphisms specify their (constant) coordinate in $\P^1 \setminus \{ \infty \}$ as well as the representation labeling them. The twist matrix parametrizes the background principal $GL_\ell$-bundle.
+The functorial quantum field theory $Z$ we constructed above exactly represents four-dimen\-sional Chern-Simons theory for $C=\P^1$ with $\omega = dz$ and $\Sigma = S^1 \times [0,1]$. The tight morphisms are nothing but Wilson lines along $S^1 \times [0,1]$ and the loose morphisms specify their (constant) coordinate in $\P^1 \setminus \{ \infty \}$ as well as the representation labeling them. The twist matrix parametrizes the background principal $GL_\ell$-bundle. It is a famous result of \cite{article:costello:2013} that Wilson lines in four-dimensional Chern-Simons theory reproduce the Heisenberg model.
 
-We can now perform two dimensional reductions: Firstly, we may shrink $S^1 \times [0,1]$ to a point, so that our Wilson lines become point particles on $\P^1 \setminus \{ \infty \}$ that carry internal spin degrees of freedom. Secondly, we may shrink $\P^1$ to a point, which gives the homogeneous limit $y_1,...,y_N \to 0$, in which we obtain the homogeneous spin chain with its local Hamiltonian. This paints a nicely intuitive picture of quantum-classical duality.
+We can now perform two dimensional reductions: Firstly, we may shrink $S^1 \times [0,1]$ to a point, so that our Wilson lines become point particles on $\P^1 \setminus \{ \infty \}$ that carry internal spin degrees of freedom, following the rational Ruijsenaars-Schneider Hamiltonian. Secondly, we may shrink $\P^1$ to a point, which gives the homogeneous limit $y_1,...,y_N \to 0$, in which we obtain the homogeneous Heisenberg spin chain with its local Hamiltonian. This paints a nicely intuitive picture of quantum-classical duality.
 
 %Certain classical solutions for $A(z)$ are determined in \cite{article:lacroix:2021}. They satisfy $A(y_i) = J_i$ and have poles at $y_i-\eta$. This is consistent with the analytic structure of the unitary transfer matrix. We obtain the Cauchy matrix $C_{ij} = \frac{1}{y_i-y_j+\eta}$, which has inverse
 %\begin{equation*}
@@ -3002,27 +3071,29 @@ We can now perform two dimensional reductions: Firstly, we may shrink $S^1 \time
 
 \chapter{Conclusion}\label{chapter:conclusion}
 
-Starting from the appearance of the Lax matrix of the classical rational Ruijsenaars-Schneider model in the fusion relations of the Heisenberg model, we have teased out a beautifully symmetric structure: The four arms emerging from four-dimensional Chern-Simons theory are all related by clear dualities as summarized in figure \ref{figure:dualities}. (tba)
+Starting from the appearance of the Lax matrix of the classical rational Ruijsenaars-Schneider model in the fusion relations of the Heisenberg model, we have teased out a beautifully symmetric structure: The four arms emerging from the representation theory of the loop Yangian are all related by clear dualities as summarized in figure \ref{figure:dualities}. (tba)
+
+We hope that this thesis has shed some light on the rich and beautiful interplay between integrable models, representation theory, and geometry, and that it will inspire further research in this direction.
 
 \section*{Future work}
 
-One would expect as before that the action of the Laurent generators $X_1,...,X_N$ in 4d Chern-Simons theory is placed on a more equal footing with that of the polynomial generators $y_1,...,y_N$ once we incorporate the full loop Yangian $LY(\mathfrak{gl}_\ell)$. However, due its complex nature, more work needs to be done in order to establish some necessary properties of $LY(\mathfrak{gl}_\ell)$, such as the construction of a dual loop Yangian, so we leave this for future work. We expect that the corresponding quantum field theory is given by five-dimensional Chern-Simons theory on $\C \times \C^\times \times [0,1]$.
+One would expect as before that the action of the Laurent generators $X_1,...,X_N$ in 4d Chern-Simons theory is placed on a more equal footing with that of the polynomial generators $y_1,...,y_N$ once we incorporate the full loop Yangian $LY(\mathfrak{gl}_\ell)$. However, due its complex nature, more work needs to be done in order to establish some necessary properties of $LY(\mathfrak{gl}_\ell)$, such as the construction of a dual loop Yangian, so we leave this for future work. We expect that the corresponding quantum field theory is given by five-dimensional Chern-Simons theory on $\P^1 \times P^1 \times [0,1]$ with the 1-forms $dz$ and $dw/w$ on the first and second copy of $\P^1$, respectively.
 
 Another fruitful direction might be the quantization of the elliptic Ruijsenaars-Schneider model with spin. We have seen how the rational Ruijsenaars-Schneider model with spin arises from the dynamics of Wilson lines in four-dimensional Chern-Simons theory on $\P^1 \times S^1 \times [0,1]$. One might hope that the functorial quantum field theory we constructed has an extension to complex curves of higher genus. In the case of an elliptic curve $E = \C/\Lambda$, we can look at $E \times S^1 \times [0,1]$ and hope for a description of Wilson lines in terms of the elliptic Ruijsenaars-Schneider model with spin.
 
 To this end, we will have to determine which module the functorial quantum field theory assigns to $E \times S^1$, or more precisely, we have to determine the Drinfeld-type functor defined on quasi-coherent sheaves on
 \begin{equation*}
-Y_N^\text{ell} := \{ (y_1,...,y_N,\tau) \in \C^N \times \mathbb{H} \mid y_i-y_j,y_i-y_j-\eta \notin \Z \oplus \Z \tau \}/S_N \times SL_2(\Z) \ltimes (\Z^2)^N.
+Y_N^\text{ell} := \{ (y_1,...,y_N,\tau) \in \C^N \times \mathbb{H} \mid y_i,y_i-y_j,y_i-y_j-\eta \notin \Z \oplus \Z \tau \}/S_N \times SL_2(\Z) \ltimes (\Z^2)^N.
 \end{equation*}
 In accordance with \cite{article:costello:2018b}, we have to replace the Yangian with Belavin's elliptic quantum group $E(\mathfrak{gl}_\ell)$, so our Drinfeld functor will be valued in modules over $E(\mathfrak{gl}_\ell)$. Thus, we will have to construct a bimodule
 \begin{equation*}
 E(\mathfrak{gl}_\ell) \curvearrowright (\C^\ell)^{\otimes N} \otimes \mathcal{O}(Y_N^\textnormal{ell}) \curvearrowleft \dot H_N^\text{ell},
 \end{equation*}
-where $\dot H_N^\text{ell}$ is the algebra whole modules model quasi-coherent sheaves on $Y_N^\textnormal{ell}$. The quantum elliptic Ruijsenaars-Schneider model with spin will be given by
+where $\mathcal{O}(Y_N^\textnormal{ell})$ denotes holomorphic functions on $Y_N^\text{ell}$ and $\dot H_N^\text{ell}$ is the algebra whose modules model quasi-coherent sheaves on $Y_N^\textnormal{ell}$. The quantum elliptic Ruijsenaars-Schneider model with spin will be given by
 \begin{equation*}
-(\C^\ell)^{\otimes N} \otimes \mathcal{O}(Y_N^\textnormal{ell}) \otimes_{\dot H_N^\text{ell}} \mathcal{O}(Y_N^\textnormal{ell})
+\Big( (\C^\ell)^{\otimes N} \otimes \mathcal{O}(Y_N^\textnormal{ell}) \Big) \otimes_{\dot H_N^\text{ell}} \mathcal{O}(Y_N^\textnormal{ell})
 \end{equation*}
-with Hamiltonians given by the usual elliptic difference operators acting in this representation.
+with Hamiltonians given by the usual elliptic difference operators acting on this representation.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3053,7 +3124,7 @@ Every partition $\lambda$ has a \emph{dual partition} $\lambda'$ given by transp
 4
 \end{ytableau}
 \end{equation*}
-Given a number $k \in \{ 1,...,N \}$, we define its \emph{content} to be $c_k(t) := i - j$, where $i$ and $j$, respectively, are the row and column in which $k$ appears on the Young tableau. Then $(c_1(t),...,c_N(t))$ is called the \emph{content vector} of $t_\lambda$. The tableau above has content vector $(-2,0,0,2,-1,-3,1)$. A Young tableau is \emph{standard}, if the numbers are increasing from left to right and from top to bottom. The tableau above is \emph{not} standard.
+Given a number $k \in \{ 1,...,N \}$, we define its \emph{content} to be $c_k(t) := i - j$, where $i$ and $j$, respectively, are the row and column in which $k$ appears on the Young tableau. Then $(c_1(t),...,c_N(t))$ is called the \emph{content vector} of $t_\lambda$. The tableau above has content vector $(-2,0,0,2,-1,-3,1)$. A Young tableau is \emph{standard}, if the numbers are increasing from left to right and from top to bottom. The tableau above is \emph{not} standard. Given a Young diagram, there are two easily definable standard Young tableaux: The \emph{row  tableau} and the \emph{column tableau}, obtained by filling in the boxes in ascending order row-by-row or column-by-column.
 %\item There is an action of the \emph{Young subgroup} $S_\lambda := S_{\lambda_1} \times \cdots \times S_{\lambda_\ell}$ on the set of Young tableaux of shape $\lambda$ by permuting the entries of each row. Two Young tableaux that are in the same orbit of this action are called \emph{row-equivalent}, because they share the same sets of numbers in each row. Equivalence classes of row-equivalent tableaux are called \emph{Young tabloids of shape $\lambda$}. We know that there are $|S_N/S_\lambda| = \frac{N!}{\lambda_1! \cdots \lambda_\ell!}$ such Young tabloids, and they span the \emph{permutation module} $\mathcal{P}^\lambda$.
 %\item Let $t$ be a Young tableau of shape $\lambda$. Define the \emph{Young symmetrizer}
 %\begin{equation*}
@@ -3146,7 +3217,83 @@ Noting that $(1-(i \ j))$ acts as zero on symmetric polynomials and $2\sum_{i \n
 \begin{equation*}
 C_1 = \sum_i \delta^{-1} y_i \delta = -\I \hbar \sum_i X_i \partial_i + 2\eta \sum_{i \neq j} \theta_{ij} - \eta {N \choose 2} = -\I \hbar \sum_i X_i \partial_i.
 \end{equation*}
-tba
+%To show the second part, let us make use of the identity
+%\begin{align*}
+%\delta^{-1} y_i \delta
+%&= y_i + \eta \sum_{i \neq j} \theta_{ij} \\
+%&= -\I \hbar X_i \partial_i - i \eta + \eta \sum_{j < i} \theta_{ji} (1+(i \ j)) - \eta \sum_{j > i} \theta_{ij} (1+(i \ j)) + \eta \sum_{i \neq j} \theta_{ij} \\
+%&= -\I \hbar X_i \partial_i - \eta + \eta \sum_{j < i} \theta_{ji} (i \ j) - \eta \sum_{j > i} \theta_{ij} (i \ j) \\
+%&= -\I \hbar X_i \partial_i - \eta + \eta \sum_{j < i} \frac{\theta_{ji}+1-\theta_{ij}}{2} (i \ j) - \eta \sum_{j > i} \frac{\theta_{ij}+1-\theta_{ji}}{2} (i \ j) \\
+%&= -\I \hbar X_i \partial_i - \eta - \eta \sum_{i \neq j} \frac{\theta_{ij}-\theta_{ji}}{2} (i \ j) - \eta \sum_{i \neq j} \operatorname{sgn}(j-i) (i \ j).
+%\end{align*}
+%Using the identity $X_i \partial_i \frac{\theta_{ij}-\theta_{ji}}{2} = \theta_{ij} \theta_{ji}$, on symmetric polynomials, we obtain:
+%\begin{align*}
+%C_2
+%&= \sum_i \bigg( -\I \hbar X_i \partial_i - \eta - \eta \sum_{i \neq j} \frac{\theta_{ij}-\theta_{ji}}{2} (i \ j) - \eta \sum_{i \neq j} \operatorname{sgn}(j-i) (i \ j) \bigg) \\
+%&\times \bigg( -\I \hbar X_i \partial_i - \eta - \eta \sum_{i \neq k} \frac{\theta_{ik}-\theta_{ki}}{2} - \eta \sum_{i \neq k} \operatorname{sgn}(k-i) \bigg) \\
+%&= \sum_i \bigg( -\hbar^2 (X_i \partial_i)^2 + \I \hbar \eta \sum_{i \neq k} \theta_{ik} \theta_{ki} \\
+%&+ \eta \I \hbar X_i \partial_i + \eta^2 + \eta^2 \sum_{i \neq k} \frac{\theta_{ik}-\theta_{ki}}{2} + \eta^2 \sum_{i \neq k} \operatorname{sgn}(k-i) \\
+%&- \eta \sum_{i \neq j} \frac{\theta_{ij}-\theta_{ji}}{2} (i \ j) \bigg( -\I \hbar X_i \partial_i - \eta - \eta \sum_{i \neq k} \frac{\theta_{ik}-\theta_{ki}}{2} - \eta \sum_{i \neq k} \operatorname{sgn}(k-i) \bigg) \\
+%&- \eta \sum_{i \neq j} \operatorname{sgn}(j-i) (i \ j) \bigg( -\I \hbar X_i \partial_i - \eta - \eta \sum_{i \neq k} \frac{\theta_{ik}-\theta_{ki}}{2} - \eta \sum_{i \neq k} \operatorname{sgn}(k-i) \bigg) \bigg)
+%\end{align*}
+Notice
+\begin{align*}
+y_i^2
+&= \bigg( -\I \hbar X_i \partial_i - i \eta + \eta \sum_{j < i} \theta_{ji} (1-(i \ j)) - \eta \sum_{j > i} \theta_{ij} (1-(i \ j)) \bigg) \bigg( -\I \hbar X_i \partial_i - i\eta \bigg) \\
+&= -\hbar^2 (X_i \partial_i)^2 + \I \hbar \eta 2i X_i \partial_i - \I \hbar \eta \sum_{j < i} \theta_{ji} (X_i \partial_i-X_j \partial_j) + \I \hbar \eta \sum_{j > i} \theta_{ij} (X_i \partial_i-X_j \partial_j) + i^2 \eta^2 \\
+&= -\hbar^2 (X_i \partial_i)^2 + \I \hbar \eta 2i X_i \partial_i - \I \hbar \eta \sum_{j < i} (1-\theta_{ij}) (X_i \partial_i-X_j \partial_j) + \I \hbar \eta \sum_{j > i} \theta_{ij} (X_i \partial_i-X_j \partial_j) + i^2 \eta^2 \\
+&= -\hbar^2 (X_i \partial_i)^2 + \I \hbar \eta 2i X_i \partial_i - \I \hbar \eta \sum_{j < i} (X_i \partial_i-X_j \partial_j) + \I \hbar \eta \sum_{i \neq j} \theta_{ij} (X_i \partial_i-X_j \partial_j) + i^2 \eta^2 \\
+&= -\hbar^2 (X_i \partial_i)^2 + \I \hbar \eta (i+1) X_i \partial_i + \I \hbar \eta \sum_{j < i} X_j \partial_j + \I \hbar \eta \sum_{i \neq j} \theta_{ij} (X_i \partial_i-X_j \partial_j) + i^2 \eta^2,
+\end{align*}
+so
+\begin{align*}
+\sum_i y_i^2 &= -\hbar^2 \sum_i (X_i \partial_i)^2  + \I \hbar \eta \sum_{i \neq j} \theta_{ij} (X_i \partial_i-X_j \partial_j) - \eta^2 \frac{N(N+1)(2N+1)}{6}.
+\end{align*}
+
+%It follows that
+%\begin{align*}
+%C_2 = \sum_i \delta^{-1} y_i^2 \delta
+%&= \sum_i \bigg( -\hbar^2 (X_i \partial_i)^2 - 4\I\hbar\eta \sum_{i \neq j} \theta_{ij} X_i \partial_i - 2 \eta \sum_{i \neq j} \theta_{ij} \theta_{ji} - 4\eta^2 \sum_{i \neq j} \sum_{i \neq k} \theta_{ij} \theta_{ik} \bigg) \\
+%&+ 2\I\hbar\eta \sum_i i \bigg( X_i \partial_i + 2\eta \sum_{i \neq j} \theta_{ij} \bigg) - \eta^2 \frac{N(N+1)(2N+1)}{6} \\
+%&- \I \hbar \eta \sum_i \bigg( \sum_{j < i} \theta_{ji} (X_i \partial_i - X_j \partial_j - 2\eta \sum_{i \neq k} \theta_{ik} + 2\eta \sum_{j \neq l} \theta_{jl}) \\
+%&- \sum_{j > i} \theta_{ij} (X_i \partial_i - X_j \partial_j - 2\eta \sum_{i \neq k} \theta_{ik} + 2\eta \sum_{j \neq l} \theta_{jl}) \bigg).
+%\end{align*}
+%\begin{align*}
+%\delta^{-1} y_i^2 \delta
+%&= \bigg( -\I\hbar X_i \partial_i - \eta - \eta \sum_{i \neq j} \frac{X_i+X_j}{X_i-X_j} (i \ j) - \eta \sum_{i \neq j} \operatorname{sgn}(j-i) (i \ j) \bigg) \bigg( -\I\hbar X_i \partial_i + 2\eta \sum_{i \neq j} \theta_{ij} - i\eta \bigg) \\
+%&= -\hbar^2 (X_i \partial_i)^2 + \I\hbar\eta X_i \partial_i + \I\hbar\eta \sum_{i \neq j} \frac{X_i+X_j}{X_i-X_j} X_j \partial_j + \I\hbar\eta \sum_{i \neq j} \operatorname{sgn}(j-i) X_j \partial_j \\
+%&-2\I\hbar\eta \sum_{i \neq j} \theta_{ij} \theta_{ji} - 2\eta^2 \sum_{i \neq j} \theta_{ij} - 2\eta^2 \sum_{i \neq j} \frac{X_i+X_j}{X_i-X_j} (i \ j) \sum_{i \neq k} \theta_{ik}
+%\end{align*}
+We can also use
+\begin{align*}
+y_i &\mapsto -\I\hbar X_i \partial_i - \frac{\eta}{2} \sum_{i \neq j} \frac{X_i+X_j}{X_i-X_j} (1-(i \ j)) - \frac{\eta}{2} \sum_j \operatorname{sgn}(j-i) (i \ j) \\
+&= -\I\hbar X_i \partial_i - \frac{\eta}{2} (N-2i+1) - \eta \sum_{j < i} \theta_{ij} (1-(i \ j)) + \eta \sum_{j > i} \theta_{ji} (1-(i \ j)),
+\end{align*}
+so
+\begin{align*}
+y_i^2 &\mapsto \bigg( -\I\hbar X_i \partial_i - \frac{\eta}{2} \sum_{i \neq j} (\theta_{ij}-\theta_{ji}) (1-(i \ j)) - \frac{\eta}{2} \sum_j \operatorname{sgn}(j-i) (i \ j) \bigg) \bigg( -\I\hbar X_i \partial_i - \frac{\eta}{2} (N-2i+1) \bigg) \\
+&= -\hbar^2 (X_i \partial_i)^2 + \frac{\I\hbar\eta}{2} \sum_{i \neq j} (\theta_{ij}-\theta_{ji}) (X_i \partial_i-X_j \partial_j) + \frac{\I\hbar\eta}{2} \sum_j \operatorname{sgn}(j-i) X_j \partial_j \\
+&+ \frac{\I\hbar\eta}{2} (N-2i+1) X_i \partial_i + \frac{\eta^2}{4} (N-2i+1)^2
+\end{align*}
+and
+\begin{align*}
+\sum_i y_i^2 \mapsto -\hbar^2 \Delta + \frac{\I\hbar\eta}{2} \sum_{i \neq j} (\theta_{ij}-\theta_{ji}) (X_i \partial_i-X_j \partial_j) + \eta^2 \frac{N(N-1)^2}{12}.
+\end{align*}
+Using $X_i \partial_i \theta_{ij} = \theta_{ij}X_i \partial_i + \theta_{ij} \theta_{ji}$, we derive
+\begin{align*}
+-\hbar^2 \delta^{-1} \Delta \delta
+&= \sum_i \delta^{-1} \I\hbar X_i \partial_i \delta \delta^{-1} \I\hbar X_i \partial_i \delta \\
+&= \sum_i \bigg( \I \hbar X_i \partial_i - 2\eta \sum_{i \neq j} \theta_{ij} \bigg) \bigg( \I \hbar X_i \partial_i - 2\eta \sum_{i \neq j} \theta_{ij} \bigg) \\
+&= -\hbar^2 \Delta - 4\I\hbar\eta \sum_{i \neq j} \theta_{ij} X_i \partial_i - 2\I\hbar\eta \sum_{i \neq j} \theta_{ij} \theta_{ji} + 4\eta^2 \sum_i \sum_{i \neq j} \sum_{i \neq k} \theta_{ij} \theta_{ik}
+\end{align*}
+Is the 2 wrong? Then we would have
+\begin{equation*}
+-\hbar^2 \Delta - \frac{\I\hbar\eta}{2} \sum_{i \neq j} (\theta_{ij}-\theta_{ji}+1) X_i \partial_i - \I\hbar\eta \sum_{i \neq j} \theta_{ij} \theta_{ji} + \eta^2 \sum_i \sum_{i \neq j} \sum_{i \neq k} \theta_{ij} \theta_{ik}
+\end{equation*}
+The last term gives
+\begin{align*}
+\sum_i \sum_{i \neq j} \sum_{i \neq k} \theta_{ij} (1-\theta_{ki}) = (N-1) \sum_{i \neq j} \theta_{ij} - \sum_{i \neq j \neq k} \theta_{ij} \theta_{ki} - \sum_{i \neq j} \theta_{ij} \theta_{ji} = \frac{N(N-1)^2}{2} - ? - \sum_{i \neq j} \theta_{ij} \theta_{ji}.
+\end{align*}
 \end{proof}
 
 %\chapter{Moduli spaces}\label{appendix:moduliSpaces}
@@ -3193,56 +3340,56 @@ tba
 %\sum_i \frac{X_i}{z-y_i} = \sum_r z^{-1} \sum_i X_i y_i^{r-1}.
 %\end{equation*}
 
-\chapter{Elliptic functions}\label{appendix:moduliSpaces}
-
-The following is due to \cite{article:zabrodin:2022}:
-
-\begin{definition}
-Let $\tau$ be a given half-period ratio. Define the theta functions
-\begin{equation*}
-\theta_{a,b}(z) := \sum_{j \in \Z} \exp(2 \pi \I ((j+a)^2 \frac{\tau}{2} + (j+a)(j+b))).
-\end{equation*}
-We let
-\begin{equation*}
-\vartheta(z) := -\theta_{1/2,1/2}(z)
-\end{equation*}
-denote the first Jacobi theta function\index{Jacobi theta function}.
-\end{definition}
-
-\begin{definition}
-Let
-\begin{equation*}
-\phi(w,z) := \vartheta'(0) \cdot \frac{\vartheta(w+z)}{\vartheta(w)\vartheta(z)}
-\end{equation*}
-denote the \emph{Kronecker function}\index{Kronecker function}.
-\end{definition}
-
-\begin{prop}
-\begin{enumerate}[label=(\roman*)]
-\item $\phi(w,z) = \phi(z,w)$.
-\item $\phi(w,z)$ has a simple pole at $z=0$ with residue one.
-\item $\phi(w,z+1) = \phi(w,z)$ and $\phi(w,z+\tau) = \exp(-2\pi\I w) \phi(w,z)$.
-\end{enumerate}
-\end{prop}
-
-\begin{definition}
-Let
-\begin{equation*}
-\sigma(z) := z \prod_{s \in 2\omega_1 \Z \oplus 2\omega_2\Z \setminus \{ 0 \}} \left(1-\frac{z}{s}\right) e^{\frac{x}{s}+\frac{x^2}{2s^2}}.
-\end{equation*}
-Then
-\begin{align*}
-\sigma(z+2\omega_1) &= -e^{2\eta_1(z+\omega_1)} \sigma(z), \\
-\sigma(z+2\omega_2) &= -e^{2\eta_2(z+\omega_2)} \sigma(z).
-\end{align*}
-\end{definition}
-
-\begin{lemma}
-Let $\varphi(z,w) := \frac{\sigma(z+w)}{\sigma(z)\sigma(w)}$. Then
-\begin{equation*}
-\varphi(z+2\omega_1,w) = \frac{e^{2\eta_1(z+w+\omega_1)}\sigma(z+w)}{e^{2\eta_1(z+\omega_1)}\sigma(z)\sigma(w)} = e^{2\eta_1 w} \varphi(z,w).
-\end{equation*}
-\end{lemma}
+%\chapter{Elliptic functions}\label{appendix:moduliSpaces}
+%
+%The following is due to \cite{article:zabrodin:2022}:
+%
+%\begin{definition}
+%Let $\tau$ be a given half-period ratio. Define the theta functions
+%\begin{equation*}
+%\theta_{a,b}(z) := \sum_{j \in \Z} \exp(2 \pi \I ((j+a)^2 \frac{\tau}{2} + (j+a)(j+b))).
+%\end{equation*}
+%We let
+%\begin{equation*}
+%\vartheta(z) := -\theta_{1/2,1/2}(z)
+%\end{equation*}
+%denote the first Jacobi theta function\index{Jacobi theta function}.
+%\end{definition}
+%
+%\begin{definition}
+%Let
+%\begin{equation*}
+%\phi(w,z) := \vartheta'(0) \cdot \frac{\vartheta(w+z)}{\vartheta(w)\vartheta(z)}
+%\end{equation*}
+%denote the \emph{Kronecker function}\index{Kronecker function}.
+%\end{definition}
+%
+%\begin{prop}
+%\begin{enumerate}[label=(\roman*)]
+%\item $\phi(w,z) = \phi(z,w)$.
+%\item $\phi(w,z)$ has a simple pole at $z=0$ with residue one.
+%\item $\phi(w,z+1) = \phi(w,z)$ and $\phi(w,z+\tau) = \exp(-2\pi\I w) \phi(w,z)$.
+%\end{enumerate}
+%\end{prop}
+%
+%\begin{definition}
+%Let
+%\begin{equation*}
+%\sigma(z) := z \prod_{s \in 2\omega_1 \Z \oplus 2\omega_2\Z \setminus \{ 0 \}} \left(1-\frac{z}{s}\right) e^{\frac{x}{s}+\frac{x^2}{2s^2}}.
+%\end{equation*}
+%Then
+%\begin{align*}
+%\sigma(z+2\omega_1) &= -e^{2\eta_1(z+\omega_1)} \sigma(z), \\
+%\sigma(z+2\omega_2) &= -e^{2\eta_2(z+\omega_2)} \sigma(z).
+%\end{align*}
+%\end{definition}
+%
+%\begin{lemma}
+%Let $\varphi(z,w) := \frac{\sigma(z+w)}{\sigma(z)\sigma(w)}$. Then
+%\begin{equation*}
+%\varphi(z+2\omega_1,w) = \frac{e^{2\eta_1(z+w+\omega_1)}\sigma(z+w)}{e^{2\eta_1(z+\omega_1)}\sigma(z)\sigma(w)} = e^{2\eta_1 w} \varphi(z,w).
+%\end{equation*}
+%\end{lemma}
 
 \chapter{Double categories}\label{appendix:doubleCats}
 
@@ -3329,7 +3476,6 @@ $D_k$ & Hamiltonians of the quantum rational Ruijsenaars-Schneider model \\
 $C_k$ & Hamiltonians of the quantum trigonometric Calogero-Moser model \\
 $\ell$ & rank of general linear Lie algebra \\
 $\mathfrak{gl}_\ell$ & general linear Lie algebra \\
-$V$ & $\eta$-extended vector space $\C^\ell[\eta]$ \\
 $Y(\mathfrak{gl}_\ell)$ & Yangian of the general linear Lie algebra \\
 $Y^\vee(\mathfrak{gl}_\ell)$ & Dual Yangian of the general linear Lie algebra \\
 $L(\mathfrak{gl}_\ell)$ & loop algebra of the general linear Lie algebra \\
