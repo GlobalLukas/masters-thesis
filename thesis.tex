@@ -854,7 +854,7 @@ This also yields a general evaluation homomorphism
 In addition to the Yangian $Y(\mathfrak{gl}_\ell)$, we will later make use of the \emph{dual Yangian} $Y^\vee(\mathfrak{gl}_\ell)$, which was studied in detail in the paper \cite{article:nazarov:2019}. Essentially, while the Yangian describes the disc at infinity with local coordinate $z^{-1}$, the dual Yangian describes the disc around zero with local coordinate $z$. We proceed parallel to the construction of the Yangian:
 
 \begin{definition}
-The \emph{dual Yangian}\index{Dual Yangian} for the complex Lie algebra $\mathfrak{gl}_\ell$, written $Y^\vee(\mathfrak{gl}_\ell)$, is defined as the complex associative algebra with the following presentation: It has generators $t_{ij}^{(-r)}$ for $1 \leq i,j \leq \ell$ and $r \geq 1$. To describe the defining relations, we again let $t_{ij}^{(0)} = \delta_{ij}/\eta$ and introduce
+The \emph{incomplete dual Yangian}\index{Dual Yangian} for the complex Lie algebra $\mathfrak{gl}_\ell$, written $\widetilde Y^\vee(\mathfrak{gl}_\ell)$, is defined as the complex associative algebra with the following presentation: It has generators $t_{ij}^{(-r)}$ for $1 \leq i,j \leq \ell$ and $r \geq 1$. To describe the defining relations, we again let $t_{ij}^{(0)} = \delta_{ij}/\eta$ and introduce
 \begin{equation*}
 T^\vee(z) := \sum_{ij} t_{ij}^\vee(z) \otimes e_{ij} \in Y^\vee(\mathfrak{gl}_\ell)\llbracket z \rrbracket \otimes \C^\ell, \quad t_{ij}^\vee(z) = \eta \sum_{r \geq 0} t_{ij}^{(-r)} z^r \in Y^\vee(\mathfrak{gl}_\ell)\llbracket z \rrbracket,
 \end{equation*}
@@ -862,15 +862,40 @@ as well as
 \begin{equation*}
 T_a^\vee(z) = \sum_{ij} \overset{0}{t_{ij}^\vee(z)} \otimes \overset{1}{1} \otimes \cdots \otimes \overset{a}{e_{ij}} \otimes \cdots \otimes \overset{k}{1}.
 \end{equation*}
-The defining relation of the dual Yangian then is the \emph{TTR relation}:
+The defining relation of then is the \emph{TTR relation}:
 \begin{equation}\label{equation:TTRRelation}
 T_1^\vee(z) T_2^\vee(w) R_{12}(z-w) = R_{12}(z-w) T_2^\vee(w) T_1^\vee(z).
 \end{equation}
-We may equip the dual Yangian with a descending filtration by giving $t_{ij}^{(-r)}$ the degree $r$. Denote the $N$th filtered piece by $F_N Y^\vee(\mathfrak{gl}_\ell)$ and the completion with respect to this filtration by $\widehat Y^\vee(\mathfrak{gl}_\ell)$.
+We may equip the incomplete dual Yangian with a descending filtration by giving $t_{ij}^{(-r)}$ the degree $r$. Denote the $N$th filtered piece by $F_N Y^\vee(\mathfrak{gl}_\ell)$. The \emph{dual Yangian} $Y^\vee(\mathfrak{gl}_\ell)$ is then defined to be the completion of $\widetilde{Y}^\vee(\mathfrak{gl}_\ell)$ with respect to this filtration.
 \end{definition}
 
+Due to the topological nature of the dual Yangian, it will be convenient to work inside an alternative category of vector spaces discussed in \cite{article:costello:2013}:
+
+\begin{definition}\label{definition:cfVect}
+We let $\mathsf{cfVect}$ denote the category of complete filtered $\C$-vector spaces. Such vector spaces $V$ come equipped with a descending filtration
+\begin{equation*}
+V = F_0 V \supseteq F_1 V \supseteq \cdots
+\end{equation*}
+of subspaces such that the canonical map $V \to \varprojlim V/F_i V$ is an isomorphism. A morphism $f: V \to V'$ of complete filtered modules preserves the filtrations in the sense that $f(F_i V) \subset F_i V'$. The coproduct in this category is given by
+\begin{equation*}
+\bigoplus_k V_k = \varprojlim_i \bigoplus_k F_i V_k
+\end{equation*}
+and the tensor product is
+\begin{equation*}
+V \otimes V' := \varprojlim_{i,j} V/F_i V \otimes V'/F_j V'.
+\end{equation*}
+%If for a complete filtered vector space $V$ all $V/F_i V$ are finite-dimensional, then its (right) dual is given by
+%\begin{equation*}
+%V^\vee = \varinjlim_i F_i V^\vee, \quad F_i V^\vee := (V/F_i V)^*.
+%\end{equation*}
+\end{definition}
+
+\begin{remark}
+Note that we may equip any vector space $V$ with the trivial filtration $F_i V = 0$ for $i \geq 1$. In this case, morphisms, coproducts, tensor products, and duals reduce to their unfiltered definitions. For our purposes, $Y(\mathfrak{gl}_\ell)$ itself and all $Y(\mathfrak{gl}_\ell)$-modules except for the dual Yangian $Y^\vee(\mathfrak{gl}_\ell)$ are equipped with the trivial filtration. We will thus implicitly work inside $\mathsf{cfVect}$ whenever the dual Yangian turns up.
+\end{remark}
+
 \begin{prop}
-The dual Yangian $Y^\vee(\mathfrak{gl}_\ell)$ is a bialgebra with comultiplication and counit
+The dual Yangian $Y^\vee(\mathfrak{gl}_\ell)$ is a Hopf algebra with comultiplication and counit
 \begin{equation*}
 \Delta: t_{ij}^\vee(z) \mapsto \sum_k t_{ik}^\vee(z) \otimes t_{kj}^\vee(z), \quad \epsilon: t_{ij}^\vee(z) \mapsto \delta_{ij}.
 \end{equation*}
@@ -880,16 +905,11 @@ The dual Yangian $Y^\vee(\mathfrak{gl}_\ell)$ is a bialgebra with comultiplicati
 This appears in \cite{article:nazarov:2019}.
 \end{proof}
 
-\begin{remark}
-The bialgebra structure of $Y^\vee(\mathfrak{gl}_\ell)$ extends to the completion $\widehat Y^\vee(\mathfrak{gl}_\ell)$. We may additionally define an antipode on $\widehat Y^\vee(\mathfrak{gl}_\ell)$, see \cite{article:nazarov:2019}, making $\widehat Y^\vee(\mathfrak{gl}_\ell)$ into a Hopf algebra.
-\end{remark}
-
 \begin{prop}
-There is a canonical non-degenerate pairing
+There is a non-degenerate Hopf pairing
 \begin{equation*}
-\langle \cdot,\cdot \rangle: Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to \C,
+\langle \cdot,\cdot \rangle: Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to \C.
 \end{equation*}
-such that multiplications and comultiplications become dual to each other in the sense that $\langle a,bc \rangle = \langle \Delta(a),b \otimes c \rangle$ and $\langle ab,c \rangle = \langle a \otimes b,\Delta(c) \rangle$, understanding that $\langle a \otimes b, c \otimes d \rangle := \langle a,c \rangle \langle b,d \rangle$.
 \end{prop}
 
 \begin{proof}
@@ -907,9 +927,9 @@ This is a result of \cite{article:nazarov:2019}.
 \begin{definition}
 The elements
 \begin{equation}\label{equation:universalRMatrixN}
-\mathcal{R}_N := \sum_{\deg X_i \leq N} X_i^\vee \otimes X_i \in Y^\vee(\mathfrak{gl}_\ell)/F_{N+1} Y^\vee(\mathfrak{gl}_\ell) \otimes F_N Y(\mathfrak{gl}_\ell)
+\mathcal{R}_N := \sum_{\deg X_i \leq N} X_i^\vee \otimes X_i \in Y^\vee(\mathfrak{gl}_\ell)/F_{N+1} Y^\vee(\mathfrak{gl}_\ell) \otimes Y(\mathfrak{gl}_\ell)
 \end{equation}
-define an element $\mathcal{R} \in Y^\vee(\mathfrak{gl}_\ell) \operatorname{\widehat \otimes} Y(\mathfrak{gl}_\ell)$ called \emph{the universal $R$-matrix}.
+define the \emph{canonical element} $\mathcal{R} \in Y^\vee(\mathfrak{gl}_\ell) \otimes Y(\mathfrak{gl}_\ell)$.
 \end{definition}
 
 %\begin{definition}
@@ -1084,7 +1104,7 @@ V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+,
 which we call \emph{fundamental}.
 
 \begin{prop}
-The generator matrix $T(z)$ acts on fundamental monodromy representations via the \emph{monodromy matrix}
+The generator matrix $T(z)$ acts on fundamental monodromy representations via the \emph{monodromy matrix}\index{Monodromy matrix}
 \begin{equation*}
 M(z) := R_{0N}(z-y_N) \cdots R_{01}(z-y_1),
 \end{equation*}
@@ -1371,22 +1391,22 @@ For $\Pi_{t_{[1^k]}}$ and $\Pi_{t_{[k]}}$, we respectively obtain the (anti-)sym
 \Pi_{1...k}^\pm = \frac{1}{k!} \overset{\longrightarrow}{\prod_{i < j}} \bigg( 1 \pm \frac{P_{ij}}{j-i} \bigg) = \frac{1}{k!} \prod_{i=1}^k (1 \pm Y_i).
 \end{equation*}
 where $Y_i$ are the Jucys-Murphy elements. We will also make use of
-\begin{equation*}
-\Pi_{t_{[2,1^{k-1}]}} = \frac{1}{(k+1)!} (k+Y_{k+1}) \prod_{i=1}^k (1-Y_i),
-\end{equation*}
+\begin{equation}\label{equation:hookProjector}
+\Pi_{t_{[2,1^{k-1}]}} = \frac{1}{(k+1)!} (k+Y_{k+1}) \prod_{i=1}^k (1-Y_i) = \frac{1}{k+1} (k + Y_{k+1}) \Pi_{t_{[1^k]}},
+\end{equation}
 where we have used the column tablau. These projectors can be checked to satisfy
 \begin{equation}\label{equation:LRRule}
 \Pi_{t_{[1^k]}} \otimes 1 = \Pi_{t_{[1^{k+1}]}} + \Pi_{t_{[2,1^{k-1}]}},
 \end{equation}
-consistent with the Littlewood-Richardson rule.
+consistent with the Littlewood-Richardson rule for tensor products of Young diagrams.
 \end{example}
 
 \begin{theorem}
 The fusion projectors form a complete set of primitive orthogonal idempotents on $(\C^\ell)^{\otimes k}$ such that
 \begin{equation*}
-L_{t_\lambda} := \Pi_{t_\lambda} (V_{y-\eta c_1}^+ \otimes \cdots V_{y-\eta c_k}^+)
+L_{t_\lambda} := \Pi_{t_\lambda} (V_{y-\eta c_1}^+ \otimes \cdots \otimes V_{y-\eta c_k}^+)
 \end{equation*}
-is a $Y(\mathfrak{gl}_\ell)$-submodule of $V_{y-\eta c_1}^+ \otimes \cdots V_{y-\eta c_k}^+$ isomorphic to $L(\lambda)_y^t$.
+is a $Y(\mathfrak{gl}_\ell)$-submodule of $V_{y-\eta c_1}^+ \otimes \cdots \otimes V_{y-\eta c_k}^+$ isomorphic to $L(\lambda)_y^t$.
 \end{theorem}
 
 \begin{proof}
@@ -1424,11 +1444,11 @@ Consider $\tau_{[1^2]}^g(z)$. We can write this as
 \begin{equation*}
 \tau_{[1^2]}^g(z) = \operatorname{tr}_{t_{[1^2]}} T_{t_{[1^2]}}^g(z) = \operatorname{tr}_{12} \Pi_{t_{[1^2]}} g_2 g_1 T_2(z) T_1(z-\eta).
 \end{equation*}
-In particular, in the fundamental monodromy representation $L(\ydiagram{1})_{y_1}^t \otimes L(\ydiagram{1})_{y_2}^t$, this becomes
+In particular, in the fundamental monodromy representation $V_{y_1}^+ \otimes V_{y_2}^+$, this becomes
 \begin{equation*}
-\tau_{[1^2]}^g(z) = \operatorname{tr}_{12} \Pi_{12}^- g_2 g_1 R_{23}(z-y_1) R_{24}(z-y_2) R_{13}(z-\eta-y_1) R_{14}(z-\eta-y_2).
+\tau_{[1^2]}^g(z) = \operatorname{tr}_{12} \Pi_{12}^- g_2 g_1 R_{23}(z-y_1) R_{24}(z-y_2) R_{13}(z-\eta-y_1) R_{14}(z-\eta-y_2),
 \end{equation*}
-In terms of diagrams, this reads
+which reads
 ~\\
 \begin{center}
 \begin{tikzpicture}
@@ -1454,7 +1474,7 @@ In terms of diagrams, this reads
 \draw[red,dashed] (6.5,-0.5) -- (6.5,1.5);
 \end{tikzpicture}
 \end{center}
-Note that the auxiliary space loops twice around the cylinder, exactly shifting by $\pm \eta$ when crossing the seam.
+in terms of diagrams. Note that the auxiliary space loops twice around the cylinder, exactly shifting by $\pm \eta$ when crossing the seam.
 \end{example}
 
 Further, we see that the highest transfer matrix $\tau_{[1^\ell]}^g(z)$ has a particularly nice description in terms of a Leibniz-type formula:
@@ -1466,15 +1486,19 @@ Further, we see that the highest transfer matrix $\tau_{[1^\ell]}^g(z)$ has a pa
 \end{corollary}
 
 \begin{proof}
-From the previous proposition, we have
+We have
 \begin{equation*}
 \tau_{[1^\ell]}^g(z) = \operatorname{tr}_{t_{[1^\ell]}} T_{t_{[1^\ell]}}^g(z) = \operatorname{tr}_{1...\ell} \Pi_{t_{[1^\ell]}} g_\ell \cdots g_1 T_\ell(z-\eta(\ell-1)) \cdots T_1(z).
 \end{equation*}
-Knowing that $\Pi_{t_{[1^\ell]}} = \sum_\sigma \operatorname{sgn} \sigma \cdot \sigma$, we apply the right hand side to $e_1 \otimes \cdots \otimes e_\ell$ and obtain
+We apply $\Pi_{t_{[1^\ell]}} g_\ell \cdots g_1 T_\ell(z-\eta(\ell-1)) \cdots T_1(z)$ to $e_1 \otimes \cdots \otimes e_\ell$ and obtain
 \begin{equation*}
 \sum_{i_1,...,i_\ell} \Pi_{t_{[1^\ell]}} (\gamma_{i_1} e_{i_1} \otimes \cdots \otimes \gamma_{i_\ell} e_{i_\ell}) \otimes t_{i_\ell,\ell}(z-\eta(\ell-1)) \cdots t_{i_1,1}(z).
 \end{equation*}
-But $\Pi_{t_{[1^\ell]}} (\gamma_{i_1} e_{i_1} \otimes \cdots \otimes \gamma_{i_\ell} e_{i_\ell})$ is only non-zero when the $i_1,...,i_\ell$ define a permutation $\sigma$, in which case it reduces to $\gamma_1 \cdots \gamma_\ell \cdot \operatorname{sgn} \sigma \cdot (e_1 \otimes \cdots \otimes e_\ell)$.
+But $\Pi_{t_{[1^\ell]}} (\gamma_{i_1} e_{i_1} \otimes \cdots \otimes \gamma_{i_\ell} e_{i_\ell})$ is only non-zero when the $i_1,...,i_\ell$ define a permutation $\sigma$, in which case it reduces to $\gamma_1 \cdots \gamma_\ell \cdot \operatorname{sgn} \sigma \cdot (e_1 \otimes \cdots \otimes e_\ell)$. All in all, the trace thus reduces to
+\begin{equation*}
+\sum_\sigma \gamma_1 \cdots \gamma_\ell \cdot \operatorname{sgn} \sigma \cdot t_{\sigma(\ell)\ell}(z-\eta(\ell-1)) \cdots t_{\sigma(1)1}(z),
+\end{equation*}
+which was the claim.
 \end{proof}
 
 \begin{definition}
@@ -1602,7 +1626,7 @@ Since $R_{t_\lambda,t_\mu}(z)$ is generically invertible by the previous proposi
 \end{align*}
 \end{proof}
 
-The functional relations between higher transfer matrices come from the so called \emph{fusion relations}\index{Fusion procedure}, whose categorification are certain short exact sequences of comodules. Of particular importance will be the following short exact sequence:
+The functional relations between higher transfer matrices come from the so called \emph{fusion relations}\index{Fusion procedure}, whose categorification are certain short exact sequences of comodules. Of particular importance is the following short exact sequence:
 \begin{equation*}
 0 \to C([2,1^{k-1}])_\eta^g \to C([1^k])_\eta^g \otimes C(\ydiagram{1})_0^g \to C([1^{k+1}])_0^g \to 0.
 \end{equation*}
@@ -1697,12 +1721,38 @@ The fusion projectors $\Pi_{t_{[2,1^{k-1}]}}$ and $\Pi_{t_{[1^k]}} \otimes 1$ pr
 
 \subsection{Spectral equation}
 
-In this section, we will derive the \emph{spectral equation} for the non-local Hamiltonians of the Heisenberg model from the functional relation (\ref{equation:functionalRelation}). This is where we will see the Lax matrix of the rational Ruijsenaars-Schneider model appear seemingly out of nowhere. We will work along the lines of \cite{book:arutyunov:betheAnsatz}, but our approach is slightly different since we use Yang's convention for $R$-matrices instead of the polynomial convention and work in the $g$-twisted setting. The equations in this subsection are valid only in the monodromy representation $V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$.
+In this section, we will derive the \emph{spectral equation} for the non-local Hamiltonians of the Heisenberg model from the functional relation (\ref{equation:functionalRelation}). This is where we will see the Lax matrix of the rational Ruijsenaars-Schneider model appear seemingly out of nowhere. We will work along the lines of \cite{book:arutyunov:betheAnsatz}, but our approach is slightly different since we use Yang's convention for $R$-matrices instead of the polynomial convention and work in the $g$-twisted setting. The equations in this subsection are to be read as valid in the monodromy representation $V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$ with $y_1,...,y_N$ in generic position, meaning $y_i-y_j \neq 0,...,(\ell-1)\eta$. We start with an important observation about the analytic structure of the higher transfer matrices $\tau_{[1^k]}^g(z)$:
+
+\begin{lemma}\label{lemma:analyticStructure}
+The higher transfer matrix $\tau_{[1^k]}^g(z)$ only has simple poles at $y_1,...,y_N$.
+\end{lemma}
+
+\begin{proof}
+The poles of $\tau_{[1^k]}^g(z)$ can be read off from
+\begin{equation*}
+\tau_{[1^k]}^g(z) = \operatorname{tr}_{1...k} \Pi_{1...k}^- g_k \cdots g_1 M_k(z-(k-1)\eta) \cdots M_2(z-\eta) M_1(z),
+\end{equation*}
+where $M_a(z)$ is the monodromy matrix. It follows  from the analytic structure of the $R$-matrix that $\tau_{[1^k]}(z)$ may at most have simples poles at $y_i - j\eta$ for $i=1,...,N$ and $j=0,...,k-1$ when $y_1,...,y_N$ are in generic position. It remains to show that the residues at $y_i-j\eta$ for $j=1,...,k-1$ vanish. Indeed, let us look at two adjacent monodromy matrices of the form $M_2(z-\eta) M_1(z)$. Introduce the partial monodromy matrix
+\begin{equation*}
+M_a^{[i,j]}(z) := R_{ai}(z-y_i) \cdots R_{aj}(z-y_j)
+\end{equation*}
+and compute
+\begin{align*}
+\operatorname{Res}_{z=y_i-\eta} \Big( M_2(z-\eta) M_1(z) \Big)
+&= M_2^{[N,i+1]}(y_i) \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{1i}^+ M_1^{[i-1,1]}(y_i-\eta) \\
+&= M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) \eta P_{2i} 2 \Pi_{1i}^+ M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
+&= M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{12}^+ \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
+&= \Pi_{21}^+ M_1^{[N,i+1]}(y_i-\eta) M_2^{[N,i+1]}(y_i) 2 \Pi_{12}^+ \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
+&= \Pi_{12}^+ M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{12}^+ \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
+&= \Pi_{12}^+ \operatorname{Res}_{z=y_i-\eta} \Big( M_2(z-\eta) M_1(z) \Big).
+\end{align*}
+It follows that $\operatorname{Res}_{z=y_i-\eta} \big( M_k(z-(k-1)\eta) \cdots M_1(z) \big)$ is symmetric in the indices 1 and 2, forcing $\operatorname{Res}_{z=y_i-\eta} \tau_{[1^k]}^g(z)$ to be zero due to the presence of the antisymmetrizer $\Pi_{1...k}^-$. The same argument also holds for the poles at $y_i-j\eta$ for $j=2,...,k-1$.
+\end{proof}
 
 \begin{lemma}\label{lemma:transferMatrixExpansion}
 Let $\chi_\lambda$ be the character of the highest weight module $L(\lambda)$. Then
 \begin{equation*}
-\tau_\lambda^g(z) = \chi_\lambda(g) + \sum_j \frac{\operatorname{Res}_{z=y_j} \tau_\lambda^g(z)}{z-y_j}.
+\tau_\lambda^g(\infty) = \chi_\lambda(g).
 \end{equation*}
 \end{lemma}
 
@@ -1711,22 +1761,33 @@ For this reason, the higher transfer matrices are called \emph{quantum character
 \end{remark}
 
 \begin{proof}
-This is just the canonical partial fraction decomposition of $\tau_\lambda^g(z)$. To show that this is indeed the case, we need to show that $\tau_\lambda^g(z)$ only has poles at $y_1,...,y_N$ and that $\tau_\lambda^g(\infty) = \chi_\lambda(g)$. (tba) Let us take the column tableau $t_\lambda$, giving
+Let us take the column tableau $t_\lambda$, giving
 \begin{equation*}
 \tau_\lambda^g(\infty) = \operatorname{tr}_{t_\lambda} T_{t_\lambda}^g(\infty).
 \end{equation*}
 But $T_{t_\lambda}^g(\infty)$ is just $g$, yielding
 \begin{equation*}
-\tau_{[1^k]}^g(\infty) = \operatorname{tr}_{t_\lambda} g_{t_\lambda},
+\tau_\lambda^g(\infty) = \operatorname{tr}_{t_\lambda} g_k \cdots g_1,
 \end{equation*}
 which is exactly the character $\chi_\lambda(g)$ of the highest weight module $L(\lambda)$.
+\end{proof}
+
+\begin{lemma}
+We have
+\begin{equation*}
+\tau_{[1^k]}^g(z) = e_k(g) + \sum_i \frac{\operatorname{Res}_{z=y_i} \tau_{[1^k]}^g(z)}{z-y_i}.
+\end{equation*}
+\end{lemma}
+
+\begin{proof}
+This is just the canonical partial fraction decomposition of $\tau_{[1^k]}^g(z)$, taking into account that $\tau_{[1^k]}^g(z)$ only has simple poles at $y_1,...,y_N$ and fulfills $\tau_{[1^k]}^g(\infty) = \chi_{[1^k]}(g)$, which is nothing but the $k$th elementary symmetric polynomial $e_k(g)$.
 \end{proof}
 
 \begin{lemma}\label{lemma:recursionRelation}
 We have the recursion relation
 \begin{equation*}
 \operatorname{Res}_{z=y_i} \tau_{[1^{k+1}]}^g(z)
-= \chi_{[1^k]}(g) H_i + \sum_j \frac{\eta H_i}{y_i-y_j-\eta} \operatorname{Res}_{z=y_j} \tau_{[1^k]}^g(z).
+= e_k(g) H_i + \sum_j \frac{\eta H_i}{y_i-y_j-\eta} \operatorname{Res}_{z=y_j} \tau_{[1^k]}^g(z).
 \end{equation*}
 \end{lemma}
 
@@ -1735,31 +1796,28 @@ The functional relation (\ref{equation:functionalRelation}) can be rewritten as
 \begin{equation*}
 \tau_{[1^{k+1}]}^g(z) = \tau_{[1^k]}^g(z-\eta) \tau_{\ydiagram{1}}^g(z) - \tau_{[2,1^{k-1}]}^g(z-\eta).
 \end{equation*}
-Let us take the residue at $z=y_i$. We remark that $\tau_{[1^k]}^g(z-\eta)$ does not have a pole at $y_i$, which can be seen immediately by expanding it in terms of $R$-matrices using the fusion procedure. On the other hand, taking the row tableau $t_{[2,1^{k-1}]}$, we find
-\begin{align*}
-\tau_{[2,1^{k-1}]}^g(z-\eta)
-&= \operatorname{tr}_{1...k+1} \Pi_{t_{[2,1^{k-1}]}} g_{k+1} \cdots g_1 M_{k+1}(z-k\eta) \cdots M_3(z-2\eta) M_2(z) M_1(z-\eta).
-\end{align*}
-Introduce the partial monodromy matrix
-\begin{equation*}
-M_a^{[i,j]}(z) := R_{ai}(z-y_i) \cdots R_{aj}(z-y_j)
-\end{equation*}
-and compute
-\begin{align*}
-\operatorname{Res}_{z=y_i} M_2(z) M_1(y_i-\eta)
-&= M_2^{[N,i+1]}(y_i) \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{1i}^+ M_1^{[i-1,1]}(y_i-\eta) \\
-&= M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) \eta P_{2i} 2 \Pi_{1i}^+ M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
-&= M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{12}^+ \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
-&= \Pi_{21}^+ M_1^{[N,i+1]}(y_i-\eta) M_2^{[N,i+1]}(y_i) 2 \Pi_{12}^+ \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
-&= \Pi_{12}^+ M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{12}^+ \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
-&= \Pi_{12}^+ \operatorname{Res}_{z=y_i} M_2(z) M_1(y_i-\eta).
-\end{align*}
-But $\Pi_{t_{[2,1^{k-1}]}}$ antisymmetrizes over the indices 1 and 2, implying $\Pi_{t_{[2,1^{k-1}]}} \Pi_{12}^+ = 0$ and thus $\operatorname{Res}_{z=y_i} \tau_{[2,1^{k-1}]}^g(z-\eta) = 0$. With this, we finally arrive at
+Let us take the residue at $z=y_i$. Recall that $\tau_{[1^k]}^g(z-\eta)$ does not have a pole at $y_i$ by lemma \ref{lemma:analyticStructure}. If show the same for $\tau_{[2,1^{k-1}]}^g(z-\eta)$, we arrive at
 \begin{equation*}
 \operatorname{Res}_{z=y_i} \tau_{[1^{k+1}]}^g(z)
-= \tau_{[1^k]}^g(y_i-\eta) \operatorname{Res}_{z=y_i} \tau_{\ydiagram{1}}^g(z),
+= \tau_{[1^k]}^g(y_i-\eta) H_i,
 \end{equation*}
 such that lemma \ref{lemma:transferMatrixExpansion} yields the claim.
+%Indeed, taking the row tableau $t_{[2,1^{k-1}]}$, we get
+%\begin{align*}
+%\tau_{[2,1^{k-1}]}^g(z-\eta)
+%&= \operatorname{tr}_{1...k+1} \Pi_{t_{[2,1^{k-1}]}} g_{k+1} \cdots g_1 M_{k+1}(z-k\eta) \cdots M_3(z-2\eta) M_2(z) M_1(z-\eta).
+%\end{align*}
+%But
+%\begin{align*}
+%&\operatorname{Res}_{z=y_i} M_{k+1}(z-k\eta) \cdots M_3(z-2\eta) M_2(z) M_1(z-\eta) \\
+%&= M_{k+1}^{[N,i+1]}(z-k\eta) \cdots M_3^{[N,i+1]}(y_i-2\eta) M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) \mathbf{R} M_{k+1}^{[i-1,1]}(z-k\eta) \cdots M_3^{[i-1,1]}(y_i-2\eta) M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta)
+%\end{align*}
+Indeed, taking the column tableau $t_{[2,1^{k-1}]}$, we get
+\begin{align*}
+\tau_{[2,1^{k-1}]}^g(z)
+&= \operatorname{tr}_{1...k+1} \Pi_{t_{[2,1^{k-1}]}} g_{k+1} \cdots g_1 M_{k+1}(z+\eta) M_k(z-(k-1)\eta) \cdots M_2(z-\eta) M_1(z).
+\end{align*}
+The combination $M_2(z-\eta) M_1(z)$ again gives a vanishing residue at $z=y_i-\eta$ by the argument of lemma \ref{lemma:analyticStructure} using the identity $\Pi_{t_{[2,1^{k-1}]}} \Pi_{12}^+ = 0$, which follows from (\ref{equation:hookProjector}).
 \end{proof}
 
 In matrix notation, the previous lemma reads
@@ -1770,7 +1828,7 @@ In matrix notation, the previous lemma reads
 \operatorname{Res}_{z=y_N} \tau_{[1^{k+1}]}^g(z)
 \end{pmatrix}
 =
-\chi_{[1^k]}(g)
+e_k(g)
 \begin{pmatrix}
 H_1 \\
 \vdots \\
@@ -1794,37 +1852,36 @@ Iterating the matrix equation and combining with the formula for the quantum det
 \begin{theorem}[Spectral equation]\label{theorem:spectralEq}
 The non-local Hamiltonians $H_1,...,H_N$ of the spin chain fulfill the \emph{spectral equation}
 \begin{equation}\label{equation:spectralEq}
-\left( \sum_{k=0}^\ell \chi_{[1^{\ell-k}]}(g) (-L^t)^k \right)
+\sum_{k=0}^\ell e_{\ell-k}(g) (-L^t)^k
 \begin{pmatrix}
-\prod_{j \neq 1} \frac{y_1-y_j-\eta}{y_1-y_j} \\
-\vdots \\
-\prod_{j \neq N} \frac{y_N-y_j-\eta}{y_N-y_j}
+b_1 \\ \vdots \\ b_N
 \end{pmatrix}
-= 0.
+= 0,
 \end{equation}
+where $b_i = \prod_{i \neq j} \frac{y_i-y_j-\eta}{y_i-y_j}$.
 \end{theorem}
 
 \begin{proof}
-We have $\operatorname{qdet} T(z) = \prod_k \frac{z-y_k-\eta}{z-y_k}$, so that $\operatorname{Res}_{z=y_j} \operatorname{qdet} T(z) = -\eta \prod_{j \neq k} \frac{y_j-y_k-\eta}{y_j-y_k}$. On the other hand, we have $L = CH \Leftrightarrow H = (-L^t) (-C^t)^{-1}$, where $C_{ij} = \frac{\eta}{y_i-y_j+\eta}$ is the Cauchy matrix and $H = \operatorname{diag}(H_1,...,H_N)$. Iterating the recursion relation from lemma \ref{lemma:recursionRelation} until we reach the quantum determinant $\tau_{[1^\ell]}^g(z) = \det g \operatorname{qdet} T(z)$ yields
+We have $\operatorname{qdet} T(z) = \prod_k \frac{z-y_k-\eta}{z-y_k}$, so that $\operatorname{Res}_{z=y_j} \operatorname{qdet} T(z) = -\eta b_j$. On the other hand, we have $L = CH \Leftrightarrow H = (-L^t) (-C^t)^{-1}$, where $C_{ij} = \frac{\eta}{y_i-y_j+\eta}$ is the Cauchy matrix and $H = \operatorname{diag}(H_1,...,H_N)$. Iterating the recursion relation from lemma \ref{lemma:recursionRelation} until we reach the quantum determinant $\tau_{[1^\ell]}^g(z) = e_\ell(g) \operatorname{qdet} T(z)$ yields
 \begin{equation*}
-\chi_{[1^\ell]}(g)
+e_\ell(g)
 \begin{pmatrix}
 \operatorname{Res}_{z=y_1} \operatorname{qdet} T(z) \\ \vdots \\ \operatorname{Res}_{z=y_N} \operatorname{qdet} T(z)
 \end{pmatrix}
-= \sum_{k=1}^\ell \chi_{[1^{\ell-k}]}(g) (-L^t)^{k-1}
+= \sum_{k=1}^\ell e_{\ell-k}(g) (-L^t)^{k-1}
 \begin{pmatrix}
 H_1 \\ \vdots \\ H_N
 \end{pmatrix},
 \end{equation*}
 which implies
 \begin{equation*}
-\left( \sum_{k=0}^\ell \chi_{[1^{\ell-k}]}(g) (-L^t)^k \right) (C^t)^{-1} e = 0
+\sum_{k=0}^\ell e_{\ell-k}(g) (-L^t)^k (C^t)^{-1} e = 0
 \end{equation*}
 due to $H e = (-L^t) (-C^t)^{-1} e$, where $e = (1,...,1)$, so that $(C^t)^{-1} e$ is the vector from (\ref{equation:spectralEq})
 \end{proof}
 
 \begin{remark}
-Recall that $\chi_{[1^k]}(g) = e_k(\gamma_1,...,\gamma_\ell)$. It becomes clear that the Cayley-Hamilton form of the spectral equation is consistent with the findings of \cite{article:gorsky:2014}, where it is shown that the twist parameters $\gamma_1,...,\gamma_\ell$ give the eigenvalues of the Lax matrix $L$ with multiplicities given by the eigenvalues of the occupation number operators\index{Occupation number operators}
+The Cayley-Hamilton form of the spectral equation is consistent with the findings of \cite{article:gorsky:2014}, where it is shown that the twist parameters $\gamma_1,...,\gamma_\ell$ give the eigenvalues of the Lax matrix $L$ with multiplicities given by the eigenvalues of the occupation number operators\index{Occupation number operators}
 \begin{equation}\label{equation:occupationNumber}
 M_a = \sum_{i=1}^N (e_{aa})_i, \quad a=1,...,\ell.
 \end{equation}
@@ -2011,7 +2068,7 @@ With this definition, we are finally ready to show explicitly how the preaffine 
 We are now ready to show how the Hamiltonian operators acting on the wave function representation $\C[y_1,...,y_N]$ of the quantum rational Ruijsenaars-Schneider model produce the Hamiltonian operators on the Heisenberg spin chain via the preaffine Drinfeld functor. This result rests on the following key observation:
 
 \begin{lemma}\label{lemma:keyLemma}
-On $(\C^\ell)^{\otimes N} \otimes_{S_N} \C[y_1,...,y_N]$, we have
+On $D_{\ell,N}^g(\C[y_1,...,y_N])$, we have
 \begin{equation*}
 g_i v \otimes X_i f = \check R_{i,i-1}(y_i-y_{i-1}) \cdots \check R_{i1}(y_i-y_1) (g_i \otimes e^{\I \hbar \partial_i}) \check R_{iN}(y_i-y_N) \cdots \check R_{i,i+1}(y_i-y_{i+1}) (v \otimes f).
 \end{equation*}
@@ -2057,7 +2114,7 @@ acts on $D_{\ell,N}^g(\C[y_1,...,y_N])$ as the transfer matrix $\tau^g(z)$ when 
 \end{theorem}
 
 \begin{proof}
-We compare the residues. By lemma \ref{lemma:keyLemma}, we see that $\bigg( \prod_{k \neq i} \frac{y_i-y_k-\eta}{y_i-y_k} \bigg) X_i$ acts as
+We compare the residues. By lemma \ref{lemma:keyLemma}, we see that $\Big( \prod_{k \neq i} \frac{y_i-y_k-\eta}{y_i-y_k} \Big) X_i$ acts as
 \begin{equation*}
 R_{i,i-1}(y_i-y_{i-1}) \cdots R_{i1}(y_i-y_1) (g_i \otimes e^{\I \hbar \partial_i}) R_{iN}(y_i-y_N) \cdots R_{i,i+1}(y_i-y_{i+1}),
 \end{equation*}
@@ -2080,15 +2137,18 @@ non-local Hamiltonians $\check H_i$ & Macdonald operators $X_i$ at $\hbar = 0$ \
 \hline
 \end{tabular}
 \end{center}
-We remark that we may think of both models as two aspects of the same model: The rational Ruijsenaars-Schneider model with spin. Its Hilbert space is just
+
+\begin{remark}
+We may think of both models as two aspects of one and the same model: The rational Ruijsenaars-Schneider model with spin, which is the rational limit of the trigonometric case described in \cite{article:lamers:2022}. Its Hilbert space is just
 \begin{equation*}
 D_{\ell,N}^g(\C[y_1,...,y_N]) = (\C^\ell)^{\otimes N} \otimes_{S_N} \C[y_1,...,y_N],
 \end{equation*}
-which evidently has two parts: The first tensorand is the Hilbert space of $N$ spins and the second tensorand is the Hilbert space of wave functions of $N$ particles. However, we may equivalently think of it as the Hilbert space of $N$ particles with spin.
+which evidently has two parts: The first tensorand is the Hilbert space of $N$ spins and the second tensorand is the Hilbert space of wave functions of $N$ particles. We let the usual Hamiltonians of the rational Ruijsenaars-Schneider model act on the wave function part, which intertwines with the spin chain part because we are tensoring over $S_N$. This means that an exchange of two particles acts non-trivially on their spins via the $R$-matrix.
+\end{remark}
 
 \subsection{Higher spin chain}
 
-The way we have introduced the quantum-classical duality between the Heisenberg and Ruijse\-naars-Schneider models easily lends itself to a generalization to spins in non-fundamental representations: Consider the spin chain with monodromy representation
+The way we have introduced the quantum-classical duality between the inhomogeneous Heisenberg and rational Ruijsenaars-Schneider models easily lends itself to a generalization to spins in non-fundamental representations: Consider the spin chain with monodromy representation
 \begin{equation*}
 L(\lambda^{(1)})_{y_1}^t \otimes \cdots \otimes L(\lambda^{(N)})_{y_N}^t
 \end{equation*}
@@ -2098,31 +2158,40 @@ S(\lambda^{(1)})_{y_1} \otimes_{\dot H_*} \cdots \otimes_{\dot H_*} S(\lambda^{(
 \end{equation*}
 under the Drinfeld functor.
 
-Let us look at a single site $L(\lambda)_y^t$ with a Young diagram $\lambda$ of $k$ boxes. Take the Specht module $S(\lambda)$ and pull back along the evaluation morphism at $y \in \C$. This yields the $\dot H_k$-module $S(\lambda)_y$ with $y_1,...,y_k$ acting as $y - \eta c_1,...,y-\eta c_k$ on the basis vector $v_t$ labeled by a standard Young tableau $t$ of shape $\lambda$ with content vector $(c_1,...,c_k)$. We also know that $S(\lambda)_y$ maps to $L(\lambda)_y^t$ under the Drinfeld functor. Note that this is exactly in line with the fusion procedure, taking $y_i \to y - \eta c_i$. We conclude that a single site with spin representation labeled by $\lambda$ is equivalently a \emph{stack of $k$ particles} that sit at relative positions determined by content vectors for standard Young tableaux of shape $\lambda$. A general quantum state is a superposition of such configurations and transforms under $S_N$ in the representation given by the Specht module $S(\lambda)$, \emph{i.e.} the particle wave function of the stack satisfies exchange statistics determined by the Specht module $S(\lambda)$.
+Let us look at a single site $L(\lambda)_y^t$ with a Young diagram $\lambda$ of $k$ boxes. Take the Specht module $S(\lambda)$ and pull back along the evaluation morphism at $y \in \C$. This yields the $\dot H_k$-module $S(\lambda)_y$ with $y_1,...,y_k$ acting as $y - c_1 \eta,...,y-c_k \eta$ on the basis vector $v_t$ labeled by a standard Young tableau $t$ of shape $\lambda$ with content vector $(c_1,...,c_k)$. We also know that $S(\lambda)_y$ maps to $L(\lambda)_y^t$ under the Drinfeld functor. Note that this is exactly in line with the fusion procedure, taking $y_i \to y - \eta c_i$. We conclude that a single site with spin representation labeled by $\lambda$ is equivalently a \emph{stack of $k$ particles} that sit at relative positions determined by content vectors for standard Young tableaux of shape $\lambda$. A general quantum state is a superposition of such configurations and transforms under $S_N$ in the representation given by the Specht module $S(\lambda)$, \emph{i.e.} the particle wave function of the stack satisfies exchange statistics determined by the Specht module $S(\lambda)$.
 
 What is the correspondence for Hamiltonians? On the spin side, %it is clear that we should again look at the poles of the transfer matrix $\tau^g(z)$, which in our chosen monodromy representation has the form
 %\begin{equation*}
 %\tau^g(z) = \operatorname{tr}_0 R_{0\lambda^{(N)}}(z-y_N) \cdots R_{0\lambda^{(1)}}(z-y_1),
 %\end{equation*}
-let us take the generalization
+we consider
 \begin{equation*}
-\mathbf{H}_i := R_{\lambda^{(i)}\lambda^{(i-1)}}(y_i-y_{i-1}) \cdots R_{\lambda^{(i)}\lambda^{(1)}}(y_i-y_1) g_i R_{\lambda^{(i)}\lambda^{(N)}}(y_i-y_N) \cdots R_{\lambda^{(i)}\lambda^{(i+1)}}(y_i-y_{i+1})
+\mathbf{\check H}_i := R_{\lambda^{(i)}\lambda^{(i-1)}}(y_i-y_{i-1}) \cdots R_{\lambda^{(i)}\lambda^{(1)}}(y_i-y_1) g_i R_{\lambda^{(i)}\lambda^{(N)}}(y_i-y_N) \cdots R_{\lambda^{(i)}\lambda^{(i+1)}}(y_i-y_{i+1})
 \end{equation*}
-where $R_{\lambda\mu}(z-w)$ denotes the higher $R$-matrix (\ref{eq:higherRMatrix}) for the Young diagram $\lambda^{(i)}$ of $k$ boxes with a chosen standard Young tableau. These are the \emph{higher non-local Hamiltonians}. %Thus, we find that $\tau^g(z)$ obtains poles at $z = y_i-\eta c_j$, but these in general might not be simple. The relevant Hamiltonians then are the coefficients of the principal parts at the poles $z = y_i-\eta c_j$. In general, these have the form
+where $\check R_{\lambda^{(i)}\lambda^{(j)}}(y_i-y_j)$ denotes the higher $R$-matrix (\ref{eq:higherRMatrix}) for the Young diagram $\lambda^{(i)}$ and $\lambda^{(j)}$ in the unitary convention. These are the \emph{higher non-local Hamiltonians}. %Thus, we find that $\tau^g(z)$ obtains poles at $z = y_i-\eta c_j$, but these in general might not be simple. The relevant Hamiltonians then are the coefficients of the principal parts at the poles $z = y_i-\eta c_j$. In general, these have the form
 %\begin{align*}
 %R_{\lambda^{(i)}\lambda^{(i-1)}}(y_i-y_{i-1}) \cdots R_{\lambda^{(i)}\lambda^{(1)}}(y_i-y_1) \times W \times R_{\lambda^{(i)}\lambda^{(N)}}(y_i-y_N) \cdots R_{\lambda^{(i)}\lambda^{(i+1)}}(y_i-y_{i+1}),
 %\end{align*}
 %where $W$ is some operator acting on $L(\lambda^{(i)})_{y_i}^t$.
-
-On the particle side, we may similarly introduce \emph{higher $x$-operators}
-\begin{equation*}
-x_{\lambda \mu} := \overleftarrow{\prod_i} \overrightarrow{\prod_j} x_{ij} \in \dot H_{k+l}
-\end{equation*}
-and define higher Macdonald operators
+On the particle side, we may similarly introduce \emph{higher $x$-operators} $x_{\lambda \mu} := \overleftarrow{\prod_i} \overrightarrow{\prod_j} x_{ij}$ and define \emph{higher Macdonald operators}
 \begin{equation*}
 \mathbf{X}_i := x_{\lambda^{(i)}\lambda^{(i-1)}} \cdots x_{\lambda^{(i)}\lambda^{(1)}} e^{\I\hbar\partial_i} x_{\lambda^{(i)}\lambda^{(N)}} \cdots x_{\lambda^{(i)}\lambda^{(i+1)}}.
 \end{equation*}
-Letting $\mathbf{\check H}_i$ denote the higher non-local Hamiltonian $\mathbf{H}_i$ with unitary normalizations, we obtain the following correspondence:
+They relate as follows:
+
+\begin{prop}
+The higher $x$-operators $x_{\lambda^{(i)}\lambda^{(j)}}$ act on $D_{\ell,N}^g(\C[y_1,...,y_N])$ in the same way as the higher $R$-matrix $\check R_{\lambda^{(i)}\lambda^{(j)}}(y_i-y_j)$.
+\end{prop}
+
+\begin{proof}
+This follows directly from lemma \ref{lemma:keyLemma}.
+\end{proof}
+
+\begin{corollary}
+The symmetric polynomials $e_k(\mathbf{X}_1,...,\mathbf{X}_N)$ act on $D_{\ell,N}^g(\C[y_1,...,y_N])$ in the same way as $e_k(\mathbf{\check H}_1,...,\mathbf{\check H}_N)$ when $\hbar = 0$.
+\end{corollary}
+
+This allows us to state the following correspondence:
 
 \begin{center}
 \begin{tabular}{|r||l|}
@@ -2142,16 +2211,16 @@ Let us look at the two site spin chain
 \begin{equation*}
 L(\ydiagram{2})_{y_1}^t \otimes L(\ydiagram{2})_{y_2}^t \subseteq V_{y_1}^+ \otimes V_{y_1'}^+ \otimes V_{y_2}^+ \otimes V_{y_2'}^+.
 \end{equation*}
-for $y_i' = y_i-\eta$ with projector $\Pi_{\ydiagram{2}} = (1 + (1 \ 2))/2$ for $\ell=2$. Solving this case explicitly using the spectral equation derived earlier proves difficult for the following reasons:
+for $y_i' = y_i-\eta$ with projector $\Pi_{\ydiagram{2}} = (1 + (1 \ 2))/2$ for $\ell=2$. Explicitly solving for the spectrum of this spin chain using the spectral equation derived earlier proves difficult for the following reasons:
 \begin{enumerate}[label=(\roman*)]
 \item We cannot take the limit $y_i' \to y_i - \eta$ in the spectral equation, since its coefficients have a pole at $y_i'=y_i-\eta$.
-\item We might try to solve the spectral equation for generic inhomogeneities and \emph{then} take the limit $y_i' \to y_i - \eta$ in the solution we obtained. However, the spectral equation for a spin chain with four sites and generic inhomogeneities contains polynomials in four variables and degree $\ell = 2$. Solving such an equation analytically is computationally intractable.
+\item We might try to solve the spectral equation for generic inhomogeneities and \emph{then} take the limit $y_i' \to y_i - \eta$ in the solution we obtained. However, the spectral equation for a spin chain with four sites and generic inhomogeneities contains polynomials in four variables and degree $\ell = 2$. Solving such an equation analytically is already computationally intractable, yielding expressions spanning multiple megabytes in Mathematica.
 \end{enumerate}
 Instead, solving the Wronskian equation \cite{book:arutyunov:betheAnsatz} for the $N=4$ $\mathfrak{gl}_2$ spin chain with generic inhomogeneities and performing the fusion procedure as well as going to the homogeneous limit yields the solution
 \begin{equation*}
 (z-\eta)^2 (2 z^2 + 4 \eta z + 4 \eta^2)
 \end{equation*}
-for the $\ydiagram{4}$-multiplet, which is exactly correct (compare \cite{book:arutyunov:betheAnsatz}, section 8.7) up to the prefactor $(z-\eta)^2$, which results from the polynomial convention used in \emph{loc. cit.}
+for the $\ydiagram{4}$-multiplet, which is exactly correct (compare \cite{book:arutyunov:betheAnsatz}, section 8.7) up to the prefactor $(z-\eta)^2$, which results from the polynomial convention used in \emph{loc. cit.} (tba)
 \end{example}
 
 \section{$S$-duality}
@@ -2183,7 +2252,7 @@ LD_{\ell,N}: \ddot H_N\mathsf{Mod} \to LY(\mathfrak{gl}_\ell) \mathsf{Mod}.
 \end{equation*}
 \end{definition}
 
-We can now identify the Hamiltonians of the quantum rational Ruijsenaars-Schneider model and the quantum trigonometric Calogero-Moser model as elements of the loop Yangian, or more precisely of the centers of the loop algebra and the Yangian:
+We can now identify the Hamiltonians of the quantum rational Ruijsenaars-Schneider model and the quantum trigonometric Calogero-Moser model as elements of the loop Yangian, or more precisely of the centers of the loop algebra and the Yangian sitting inside the loop Yangian, respectively:
 
 \begin{prop}
 On $LD_{\ell,N}(\C[y_1,...,y_N])$, we have
@@ -2328,7 +2397,7 @@ Summing over $i$ cancels the last term, giving
 where in the last step we have used that $Q_{ij} + Q_{ji} = 0$.
 \end{proof}
 
-Unfortunately, the higher Hamiltonians of the trigonometric Calogero-Moser model significantly grow in complexity, often positioning statements about them in the conjectural realm. Here, we see a reflection of this phenomenon, since it becomes hard to see how the $Q$-operator enters into higher Hamiltonians. In contrast, it is immediate that the $Q$-operators cancel for the lowest Hamiltonian $\delta^{-1} C_1 \delta$. Nonetheless, the general findings of quantum-classical duality between the trigonometric Calogero-Moser model and the trigonometric Gaudin model in section 4 of \cite{article:zabrodin:2017} lead us to conjecture that the higher Hamiltonians $\delta^{-1} C_k \delta$ yield a generating set of symmetric polynomials in $G_1,...,G_N$ modulo polynomials in the occupation number operators (\ref{equation:occupationNumber}).
+Unfortunately, the higher Hamiltonians of the trigonometric Calogero-Moser model significantly grow in complexity, often positioning statements about them in the conjectural realm. Here, we see a reflection of this phenomenon, since it becomes very hard to see how the $Q$-operator enters into higher Hamiltonians. In contrast, it is immediate that the $Q$-operators cancel for the lowest Hamiltonian $\delta^{-1} C_1 \delta$. Nonetheless, the more general findings of quantum-classical duality between the trigonometric Calogero-Moser model and the trigonometric Gaudin model in section 4 of \cite{article:zabrodin:2017} lead us to conjecture that the higher Hamiltonians $\delta^{-1} C_k \delta$ yield a generating set of symmetric polynomials in $G_1,...,G_N$ modulo polynomials in the occupation number operators (\ref{equation:occupationNumber}).
 
 %\begin{equation*}
 %\sum_i G_i^2 = \sum_i \sum_{i \neq j} \sum_{i \neq k} \left( \frac{X_i+X_j}{X_i-X_j} \frac{X_i+X_k}{X_i-X_k} P_{ij} P_{ik} + \frac{X_i+X_j}{X_i-X_j} P_{ij} Q_{ik} + \frac{X_i+X_k}{X_i-X_k} Q_{ij} P_{ik} + Q_{ij} Q_{ik} \right)
@@ -2342,58 +2411,146 @@ The aim of this section is to reformulate Yangian Schur-Weyl duality in terms of
 
 \subsection{From diagrams to field theory}
 
-Since we are working in four total dimensions, the diagrams on cylinders suggest that we should assign a bicategory to the direct product of a formal punctured disc and a point $D^\times \times *$, which should be seen as a one-dimensional object. We also know that these are labeled by representations $V_y^+$ of the Yangian, so we conclude that this bicategory should be the delooping of the monoidal category $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$. It remains to determine what should be assigned to $D^\times \times S_*^1$, where $S_*^1$ is a circle with basepoint. By general abstract arguments from topological quantum field theory, this will be given by the zeroth Hochschild homology of $Y(\mathfrak{gl}_\ell)$, which is the dual Bethe algebra $C(\mathfrak{gl}_\ell)$.
+Since we are working in four total dimensions, the diagrams on cylinders suggest the following scheme for our functorial quantum field theory:
+~\\
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+space & dimensionality & valued in \\
+\hline
+$C \times S_*^1 \times [0,1]$ & 4-dimensional & vectors \\
+$C \times S_*^1$ & 3-dimensional & modules \\
+$D^\times \times S_*^1 \times [0,1]$ & 3-dimensional & modules \\
+%$\P^1 \setminus \{ \infty \} \times *$ & 2-dimensional & algebras \\
+$D^\times \times S_*^1$ & 2-dimensional & algebras/categories \\
+$D^\times \times *$ & 1-dimensional & 2-algebras/2-categories \\
+\hline
+\end{tabular}
+\end{center}
+~\\
+Here $C$ is a complex curve punctured by ingoing and outgoing points, $D^\times$ denotes the formal punctured disc and $S_*^1$ denotes a circle marked with a basepoint. The module assigned to $D^\times \times S_*^1 \times [0,1]$ will be a bimodule over the algebra assigned to $D^\times \times S_*^1$, which in turn can be computed in terms of the 2-category assigned to $D^\times \times *$. Since the diagrams on cylinders label $D^\times \times *$ with a representation of the Yangian, our functorial quantum field theory should assign the delooping $\mathcal{B}Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ of the monoidal category of modules over the Yangian to $D^\times \times *$. From this, let us compute what should be assigned to $D^\times \times S_*^1$ by cutting $S_*^1$ into a line marked with the basepoint on the interior and an unmarked line as follows:
+~\\
+\begin{center}
+\begin{tikzpicture}
+\draw (0,0) circle (0.75cm);
+\filldraw (0,-0.75cm) circle (2pt);
+\node at (1.5,0) {$\longrightarrow$};
+\draw (3.75,0.25) arc (0:180:0.75cm);
+\draw (3.75,-0.25) arc (0:-180:0.75cm);
+\filldraw (3,-1) circle (2pt);
+\end{tikzpicture}
+\end{center}
+~\\
+If we insert a $Y(\mathfrak{gl}_\ell)$-module $V$ at the basepoint, the marked line gives the 2-functor that sends $\mathsf{Vect}$ to the category $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\text{op} \boxtimes Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ and $\C$ to $V^\vee \boxtimes V$, while the unmarked line is nothing but the Hom 2-functor
+\begin{equation*}
+\mathcal{B}Y(\mathfrak{gl}_\ell)\mathsf{Mod}^\text{op} \boxtimes \mathcal{B}Y(\mathfrak{gl}_\ell)\mathsf{Mod} \to \mathcal{R}ex,
+\end{equation*}
+which evaluates to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ on the unique object $*$ of $\mathcal{B}Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ and sends any two $Y(\mathfrak{gl}_\ell)$-modules $V,V'$ to the functor
+\begin{equation*}
+\Hom_{\mathcal{B}Y(\mathfrak{gl}_\ell)\mathsf{Mod}}(V,V'): \Hom_{\mathcal{B}Y(\mathfrak{gl}_\ell)\mathsf{Mod}}(*,*) \to \Hom_{\mathcal{B}Y(\mathfrak{gl}_\ell)\mathsf{Mod}}(*,*), \quad U \mapsto V' \otimes U \otimes V
+\end{equation*}
+which represents the $Y(\mathfrak{gl}_\ell)$-module $V' \otimes V$. We conclude that the (co)algebra corresponding to $D^\times \times S_*^1$ with $V$ inserted at the basepoint is the coalgebra $V \otimes V^\vee$. To get rid of the dependence on $V$, we should take the coend
+\begin{equation*}
+\int^{V \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}} V \otimes V^\vee.
+\end{equation*}
+
+This gives a heuristic argument for assigning the coend $\int^{V \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}} V \otimes V^\vee$ to $D^\times \times S_*^1$. However, for technical reasons, it will be necessary to work inside the category $\mathsf{cfVect}$ (see definition \ref{definition:cfVect}) and replace the coend by the \emph{universal coacting object}:
+
+\begin{definition}
+Let $\mathsf{C}$ be a monoidal category. A \emph{coacting coalgebra for $\mathsf{C}$} is a coalgebra $L'$ with coactions $V \to L' \otimes V$ for all $V \in \mathsf{C}$ such that
+\begin{center}
+\begin{tikzcd}
+V \arrow{r} \arrow{d}{f} & L' \otimes V \arrow{d}{f} \\
+W \arrow{r} & L' \otimes W
+\end{tikzcd}
+\end{center}
+commutes for all morphisms $f: V \to W$. A \emph{universal} coacting coalgebra $L$ has unique maps $\psi: L \to L'$ to all other coacting coalgebras that commute with the coactions. It is unique up to unique isomorphism.
+\end{definition}
+
+This extends the definition of the coend $\int^{V \in \mathsf{C}} V \otimes V^\vee$ to monoidal categories $\mathsf{C}$ that are not necessarily rigid. We now make the following observation:
+
+%that we should assign a 2-categorical object to the direct product of a formal punctured disc and a point $D^\times \times *$, which should be seen as a one-dimensional object, as well as a 1-categorical object to $D^\times \times S_*^1$, where $S_*^1$ is a circle marked with a basepoint.
+%
+% We also know that this is labeled by a representation $V_y^+$ of the Yangian, so we conclude that this bicategory should be the delooping of the monoidal category $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$. It remains to determine what should be assigned to $D^\times \times S_*^1$, where $S_*^1$ is a circle marked with a basepoint. By general abstract arguments from the theory of factorization algebras and topological quantum field theory recounted in \cite{article:costello:2013}, this will be given by the \emph{dual Bethe subalgebra} $C(\mathfrak{gl}_\ell)$.
 %a sensible guess would be the vertical trace
 %\begin{equation*}
 %\operatorname{Tr}(Y(\mathfrak{gl}_\ell)\mathsf{Mod}) := \int^{V \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}} \Hom_{Y(\mathfrak{gl}_\ell)}(V,V).
 %\end{equation*}
 %We would expect that this coend is given by the invariants of some kind of coadjoint representation of the Yangian. Thus, the best candidate would be the dual Bethe subalgebra $C(\mathfrak{gl}_\ell)$ of the dual Yangian $Y^\vee(\mathfrak{gl}_\ell)$. Indeed, we have:
-
-\begin{lemma}
-The map
-\begin{equation*}
-\delta: V_y^+ \to Y^\vee(\mathfrak{gl}_\ell) \operatorname{\widehat{\otimes}} V_y^+, \quad v \mapsto T^\vee(y) (1 \otimes v), \quad e_j \mapsto \sum_i t_{ij}(y) \otimes e_i,
-\end{equation*}
-equips $V_y^+$ with the structure of a $Y^\vee(\mathfrak{gl}_\ell)$-comodule internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$.
-\end{lemma}
-
-\begin{proof}
-The fact that this be $Y(\mathfrak{gl}_\ell)$-linear means that $T_2(z)$ has to act as
-\begin{equation*}
-T_1^\vee(y) \mapsto R_{12}(y-z) T_1^\vee(y) R_{12}(z-y).
-\end{equation*}
-tba
-\end{proof}
-
-\begin{lemma}
-There exist finitely many tuples $(y_1,...,y_N)$ such that $x \in F_N Y(\mathfrak{gl}_\ell)$ is zero if and only if $x$ acts as zero on all $V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$.
-\end{lemma}
-
-\begin{proof}
-Let $\rho_{y_1,...,y_N}: Y(\mathfrak{gl}_\ell) \to \End V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$ denote the action. Given any $x \in F_N Y(\mathfrak{gl}_\ell)$, it is a result of \cite{article:nazarov:2019} that $\rho_{y_1,...,y_N}(x) = 0$ for all values of $y_1,...,y_N$ implies $x = 0$. But $\rho_{y_1,...,y_N}(x)$ is polynomial in $y_1,...,y_N$, so it is enough to know that it vanishes at finitely many points.
-\end{proof}
+%\begin{definition}
+%The dual Bethe subalgebra $C(\mathfrak{gl}_\ell)$ is the space of $\C$-linear forms on $Y(\mathfrak{gl}_\ell)$ that vanish on commutators. It is a subalgebra of the dual Yangian via the coproduct of the Yangian.
+%\end{definition}
+%
+%In particular, the dual Bethe subalgebra contains the characters of finite-dimensional modules over the Yangian, just like the usual Bethe subalgebra contains the cocharacters of finite-dimensional comodules over $Y(\mathfrak{gl}_\ell)\llbracket z^{-1} \rrbracket$. Thus, we are led to assign the category $C(\mathfrak{gl}_\ell)\mathsf{mod}_{Y(\mathfrak{gl}_\ell)\mathsf{Mod}}$ of $C(\mathfrak{gl}_\ell)$-modules internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$.
 
 \begin{prop}
-The dual Yangian $Y^\vee(\mathfrak{gl}_\ell)$ is the coend $\int^{V \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}} V \otimes V^\vee$.
+Let $V$ be a $Y(\mathfrak{gl}_\ell)$-module and equip $Y^\vee(\mathfrak{gl}_\ell)$ with the coadjoint action. Then $V$ is a $Y^\vee(\mathfrak{gl}_\ell)$-comodule internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ via
+\begin{equation*}
+V \to Y^\vee(\mathfrak{gl}_\ell) \otimes V, \quad v \mapsto \mathcal{R} (1 \otimes v).
+\end{equation*}
 \end{prop}
 
 \begin{proof}
-Let $\mathsf{M}_N$ be the full subcategory spanned by $V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$ for the finitely many tuples $(y_1,...,y_N)$ of the previous lemma. Let
+If we let $\rho$ denote the action of $V$, then the coaction is defined via the composition
 \begin{equation*}
-E_N := \bigoplus_{M \in \mathsf{M}_N} M \otimes M^\vee \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}
+\delta := (\id \otimes \rho) \circ (\mathcal{R} \otimes \id): V \to Y^\vee(\mathfrak{gl}_\ell) \otimes Y(\mathfrak{gl}_\ell) \otimes V \to Y^\vee(\mathfrak{gl}_\ell) \otimes V,
 \end{equation*}
-with the special element $1_N: \C \to E_N$ representing the sum of identities. By the previous lemma, we can identify $F_N Y(\mathfrak{gl}_\ell)$ as a subspace of $E_N$ via the map $Y(\mathfrak{gl}_\ell) \to E_N$ induced by the jointly faithful actions. Further let $L := \int^{V \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}} V \otimes V^\vee$. The coactions of the dual Yangian give a map $\psi: L \to Y^\vee(\mathfrak{gl}_\ell)$ that commutes with the coactions $E_N \to L \otimes E_N$ and $E_N \to Y^\vee(\mathfrak{gl}_\ell) \otimes E_N$. We may look at the image of $1_N$
+where we have equipped $Y(\mathfrak{gl}_\ell)$ with the adjoint action, making $\rho$ into a $Y(\mathfrak{gl}_\ell)$-linear map. The map $\delta$ satisfies the properties of a coaction due to $(\Delta \otimes \id) = \mathcal{R}_{13} \mathcal{R}_{23}$ and $(\epsilon \otimes \id)(\mathcal{R}) = 1$, which was proven in \cite{article:nazarov:2019}. It remains to show that
 \begin{equation*}
-\widetilde{\mathcal{R}}_N: \C \to E_N \to L \otimes F_N Y(\mathfrak{gl}_\ell) \subseteq L \otimes E_N,
+\C \to Y^\vee(\mathfrak{gl}_\ell) \otimes Y(\mathfrak{gl}_\ell), \quad 1 \mapsto \mathcal{R}
 \end{equation*}
-which under $\psi \otimes \id$ gets mapped to $\mathcal{R}(1 \otimes 1_N)$, which is nothing but $\mathcal{R}_N \in Y^\vee(\mathfrak{gl}_\ell) \otimes F_N Y(\mathfrak{gl}_\ell)$, confer (\ref{equation:universalRMatrixN}). In the limit, we obtain an element
+is $Y(\mathfrak{gl}_\ell)$-linear, \emph{i.e.} that $c \cdot \mathcal{R} = \epsilon(c) \mathcal{R}$. To this end, note that the coadjoint action $\operatorname{ad}_c^*$ is uniquely defined by
 \begin{equation*}
-\widetilde{\mathcal{R}} \in \varprojlim_N L \otimes F_N Y(\mathfrak{gl}_\ell)
+\langle a,\operatorname{ad}_c^* b \rangle = \langle \operatorname{ad}_{S(c)} a,b \rangle,
 \end{equation*}
-mapping to the universal $R$-matrix $\mathcal{R}$. The element $\widetilde{\mathcal{R}}$ then witnesses that the composition $Y(\mathfrak{gl}_\ell) \otimes L \to Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to \C$ is a non-degenerate pairing, implying that $\psi$ is an isomorphism. tba: Resolve topological complications
+implying
+\begin{equation*}
+\langle \operatorname{ad}_{c_{(2)}} X_i, \operatorname{ad}_{c_{(1)}}^* X_j^\vee \rangle = \langle \operatorname{ad}_{S(c_{(1)})} \operatorname{ad}_{c_{(2)}} X_i, X_j^\vee \rangle = \epsilon(c) \langle X_i,X_j^\vee \rangle = \epsilon(c) \delta_{ij}.
+\end{equation*}
+This shows that the endomorphism
+\begin{equation*}
+(\langle \cdot,\cdot \rangle \otimes \id) \circ (\id \otimes c \cdot \mathcal{R}): Y(\mathfrak{gl}_\ell) \to Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \otimes Y(\mathfrak{gl}_\ell) \to Y(\mathfrak{gl}_\ell)
+\end{equation*}
+coincides with $\epsilon(c) \id$. We conclude $c \cdot \mathcal{R} = \epsilon(c) \mathcal{R}$.
 \end{proof}
 
-\subsection{A first stab at a category of cobordisms}
+%\begin{lemma}
+%There exist finitely many tuples $(y_1,...,y_N)$ such that $x \in F_N Y(\mathfrak{gl}_\ell)$ is zero if and only if $x$ acts as zero on all $V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$.
+%\end{lemma}
+%
+%\begin{proof}
+%Let $\rho_{y_1,...,y_N}: Y(\mathfrak{gl}_\ell) \to \End V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$ denote the action. Given any $x \in F_N Y(\mathfrak{gl}_\ell)$, it is a result of \cite{article:nazarov:2019} that $\rho_{y_1,...,y_N}(x) = 0$ for all values of $y_1,...,y_N$ implies $x = 0$. But $\rho_{y_1,...,y_N}(x)$ is polynomial in $y_1,...,y_N$, so it is enough to know that it vanishes at finitely many points.
+%\end{proof}
+
+\begin{prop}
+The dual Yangian $Y^\vee(\mathfrak{gl}_\ell)$ is the universal coacting coalgebra of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$.
+\end{prop}
+
+%\begin{proof}
+%An extranatural transformation $V^\vee \otimes V \to L$ is the same as a collection of coactions $V \to V \otimes L$ commuting with $Y(\mathfrak{gl}_\ell)$-linear maps since $V$ was assumed to be right dualizable. Letting $L := \int^{V \in Y(\mathfrak{gl}_\ell)\mathsf{mod}} V^\vee \otimes V$, the coactions of the dual Yangian then guarantee the existence of a unique map $\psi: L \to Y^\vee(\mathfrak{gl}_\ell)$ commuting with the coactions $V \to V \otimes L$ and $V \to V \otimes Y^\vee(\mathfrak{gl}_\ell)$.
+%
+%Let $\mathsf{M}_N$ be the full subcategory of $Y(\mathfrak{gl}_\ell)\mathsf{mod}$ spanned by $V_{y_1}^+ \otimes \cdots \otimes V_{y_N}^+$ for the finitely many tuples $(y_1,...,y_N)$ of the previous lemma. Let
+%\begin{equation*}
+%E_N := \bigoplus_{V \in \mathsf{M}_N} V \otimes V^\vee \in Y(\mathfrak{gl}_\ell)\mathsf{mod}
+%\end{equation*}
+%with the special element $1_N \in E_N$ representing the sum of identities. By the previous lemma, we can identify $F_N Y(\mathfrak{gl}_\ell)$ as a subspace of $E_N$ via the map $Y(\mathfrak{gl}_\ell) \to E_N$ induced by the jointly faithful actions. In the case of $E_N$, the coaction of $Y^\vee(\mathfrak{gl}_\ell)$ sends $1_N$ to $\mathcal{R}(1_N \otimes 1)$, which projects onto
+%\begin{equation*}
+%\mathcal{R}_N \in F_N Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell)/F_N Y^\vee(\mathfrak{gl}_\ell),
+%\end{equation*}
+%confer (\ref{equation:universalRMatrixN}).
+%
+%The image of $1_N$ under the coaction $E_N \to E_N \otimes L$ yields an element $\widetilde{\mathcal{R}}_N \in E_N \otimes L$ that maps to $\mathcal{R}_N$ using $\psi$. In the limit, we obtain an element $\widetilde{\mathcal{R}}$ mapping to the universal $R$-matrix $\mathcal{R}$. The element $\widetilde{\mathcal{R}}$ then witnesses that the composition $Y(\mathfrak{gl}_\ell) \otimes L \to Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to \C$ is a non-degenerate pairing, implying that $\psi$ is an isomorphism. tba
+%\end{proof}
+
+\begin{proof}
+The coactions of the dual Yangian guarantee the existence of a unique morphism $\psi: L \to Y^\vee(\mathfrak{gl}_\ell)$ that commutes with the coactions $Y(\mathfrak{gl}_\ell) \to Y^\vee(\mathfrak{gl}_\ell) \otimes Y(\mathfrak{gl}_\ell)$ and $Y(\mathfrak{gl}_\ell) \to L \otimes Y(\mathfrak{gl}_\ell)$. The image of $1$ under the first map is nothing but the canonical element $\mathcal{R}$. Call the image of $1$ under the second map $\mathcal{R}_L$. Then $(\psi \otimes \id)(\mathcal{R}_L) = \mathcal{R}$, so that $\mathcal{R}_L$ witnesses that
+\begin{equation*}
+Y(\mathfrak{gl}_\ell) \otimes L \to Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to \C
+\end{equation*}
+is a non-degenerate pairing, implying that $\psi$ is an isomorphism.
+\end{proof}
+
+\subsection{A first stab at a category of cobordisms}\label{subsection:naiveDef}
 
 %These data are combined in the complex Teichmüller tower, whose genus zero part describes $(1+N)$-pointed Riemann spheres $(\P^1;\infty,y_1,...,y_N;-\partial_{z^{-1}},v_1,...,v_N)$, where $y_1,...,y_N$ are distinct complex numbers and $v_1,...,v_N$ are non-zero tangent vectors at $y_1,...,y_N$, respectively. The morphisms in genus zero are generated by braidings and twists, visualized in figure \ref{figure:braidTwist}. In \cite{book:bakalov}, it is proved that the complex Teichmüller groupoid is equivalent to the topological Teichmüller groupoid, coming from the following construction:
 %
@@ -2503,26 +2660,26 @@ mapping to the universal $R$-matrix $\mathcal{R}$. The element $\widetilde{\math
 %\item the action of the braid group via 2-morphisms to the action of the braid group on the tensor product functor via a braiding.
 %\end{enumerate}
 
-Let us start with a naive definition: Let $\mathbb{C}\textnormal{ob}'$ denote the double category (appendix \ref{appendix:doubleCats}) whose
+We now set out to give a rigorous definition of our functorial quantum field theory. Let us start with a naive definition for our cobordism category: Let $\mathbb{C}\textnormal{ob}'$ denote the double category (see appendix \ref{appendix:doubleCats} for a review on double categories) whose
 \begin{enumerate}[label=(\roman*)]
-\item objects $[N]$ are disjoint unions of $N$ copies of $D^\times \times S_*^1$, where $D^\times$ is the formal punctured disc and $S_*^1$ is a circle with a chosen basepoint.
-\item Tight morphisms $[N] \to [N]$ are cylinder cobordisms equipped with isotopy classes of paths connecting the basepoints of the boundary circles. This specifies an element in $\dot S_N$.
-\item Loose morphisms $[N] \dashrightarrow [1]$ are complex cobordisms $\P^1$ with distinct ingoing points $y_1,...,y_N$ and outgoing point $\infty$. (We will see that the points $y_1,...,y_N$ are secretly labeled by the Young diagram with a single box.)
-\item Squares of the form
+\item objects $[N]$ are disjoint unions of $N$ copies of $D^\times \times S_*^1$,%, where $D^\times$ is the formal punctured disc and $S_*^1$ is a circle with a chosen basepoint.
+\item tight morphisms $[N] \longrightarrow [N]$ are cylinder cobordisms equipped with isotopy classes of paths connecting the basepoints of the boundary circles. This specifies an element in $\dot S_N$ by permutation of the boundary circles and paths winding around the cylinders,
+\item loose morphisms $[N] \dashrightarrow [1]$ are complex cobordisms $\P^1$ with distinct ingoing points $y_1,...,y_N$ and outgoing point $\infty$, %We imagine that the points $y_1,...,y_N$ are secretly labeled by the Young diagram with a single box.
+\item squares of the form
 \begin{center}
 \begin{tikzcd}[column sep=2cm]
 {[N]} \arrow[dashed]{r}{(y_1,...,y_N)} \arrow{d}{\sigma} & {[1]} \arrow{d}{\id} \\
 {[N]} \arrow[dashed]{r}{(y_{\sigma(1)},...,y_{\sigma(N)})} & {[1]}
 \end{tikzcd}
 \end{center}
-are homotopy classes of paths in the moduli space of complex cobordisms.
+are homotopy classes of paths in the moduli space of pointed complex curves.
 \end{enumerate}
 
 We note that this is already suspect because composition of loose morphisms is not well-defined unless we allow nodal curves as complex cobordisms. Nonetheless, we would want to define a double functor $\mathbb{C}\textnormal{ob}' \to \mathbb{S}\textnormal{q}(\mathcal{R}ex)$ that sends
 \begin{enumerate}[label=(\roman*)]
 \item the object $[1]$ to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$,
 \item the cobordism specifying a simple permutation $s_i$ to the permutation map $Y(\mathfrak{gl}_\ell)\mathsf{Mod}^{\boxtimes 2} \to Y(\mathfrak{gl}_\ell)\mathsf{Mod}^{\boxtimes 2}$,
-\item the cobordism specifying a twist on the $i$th cylinder to the identity,
+\item the cobordism specifying a winding around the $i$th cylinder to the identity,
 \item a loose morphism $(y_1,...,y_N)$ to the shifted tensor product functor
 \begin{equation*}
 Y(\mathfrak{gl}_\ell)\mathsf{Mod}^{\boxtimes N} \to Y(\mathfrak{gl}_\ell)\mathsf{Mod}, \quad V_1 \boxtimes \cdots \boxtimes V_N \mapsto V_1(y_1) \otimes \cdots \otimes V_N(y_N),
@@ -2530,7 +2687,7 @@ Y(\mathfrak{gl}_\ell)\mathsf{Mod}^{\boxtimes N} \to Y(\mathfrak{gl}_\ell)\mathsf
 \item a square specifying a simple permutation $s_i$ to the corresponding braiding,
 \item a square specifying a path winding once around the $i$th cylinder to $X_i$.
 \end{enumerate}
-It is here that we also run into problems: The braiding of the Yangian induced by the $R$-matrices and similarly $X_i$ is neither invertible nor defined for all values of the spectral parameter. We have already seen that the $R$-matrix has poles and at some points becomes a projector. Furthermore, the braiding degenerates when we try to braid a vector representation with its dual: It can be easily checked that dualizing the braiding
+It is here that we also run into problems: The braiding of the Yangian induced by the $R$-matrices and similarly $X_i$ is neither invertible nor defined for all values of the spectral parameter. We have already seen that the $R$-matrix has poles and at some points becomes a projector. Furthermore, the braiding degenerates when we try to braid $V_y^+$ with its dual: It can be easily checked that dualizing the braiding
 \begin{equation*}
 P \check R(y_1-y_2): V_{y_1}^+ \otimes V_{y_2}^+ \to V_{y_2}^+ \otimes V_{y_1}^+
 \end{equation*}
@@ -2540,17 +2697,17 @@ yields
 \end{equation*}
 where $P^t = \sum_{ij} e_{ij} \otimes e_{ij}$. In particular, we see that braiding $V_y^+$ with its left dual $V_{y+\ell\eta}^-$ reduces to $P^t$, which projects onto the one-dimensional subspace spanned by $\sum_i e_i \otimes e_i$, and is hence not invertible.
 
-\subsection{Patching up the naive definition}
+\subsection{Patching up the naive definition}\label{subsection:patch}
 
-We have seen that the above naive description is not workable, essentially because the category of representations of the Yangian is not braided in the standard sense. Instead, it is a result of \cite{article:soibelman:1997} that the category of finite-dimensional representations of the Yangian is a \emph{meromorphic braided category}. This means that the operadic data defining the tensor product and the braiding actually form sheaves on a complex analytic space, which might degenerate on subspaces of proper codimension. We will roughly follow this idea and replace loose morphisms $[N] \dashrightarrow [1]$ by an analogue of $\mathcal{D}$-modules on the quotient stack
+We have seen that the naive description above is not workable, essentially because the category of representations of the Yangian is not braided in the standard sense. Instead, it is a result of \cite{article:soibelman:1997} that the category of finite-dimensional representations of the Yangian is a \emph{meromorphic braided category}. This means that the operadic data defining the tensor product and the braiding actually form sheaves on a complex analytic space, which might degenerate on subspaces of proper codimension. We will roughly follow this idea and replace loose morphisms $[N] \dashrightarrow [1]$ by an analogue of $\mathcal{D}$-modules on the quotient stack
 \begin{equation*}
-M_{0,1+N} = \{ (y_1,...,y_N) \in \C^N \mid y_i \neq y_j \} / S_N \times \C^\times \ltimes \C.
+M_{0,1+N} = \{ (y_1,...,y_N) \in \C^N \mid y_i \neq y_j \} / S_N \times \C^\times \ltimes \C
 \end{equation*}
-To get a well-defined braiding, it will also be helpful to impose the condition $y_i-y_j \neq \eta$, which breaks the $\C^\times$-symmetry and gives the quotient stack
+of $(1+N)$-pointed complex smooth projective curves of genus zero. To get a well-defined braiding, it will also be important to impose the condition $y_i-y_j \neq \eta$, which breaks the $\C^\times$-symmetry and gives the quotient stack
 \begin{equation*}
 Y_N := \{ (y_1,...,y_N) \in \C^N \mid y_i-y_j \neq 0,\eta \}/S_N \times \C.
 \end{equation*}
-Writing $\underline{\dot H}_N := \dot H_N[(y_i-y_j)^{-1}][(y_i-y_j-\eta)^{-1}]$, we then arrive at the following proposition:
+Writing $\underline{\dot H}_N := \dot H_N[(y_i-y_j)^{-1},(y_i-y_j-\eta)^{-1}]$, we then arrive at the following proposition:
 
 \begin{prop}
 The category of quasi-coherent sheaves on $Y_N$ is equivalent to the category of $\C$-equivariant $\underline{\dot H}_N$-modules.
@@ -2559,7 +2716,7 @@ The category of quasi-coherent sheaves on $Y_N$ is equivalent to the category of
 \begin{proof}
 Quasi-coherent sheaves on $Y_N$ are equivalently $S_N \times \C$-equivariant modules $U$ over
 \begin{equation*}
-A := \C[y_1,...,y_N][(y_i-y_j)^{-1}][(y_i-y_j-\eta)^{-1}].
+A := \C[y_1,...,y_N][(y_i-y_j)^{-1},(y_i-y_j-\eta)^{-1}].
 \end{equation*}
 Being $\C$-equivariant means that $U$ comes equipped with a coaction $U \to U[y]$ compatible with the algebra map $A \to A[y], y_i \mapsto y_i+y$. Being $S_N$-equivariant means that $U$ comes equipped with an action of $S_N$ satisfying
 \begin{equation*}
@@ -2575,7 +2732,7 @@ S_N \ltimes A \cong \dot H_N[(y_i-y_j)^{-1},(y_i-y_j-\eta)^{-1}] = \underline{\d
 \end{equation*}
 \end{proof}
 
-Being a module over $\underline{\ddot H}_N := \ddot H_N[(y_i-y_j)^{-1}][(y_i-y_j-\eta)^{-1}]$ extends the $\underline{\dot H}_N$-module structure by the difference operators $X_1,...,X_N$. Hence, we may think of $\ddot H_N$-modules as difference modules on $Y_N$. Interpreting these as distributions over complex cobordisms (with fixed topology), we can view the preaffine Drinfeld functor as a well-defined replacement for the shifted tensor product functor.
+Being a module over $\underline{\ddot H}_N := \ddot H_N[(y_i-y_j)^{-1},(y_i-y_j-\eta)^{-1}]$ extends the $\underline{\dot H}_N$-module structure by the difference operators $X_1,...,X_N$. Hence, we may think of $\ddot H_N$-modules as difference modules on $Y_N$. Interpreting these as distributions over complex cobordisms (with fixed topology), we can view the twist-extended Drinfeld functor as a well-defined replacement for the shifted tensor product functor.
 
 \begin{remark}
 We may add boundary points to $Y_N$ via the fusion procedure. The ingoing points on cobordisms can then be labeled by general Young diagrams.
@@ -2689,36 +2846,49 @@ We may add boundary points to $Y_N$ via the fusion procedure. The ingoing points
 
 \subsection{Full construction of the functorial quantum field theory}
 
-With this in hand, we can give a serious definition for our functorial quantum field theory:
+Let us write $\Gamma: N \to M$ whenever $\Gamma$ is a composition of $N$ by $M$ numbers $N_1,...,N_M$. We can compose $\Gamma: N \to M$ with another composition $\Gamma': M \to L$ and obtain a composition $\Gamma' \circ \Gamma: N \to L$. Given $\Gamma'': N' \to M'$, we may also build a composition $\Gamma \otimes \Gamma'': N+N' \to M+M'$. Define
+\begin{equation*}
+\underline{\ddot H}_\Gamma := \underline{\ddot H}_{N_1} \otimes \cdots \otimes \underline{\ddot H}_{N_M}, \quad \dot S_\Gamma := \dot S_{N_1} \times \cdots \times \dot S_{N_M}.
+\end{equation*}
+There are algebra maps $\underline{\ddot H}_{\Gamma' \circ \Gamma} \to \underline{\ddot H}_\Gamma$ defined via the canonical inclusions, as well as $\underline{\ddot H}_\Gamma \to \underline{\ddot H}_\Gamma \otimes \underline{\ddot H}_{\Gamma'}$ defined via the coactions $\underline{\ddot H}_{N_i} \to \underline{\ddot H}_{N_i}[y_i]$. Together, they give an algebra map
+\begin{equation*}
+\alpha_{\Gamma,\Gamma'}: \underline{\ddot H}_{\Gamma' \circ \Gamma} \to \underline{\ddot H}_\Gamma \otimes \underline{\ddot H}_{\Gamma'}.
+\end{equation*}
+Finally, we also have isomorphisms $\underline{\ddot H}_{\Gamma \otimes \Gamma''} \cong \underline{\ddot H}_\Gamma \otimes \underline{\ddot H}_{\Gamma''}$. With this in hand, we can give a serious definition for our category of cobordisms:
 
 \begin{definition}
-Let $\mathbb{C}\textnormal{ob}$ denote the following monoidal (pseudo) double category:
+Let $\mathbb{C}\textnormal{ob}$ denote the monoidal (pseudo) double category defined by:
 \begin{enumerate}[label=(\roman*)]
-\item Objects are natural numbers $[N]$, representing a disjoint union of $N$ copies of the cartesian product of a formal punctured disc with a pointed circle $D^\times \times S_*^1$.
-\item Tight morphisms $\sigma: [N] \to [N]$ are diffeomorphism classes of cobordisms which are disjoint unions of cylinders equipped with isotopy classes of paths connecting the basepoints of the boundary circles. This specifies an element of $\dot S_N$.
-\item Loose morphisms $U: [N] \to [1]$ are $\ddot H_N$-modules, giving distributions over complex cobordisms. General loose morphisms are tensor products of these.
-\item Squares are tensor products of
-\begin{center}
-\begin{tikzcd}
-{[N]} \arrow{d}{\sigma} \arrow{r}{U} & {[1]} \arrow{d}{\id} \\
-{[N]} \arrow{r}{U'} & {[1]}
-\end{tikzcd}
-\end{center}
-equipped with $\sigma$-equivariant morphisms $U \to U'$ of $\ddot H_N$-modules.
-\item Tight composition is given by gluing cobordisms, which is strict.
-\item Loose composition of $U: [N_1+\cdots+N_M] \to [M]$ that has a decomposition
-\begin{equation*}
-U = U_1 \boxtimes \cdots \boxtimes U_M, \quad U_i: [N_i] \to [1],
-\end{equation*}
-with $W: [M] \to [1]$ is defined via push-pull of $U_1 \boxtimes \cdots \boxtimes U_M \boxtimes W$ along the span of algebra morphisms
-\begin{equation*}
-\underline{\ddot H}_{N_1+\cdots+N_M} \leftarrow \underline{\ddot H}_{N_1} \otimes \cdots \otimes \underline{\ddot H}_{N_M} \to \underline{\ddot H}_{N_1}[y_1] \otimes \cdots \otimes \underline{\ddot H}_{N_M}[y_M] \to \underline{\ddot H}_{N_1} \otimes  \cdots \otimes \underline{\ddot H}_{N_M} \otimes \underline{\ddot H}_M.
-\end{equation*}
-The identity is given by $\underline{\ddot H}_N$.
-\item Composition of squares is composition of module maps.
-\item The tensor product is given on objects by $[N] \otimes [M] := [N+M]$, on tight morphisms by disjoint union, and on loose morphisms by external tensor product.
+\item $\mathbb{C}\textnormal{ob}_0$ is the category whose objects are natural numbers $[N]$ with $\Hom([N],[N]) := \dot S_N$ and zero otherwise. The monoidal structure is given by $[N] \otimes [M] := [N+M]$ and the canonical inclusions $\dot S_N \times \dot S_M \to \dot S_{N+M}$. This category represents topological cobordisms as discussed in subsection \ref{subsection:naiveDef}.
+\item $\mathbb{C}\textnormal{ob}_1$ is the category whose objects are pairs $(\Gamma,U)$, where $\Gamma: N \to M$ and $U$ is a module over $\underline{\ddot H}_\Gamma$ and whose morphisms $(\Gamma,U) \to (\Gamma',U')$ are pairs $(\sigma,\alpha)$, where $\sigma \in \dot S_\Gamma$ and $\alpha$ is a $\sigma$-equivariant map of $\underline{\ddot H}_\Gamma$-modules. Source and target are given by $[N]$ and $[M]$. The monoidal structure is given by $(\Gamma_1,U_2) \otimes (\Gamma_2,U_2) := (\Gamma_1 \otimes \Gamma_2, U_1 \otimes U_2)$. This category represents distributions over holomorphic cobordisms as discussed in subsection \ref{subsection:patch}.
+\item The weak composition of $(\Gamma,U): [N] \to [M]$ with $(\Gamma',U'): [M] \to [L]$ is defined to be $(\Gamma' \circ \Gamma, \alpha_{\Gamma,\Gamma'}^* U \otimes U')$.
 \end{enumerate}
 \end{definition}
+
+\begin{lemma}
+Weak composition in $\mathbb{C}\textnormal{ob}$ is weakly associative.
+\end{lemma}
+
+\begin{proof}
+Consider a composable triple
+\begin{center}
+\begin{tikzcd}[column sep=1.5cm]
+{[N]} \arrow{r}{(\Gamma,U)} &
+{[N']} \arrow{r}{(\Gamma',U')} &
+{[N'']} \arrow{r}{(\Gamma'',U'')} &
+{[N''']}
+\end{tikzcd}
+\end{center}
+It is clear that $(\Gamma'' \circ \Gamma') \circ \Gamma = \Gamma'' \circ (\Gamma' \circ \Gamma)$. We notice that the algebra map
+\begin{equation*}
+(\alpha_{\Gamma',\Gamma''} \otimes \id) \circ \alpha_{\Gamma,\Gamma'' \circ \Gamma'}: \underline{\ddot H}_{\Gamma'' \circ \Gamma' \circ \Gamma} \to \underline{\ddot H}_{\Gamma'' \circ \Gamma'} \otimes \underline{\ddot H}_\Gamma \to \underline{\ddot H}_{\Gamma''} \otimes \underline{\ddot H}_{\Gamma'} \otimes \underline{\ddot H}_\Gamma
+\end{equation*}
+coincides with the algebra map
+\begin{equation*}
+(\id \otimes \alpha_{\Gamma,\Gamma'}) \circ \alpha_{\Gamma' \circ \Gamma,\Gamma''}: \underline{\ddot H}_{\Gamma'' \circ \Gamma' \circ \Gamma} \to \underline{\ddot H}_{\Gamma''} \otimes \underline{\ddot H}_{\Gamma' \circ \Gamma} \to \underline{\ddot H}_{\Gamma''} \otimes \underline{\ddot H}_{\Gamma'} \otimes \underline{\ddot H}_\Gamma,
+\end{equation*}
+reducing weak associativity to the weak associativity of the usual tensor product.
+\end{proof}
 
 For concreteness, let us work in the Morita picture for the target category of our functorial quantum field theory:
 
