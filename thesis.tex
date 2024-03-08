@@ -1880,7 +1880,7 @@ e_\ell(g)
 H_1 \\ \vdots \\ H_N
 \end{pmatrix}.
 \end{equation*}
-By propositions \ref{prop:quantumDetGroupLike} and \ref{prop:quantumDetWeights}, we compute $\operatorname{qdet} T(z) = \prod_k \left( 1-\frac{\eta}{-(z-y_k)} \right) = \prod_k \frac{z-y_k+\eta}{z-y_k}$, implying
+By propositions \ref{prop:quantumDetGroupLike} and \ref{prop:quantumDetWeights}, we compute $\operatorname{qdet} T(z) = \prod_k \left( 1+\frac{\eta}{z-y_k} \right) = \prod_k \frac{z-y_k+\eta}{z-y_k}$, implying
 \begin{equation*}
 \operatorname{Res}_{z=y_j} \operatorname{qdet} T(z) = \eta b_j.
 \end{equation*}
@@ -2500,7 +2500,7 @@ which evaluates to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ on the unique object $*$ 
 \begin{equation*}
 \Hom_{\mathcal{B}Y(\mathfrak{gl}_\ell)\mathsf{Mod}}(V,V'): \Hom_{\mathcal{B}Y(\mathfrak{gl}_\ell)\mathsf{Mod}}(*,*) \to \Hom_{\mathcal{B}Y(\mathfrak{gl}_\ell)\mathsf{Mod}}(*,*), \quad U \mapsto V' \otimes U \otimes V
 \end{equation*}
-which is represented by the $Y(\mathfrak{gl}_\ell)$-module $V' \otimes V$. We conclude that the (co)algebra corresponding to $D^\times \times S_*^1$ with $V$ inserted at the basepoint is the coalgebra $V \otimes V^\vee$. To get rid of the dependence on $V$, we should take the coend
+which when inserting the tensor unit gives the $Y(\mathfrak{gl}_\ell)$-module $V' \otimes V$. We conclude that the (co)algebra corresponding to $D^\times \times S_*^1$ with $V$ inserted at the basepoint should be the coalgebra $V \otimes V^\vee$. To get rid of the dependence on $V$, we take the coend
 \begin{equation*}
 \int^{V \in Y(\mathfrak{gl}_\ell)\mathsf{Mod}} V \otimes V^\vee.
 \end{equation*}
@@ -2594,7 +2594,7 @@ The dual Yangian $Y^\vee(\mathfrak{gl}_\ell)$ is the universal coacting coalgebr
 %\end{proof}
 
 \begin{proof}
-The coactions of the dual Yangian guarantee the existence of a unique morphism $\psi: L \to Y^\vee(\mathfrak{gl}_\ell)$ that commutes with the coactions $Y(\mathfrak{gl}_\ell) \to Y^\vee(\mathfrak{gl}_\ell) \otimes Y(\mathfrak{gl}_\ell)$ and $Y(\mathfrak{gl}_\ell) \to L \otimes Y(\mathfrak{gl}_\ell)$. The image of $1$ under the first coaction is nothing but the canonical element $\mathcal{R}$. Call the image of $1$ under the second coaction $\mathcal{R}_L$. Then $(\psi \otimes \id)(\mathcal{R}_L) = \mathcal{R}$, so that $\mathcal{R}_L$ witnesses that
+Let $L$ denote the universal coacting coalgebra. The coactions of the dual Yangian guarantee the existence of a unique morphism $\psi: L \to Y^\vee(\mathfrak{gl}_\ell)$ that commutes with the coactions $Y(\mathfrak{gl}_\ell) \to Y^\vee(\mathfrak{gl}_\ell) \otimes Y(\mathfrak{gl}_\ell)$ and $Y(\mathfrak{gl}_\ell) \to L \otimes Y(\mathfrak{gl}_\ell)$. The image of $1$ under the first coaction is nothing but the canonical element $\mathcal{R}$. Call the image of $1$ under the second coaction $\mathcal{R}_L$. Then $(\psi \otimes \id)(\mathcal{R}_L) = \mathcal{R}$, so that $\mathcal{R}_L$ witnesses that
 \begin{equation*}
 \langle \cdot,\cdot \rangle \circ (\id \otimes \psi): Y(\mathfrak{gl}_\ell) \otimes L \to Y(\mathfrak{gl}_\ell) \otimes Y^\vee(\mathfrak{gl}_\ell) \to \C
 \end{equation*}
@@ -2753,11 +2753,11 @@ where $P^t = \sum_{ij} e_{ij} \otimes e_{ij}$. In particular, we see that braidi
 
 We have seen that the naive description above is not workable, essentially because the category of representations of the Yangian is not braided in the standard sense. Instead, it is a result of \cite{article:soibelman:1997} that the category of finite-dimensional representations of the Yangian is a \emph{meromorphic braided category}. This means that the operadic data defining the tensor product and the braiding actually form sheaves on a complex analytic space, which might degenerate on subspaces of proper codimension. We will roughly follow this idea and replace loose morphisms $[N] \dashrightarrow [1]$ by quasi-coherent sheaves on an analogue of the moduli space
 \begin{equation*}
-M_{0,1+N} = \{ (y_1,...,y_N) \in \C^N \mid y_i \neq y_j \} / S_N \times \C^\times \ltimes \C
+M_{0,1+N} = \{ (y_1,...,y_N) \in \C^N \mid y_i \neq y_j \} / (S_N \times \C^\times \ltimes \C)
 \end{equation*}
 of $(1+N)$-pointed complex smooth projective curves of genus zero. Indeed, to get a well-defined braiding, it will be important to impose the condition $y_i-y_j \neq \eta$, which breaks the $\C^\times$-symmetry and gives the quotient stack
 \begin{equation*}
-Y_N := \{ (y_1,...,y_N) \in \C^N \mid y_i-y_j \neq 0,\eta \}/S_N \times \C.
+Y_N := \{ (y_1,...,y_N) \in \C^N \mid y_i-y_j \neq 0,\eta \}/(S_N \times \C).
 \end{equation*}
 Writing $\underline{\dot H}_N := \dot H_N[(y_i-y_j)^{-1},(y_i-y_j-\eta)^{-1}]$, we then arrive at the following proposition:
 
@@ -2766,7 +2766,7 @@ The category of quasi-coherent sheaves on $Y_N$ is equivalent to the category of
 \end{prop}
 
 \begin{proof}
-Quasi-coherent sheaves on $Y_N$ are equivalently $S_N \times \C$-equivariant modules $U$ over
+Quasi-coherent sheaves on $Y_N$ are equivalently $(S_N \times \C)$-equivariant modules $U$ over
 \begin{equation*}
 A := \C[y_1,...,y_N][(y_i-y_j)^{-1},(y_i-y_j-\eta)^{-1}].
 \end{equation*}
@@ -2776,16 +2776,16 @@ Being $\C$-equivariant means that $U$ comes equipped with a coaction $U \to U[y]
 \end{equation*}
 This means that we can think of $U$ as a module over the semidirect product algebra $S_N \ltimes A$. Note that the operators
 \begin{equation*}
-T_i = \frac{y_i-y_{i+1}-\eta}{y_i-y_{i+1}} s_i + \frac{\eta}{y_i-y_{i+1}} \in S_N \ltimes A
+t_i = \frac{y_i-y_{i+1}-\eta}{y_i-y_{i+1}} s_i + \frac{\eta}{y_i-y_{i+1}} \in S_N \ltimes A
 \end{equation*}
-together with $y_1,...,y_N$ generate a subalgebra of $S_N \ltimes A$ isomorphic to $\dot H_N$. On the other hand, we have $s_i = \frac{y_i-y_{i+1}}{y_i-y_{i+1}-\eta} T_i - \frac{\eta}{y_i-y_{i+1}-\eta}$, so that localizing at $y_i-y_{i+1}$ and $y_i-y_{i+1}-\eta$ makes both algebras isomorphic:
+together with $y_1,...,y_N$ generate a subalgebra of $S_N \ltimes A$ isomorphic to $\dot H_N$. On the other hand, we have $s_i = \frac{y_i-y_{i+1}}{y_i-y_{i+1}-\eta} t_i - \frac{\eta}{y_i-y_{i+1}-\eta}$, so that localizing at $y_i-y_{i+1}$ and $y_i-y_{i+1}-\eta$ makes both algebras isomorphic:
 \begin{equation*}
 S_N \ltimes A \cong \dot H_N[(y_i-y_j)^{-1},(y_i-y_j-\eta)^{-1}] = \underline{\dot H}_N.
 \end{equation*}
 \end{proof}
 
 %Being a module over $\underline{\ddot H}_N := \ddot H_N[(y_i-y_j)^{-1},(y_i-y_j-\eta)^{-1}]$ extends the $\underline{\dot H}_N$-module structure by the difference operators $X_1,...,X_N$.
-Hence, we may think of $\dot H_N$-modules as quasi-coherent sheaves on $Y_N$. Interpreting these as distributions over holomorphic cobordisms (with fixed topology), we can view the twist-extended Drinfeld functor as a well-defined replacement for the shifted tensor product functor.
+Hence, we may think of $\dot H_N$-modules as quasi-coherent sheaves on $Y_N$. Interpreting these as distributions over holomorphic cobordisms (with fixed topology), this allows us to view the Drinfeld functor as a well-defined replacement for the shifted tensor product functor.
 
 \begin{remark}
 We may add boundary points to $Y_N$ via the fusion procedure. The ingoing points on cobordisms can then be labeled by general Young diagrams.
@@ -2903,11 +2903,11 @@ Let us write $\Gamma: N \to M$ whenever $\Gamma$ is a composition of $N$ by $M$ 
 \begin{equation*}
 \underline{\dot H}_\Gamma := \underline{\dot H}_{N_1} \otimes \cdots \otimes \underline{\dot H}_{N_M}, \quad \dot S_\Gamma := \dot S_{N_1} \times \cdots \times \dot S_{N_M}, \quad S_\Gamma := S_{N_1} \times \cdots \times S_{N_M}.
 \end{equation*}
-Then $\dot H_\Gamma$ controls the moduli space of holomorphic cobordisms with topology fixed by $\Gamma$. There are algebra maps $\underline{\dot H}_{\Gamma' \circ \Gamma} \to \underline{\dot H}_\Gamma$ defined via the canonical inclusions, as well as $\underline{\dot H}_\Gamma \to \underline{\dot H}_\Gamma \otimes \underline{\dot H}_{\Gamma'}$ defined via the coactions $\underline{\dot H}_N \to \underline{\dot H}_N[y]$. Together, they give an algebra map
+Then $\underline{\dot H}_\Gamma$ controls the moduli space of holomorphic cobordisms with topology fixed by $\Gamma$. There are algebra maps $\underline{\dot H}_{\Gamma' \circ \Gamma} \to \underline{\dot H}_\Gamma$ defined via the canonical inclusions, as well as $\underline{\dot H}_\Gamma \to \underline{\dot H}_\Gamma \otimes \underline{\dot H}_{\Gamma'}$ defined via the coactions $\underline{\dot H}_N \to \underline{\dot H}_N[y]$. Together, they give an algebra map
 \begin{equation*}
 \alpha_{\Gamma,\Gamma'}: \underline{\dot H}_{\Gamma' \circ \Gamma} \to \underline{\dot H}_\Gamma \otimes \underline{\dot H}_{\Gamma'}.
 \end{equation*}
-We also have isomorphisms $\underline{\dot H}_{\Gamma_1 \otimes \Gamma_2} \cong \underline{\dot H}_{\Gamma_1} \otimes \underline{\dot H}_{\Gamma_2}$. Finally, we remark that $\underline{\dot H}_\Gamma$ has an action of $S_\Gamma$ by automorphisms, sending $\sigma \in S_\Gamma$ to the corresponding inner automorphism on $S_\Gamma \subseteq \underline{\dot H}_\Gamma$ and $y_i$ to $y_{\sigma(i)}$. In particular, we may consider $\sigma$-equivariant maps of $\underline{\dot H}_\Gamma$-modules. With this in hand, we can give a serious definition for our category of cobordisms:
+We also have isomorphisms $\underline{\dot H}_{\Gamma_1 \otimes \Gamma_2} \cong \underline{\dot H}_{\Gamma_1} \otimes \underline{\dot H}_{\Gamma_2}$. Finally, we remark that $\underline{\dot H}_\Gamma$ has an action of $S_\Gamma \subseteq \underline{\dot H}_\Gamma$ by inner automorphisms. In particular, we may consider $\sigma$-equivariant maps of $\underline{\dot H}_\Gamma$-modules for any $\sigma \in S_\Gamma$. With this in hand, we can give a serious definition for our category of cobordisms:
 
 \begin{definition}
 Let $\mathbb{C}\textnormal{ob}$ denote the monoidal double category defined by:
@@ -2940,9 +2940,27 @@ It is clear that $(\Gamma'' \circ \Gamma') \circ \Gamma = \Gamma'' \circ (\Gamma
 coincide, reducing weak associativity to the weak associativity of the tensor product of vector spaces. Similarly, the maps $\alpha_{\Gamma,\id}: \underline{\dot H}_\Gamma \to \underline{\dot H}_\Gamma \otimes \underline{\dot H}_\id$ and $\alpha_{\id,\Gamma}: \underline{\dot H}_\Gamma \to \underline{\dot H}_\id \otimes \underline{\dot H}_\Gamma$ reduce weak unitality to unitality of the tensor product of vector spaces.
 \end{proof}
 
+\begin{prop}
+There is a weak interchange law for loose composition in $\mathbb{C}\textnormal{ob}$.
+\end{prop}
+
+\begin{proof}
+It is clear that $(\Gamma_1' \otimes \Gamma_2') \circ (\Gamma_1 \otimes \Gamma_2) = (\Gamma_1' \circ \Gamma_1) \otimes (\Gamma_2' \circ \Gamma_2)$. The interchange law then comes from the commutative diagram
+\begin{center}
+\begin{tikzcd}[column sep=2cm]
+\underline{\dot H}_{(\Gamma_1' \otimes \Gamma_2') \circ (\Gamma_1 \otimes \Gamma_2)} \arrow{r}{\alpha_{\Gamma_1 \otimes \Gamma_2,\Gamma_1' \otimes \Gamma_2'}} \arrow[equals]{d} &
+\underline{\dot H}_{\Gamma_1 \otimes \Gamma_2} \otimes \underline{\dot H}_{\Gamma_1' \otimes \Gamma_2'} \arrow[equals]{r}{\sim} &
+\underline{\dot H}_{\Gamma_1} \otimes \underline{\dot H}_{\Gamma_2} \otimes \underline{\dot H}_{\Gamma_1'} \otimes \underline{\dot H}_{\Gamma_2'} \arrow[equals]{d}{\wr} \\
+\underline{\dot H}_{(\Gamma_1' \circ \Gamma_1) \otimes (\Gamma_2' \circ \Gamma_2)} \arrow[equals]{r}{\sim} &
+\underline{\dot H}_{(\Gamma_1' \circ \Gamma_1)} \otimes \underline{\dot H}_{(\Gamma_2' \circ \Gamma_2)} \arrow{r}{\alpha_{\Gamma_1,\Gamma_1'} \otimes \alpha_{\Gamma_2,\Gamma_2'}} &
+\underline{\dot H}_{\Gamma_1} \otimes \underline{\dot H}_{\Gamma_1'} \otimes \underline{\dot H}_{\Gamma_2} \otimes \underline{\dot H}_{\Gamma_2'}
+\end{tikzcd}
+\end{center}
+\end{proof}
+
 %Let $\mathsf{V}^+$ denote the full subcategory of $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ generated under finite colimits by $V_y^+$ for $y \in \C$.
 
-Let $E$ denote the coalgebra $V_0^+ \otimes V_{\ell\eta}^-$ internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ and let $\Gamma: N \to M$ be composed of $N_1,...,N_M$. Define
+We can now define our functorial quantum field theory. Let $E$ denote the coalgebra $V_0^+ \otimes V_{\ell\eta}^-$ internal to $Y(\mathfrak{gl}_\ell)\mathsf{Mod}$ and let $\Gamma: N \to M$ be composed of $N_1,...,N_M$. Define
 \begin{equation*}
 E_\Gamma := E[y_1] \otimes \cdots \otimes E[y_N].
 \end{equation*}
@@ -2959,7 +2977,7 @@ where we have used the index labeling
 E[y_1] \otimes E[y_2]
 = \overset{1}{V_0^+} \otimes \overset{2}{V_{\ell\eta}^-}[y_1] \otimes \overset{3}{V_0^+} \otimes \overset{4}{V_{\ell\eta}^-}[y_2].
 \end{align*}
-This defines a $Y(\mathfrak{gl}_\ell)$-$\underline{\dot H}_\Gamma$-bimodule structure on $E_\Gamma$, where the permutation $(i \ j)$ acts via the braiding $P_{ij} \check R_{ij}^E(y_i-y_j)$ and the polynomial generators act via multiplication. In particular, $P_{ij} \check R_{ij}^E(y_i-y_j)$ becomes an $(i \ j)$-equivariant map of $Y(\mathfrak{gl}_\ell)$-$\underline{\dot H}_\Gamma$-bimodules.
+This defines a $Y(\mathfrak{gl}_\ell)$-$\underline{\dot H}_\Gamma$-bimodule structure on $E_\Gamma$, where the permutation $(i \ j)$ acts via the $Y(\mathfrak{gl}_\ell)$-linear braiding $P_{ij} \check R_{ij}^E(y_i-y_j)$ and the polynomial generators act via multiplication. In particular, $P_{ij} \check R_{ij}^E(y_i-y_j)$ becomes an $(i \ j)$-equivariant map of $Y(\mathfrak{gl}_\ell)$-$\underline{\dot H}_\Gamma$-bimodules.
 
 \begin{theorem}
 There is a monoidal double functor $Z: \mathbb{C}\textnormal{ob} \to Y(\mathfrak{gl}_\ell)\mathbb{C}\textnormal{o}\mathbb{A}\textnormal{lg}$ with components
@@ -2970,67 +2988,52 @@ Z_1&: \mathbb{C}\textnormal{ob}_1 \to Y(\mathfrak{gl}_\ell)\mathbb{C}\textnormal
 where $Z_0$ maps $\sigma \in \dot S_N$ to the permutation of tensorands determined by $\bar \sigma \in S_N$, and $Z_1$ maps
 \begin{enumerate}[label=(\roman*)]
 \item $((i \ j),f): (\Gamma,U) \to (\Gamma,U')$ to $(i \ j) \otimes f$, where $(i \ j)$ denotes $P_{ij} \check R_{ij}^E(y_i-y_j)$ from the action of $\underline{\dot H}_\Gamma$ on $E_\Gamma$, and
-\item $(X_i,f): (\Gamma,U) \to (\Gamma,U')$ to $P_w \check H_i \otimes f$, where $P_w$ denotes the permutation determined by the Coxeter element $w$ and $\check H_i$ denotes the $i$th non-local Hamiltonian.
+\item $(X_i,f): (\Gamma,U) \to (\Gamma,U')$ to $P_{w^{-1}} \check H_i \otimes f$, where $P_w$ denotes the permutation determined by the Coxeter element $w$ and $\check H_i$ denotes the $i$th non-local Hamiltonian.
 \end{enumerate}
-%squares
-%\begin{center}
-%\begin{tikzcd}
-%{[2]} \arrow{r}{(\Gamma,U)} \arrow{d}{s_1} & {[1]} \arrow{d}{\id} \\
-%{[2]} \arrow{r}{(\Gamma,U')} & {[1]}
-%\end{tikzcd}
-%\end{center}
-%labeled by an $s_1$-equivariant $f: U \to U'$ to
-%\begin{equation*}
-%bla
-%\end{equation*}
-%and squares
-%\begin{center}
-%\begin{tikzcd}
-%{[N]} \arrow{r}{(\Gamma,U)} \arrow{d}{X_i} & {[1]} \arrow{d}{\id} \\
-%{[N]} \arrow{r}{(\Gamma,U')} & {[1]}
-%\end{tikzcd}
-%\end{center}
-%labeled by an $\id$-equivariant $f: U \to U'$ to $f \otimes P_w \check H_i$.
 \end{theorem}
 
 \begin{proof}
 \begin{enumerate}[label=(\roman*)]
-\item Well-definition: It is immediate that $Z_0$ is well-defined. It remains to check that $Z_1$ maps the morphisms of $\mathbb{C}\textnormal{ob}_1$ to well-defined $Y(\mathfrak{gl}_\ell)$-linear maps of bicomodules. Indeed, $((i \ j),f)$ gets mapped to $(i \ j) \otimes f$, which is a well-defined $Y(\mathfrak{gl}_\ell)$-linear map since both $(i \ j)$ and $f$ are $(i \ j)$-equivariant. Similarly, we know that $(X_i,f)$ gets mapped to $P_w \check H_i \otimes f$, which is a well-defined $Y(\mathfrak{gl}_\ell)$-linear map since both maps are $\id$-equivariant and $Y(\mathfrak{gl}_\ell)$-linear.
+\item $Z$ is well-defined: It is immediate that $Z_0$ is well-defined. It remains to check that $Z_1$ maps the morphisms of $\mathbb{C}\textnormal{ob}_1$ to well-defined $Y(\mathfrak{gl}_\ell)$-linear maps of bicomodules. Indeed, $((i \ j),f)$ gets mapped to $(i \ j) \otimes f$, which is a well-defined $Y(\mathfrak{gl}_\ell)$-linear map since both $(i \ j)$ and $f$ are $(i \ j)$-equivariant. Similarly, we know that $(X_i,f)$ gets mapped to $P_{w^{-1}} \check H_i \otimes f$, which is a well-defined $Y(\mathfrak{gl}_\ell)$-linear map since both maps are $\id$-equivariant and $Y(\mathfrak{gl}_\ell)$-linear.
 \item $Z$ respects loose composition: Given $(\Gamma,U): [N] \to [M]$ and $(\Gamma',U'): [M] \to [L]$, we have natural isomorphisms
 \begin{align*}
 E_{\Gamma' \circ \Gamma} \otimes_{\underline{\dot H}_{\Gamma' \circ \Gamma}} \alpha_{\Gamma,\Gamma'}^*(U \otimes U')
 &\cong (E_\Gamma \operatorname{\square}_{Y^\vee(\mathfrak{gl}_\ell)^{\otimes M}} E_{\Gamma'}) \otimes_{\underline{\dot H}_\Gamma \otimes \underline{\dot H}_{\Gamma'}} (U \otimes U') \\
 &\cong (E_\Gamma \otimes_{\underline{\dot H}_\Gamma} U) \operatorname{\square}_{Y^\vee(\mathfrak{gl}_\ell)^{\otimes M}} (E_{\Gamma'} \otimes_{\underline{\dot H}_{\Gamma'}} U').
 \end{align*}
-\item Monoidality: It is immediate that $Z_0$ is monoidal. For $Z_1$, we recall that for $(\Gamma_1,U_1): [N_1] \to [M_1]$ and $(\Gamma_2,U_2):[N_2] \to [M_2]$, we have $\underline{\dot H}_{\Gamma_1 \otimes \Gamma_2} \cong \underline{\dot H}_{\Gamma_2} \otimes \underline{\dot H}_{\Gamma_2}$. We similarly have $E_{\Gamma_1 \otimes \Gamma_2} \cong E_{\Gamma_1} \otimes E_{\Gamma_2}$, giving natural isomorphisms
+\item $Z$ is monoidal: It is clear that $Z_0$ is monoidal. For $Z_1$, we recall that for $(\Gamma_1,U_1): [N_1] \to [M_1]$ and $(\Gamma_2,U_2):[N_2] \to [M_2]$, we have $\underline{\dot H}_{\Gamma_1 \otimes \Gamma_2} \cong \underline{\dot H}_{\Gamma_2} \otimes \underline{\dot H}_{\Gamma_2}$. We similarly have $E_{\Gamma_1 \otimes \Gamma_2} \cong E_{\Gamma_1} \otimes E_{\Gamma_2}$, giving natural isomorphisms
 \begin{equation*}
 E_{\Gamma_1 \otimes \Gamma_2} \otimes_{\underline{\dot H}_{\Gamma_1 \otimes \Gamma_2}} (U_1 \otimes U_2) \cong (E_{\Gamma_1} \otimes_{\underline{\dot H}_{\Gamma_1}} U_1) \otimes (E_{\Gamma_2} \otimes_{\underline{\dot H}_{\Gamma_2}} U_2).
 \end{equation*}
 \end{enumerate}
 \end{proof}
 
-\begin{lemma}
-Let $E,E'$ be $A$-$B$-bimodules and $U,U'$ be $B$-modules. Let $B$ have an action of a group $G$ and let $h: E \to E'$ and $f: U \to U'$ be $g$-equivariant for some $g \in G$. Then $h \otimes f$ is a well-defined $A$-linear map.
-\end{lemma}
+\begin{remark}
+The theorem above needs a bit more work to be proven definitively. However, time constraints did not allow the author to work through the full proof. For example, it is puzzling why we would assign $P_{w^{-1}} \check H_i \otimes f$ to $(X_i,f)$ and not simply $\check H_i \otimes f$. However, $P_{w^{-1}}$ is necessary for $Y(\mathfrak{gl}_\ell)$-linearity. All in all, the correct stuff and structure is present, it only remains to check some properties.
+\end{remark}
 
-\begin{proof}
-We check
-\begin{align*}
-(h \otimes f)(e \otimes bu)
-= h(e) \otimes f(bu)
-= h(e) \otimes g(b)f(u)
-= h(e)g(b) \otimes f(u)
-= h(eb) \otimes f(u)
-= (h \otimes f)(eb \otimes u)
-\end{align*}
-as well as
-\begin{equation*}
-(h \otimes f)(ae \otimes u)
-= h(ae) \otimes f(u)
-= ah(e) \otimes f(u)
-= a(h \otimes f)(e \otimes u).
-\end{equation*}
-\end{proof}
+%\begin{lemma}
+%Let $E,E'$ be $A$-$B$-bimodules and $U,U'$ be $B$-modules. Let $B$ have an action of a group $G$ and let $h: E \to E'$ and $f: U \to U'$ be $g$-equivariant for some $g \in G$. Then $h \otimes f$ is a well-defined $A$-linear map.
+%\end{lemma}
+%
+%\begin{proof}
+%We check
+%\begin{align*}
+%(h \otimes f)(e \otimes bu)
+%= h(e) \otimes f(bu)
+%= h(e) \otimes g(b)f(u)
+%= h(e)g(b) \otimes f(u)
+%= h(eb) \otimes f(u)
+%= (h \otimes f)(eb \otimes u)
+%\end{align*}
+%as well as
+%\begin{equation*}
+%(h \otimes f)(ae \otimes u)
+%= h(ae) \otimes f(u)
+%= ah(e) \otimes f(u)
+%= a(h \otimes f)(e \otimes u).
+%\end{equation*}
+%\end{proof}
 
 \section{Quantum-classical duality in terms of four-dimensional Chern-Simons theory}
 
@@ -3042,7 +3045,7 @@ S_\omega(A) = \frac{i}{4\pi} \int_{C \times \Sigma} \omega \wedge \textnormal{CS
 \end{equation*}
 The field $A$ is a $\mathfrak{gl}_\ell$-valued 1-form on $C \times \Sigma$ that has no components in the $z,\bar z$ direction up to some gauge transformation, meaning we can write it as $A = A_t dt + A_x dx$. The equations of motion let us interpret $A$ as a Lax connection on $\Sigma$ with spectral parameter $z$, writing $A(z) \in \Omega^1(\Sigma,\mathfrak{gl}_\ell)$. Thus, four-dimensional Chern-Simons theory reduces to a two-dimensional integrable field theory on $\Sigma$ with spectral parameter in $C$.
 
-The functorial quantum field theory $Z$ we constructed above exactly represents four-dimen\-sional Chern-Simons theory for $C=\P^1$ with $\omega = dz$ and $\Sigma = S^1 \times [0,1]$. The topological cobordisms are nothing but Wilson lines along $S^1 \times [0,1]$ and the holomorphic cobordisms specify their (constant) coordinate in $\P^1 \setminus \{ \infty \}$ as well as the representation labeling them, in our case $V_y^+$. The twist matrix parametrizes transition function of the background principal $GL_\ell$-bundle on the cylinder. It is a famous result of \cite{article:costello:2013} that Wilson lines in four-dimensional Chern-Simons theory reproduce the Heisenberg model in the way we described.
+The functorial quantum field theory $Z$ we constructed above exactly represents four-dimen\-sional Chern-Simons theory for $C=\P^1$ with $\omega = dz$ and $\Sigma = S^1 \times [0,1]$. The topological cobordisms are nothing but Wilson lines along $S^1 \times [0,1]$ and the holomorphic cobordisms specify their (constant) coordinate in $\P^1 \setminus \{ \infty \}$ as well as the representation labeling them, in our case $V_y^+$. The twist matrix parametrizes the \v Cech cocycle of the background principal $GL_\ell$-bundle on the cylinder. It is a famous result of \cite{article:costello:2013} that Wilson lines in four-dimensional Chern-Simons theory reproduce the Heisenberg model in the way we described.
 
 We can now perform two dimensional reductions: Firstly, we may shrink $S^1 \times [0,1]$ to a point, so that our Wilson lines become point particles on $\P^1 \setminus \{ \infty \}$ that carry internal spin degrees of freedom, following the rational Ruijsenaars-Schneider Hamiltonian. Secondly, we may shrink $\P^1$ to a point, which gives the homogeneous limit $y_1,...,y_N \to 0$, in which we obtain the homogeneous Heisenberg spin chain with its local Hamiltonian. This paints a nicely intuitive picture of quantum-classical duality.
 
@@ -3365,7 +3368,7 @@ Another fruitful direction might be the quantization of the elliptic Ruijsenaars
 
 To this end, we will have to determine which module the functorial quantum field theory assigns to $E \times S^1$, or more precisely, we have to determine the Drinfeld-type functor defined on quasi-coherent sheaves on
 \begin{equation*}
-Y_N^\text{ell} := \{ (y_1,...,y_N,\tau) \in \C^N \times \mathbb{H} \mid y_i,y_i-y_j,y_i-y_j-\eta \notin \Z \oplus \Z \tau \}/S_N \times SL_2(\Z) \ltimes (\Z^2)^N.
+Y_N^\text{ell} := \{ (y_1,...,y_N,\tau) \in \C^N \times \mathbb{H} \mid y_i,y_i-y_j,y_i-y_j-\eta \notin \Z \oplus \Z \tau \}/(S_N \times SL_2(\Z) \ltimes (\Z^2)^N).
 \end{equation*}
 In accordance with \cite{article:costello:2018b}, we have to replace the Yangian with Belavin's elliptic quantum group $E(\mathfrak{gl}_\ell)$, so our Drinfeld functor will be valued in modules over $E(\mathfrak{gl}_\ell)$. Thus, we will have to construct a bimodule
 \begin{equation*}
@@ -3806,7 +3809,7 @@ Let $H$ be a Hopf algebra. Then there is a monoidal double category $H\mathbb{C}
 H\mathbb{C}\textnormal{o}\mathbb{A}\textnormal{lg}_0 &:= \{ \text{coalgebras internal to } H\mathsf{Mod} \text{ with coalgebra maps} \}, \\
 H\mathbb{C}\textnormal{o}\mathbb{A}\textnormal{lg}_1 &:= \{ \text{bicomodules internal to } H\mathsf{Mod} \text{ with equivariant bicomodule maps} \}.
 \end{align*}
-Loose composition is given by the relative tensor product of bicomodules and the monoidal structure is given by the usual tensor product in $H\mathsf{Mod}$.
+Loose composition of $A$-$B$-bicomodules with $B$-$C$-bicomodules is given by the relative cotensor product $- \operatorname{\square}_B -$ and the monoidal structure is given by the usual tensor product in $H\mathsf{Mod}$.
 \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
