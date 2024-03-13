@@ -97,6 +97,8 @@ We examine a quantum-classical duality between inhomogeneous Heisenberg models a
 
 I sincerely want to thank my advisor Prof. Dr. Gleb Arutyunov for his feedback and guidance in the research process and for sparking my interest in this wonderful topic, as well as my coadvisor Prof. Dr. Paul Wedrich for pointing me to relevant work. I also thank Philipp Rusch for proofreading the text. Finally, I would like to thank my family for their unwavering support in my studies.
 
+\let\thefootnote\relax\footnotetext{This thesis has benefited from large language models.}
+
 \tableofcontents
 
 \setcounter{chapter}{-1}
@@ -1393,7 +1395,7 @@ where $Y_i$ are the Jucys-Murphy elements. We will also make use of
 \begin{equation}\label{equation:hookProjector}
 \Pi_{t_{[2,1^{k-1}]}} = \frac{1}{(k+1)!} (k+Y_{k+1}) \prod_{i=1}^k (1-Y_i) = \frac{1}{k+1} (k + Y_{k+1}) \Pi_{t_{[1^k]}},
 \end{equation}
-where we have used the column tablau. These projectors can be checked to satisfy
+where we have used the column tablau. These projectors clearly satisfy
 \begin{equation}\label{equation:LRRule}
 \Pi_{t_{[1^k]}} \otimes 1 = \Pi_{t_{[1^{k+1}]}} + \Pi_{t_{[2,1^{k-1}]}},
 \end{equation}
@@ -1427,13 +1429,17 @@ Let $t_\lambda$ be a standard Young tableau of shape $\lambda$ with $k$ boxes an
 \end{align}
 where we have defined
 \begin{equation*}
-T_{t_\lambda}^g(z) := g_k \cdots g_1 T_k(z+\eta c_k) \cdots T_1(z+\eta c_1).
+T_{t_\lambda}^g(z) := g_1 \cdots g_k T_1(z-\eta c_1) \cdots T_k(z-\eta c_k).
 \end{equation*}
 This coaction preserves the subspace $L_{t_\lambda} \subseteq (\C^\ell)^{\otimes k}$ due to
 \begin{equation*}
+\Pi_{t_\lambda} T_k(z-\eta c_k) \cdots T_1(z-\eta c_1) = T_1(z-\eta c_1) \cdots T_k(z-\eta c_k) \Pi_{t_\lambda},
+\end{equation*}
+which can be obtained by applying the anti-automorphism $T(z) \mapsto T(-z)$ to the relation
+\begin{equation*}
 \Pi_{t_\lambda} T_1(z+\eta c_1) \cdots T_k(z+\eta c_k) = T_k(z+\eta c_k) \cdots T_1(z+\eta c_1) \Pi_{t_\lambda},
 \end{equation*}
-which is derived from the higher RTT relation (\ref{equation:higherRTT}) by taking consecutive limits. We denote the comodule resulting from restriction of the coaction (\ref{equation:coaction}) to $L_{t_\lambda}$ shited by $y \in \C$ by $C(\lambda)_y^g$.
+which in turn is derived from the higher RTT relation (\ref{equation:higherRTT}) by taking consecutive limits. We denote the comodule resulting from restriction of the coaction (\ref{equation:coaction}) to $L_{t_\lambda}$ shifted by $y \in \C$ by $C(\lambda)_y^g$.
 \end{definition}
 
 \begin{definition}
@@ -1447,17 +1453,17 @@ where $\operatorname{tr}_{t_\lambda}$ denotes the partial trace over $L_{t_\lamb
 \begin{example}
 Consider $\tau_{[1^2]}^g(z)$. We can write this as
 \begin{equation*}
-\tau_{[1^2]}^g(z) = \operatorname{tr}_{t_{[1^2]}} T_{t_{[1^2]}}^g(z) = \operatorname{tr}_{12} \Pi_{t_{[1^2]}} g_2 g_1 T_2(z-\eta) T_1(z).
+\tau_{[1^2]}^g(z) = \operatorname{tr}_{t_{[1^2]}} T_{t_{[1^2]}}^g(z) = \operatorname{tr}_{12} \Pi_{t_{[1^2]}} g_1 g_2 T_1(z) T_2(z+\eta).
 \end{equation*}
 In particular, in the fundamental monodromy representation $V_{y_1}^+ \otimes V_{y_2}^+$, this becomes
 \begin{equation*}
-\tau_{[1^2]}^g(z) = \operatorname{tr}_{12} \Pi_{12}^- g_2 g_1 R_{22'}(z-\eta-y_2) R_{21'}(z-\eta-y_1) R_{12'}(z-y_2) R_{11'}(z-y_1),
+\tau_{[1^2]}^g(z) = \operatorname{tr}_{12} \Pi_{12}^- g_2 g_1 R_{12'}(z-y_2) R_{11'}(z-y_1) R_{22'}(z+\eta-y_2) R_{21'}(z+\eta-y_1),
 \end{equation*}
 which reads
 ~\\
 \begin{center}
 \begin{tikzpicture}
-\node at (1.5,0.5) {$\tau_{[1^2]}^g(z) =$};
+\node at (1.5,0.5) {$\tau_{[1^2]}^g(z) = \frac{1}{2} \times$};
 \draw[red,dashed] (3,-0.5) -- (3,1.5);
 \draw (5,-0.5) -- (5,1.5);
 \draw (6,-0.5) -- (6,1.5);
@@ -1472,8 +1478,8 @@ which reads
 \draw (4,0.5) .. controls (3.5,1) .. (3,1);
 \draw (4,0.5) .. controls (3.5,0) .. (3,0);
 \draw (4+.1,0.5-.1) arc (-45:45:0.15);
-\node[right] at (6.5,0) {$z$};
-\node[right] at (6.5,1) {$z-\eta$};
+\node[right] at (6.5,0) {$z+\eta$};
+\node[right] at (6.5,1) {$z$};
 \node[below] at (5,-0.5) {$y_1$};
 \node[below] at (6,-0.5) {$y_2$};
 \draw[red,dashed] (6.5,-0.5) -- (6.5,1.5);
@@ -1486,22 +1492,26 @@ Further, we see that the highest transfer matrix $\tau_{[1^\ell]}^g(z)$ has a pa
 
 \begin{corollary}
 \begin{equation*}
-\tau_{[1^\ell]}^g(z) = \det g \sum_\sigma \operatorname{sgn} \sigma \cdot t_{\sigma(\ell)\ell}(z-\eta (\ell-1)) \cdots t_{\sigma(1)1}(z).
+\tau_{[1^\ell]}^g(z) = \det g \sum_\sigma \operatorname{sgn} \sigma \cdot t_{\sigma(1)1}(z+\eta(\ell-1)) \cdots t_{\sigma(\ell)\ell}(z).
 \end{equation*}
 \end{corollary}
 
 \begin{proof}
 We have
+\begin{align*}
+\tau_{[1^\ell]}^g(z)
+&= \operatorname{tr}_{t_{[1^\ell]}} T_{t_{[1^\ell]}}^g(z) \\
+&= \operatorname{tr}_{1...\ell} \Pi_{t_{[1^\ell]}} g_1 \cdots g_\ell T_1(z) \cdots T_\ell(z+\eta(\ell-1)) \\
+&= \operatorname{tr}_{1...\ell} \Pi_{t_{[1^\ell]}} g_1 \cdots g_\ell T_\ell(z+\eta(\ell-1)) \cdots T_1(z) \\
+&= \operatorname{tr}_{1...\ell} \Pi_{t_{[1^\ell]}} g_1 \cdots g_\ell T_1(z+\eta(\ell-1)) \cdots T_\ell(z).
+\end{align*}
+We apply $\Pi_{t_{[1^\ell]}} g_1 \cdots g_\ell T_1(z+\eta(\ell-1)) \cdots T_\ell(z)$ to $e_1 \otimes \cdots \otimes e_\ell$ and obtain
 \begin{equation*}
-\tau_{[1^\ell]}^g(z) = \operatorname{tr}_{t_{[1^\ell]}} T_{t_{[1^\ell]}}^g(z) = \operatorname{tr}_{1...\ell} \Pi_{t_{[1^\ell]}} g_\ell \cdots g_1 T_\ell(z-\eta(\ell-1)) \cdots T_1(z).
+\sum_{i_1,...,i_\ell} t_{i_1,1}(z+\eta(\ell-1)) \cdots t_{i_\ell,\ell}(z) \otimes \Pi_{t_{[1^\ell]}} (\gamma_{i_1} e_{i_1} \otimes \cdots \otimes \gamma_{i_\ell} e_{i_\ell}).
 \end{equation*}
-We apply $\Pi_{t_{[1^\ell]}} g_\ell \cdots g_1 T_\ell(z-\eta(\ell-1)) \cdots T_1(z)$ to $e_1 \otimes \cdots \otimes e_\ell$ and obtain
+But $\Pi_{t_{[1^\ell]}} (\gamma_{i_1} e_{i_1} \otimes \cdots \otimes \gamma_{i_\ell} e_{i_\ell})$ is only non-zero when the $i_1,...,i_\ell$ define a permutation $\sigma$, in which case it reduces to $\gamma_1 \cdots \gamma_\ell \cdot \operatorname{sgn} \sigma \cdot \Pi_{t_{[1^\ell]}} (e_1 \otimes \cdots \otimes e_\ell)$. All in all, the trace thus reduces to
 \begin{equation*}
-\sum_{i_1,...,i_\ell} t_{i_\ell,\ell}(z-\eta(\ell-1)) \cdots t_{i_1,1}(z) \otimes \Pi_{t_{[1^\ell]}} (\gamma_{i_1} e_{i_1} \otimes \cdots \otimes \gamma_{i_\ell} e_{i_\ell}).
-\end{equation*}
-But $\Pi_{t_{[1^\ell]}} (\gamma_{i_1} e_{i_1} \otimes \cdots \otimes \gamma_{i_\ell} e_{i_\ell})$ is only non-zero when the $i_1,...,i_\ell$ define a permutation $\sigma$, in which case it reduces to $\gamma_1 \cdots \gamma_\ell \cdot \operatorname{sgn} \sigma \cdot (e_1 \otimes \cdots \otimes e_\ell)$. All in all, the trace thus reduces to
-\begin{equation*}
-\sum_\sigma \gamma_1 \cdots \gamma_\ell \cdot \operatorname{sgn} \sigma \cdot t_{\sigma(\ell)\ell}(z-\eta(\ell-1)) \cdots t_{\sigma(1)1}(z),
+\sum_\sigma \gamma_1 \cdots \gamma_\ell \cdot \operatorname{sgn} \sigma \cdot t_{\sigma(1)1}(z+\eta(\ell-1)) \cdots t_{\sigma(\ell)\ell}(z),
 \end{equation*}
 which shows the claim.
 \end{proof}
@@ -1511,7 +1521,7 @@ Due to this fact, $\tau_{[1^\ell]}^1(z)$ deserves the name \emph{quantum determi
 \end{definition}
 
 \begin{remark}
-This definition of the quantum determinant differs from the one in \cite{book:molev} by the anti-automorphism $\sigma: T(z) \mapsto T(-z)$. Specifically, Molev's definition coincides with $\sigma(\operatorname{qdet} T(-z))$.
+This definition of the quantum determinant differs from the one in \cite{book:molev} by the shift $z \mapsto z-\eta(\ell-1)$.
 \end{remark}
 
 \begin{prop}\label{prop:quantumDetGroupLike}
@@ -1533,15 +1543,21 @@ The center of $Y(\mathfrak{gl}_\ell)$ is generated by the coefficients of $\oper
 This is theorem 1.7.5 in \cite{book:molev}.
 \end{proof}
 
-\begin{prop}\label{prop:quantumDetWeights}
+\begin{corollary}\label{corollary:quantumDetWeights}
 Let $V$ be a highest weight representation of $Y(\mathfrak{gl}_\ell)$ with highest weight $\lambda(z) = (\lambda_1(z),...,\lambda_\ell(z))$. Then $\operatorname{qdet} T(z)$ acts as a scalar of the form
 \begin{equation*}
-\lambda_1(-z) \lambda_2(-z-\eta) \cdots \lambda_\ell(-z-\eta(\ell-1)).
+\lambda_1(z+\eta(\ell-1)) \cdots \lambda_\ell(z).
 \end{equation*}
-\end{prop}
+In particular, the quantum determinant acting on $V_y^+$ is given by $1 - \frac{\eta}{z-y}$.
+\end{corollary}
 
 \begin{proof}
-This is proposition 3.2.5 of \cite{book:molev}, keeping in mind that we have to flip the sign of the spectral parameter to match conventions. %Since $T(z)$ acts as a lower-triangular matrix on the highest weight vector, the only non-zero term in the Leibniz formula above is the term for $\sigma = \id$, which acts exactly as described. Since $\operatorname{qdet} T(z)$ is central in $Y(\mathfrak{gl}_\ell)$, it will act on all vectors of $V$ via this scalar.
+Since $T(z)$ acts as a lower-triangular matrix on the highest weight vector, the only non-zero term in the Leibniz formula above is the term for $\sigma = \id$, which acts exactly as described. Since $\operatorname{qdet} T(z)$ is central in $Y(\mathfrak{gl}_\ell)$, it will act on all vectors of $V$ via this scalar.
+
+For the second claim, we compute the highest weight of the $\mathfrak{gl}_\ell$-module $L(\ydiagram{1})^t$ by starting with $\ydiagram{1} = (1,0,...,0)$, multiplying by $-1$ to obtain $(-1,0,...,0)$ and reordering to obtain $(0,...,0,-1)$. It follows that
+\begin{equation*}
+\lambda_1(z+\eta(\ell-1)) \cdots \lambda_\ell(z) = \lambda_\ell(z) = 1 - \frac{\eta}{z-y}
+\end{equation*}
 \end{proof}
 
 %Using the fusion procedure and the quantum determinant, we may characterize dual representations in a new way. Recall that $V_y^+ = L(\ydiagram{1})_y^t$ and that $V_{y-\ell\eta}^- = L(\ydiagram{1})_{y-\ell\eta}$ and $V_{y+\ell\eta}^- = L(\ydiagram{1})_{y+\ell\eta}$ are its left and right duals. There is another convenient way to express duals. Let $\check V_y^+$ denote $V_y^+$ twisted by $\operatorname{qdet} T(z)^{-1}$, so that $T(z)$ acts via $(\operatorname{qdet} T(z)^{-1}) T(z)$. We note that by corollary \ref{corollary:quantumDet}, the quantum determinant acts via the scalar $1-\frac{\eta}{z-y} = \frac{z-y-\eta}{z-y}$, so that
@@ -1590,7 +1606,7 @@ which follows from the RTT relation and taking consecutive limits.
 %\end{equation}
 Further, repeated application of the RTT relation (\ref{equation:RTTRelation})\index{Higher RTT relation} implies
 \begin{align*}
-R_{t_\lambda,t_\mu}(z-w) T_{t_\lambda}(z) T_{t_\mu}(w) &= T_{t_\mu}(w) T_{t_\lambda}(z) R_{t_\lambda,t_\mu}(z-w).
+R_{t_\lambda,t_\mu}(z-w) T_{t_\mu}(z) T_{t_\lambda}(w) &= T_{t_\lambda}(w) T_{t_\mu}(z) R_{t_\lambda,t_\mu}(z-w).
 \end{align*}
 Similarly, repeated application of the quantum Yang-Baxter equation implies the higher quantum Yang-Baxter equation:
 \begin{equation*}
@@ -1626,8 +1642,8 @@ Since $R_{t_\lambda,t_\mu}(z)$ is invertible almost everywhere by the previous p
 \tau_\lambda^g(z) \tau_\mu^g(w)
 &= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\lambda} T_{t_\lambda}(z) g_{t_\mu} T_{t_\mu}(w) \\
 &= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\lambda} g_{t_\mu} T_{t_\lambda}(z) T_{t_\mu}(w) \\
-&= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\lambda} g_{t_\mu} R_{t_\lambda,t_\mu}(z-w)^{-1} T_{t_\mu}(w) T_{t_\lambda}(z) R_{t_\lambda,t_\mu}(z-w) \\
-&= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\lambda} g_{t_\mu} R_{t_\lambda,t_\mu}(z-w) R_{t_\lambda,t_\mu}(z-w)^{-1} T_{t_\mu}(w) T_{t_\lambda}(z) \\
+&= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\lambda} g_{t_\mu} R_{t_\lambda,t_\mu}(z-w) T_{t_\mu}(w) T_{t_\lambda}(z) R_{t_\lambda,t_\mu}(z-w)^{-1} \\
+&= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\lambda} g_{t_\mu} T_{t_\mu}(w) T_{t_\lambda}(z) R_{t_\lambda,t_\mu}(z-w)^{-1} R_{t_\lambda,t_\mu}(z-w) \\
 &= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\lambda} g_{t_\mu} T_{t_\mu}(w) T_{t_\lambda}(z) \\
 &= \operatorname{tr}_{t_\lambda,t_\mu} g_{t_\mu} T_{t_\mu}(w) g_{t_\lambda} T_{t_\lambda}(z) \\
 &= \tau_\mu^g(w) \tau_\lambda^g(z).
@@ -1640,7 +1656,7 @@ The functional relations between higher transfer matrices are the so called \emp
 \end{equation*}
 The rule for traces over short exact sequences immediately implies the functional relation
 \begin{equation*}\label{equation:functionalRelation}
-\tau_{[2,1^{k-1}]}^g(z-\eta) - \tau_{[1^k]}^g(z-\eta) \tau_{\ydiagram{1}}^g(z) + \tau_{[1^{k+1}]}^g(z) = 0,
+\tau_{[2,1^{k-1}]}^g(z+\eta) - \tau_{[1^k]}^g(z+\eta) \tau_{\ydiagram{1}}^g(z) + \tau_{[1^{k+1}]}^g(z) = 0,
 \end{equation*}
 which will be our basis for deriving the spectral equation. The analogous short exact sequence for modules over $Y(\mathfrak{sl}_2)$ was originally established in \cite{article:chari:1990}. In terms of Young diagrams, the case $k=3$ simply reads
 \begin{equation*}
@@ -1663,16 +1679,21 @@ Choosing column tableaux $t_{[2,1^{k-1}]},t_{[1^k]},t_{[1^{k+1}]}$, we are led t
 \end{equation*}
 coming from
 \begin{equation*}
-g_{k+1} g_k \cdots g_1 T_{k+1}(z) T_k(z-k\eta) \cdots T_1(z-\eta).
+g_1 \cdots g_k g_{k+1} T_1(z+\eta) \cdots T_k(z+k\eta) T_{k+1}(z).
 \end{equation*}
 The fusion projectors $\Pi_{t_{[2,1^{k-1}]}}$ and $\Pi_{t_{[1^k]}} \otimes 1$ project onto the left and middle pieces of the exact sequence we are after. From (\ref{equation:LRRule}), it follows that $\Pi_{t_{[2,1^{k-1}]}}$ actually factors through $\Pi_{t_{[1^k]}} \otimes 1$, which yields the inclusion from the left to the middle piece. This respects the coaction by construction. Now, $\Pi_{t_{[1^{k+1}]}}$ will be the projection onto the cokernel of this inclusion and it only remains to be checked that the projection respects the coaction. Indeed, the RTT relation supplemented by $\Pi_{t_{[1^{k+1}]}} \Pi_{t_{[1^k]}} = \Pi_{t_{[1^{k+1}]}}$ implies
 \begin{align*}
-&\Pi_{t_{[1^{k+1}]}} g_{k+1} g_k \cdots g_1 T_{k+1}(z) T_k(z-k\eta) \cdots T_1(z-\eta) \\
-&= \Pi_{t_{[1^{k+1}]}} \Pi_{t_{[1^k]}} g_{k+1} g_k \cdots g_1 T_{k+1}(z) T_k(z-k\eta) \cdots T_1(z-\eta) \\
-&= \Pi_{t_{[1^{k+1}]}}  g_{k+1} g_k \cdots g_1 T_{k+1}(z) T_1(z-\eta) \cdots T_k(z-k\eta) \Pi_{t_{[1^k]}} \\
-&=  g_{k+1} g_k \cdots g_1 T_k(z-k\eta) \cdots T_1(z-\eta) T_{k+1}(z) \cdots \Pi_{t_{[1^{k+1}]}} \Pi_{t_{[1^k]}} \\
-&=  g_{k+1} g_k \cdots g_1 T_k(z-k\eta) T_1(z-\eta) T_{k+1}(z) \Pi_{t_{[1^{k+1}]}}.
+&\Pi_{t_{[1^{k+1}]}} g_{k+1} g_k \cdots g_1 T_{k+1}(z) T_k(z-k\eta) \cdots T_1(z-\eta) \Pi_{t_{[1^k]}} \\
+&= \Pi_{t_{[1^{k+1}]}} \Pi_{t_{[1^k]}} g_{k+1} g_k \cdots g_1 T_{k+1}(z) T_1(z-\eta) \cdots T_k(z-k\eta) \\
+&= \Pi_{t_{[1^{k+1}]}} g_{k+1} g_k \cdots g_1 T_{k+1}(z) T_1(z-\eta) \cdots T_k(z-k\eta) \\
+&= g_{k+1} g_k \cdots g_1 T_k(z-k\eta) \cdots T_1(z-\eta) T_{k+1}(z) \Pi_{t_{[1^{k+1}]}}.
 \end{align*}
+Applying the anti-automorphism $T(z) \mapsto T(-z)$ to this relation yields
+\begin{align*}
+&\Pi_{t_{[1^{k+1}]}} g_1 \cdots g_k g_{k+1} T_1(z+\eta) \cdots T_k(z+k\eta) T_{k+1}(z) \Pi_{t_{[1^k]}} \\
+&= g_1 \cdots g_k g_{k+1} T_{k+1}(z) T_1(z+\eta) \cdots T_k(z+k\eta) \Pi_{t_{[1^{k+1}]}},
+\end{align*}
+so $\Pi_{t_{[1^{k+1}]}}$ indeed respects the coaction.
 \end{proof}
 
 %\begin{proof}
@@ -1738,23 +1759,23 @@ The higher transfer matrix $\tau_{[1^k]}^g(z)$ only has simple poles at $y_1,...
 \begin{proof}
 The poles of $\tau_{[1^k]}^g(z)$ can be read off from
 \begin{equation*}
-\tau_{[1^k]}^g(z) = \operatorname{tr}_{1...k} \Pi_{1...k}^- g_k \cdots g_1 M_k(z-(k-1)\eta) \cdots M_2(z-\eta) M_1(z),
+\tau_{[1^k]}^g(z) = \operatorname{tr}_{1...k} \Pi_{1...k}^- g_1 \cdots g_k M_1(z) M_2(z+\eta) \cdots M_k(z+(k-1)\eta),
 \end{equation*}
-where $M_a(z)$ is the monodromy matrix. It follows  from the analytic structure of the $R$-matrix that $\tau_{[1^k]}(z)$ may at most have simples poles at $y_i - j\eta$ for $i=1,...,N$ and $j=0,...,k-1$ when $y_1,...,y_N$ are in generic position. It remains to show that the residues at $y_i-j\eta$ for $j=1,...,k-1$ vanish. Indeed, let us look at two adjacent monodromy matrices of the form $M_2(z-\eta) M_1(z)$. Introduce the partial monodromy matrix
+where $M_a(z)$ is the monodromy matrix. It follows  from the analytic structure of the $R$-matrix that $\tau_{[1^k]}(z)$ may at most have simples poles at $y_i-j\eta$ for $i=1,...,N$ and $j=0,...,k-1$ when $y_1,...,y_N$ are in generic position. It remains to show that the residues at $y_i-j\eta$ for $j=1,...,k-1$ vanish. Indeed, let us look at two adjacent monodromy matrices of the form $M_1(z) M_2(z+\eta)$. Introduce the partial monodromy matrix
 \begin{equation*}
 M_a^{[i,j]}(z) := R_{ai}(z-y_i) \cdots R_{aj}(z-y_j)
 \end{equation*}
 and compute
 \begin{align*}
-\operatorname{Res}_{z=y_i-\eta} \Big( M_2(z-\eta) M_1(z) \Big)
-&= M_2^{[N,i+1]}(y_i) \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{1i}^+ M_1^{[i-1,1]}(y_i-\eta) \\
-&= M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) \eta P_{2i} 2 \Pi_{1i}^+ M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
-&= M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{12}^+ \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
-&= \Pi_{21}^+ M_1^{[N,i+1]}(y_i-\eta) M_2^{[N,i+1]}(y_i) 2 \Pi_{12}^+ \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
-&= \Pi_{12}^+ M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{12}^+ \eta P_{2i} M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \\
-&= \Pi_{12}^+ \operatorname{Res}_{z=y_i-\eta} \Big( M_2(z-\eta) M_1(z) \Big).
+\operatorname{Res}_{z=y_i-\eta} \Big( M_1(z) M_2(z+\eta) \Big)
+&= -M_1^{[N,i+1]}(y_i-\eta) 2 \Pi_{1i}^+ M_1^{[i-1,1]}(y_i-\eta) M_2^{[N,i+1]}(y_i) \eta P_{2i} M_2^{[i-1,1]}(y_i) \\
+&= -M_1^{[N,i+1]}(y_i-\eta) M_2^{[N,i+1]}(y_i) 2 \Pi_{1i}^+ \eta P_{2i} M_1^{[i-1,1]}(y_i-\eta) M_2^{[i-1,1]}(y_i) \\
+&= -M_1^{[N,i+1]}(y_i-\eta) M_2^{[N,i+1]}(y_i) \eta P_{2i} 2 \Pi_{12}^+ M_1^{[i-1,1]}(y_i-\eta) M_2^{[i-1,1]}(y_i) \\
+&= -M_1^{[N,i+1]}(y_i-\eta) M_2^{[N,i+1]}(y_i) \eta P_{2i} 2 \Pi_{12}^+ M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \Pi_{12}^+ \\
+&= -M_1^{[N,i+1]}(y_i-\eta) M_2^{[N,i+1]}(y_i) \eta P_{2i} 2 \Pi_{12}^+ M_1^{[i-1,1]}(y_i-\eta) M_2^{[i-1,1]}(y_i) \Pi_{12}^+ \\
+&= -\operatorname{Res}_{z=y_i-\eta} \Big( M_2(z-\eta) M_1(z) \Big) \Pi_{12}^+.
 \end{align*}
-It follows that $\operatorname{Res}_{z=y_i-\eta} \big( M_k(z-(k-1)\eta) \cdots M_1(z) \big)$ is symmetric in the indices 1 and 2, forcing $\operatorname{Res}_{z=y_i-\eta} \tau_{[1^k]}^g(z)$ to be zero due to the presence of the antisymmetrizer $\Pi_{1...k}^-$. The same argument also holds for the poles at $y_i-j\eta$ for $j=2,...,k-1$.
+It follows that $\operatorname{Res}_{z=y_i-\eta} \big( M_1(z) M_2(z+\eta) \cdots M_k(z+(k-1)\eta) \big)$ is symmetric in the indices 1 and 2, forcing $\operatorname{Res}_{z=y_i-\eta} \tau_{[1^k]}^g(z)$ to be zero due to the presence of the antisymmetrizer $\Pi_{1...k}^-$. The same argument also holds for the poles at $y_i-j\eta$ for $j=2,...,k-1$.
 \end{proof}
 
 \begin{lemma}\label{lemma:transferMatrixExpansion}
@@ -1775,7 +1796,7 @@ Let us take the column tableau $t_\lambda$, giving
 \end{equation*}
 But $T_{t_\lambda}^g(\infty)$ is just $g$, yielding
 \begin{equation*}
-\tau_\lambda^g(\infty) = \operatorname{tr}_{t_\lambda} g_k \cdots g_1,
+\tau_\lambda^g(\infty) = \operatorname{tr}_{t_\lambda} g_1 \cdots g_k,
 \end{equation*}
 which is exactly the character $\chi_\lambda(g)$ of the highest weight module $L(\lambda)$.
 \end{proof}
@@ -1795,21 +1816,21 @@ This is just the canonical partial fraction decomposition of $\tau_{[1^k]}^g(z)$
 We have the recursion relation
 \begin{equation*}
 \operatorname{Res}_{z=y_i} \tau_{[1^{k+1}]}^g(z)
-= -\eta e_k(g) H_i - \sum_j \frac{\eta H_i}{y_i-y_j-\eta} \operatorname{Res}_{z=y_j} \tau_{[1^k]}^g(z).
+= -\eta e_k(g) H_i - \sum_j \frac{\eta H_i}{y_i-y_j+\eta} \operatorname{Res}_{z=y_j} \tau_{[1^k]}^g(z).
 \end{equation*}
 \end{lemma}
 
 \begin{proof}
 The functional relation (\ref{equation:functionalRelation}) can be rewritten as
 \begin{equation*}
-\tau_{[1^{k+1}]}^g(z) = \tau_{[1^k]}^g(z-\eta) \tau_{\ydiagram{1}}^g(z) - \tau_{[2,1^{k-1}]}^g(z-\eta).
+\tau_{[1^{k+1}]}^g(z) = \tau_{[1^k]}^g(z+\eta) \tau_{\ydiagram{1}}^g(z) - \tau_{[2,1^{k-1}]}^g(z+\eta).
 \end{equation*}
-Let us take the residue at $z=y_i$. Recall that $\tau_{[1^k]}^g(z-\eta)$ does not have a pole at $y_i$ by lemma \ref{lemma:analyticStructure}. If show the same for $\tau_{[2,1^{k-1}]}^g(z-\eta)$, we arrive at
+Let us take the residue at $z=y_i$. Recall that $\tau_{[1^k]}^g(z+\eta)$ does not have a pole at $y_i$ by lemma \ref{lemma:analyticStructure}. If show the same for $\tau_{[2,1^{k-1}]}^g(z+\eta)$, we arrive at
 \begin{equation*}
 \operatorname{Res}_{z=y_i} \tau_{[1^{k+1}]}^g(z)
-= -\eta \tau_{[1^k]}^g(y_i-\eta) H_i,
+= -\eta \tau_{[1^k]}^g(y_i+\eta) H_i,
 \end{equation*}
-such that lemma \ref{lemma:transferMatrixExpansion} yields the claim.
+such that lemma \ref{lemma:transferMatrixExpansion} applied to $\tau_{[1^k]}^g(y_i+\eta)$ yields the claim.
 %Indeed, taking the row tableau $t_{[2,1^{k-1}]}$, we get
 %\begin{align*}
 %\tau_{[2,1^{k-1}]}^g(z-\eta)
@@ -1820,12 +1841,12 @@ such that lemma \ref{lemma:transferMatrixExpansion} yields the claim.
 %&\operatorname{Res}_{z=y_i} M_{k+1}(z-k\eta) \cdots M_3(z-2\eta) M_2(z) M_1(z-\eta) \\
 %&= M_{k+1}^{[N,i+1]}(z-k\eta) \cdots M_3^{[N,i+1]}(y_i-2\eta) M_2^{[N,i+1]}(y_i) M_1^{[N,i+1]}(y_i-\eta) \mathbf{R} M_{k+1}^{[i-1,1]}(z-k\eta) \cdots M_3^{[i-1,1]}(y_i-2\eta) M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta)
 %\end{align*}
-Indeed, taking the column tableau $t_{[2,1^{k-1}]}$, we get
+Indeed, taking the row tableau $t_{[2,1^{k-1}]}$, we see
 \begin{align*}
-\tau_{[2,1^{k-1}]}^g(z)
-&= \operatorname{tr}_{1...k+1} \Pi_{t_{[2,1^{k-1}]}} g_{k+1} \cdots g_1 M_{k+1}(z+\eta) M_k(z-(k-1)\eta) \cdots M_2(z-\eta) M_1(z).
+\tau_{[2,1^{k-1}]}^g(z+\eta)
+&= \operatorname{tr}_{1...k+1} \Pi_{t_{[2,1^{k-1}]}} g_1 \cdots g_{k+1} M_1(z+\eta) M_2(z) M_3(z+2\eta) \cdots M_{k+1}(z+(k-1)\eta).
 \end{align*}
-The combination $M_2(z-\eta) M_1(z)$ again gives a vanishing residue at $z=y_i-\eta$ by the argument of lemma \ref{lemma:analyticStructure} using the identity $\Pi_{t_{[2,1^{k-1}]}} \Pi_{12}^+ = 0$, which follows from (\ref{equation:hookProjector}).
+The combination $M_1(z+\eta) M_2(z)$ again gives a vanishing residue at $z=y_i$ by the same argument as in lemma \ref{lemma:analyticStructure} using the identity $\Pi_{t_{[2,1^{k-1}]}} \Pi_{12}^- = 0$, which follows because $\Pi_{t_{[2,1^{k-1}]}}$ symmetrizes over the indices 1 and 2.
 \end{proof}
 
 In matrix notation, the previous lemma reads
@@ -1842,29 +1863,29 @@ H_1 \\
 \vdots \\
 H_N
 \end{pmatrix}
-+L^t
+- HC
 \begin{pmatrix}
 \operatorname{Res}_{z=y_1} \tau_{[1^k]}^g(z) \\
 \vdots \\
 \operatorname{Res}_{z=y_N} \tau_{[1^k]}^g(z)
 \end{pmatrix}
 \end{equation*}
-where we have introduced the matrix $L$ with coefficients
+where we have introduced the diagonal matrix $H = \operatorname{diag}(H_1,...,H_N)$ and the Cauchy matrix $C$ with coefficients
 \begin{equation*}
-L_{ij} := \frac{\eta H_j}{y_i-y_j+\eta} = \frac{\eta}{y_i-y_j+\eta} \bigg( \prod_{j \neq k} \frac{y_j-y_k-\eta}{y_j-y_k} \bigg) \check H_j.
+C_{ij} = \frac{\eta}{y_i-y_j+\eta}.
 \end{equation*}
-This looks awfully close to the Lax matrix (\ref{equation:RSLaxMatrix}) of the rational Ruijsenaars-Schneider model when we substitute $e^{-p_j}$ for $\check H_j$! Recall that $X_j$ is the operator that under quantization corresponds to $e^{-p_j}$, which leads us to hypothesize that $X_j$ and $\check H_j$ will in some sense turn out to be one and the same operator. This the main result of the next section.
+We notice that $L := CH$ has coefficients
+\begin{equation*}
+L_{ij} = \frac{\eta H_j}{y_i-y_j+\eta} = \frac{\eta}{y_i-y_j+\eta} \bigg( \prod_{j \neq k} \frac{y_j-y_k-\eta}{y_j-y_k} \bigg) \check H_j,
+\end{equation*}
+which looks awfully close to the Lax matrix (\ref{equation:RSLaxMatrix}) of the rational Ruijsenaars-Schneider model when we substitute $e^{-p_j}$ for $\check H_j$! Recall that $X_j$ is the operator that under quantization corresponds to $e^{-p_j}$, which leads us to hypothesize that $X_j$ and $\check H_j$ will in some sense turn out to be one and the same operator. This the main result of the next section.
 
-Iterating the matrix equation and combining with the formula for the quantum determinant from corollary \ref{corollary:quantumDet} finally gives the spectral equation, resembling a Cayley-Hamilton-type identity:
+Iterating the matrix equation and combining with the formula for the quantum determinant from corollary \ref{corollary:quantumDetWeights} finally gives the spectral equation, resembling a Cayley-Hamilton-type identity:
 
 \begin{theorem}[Spectral equation]\label{theorem:spectralEq}
 The non-local Hamiltonians $H_1,...,H_N$ of the spin chain fulfill the \emph{spectral equation}
 \begin{equation}\label{equation:spectralEq}
-\sum_{k=0}^\ell e_{\ell-k}(g) (L^t)^k
-\begin{pmatrix}
-b_1 \\ \vdots \\ b_N
-\end{pmatrix}
-= 0, \quad b_i = \prod_{i \neq j} \frac{y_i-y_j+\eta}{y_i-y_j}.
+\sum_{k=0}^\ell e_{\ell-k}(g) (-L)^k e = 0, \quad e = (1,...,1).
 \end{equation}
 \end{theorem}
 
@@ -1875,25 +1896,20 @@ e_\ell(g)
 \begin{pmatrix}
 \operatorname{Res}_{z=y_1} \operatorname{qdet} T(z) \\ \vdots \\ \operatorname{Res}_{z=y_N} \operatorname{qdet} T(z)
 \end{pmatrix}
-= -\eta \sum_{k=1}^\ell e_{\ell-k}(g) (L^t)^{k-1}
+= -\eta \sum_{k=1}^\ell e_{\ell-k}(g) (-HC)^{k-1}
 \begin{pmatrix}
 H_1 \\ \vdots \\ H_N
 \end{pmatrix}.
 \end{equation*}
-By propositions \ref{prop:quantumDetGroupLike} and \ref{prop:quantumDetWeights}, we compute $\operatorname{qdet} T(z) = \prod_k \left( 1+\frac{\eta}{z-y_k} \right) = \prod_k \frac{z-y_k+\eta}{z-y_k}$, implying
+By proposition \ref{prop:quantumDetGroupLike} and corollary \ref{corollary:quantumDetWeights}, we compute $\operatorname{qdet} T(z) = \prod_k \left( 1-\frac{\eta}{z-y_k} \right) = \prod_k \frac{z-y_k-\eta}{z-y_k}$, implying
 \begin{equation*}
-\operatorname{Res}_{z=y_j} \operatorname{qdet} T(z) = \eta b_j.
+\operatorname{Res}_{z=y_j} \operatorname{qdet} T(z) = \eta b_j, \quad b_j := \prod_{j \neq k} \frac{y_j-y_k-\eta}{y_j-y_k}.
 \end{equation*}
-On the other hand, we have $L = CH \Leftrightarrow H = L^t (C^t)^{-1}$, where $C_{ij} = \frac{\eta}{y_i-y_j+\eta}$ is the Cauchy matrix and $H = \operatorname{diag}(H_1,...,H_N)$.
-This implies
+We notice $(b_1,...,b_N) = C^{-1} e$. On the other hand, we have $(-HC)^{k-1} H = -H(-L)^{k-1}$, implying
 \begin{equation*}
-\eta e_\ell(g)
-\begin{pmatrix}
-b_1 \\ \vdots \\ b_N
-\end{pmatrix}
-= -\eta \sum_{k=1}^\ell e_{\ell-k}(g) (L^t)^k (C^t)^{-1} e
+\eta e_\ell(g) C^{-1} e = \eta \sum_{k=1}^\ell e_{\ell-k}(g) H(-L)^{k-1} e
 \end{equation*}
-due to $H e = L^t (C^t)^{-1} e$, where $e = (1,...,1)$. Finally, the equality $(C^t)^{-1} e = (b_1,...,b_N)$ yields the claim.
+Multiplying this with $-LH^{-1}$ yields the claim.
 \end{proof}
 
 \begin{remark}
@@ -2090,9 +2106,9 @@ P_{i,i+1} v \otimes f &= v \otimes \bigg( \frac{y_i-y_{i+1}-\eta}{y_i-y_{i+1}} s
 \Leftrightarrow P_{i,i+1} v \otimes f - v \otimes \frac{\eta}{y_i-y_{i+1}} f &= v \otimes \frac{y_i-y_{i+1}-\eta}{y_i-y_{i+1}} s_i f \\
 \Leftrightarrow P_{i,i+1} v \otimes \frac{y_i-y_{i+1}}{y_i-y_{i+1}-\eta} f - v \otimes \frac{\eta}{y_i-y_{i+1}-\eta} f &= v \otimes s_i f,
 \end{align*}
-showing $\check R_{i,i+1}^+(y_i-y_{i+1}) (P_{i,i+1} v \otimes f) = v \otimes s_i f$. In combination, we obtain
+showing $\check R_{i,i+1}(y_i-y_{i+1}) (P_{i,i+1} v \otimes f) = v \otimes s_i f$. In combination, we obtain
 \begin{equation*}
-v \otimes x_{i,i+1} f = v \otimes s_i t_i f = \check R_{i,i+1}^+(y_i-y_{i+1}) (P_{i,i+1} v \otimes t_i f) = \check R_{i,i+1}^+(y_i-y_{i+1})(v \otimes f).
+v \otimes x_{i,i+1} f = v \otimes s_i t_i f = \check R_{i,i+1}(y_i-y_{i+1}) (P_{i,i+1} v \otimes t_i f) = \check R_{i,i+1}(y_i-y_{i+1})(v \otimes f).
 \end{equation*}
 It follows that
 \begin{align*}
@@ -2327,25 +2343,25 @@ We also obtain the following result for the $S$-dual representation, which shoul
 On $LD_{\ell,N}(\C[X_1^{\pm 1},...,X_N^{\pm 1}])$, the quantum determinant has the following expansion:
 \begin{align*}
 \operatorname{qdet} T(z)
-= 1 &+ \frac{\eta}{z} N + \frac{\eta}{z^2} \bigg( C_1' + \eta \frac{N(N-1)}{2} \bigg) \\
-&+ \frac{\eta}{z^3} \bigg( 2C_2' + \eta (N-1) C_1' + \eta^2 \frac{N(N-1)(N-2)}{6} \bigg) + \cdots,
+= 1 &- \frac{\eta}{z} N - \frac{\eta}{z^2} \bigg( C_1' - \eta \frac{N(N-1)}{2} \bigg) \\
+&- \frac{\eta}{z^3} \bigg( 2C_2' - \eta (N-1) C_1' + \eta^2 \frac{N(N-1)(N-2)}{6} \bigg) + \cdots,
 \end{align*}
 where $C_1' = \sum_i y_i$ and $C_2' = \frac{1}{2}\sum_i y_i^2$ are the first two Hamiltonians of the trigonometric Calogero-Moser model.
 \end{prop}
 
 \begin{proof}
-Since the quantum determinant is group-like according to proposition \ref{prop:quantumDetGroupLike}, we find that the quantum determinant acting on $LD_{\ell,N}(\C[X_1^{\pm 1},...,X_N^{\pm 1}])$ is given by the product of elementary quantum determinants $1+\frac{\eta}{z-y_i}$, which becomes
+Since the quantum determinant is group-like according to proposition \ref{prop:quantumDetGroupLike}, we find that the quantum determinant acting on $LD_{\ell,N}(\C[X_1^{\pm 1},...,X_N^{\pm 1}])$ is given by the product of elementary quantum determinants $1-\frac{\eta}{z-y_i}$, which becomes
 \begin{equation*}
-\operatorname{qdet} T(z) = \prod_{i=1}^N \left( 1 + \frac{\eta}{z-y_i} \right).
+\operatorname{qdet} T(z) = \prod_{i=1}^N \left( 1 - \frac{\eta}{z-y_i} \right).
 \end{equation*}
 Recalling that
 \begin{equation*}
-1+ \frac{\eta}{z-y_i} = 1 + \frac{\eta}{z} + \frac{\eta}{z^2} y_i + \frac{\eta}{z^3} y_i^2 + \cdots,
+1-\frac{\eta}{z-y_i} = 1 - \frac{\eta}{z} - \frac{\eta}{z^2} y_i - \frac{\eta}{z^3} y_i^2 + \cdots,
 \end{equation*}
 we obtain the expansion
 \begin{equation*}
-\operatorname{qdet} T(z) = 1 + \frac{\eta}{z} N + \frac{\eta}{z^2} \bigg( \sum_i y_i + \sum_{i < j} \eta \bigg)
-+ \frac{\eta}{z^3} \bigg( \sum_i y_i^2 + \sum_{i < j} y_i \eta + \sum_{j < i} \eta y_j + \sum_{i < j < k} \eta^2 \bigg) + \cdots,
+\operatorname{qdet} T(z) = 1 - \frac{\eta}{z} N - \frac{\eta}{z^2} \bigg( \sum_i y_i - \sum_{i < j} \eta \bigg)
+- \frac{\eta}{z^3} \bigg( \sum_i y_i^2 - \sum_{i < j} y_i \eta - \sum_{j < i} \eta y_j + \sum_{i < j < k} \eta^2 \bigg) + \cdots,
 \end{equation*}
 which reduces to the desired expression.
 %
@@ -2985,7 +3001,12 @@ There is a monoidal double functor $Z: \mathbb{C}\textnormal{ob} \to Y(\mathfrak
 Z_0&: \mathbb{C}\textnormal{ob}_0 \to Y(\mathfrak{gl}_\ell)\mathbb{C}\textnormal{o}\mathbb{A}\textnormal{lg}_0, \quad [N] \mapsto Y^\vee(\mathfrak{gl}_\ell)^{\otimes N}, \\
 Z_1&: \mathbb{C}\textnormal{ob}_1 \to Y(\mathfrak{gl}_\ell)\mathbb{C}\textnormal{o}\mathbb{A}\textnormal{lg}_1, \quad (\Gamma,U) \mapsto E_\Gamma \otimes_{\underline{\dot H}_\Gamma} U,
 \end{align*}
-where $Z_0$ maps $\sigma \in \dot S_N$ to the permutation of tensorands determined by $\bar \sigma \in S_N$, and $Z_1$ maps
+where $Z_0$ maps
+\begin{enumerate}[label=(\roman*)]
+\item $(i \ j)$ to the corresponding permutation of tensorands, and
+\item $X_i$ to the automorphism $T^\vee(z) \mapsto gT^\vee(z)g^{-1}$,
+\end{enumerate}
+and $Z_1$ maps
 \begin{enumerate}[label=(\roman*)]
 \item $((i \ j),f): (\Gamma,U) \to (\Gamma,U')$ to $(i \ j) \otimes f$, where $(i \ j)$ denotes $P_{ij} \check R_{ij}^E(y_i-y_j)$ from the action of $\underline{\dot H}_\Gamma$ on $E_\Gamma$, and
 \item $(X_i,f): (\Gamma,U) \to (\Gamma,U')$ to $P_{w^{-1}} \check H_i \otimes f$, where $P_w$ denotes the permutation determined by the Coxeter element $w$ and $\check H_i$ denotes the $i$th non-local Hamiltonian.
@@ -2994,7 +3015,7 @@ where $Z_0$ maps $\sigma \in \dot S_N$ to the permutation of tensorands determin
 
 \begin{proof}
 \begin{enumerate}[label=(\roman*)]
-\item $Z$ is well-defined: It is immediate that $Z_0$ is well-defined. It remains to check that $Z_1$ maps the morphisms of $\mathbb{C}\textnormal{ob}_1$ to well-defined $Y(\mathfrak{gl}_\ell)$-linear maps of bicomodules. Indeed, $((i \ j),f)$ gets mapped to $(i \ j) \otimes f$, which is a well-defined $Y(\mathfrak{gl}_\ell)$-linear map since both $(i \ j)$ and $f$ are $(i \ j)$-equivariant. Similarly, we know that $(X_i,f)$ gets mapped to $P_{w^{-1}} \check H_i \otimes f$, which is a well-defined $Y(\mathfrak{gl}_\ell)$-linear map since both maps are $\id$-equivariant and $Y(\mathfrak{gl}_\ell)$-linear.
+\item $Z$ is well-defined: It is immediate that $Z_0$ is well-defined. It remains to check that $Z_1$ maps the morphisms of $\mathbb{C}\textnormal{ob}_1$ to well-defined $Y(\mathfrak{gl}_\ell)$-linear maps of bicomodules. Indeed, $((i \ j),f)$ gets mapped to $(i \ j) \otimes f$, which is a well-defined $Y(\mathfrak{gl}_\ell)$-linear map since both $(i \ j)$ and $f$ are $(i \ j)$-equivariant as $\underline{\dot H}_\Gamma$-module maps and $(i \ j)$ is $\id$-equivariant as a $Y(\mathfrak{gl}_\ell)$-module map. Similarly, we know that $(X_i,f)$ gets mapped to $P_{w^{-1}} \check H_i \otimes f$, which is a well-defined $Y(\mathfrak{gl}_\ell)$-linear map since both maps are $\id$-equivariant as $\underline{\dot H}_\Gamma$-module maps and $P_{w^{-1}} \check H_i$ is equivariant with respect to the automorphism conjugating by $g$ as a $Y(\mathfrak{gl}_\ell)$-module map.
 \item $Z$ respects loose composition: Given $(\Gamma,U): [N] \to [M]$ and $(\Gamma',U'): [M] \to [L]$, we have natural isomorphisms
 \begin{align*}
 E_{\Gamma' \circ \Gamma} \otimes_{\underline{\dot H}_{\Gamma' \circ \Gamma}} \alpha_{\Gamma,\Gamma'}^*(U \otimes U')
@@ -3379,8 +3400,6 @@ where $\mathcal{O}(Y_N^\textnormal{ell})$ denotes holomorphic functions on $Y_N^
 \Big( (\C^\ell)^{\otimes N} \otimes \mathcal{O}(Y_N^\textnormal{ell}) \Big) \otimes_{\dot H_N^\text{ell}} \mathcal{O}(Y_N^\textnormal{ell})
 \end{equation*}
 with Hamiltonians given by the usual elliptic difference operators acting on this representation.
-
-\let\thefootnote\relax\footnotetext{This thesis has benefited from large language models.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
