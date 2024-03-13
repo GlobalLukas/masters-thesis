@@ -97,7 +97,7 @@ We examine a quantum-classical duality between inhomogeneous Heisenberg models a
 
 I sincerely want to thank my advisor Prof. Dr. Gleb Arutyunov for his feedback and guidance in the research process and for sparking my interest in this wonderful topic, as well as my coadvisor Prof. Dr. Paul Wedrich for pointing me to relevant work. I also thank Philipp Rusch for proofreading the text. Finally, I would like to thank my family for their unwavering support in my studies.
 
-\let\thefootnote\relax\footnotetext{This thesis has benefited from large language models.}
+\footnotetext{This thesis has benefited from large language models.}
 
 \tableofcontents
 
@@ -158,13 +158,11 @@ In short, the novel contributions of this thesis are the following:
 \item We twist the Drinfeld functor $D_{\ell,N}: \dot H_N \mathsf{Mod} \to Y(\mathfrak{gl}_\ell) \mathsf{Mod}$ to give the \emph{twist-extended Drinfeld functor} $D_{\ell,N}^g: \ddot H_N \mathsf{Mod} \to S\ddot H_N \# Y(\mathfrak{gl}_\ell) \mathsf{Mod}$ and show that it maps the Hamiltonians of the quantum rational Ruijsenaars-Schneider model to the Hamiltonians of the twisted inhomogeneous Heisenberg model in the limit where the Planck constant for the rational Ruijsenaars-Schneider model $\hbar$ goes to zero.
 \item We show the same for the quantum trigonometric Calogero-Moser model, mapping to the trigonometric Gaudin model when $\hbar \to 0$.
 \item We construct a functorial quantum field theory representing four-dimensional Chern-Simons theory on $\P^1 \times S^1 \times [0,1]$ and show how it describes the rational Ruijsenaars-Schneider model with spin.
-\item We extrapolate our description to four-dimensional Chern-Simons theory on $E \times S^1 \times [0,1]$, where $E$ is an elliptic curve, giving insights into the quantization of the elliptic Ruijsenaars-Schneider model with spin.
+%\item We extrapolate our description to four-dimensional Chern-Simons theory on $E \times S^1 \times [0,1]$, where $E$ is an elliptic curve, giving insights into the quantization of the elliptic Ruijsenaars-Schneider model with spin.
 \end{itemize}
 
 The remaining chapters of this thesis are structured as follows. Chapter \ref{chapter:integrability} gives a full review from the basics of integrability to the state of the art of the pertinent models and establishes the setup that frames our discussion. Chapter \ref{chapter:duality} begins with a detailed discussion of the recent appearance of the Lax matrix of the rational Ruijsenaars-Schneider model in the functional relations for transfer matrices of the Heisenberg model used to derive the spectral equation whose solutions yield the energy spectrum of the Heisenberg model. We then move on to describe the mathematical underpinnings of generalized Schur-Weyl duality and how it gives rise to quantum-classical duality. The end of chapter \ref{chapter:duality} is dedicated to explicating $S$-duality, showing how the $S$-dual models, \emph{i.e.} the trigonometric Gaudin model and the trigonometric Calogero-Moser model are also related by quantum-classical duality. Chapter \ref{chapter:geometry} then continues with a description of the geometry behind the mathematical structures of chapter \ref{chapter:duality}, constructing a functorial quantum field theory extending the Drinfeld functor. Finally, we argue why this functorial quantum field theory represents four-dimensional Chern-Simons theory. After the conclusion (chapter \ref{chapter:conclusion}), we give supplementary material on Young diagrams (appendix \ref{appendix:youngdiagrams}) as well as results on Dunkl operators for the trigonometric Calogero-Moser model (appendix \ref{appendix:dunklOperators}) and a short reference on double categories (appendix \ref{appendix:doubleCats}).
-
 ~\\
-
 \begin{center}
 {\large \textit{-- Enjoy! --}}
 \end{center}
@@ -1521,7 +1519,7 @@ Due to this fact, $\tau_{[1^\ell]}^1(z)$ deserves the name \emph{quantum determi
 \end{definition}
 
 \begin{remark}
-This definition of the quantum determinant differs from the one in \cite{book:molev} by the shift $z \mapsto z-\eta(\ell-1)$.
+This definition of the quantum determinant differs from the one in \cite{book:molev} by shifting the spectral parameter according to $z \mapsto z-\eta(\ell-1)$.
 \end{remark}
 
 \begin{prop}\label{prop:quantumDetGroupLike}
@@ -1556,7 +1554,7 @@ Since $T(z)$ acts as a lower-triangular matrix on the highest weight vector, the
 
 For the second claim, we compute the highest weight of the $\mathfrak{gl}_\ell$-module $L(\ydiagram{1})^t$ by starting with $\ydiagram{1} = (1,0,...,0)$, multiplying by $-1$ to obtain $(-1,0,...,0)$ and reordering to obtain $(0,...,0,-1)$. It follows that
 \begin{equation*}
-\lambda_1(z+\eta(\ell-1)) \cdots \lambda_\ell(z) = \lambda_\ell(z) = 1 - \frac{\eta}{z-y}
+\lambda_1(z+\eta(\ell-1)) \cdots \lambda_\ell(z) = \lambda_\ell(z) = 1 - \frac{\eta}{z-y}.
 \end{equation*}
 \end{proof}
 
@@ -1773,7 +1771,7 @@ and compute
 &= -M_1^{[N,i+1]}(y_i-\eta) M_2^{[N,i+1]}(y_i) \eta P_{2i} 2 \Pi_{12}^+ M_1^{[i-1,1]}(y_i-\eta) M_2^{[i-1,1]}(y_i) \\
 &= -M_1^{[N,i+1]}(y_i-\eta) M_2^{[N,i+1]}(y_i) \eta P_{2i} 2 \Pi_{12}^+ M_2^{[i-1,1]}(y_i) M_1^{[i-1,1]}(y_i-\eta) \Pi_{12}^+ \\
 &= -M_1^{[N,i+1]}(y_i-\eta) M_2^{[N,i+1]}(y_i) \eta P_{2i} 2 \Pi_{12}^+ M_1^{[i-1,1]}(y_i-\eta) M_2^{[i-1,1]}(y_i) \Pi_{12}^+ \\
-&= -\operatorname{Res}_{z=y_i-\eta} \Big( M_2(z-\eta) M_1(z) \Big) \Pi_{12}^+.
+&= \operatorname{Res}_{z=y_i-\eta} \Big( M_2(z-\eta) M_1(z) \Big) \Pi_{12}^+.
 \end{align*}
 It follows that $\operatorname{Res}_{z=y_i-\eta} \big( M_1(z) M_2(z+\eta) \cdots M_k(z+(k-1)\eta) \big)$ is symmetric in the indices 1 and 2, forcing $\operatorname{Res}_{z=y_i-\eta} \tau_{[1^k]}^g(z)$ to be zero due to the presence of the antisymmetrizer $\Pi_{1...k}^-$. The same argument also holds for the poles at $y_i-j\eta$ for $j=2,...,k-1$.
 \end{proof}
