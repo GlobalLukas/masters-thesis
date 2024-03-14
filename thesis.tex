@@ -1792,7 +1792,7 @@ Let us take the column tableau $t_\lambda$, giving
 \begin{equation*}
 \tau_\lambda^g(\infty) = \operatorname{tr}_{t_\lambda} T_{t_\lambda}^g(\infty).
 \end{equation*}
-But $T_{t_\lambda}^g(\infty)$ is just $g$, yielding
+But $T_{t_\lambda}^g(\infty)$ is just $g_1 \cdots g_k$, yielding
 \begin{equation*}
 \tau_\lambda^g(\infty) = \operatorname{tr}_{t_\lambda} g_1 \cdots g_k,
 \end{equation*}
@@ -3002,18 +3002,18 @@ Z_1&: \mathbb{C}\textnormal{ob}_1 \to Y(\mathfrak{gl}_\ell)\mathbb{C}\textnormal
 where $Z_0$ maps
 \begin{enumerate}[label=(\roman*)]
 \item $(i \ j)$ to the corresponding permutation of tensorands, and
-\item $X_i$ to the automorphism $T^\vee(z) \mapsto gT^\vee(z)g^{-1}$,
+\item $X_i$ to the identity,
 \end{enumerate}
 and $Z_1$ maps
 \begin{enumerate}[label=(\roman*)]
 \item $((i \ j),f): (\Gamma,U) \to (\Gamma,U')$ to $(i \ j) \otimes f$, where $(i \ j)$ denotes $P_{ij} \check R_{ij}^E(y_i-y_j)$ from the action of $\underline{\dot H}_\Gamma$ on $E_\Gamma$, and
-\item $(X_i,f): (\Gamma,U) \to (\Gamma,U')$ to $P_{w^{-1}} \check H_i \otimes f$, where $P_w$ denotes the permutation determined by the Coxeter element $w$ and $\check H_i$ denotes the $i$th non-local Hamiltonian.
+\item $(X_i,f): (\Gamma,U) \to (\Gamma,U')$ to $P_{w^{-1}} \check H_i \otimes f$, where $P_w$ denotes the permutation determined by the Coxeter element $w$ and $\check H_i$ denotes the $i$th non-local Hamiltonian with $g=1$.
 \end{enumerate}
 \end{theorem}
 
 \begin{proof}
 \begin{enumerate}[label=(\roman*)]
-\item $Z$ is well-defined: It is immediate that $Z_0$ is well-defined. It remains to check that $Z_1$ maps the morphisms of $\mathbb{C}\textnormal{ob}_1$ to well-defined $Y(\mathfrak{gl}_\ell)$-linear maps of bicomodules. Indeed, $((i \ j),f)$ gets mapped to $(i \ j) \otimes f$, which is a well-defined $Y(\mathfrak{gl}_\ell)$-linear map since both $(i \ j)$ and $f$ are $(i \ j)$-equivariant as $\underline{\dot H}_\Gamma$-module maps and $(i \ j)$ is $\id$-equivariant as a $Y(\mathfrak{gl}_\ell)$-module map. Similarly, we know that $(X_i,f)$ gets mapped to $P_{w^{-1}} \check H_i \otimes f$, which is a well-defined $Y(\mathfrak{gl}_\ell)$-linear map since both maps are $\id$-equivariant as $\underline{\dot H}_\Gamma$-module maps and $P_{w^{-1}} \check H_i$ is equivariant with respect to the automorphism conjugating by $g$ as a $Y(\mathfrak{gl}_\ell)$-module map.
+\item $Z$ is well-defined: It is immediate that $Z_0$ is well-defined. It remains to check that $Z_1$ maps the morphisms of $\mathbb{C}\textnormal{ob}_1$ to well-defined $Y(\mathfrak{gl}_\ell)$-linear maps of bicomodules. Indeed, $((i \ j),f)$ gets mapped to $(i \ j) \otimes f$, which is a well-defined $Y(\mathfrak{gl}_\ell)$-linear map since both $(i \ j)$ and $f$ are $(i \ j)$-equivariant as $\underline{\dot H}_\Gamma$-module maps and $(i \ j)$ is $\id$-equivariant as a $Y(\mathfrak{gl}_\ell)$-module map. Similarly, we know that $(X_i,f)$ gets mapped to $P_{w^{-1}} \check H_i \otimes f$, which is a well-defined $Y(\mathfrak{gl}_\ell)$-linear map since both maps are $\id$-equivariant as $\underline{\dot H}_\Gamma$-module maps and $P_{w^{-1}} \check H_i$ is $\id$-equivariant as a $Y(\mathfrak{gl}_\ell)$-module map.
 \item $Z$ respects loose composition: Given $(\Gamma,U): [N] \to [M]$ and $(\Gamma',U'): [M] \to [L]$, we have natural isomorphisms
 \begin{align*}
 E_{\Gamma' \circ \Gamma} \otimes_{\underline{\dot H}_{\Gamma' \circ \Gamma}} \alpha_{\Gamma,\Gamma'}^*(U \otimes U')
@@ -3028,7 +3028,7 @@ E_{\Gamma_1 \otimes \Gamma_2} \otimes_{\underline{\dot H}_{\Gamma_1 \otimes \Gam
 \end{proof}
 
 \begin{remark}
-The theorem above needs a bit more work to be proven definitively. However, time constraints did not allow the author to work through the full proof. For example, it is puzzling why we would assign $P_{w^{-1}} \check H_i \otimes f$ to $(X_i,f)$ and not simply $\check H_i \otimes f$. However, $P_{w^{-1}}$ is necessary for $Y(\mathfrak{gl}_\ell)$-linearity. All in all, the correct stuff and structure is present, it only remains to check some properties.
+The theorem above needs a bit more work to be proven definitively. However, time constraints did not allow the author to work through the full proof. For example, it is puzzling why we would assign $P_{w^{-1}} \check H_i \otimes f$ to $(X_i,f)$ and not simply $\check H_i \otimes f$. However, $P_{w^{-1}}$ is necessary for $Y(\mathfrak{gl}_\ell)$-linearity. Also, to incorporate a non-trivial twist matrix $g$, further equivariance needs to be introduced. All in all, the correct stuff and structure is present, it only remains to check some properties.
 \end{remark}
 
 %\begin{lemma}
